@@ -9,10 +9,25 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>CTAssetsPickerController-CTAssetsPickerController.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
+		<key>CTAssetsPickerController.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
 		<key>MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>3</integer>
+		</dict>
+		<key>MJRefresh.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>9</integer>
 		</dict>
 		<key>MagicalRecord.xcscheme</key>
 		<dict>
@@ -37,12 +52,37 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0A12F2965E5DD1DC7F20FC294A43040E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>194B4E7195247A4791A9C8467BB64AAF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>52E8520EEB3CD4AEB0283BD08ECB551A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>558EA1AD5B545CF80EB9655397875003</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>8F74D9EA91F4C43190670066BAC37D44</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>928353533005A4198EBDA5B700D37B64</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A9DD0511E7BEB30672D6697BC3398ABB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -58,6 +98,11 @@
 			<true/>
 		</dict>
 		<key>F3CA2186CBB15F0040D55D3B4906751F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F8C3538CB6EADABE8585FCAF4BCE0480</key>
 		<dict>
 			<key>primary</key>
 			<true/>

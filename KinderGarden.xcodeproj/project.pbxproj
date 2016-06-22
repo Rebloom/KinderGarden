@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		730ED0451D1A5F5B00EA93C3 /* AddTeatcherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 730ED03E1D1A5F5B00EA93C3 /* AddTeatcherViewController.m */; };
+		730ED0461D1A5F5B00EA93C3 /* ClassManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 730ED0401D1A5F5B00EA93C3 /* ClassManageViewController.m */; };
+		730ED0471D1A5F5B00EA93C3 /* TeatcherInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 730ED0421D1A5F5B00EA93C3 /* TeatcherInfoViewController.m */; };
+		730ED0481D1A5F5B00EA93C3 /* TeatcherManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 730ED0441D1A5F5B00EA93C3 /* TeatcherManageViewController.m */; };
+		730ED04F1D1A5F7500EA93C3 /* icon_xiajiantou.png in Resources */ = {isa = PBXBuildFile; fileRef = 730ED0491D1A5F7500EA93C3 /* icon_xiajiantou.png */; };
+		730ED0501D1A5F7500EA93C3 /* icon_youjiantou.png in Resources */ = {isa = PBXBuildFile; fileRef = 730ED04A1D1A5F7500EA93C3 /* icon_youjiantou.png */; };
+		730ED0511D1A5F7500EA93C3 /* select@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 730ED04B1D1A5F7500EA93C3 /* select@2x.png */; };
+		730ED0521D1A5F7500EA93C3 /* select@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 730ED04C1D1A5F7500EA93C3 /* select@3x.png */; };
+		730ED0531D1A5F7500EA93C3 /* teatcherChat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 730ED04D1D1A5F7500EA93C3 /* teatcherChat@2x.png */; };
+		730ED0541D1A5F7500EA93C3 /* teatcherChat@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 730ED04E1D1A5F7500EA93C3 /* teatcherChat@3x.png */; };
+		730ED0571D1A600800EA93C3 /* AddTeatcherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 730ED0561D1A600800EA93C3 /* AddTeatcherCell.m */; };
+		730ED05B1D1A602C00EA93C3 /* ParentsChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 730ED05A1D1A602C00EA93C3 /* ParentsChatCell.m */; };
+		730ED05E1D1A603B00EA93C3 /* ParentsChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 730ED05D1D1A603B00EA93C3 /* ParentsChatViewController.m */; };
 		7327FC631CEBFF6700C88F38 /* Ivan_UITabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 7327FC5E1CEBFF6700C88F38 /* Ivan_UITabBar.m */; };
 		7327FC641CEBFF6700C88F38 /* UIBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7327FC601CEBFF6700C88F38 /* UIBadgeView.m */; };
 		7327FC651CEBFF6700C88F38 /* UINavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 7327FC621CEBFF6700C88F38 /* UINavBar.m */; };
@@ -185,6 +198,26 @@
 /* Begin PBXFileReference section */
 		0BC10A5E3A8DC40DBB06E11D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		615FA94E6B284ABB03BFE0EC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		730ED03D1D1A5F5B00EA93C3 /* AddTeatcherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTeatcherViewController.h; sourceTree = "<group>"; };
+		730ED03E1D1A5F5B00EA93C3 /* AddTeatcherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTeatcherViewController.m; sourceTree = "<group>"; };
+		730ED03F1D1A5F5B00EA93C3 /* ClassManageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassManageViewController.h; sourceTree = "<group>"; };
+		730ED0401D1A5F5B00EA93C3 /* ClassManageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassManageViewController.m; sourceTree = "<group>"; };
+		730ED0411D1A5F5B00EA93C3 /* TeatcherInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeatcherInfoViewController.h; sourceTree = "<group>"; };
+		730ED0421D1A5F5B00EA93C3 /* TeatcherInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeatcherInfoViewController.m; sourceTree = "<group>"; };
+		730ED0431D1A5F5B00EA93C3 /* TeatcherManageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeatcherManageViewController.h; sourceTree = "<group>"; };
+		730ED0441D1A5F5B00EA93C3 /* TeatcherManageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeatcherManageViewController.m; sourceTree = "<group>"; };
+		730ED0491D1A5F7500EA93C3 /* icon_xiajiantou.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_xiajiantou.png; sourceTree = "<group>"; };
+		730ED04A1D1A5F7500EA93C3 /* icon_youjiantou.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_youjiantou.png; sourceTree = "<group>"; };
+		730ED04B1D1A5F7500EA93C3 /* select@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "select@2x.png"; sourceTree = "<group>"; };
+		730ED04C1D1A5F7500EA93C3 /* select@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "select@3x.png"; sourceTree = "<group>"; };
+		730ED04D1D1A5F7500EA93C3 /* teatcherChat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "teatcherChat@2x.png"; sourceTree = "<group>"; };
+		730ED04E1D1A5F7500EA93C3 /* teatcherChat@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "teatcherChat@3x.png"; sourceTree = "<group>"; };
+		730ED0551D1A600800EA93C3 /* AddTeatcherCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTeatcherCell.h; sourceTree = "<group>"; };
+		730ED0561D1A600800EA93C3 /* AddTeatcherCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTeatcherCell.m; sourceTree = "<group>"; };
+		730ED0591D1A602C00EA93C3 /* ParentsChatCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParentsChatCell.h; sourceTree = "<group>"; };
+		730ED05A1D1A602C00EA93C3 /* ParentsChatCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParentsChatCell.m; sourceTree = "<group>"; };
+		730ED05C1D1A603B00EA93C3 /* ParentsChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParentsChatViewController.h; sourceTree = "<group>"; };
+		730ED05D1D1A603B00EA93C3 /* ParentsChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParentsChatViewController.m; sourceTree = "<group>"; };
 		7327FC5D1CEBFF6700C88F38 /* Ivan_UITabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ivan_UITabBar.h; sourceTree = "<group>"; };
 		7327FC5E1CEBFF6700C88F38 /* Ivan_UITabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ivan_UITabBar.m; sourceTree = "<group>"; };
 		7327FC5F1CEBFF6700C88F38 /* UIBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBadgeView.h; sourceTree = "<group>"; };
@@ -448,6 +481,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		730ED0581D1A602C00EA93C3 /* Discovery */ = {
+			isa = PBXGroup;
+			children = (
+				730ED0591D1A602C00EA93C3 /* ParentsChatCell.h */,
+				730ED05A1D1A602C00EA93C3 /* ParentsChatCell.m */,
+			);
+			path = Discovery;
+			sourceTree = "<group>";
+		};
 		7327FC5B1CEBFF4100C88F38 /* KGView */ = {
 			isa = PBXGroup;
 			children = (
@@ -500,6 +542,8 @@
 			children = (
 				7327FC911CEC064900C88F38 /* FourthViewController.h */,
 				7327FC921CEC064900C88F38 /* FourthViewController.m */,
+				730ED05C1D1A603B00EA93C3 /* ParentsChatViewController.h */,
+				730ED05D1D1A603B00EA93C3 /* ParentsChatViewController.m */,
 			);
 			path = Discovery;
 			sourceTree = "<group>";
@@ -541,6 +585,14 @@
 				F4CA1AC31CECCA330020BA59 /* SchoolInfoViewController.m */,
 				7328850C1CED5758006A5CEC /* BuildClassViewController.h */,
 				7328850D1CED5758006A5CEC /* BuildClassViewController.m */,
+				730ED03D1D1A5F5B00EA93C3 /* AddTeatcherViewController.h */,
+				730ED03E1D1A5F5B00EA93C3 /* AddTeatcherViewController.m */,
+				730ED03F1D1A5F5B00EA93C3 /* ClassManageViewController.h */,
+				730ED0401D1A5F5B00EA93C3 /* ClassManageViewController.m */,
+				730ED0411D1A5F5B00EA93C3 /* TeatcherInfoViewController.h */,
+				730ED0421D1A5F5B00EA93C3 /* TeatcherInfoViewController.m */,
+				730ED0431D1A5F5B00EA93C3 /* TeatcherManageViewController.h */,
+				730ED0441D1A5F5B00EA93C3 /* TeatcherManageViewController.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -922,6 +974,7 @@
 				EFA2BD861D0C0705000D1EF2 /* NXAddPictureView.m */,
 				EFA2BD791D0BF8C7000D1EF2 /* TakePhotoView.h */,
 				EFA2BD7A1D0BF8C7000D1EF2 /* TakePhotoView.m */,
+				730ED0581D1A602C00EA93C3 /* Discovery */,
 				73DD1AAF1CEEE2450059ADAC /* Dynamic */,
 				F4CA1AA21CECA39B0020BA59 /* Mine */,
 				7327FC721CEC039E00C88F38 /* PublicView */,
@@ -954,6 +1007,8 @@
 			children = (
 				F4CA1AA31CECA3B30020BA59 /* FifthCell.h */,
 				F4CA1AA41CECA3B30020BA59 /* FifthCell.m */,
+				730ED0551D1A600800EA93C3 /* AddTeatcherCell.h */,
+				730ED0561D1A600800EA93C3 /* AddTeatcherCell.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -963,6 +1018,12 @@
 			children = (
 				F4CA1AA71CECA6380020BA59 /* right@2x.png */,
 				F4CA1AA81CECA6380020BA59 /* right@3x.png */,
+				730ED0491D1A5F7500EA93C3 /* icon_xiajiantou.png */,
+				730ED04A1D1A5F7500EA93C3 /* icon_youjiantou.png */,
+				730ED04B1D1A5F7500EA93C3 /* select@2x.png */,
+				730ED04C1D1A5F7500EA93C3 /* select@3x.png */,
+				730ED04D1D1A5F7500EA93C3 /* teatcherChat@2x.png */,
+				730ED04E1D1A5F7500EA93C3 /* teatcherChat@3x.png */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -1033,6 +1094,7 @@
 				F4DCFBC41CF0476700FCB8DF /* main@2x.png in Resources */,
 				EFA2BD781D0BEA71000D1EF2 /* icon_write@3x.png in Resources */,
 				EFA2BD731D0BEA71000D1EF2 /* icon_leave@2x.png in Resources */,
+				730ED04F1D1A5F7500EA93C3 /* icon_xiajiantou.png in Resources */,
 				EFA2BD6A1D0BEA71000D1EF2 /* icon_baby_archive@3x.png in Resources */,
 				F4CA1ABB1CECB7A60020BA59 /* whiteBack@3x.png in Resources */,
 				EFA2BD741D0BEA71000D1EF2 /* icon_leave@3x.png in Resources */,
@@ -1049,17 +1111,20 @@
 				73DD1AD01CEEEFEA0059ADAC /* shaixuan@3x.png in Resources */,
 				732885261CED9636006A5CEC /* babyShow@2x.png in Resources */,
 				732885231CED9636006A5CEC /* ask@3x.png in Resources */,
+				730ED0531D1A5F7500EA93C3 /* teatcherChat@2x.png in Resources */,
 				7327FCF51CEC38DF00C88F38 /* WX@3x.png in Resources */,
 				EFA2BD8A1D0C1374000D1EF2 /* icon_takePicture@2x.png in Resources */,
 				7327FCEF1CEC38DF00C88F38 /* QQ@3x.png in Resources */,
 				73DD1AD11CEEEFEA0059ADAC /* whiteBack@2x.png in Resources */,
 				EFA2BD721D0BEA71000D1EF2 /* icon_group@3x.png in Resources */,
+				730ED0521D1A5F7500EA93C3 /* select@3x.png in Resources */,
 				EFA2BDC31D0CE9DE000D1EF2 /* nonfullscreen@3x.png in Resources */,
 				EFA2BDC91D0CE9DE000D1EF2 /* playcount.png in Resources */,
 				F4DCFBCC1CF0476700FCB8DF /* select_dynamic@2x.png in Resources */,
 				F4DCFBC71CF0476700FCB8DF /* mine@3x.png in Resources */,
 				73DD1ACC1CEEEFEA0059ADAC /* read@3x.png in Resources */,
 				F4DCFBCE1CF0476700FCB8DF /* select_mine@2x.png in Resources */,
+				730ED0541D1A5F7500EA93C3 /* teatcherChat@3x.png in Resources */,
 				EFA2BD511D0BBCB7000D1EF2 /* icon_child@3x.png in Resources */,
 				7327FCEB1CEC38DF00C88F38 /* backImage.jpg in Resources */,
 				732885201CED9636006A5CEC /* anounce@2x.png in Resources */,
@@ -1108,6 +1173,7 @@
 				732885281CED9636006A5CEC /* bgPic 23@3x.png in Resources */,
 				F4CA1AB91CECB7A60020BA59 /* back@3x.png in Resources */,
 				EFA2BDBE1D0CE9DE000D1EF2 /* dot@3x.png in Resources */,
+				730ED0511D1A5F7500EA93C3 /* select@2x.png in Resources */,
 				EFA2BD6B1D0BEA71000D1EF2 /* icon_baby_chat@2x.png in Resources */,
 				732885241CED9636006A5CEC /* babyFile@2x.png in Resources */,
 				7328852F1CED9636006A5CEC /* FMChat@3x.png in Resources */,
@@ -1116,6 +1182,7 @@
 				EFA2BD701D0BEA71000D1EF2 /* icon_comment@3x.png in Resources */,
 				F4CA1AAA1CECA6380020BA59 /* right@3x.png in Resources */,
 				EFA2BDC01D0CE9DE000D1EF2 /* fullscreen@3x.png in Resources */,
+				730ED0501D1A5F7500EA93C3 /* icon_youjiantou.png in Resources */,
 				EFA2BDBD1D0CE9DE000D1EF2 /* dot@2x.png in Resources */,
 				F4DCFBC51CF0476700FCB8DF /* main@3x.png in Resources */,
 				7327FCF11CEC38DF00C88F38 /* Sina@3x.png in Resources */,
@@ -1208,6 +1275,7 @@
 				7327FC6E1CEC036300C88F38 /* BasicViewController.m in Sources */,
 				EFA2BDB71D0CE9DE000D1EF2 /* VideoModel.m in Sources */,
 				EFA3BFCC1CEBE69A00724058 /* NXRequestManager.m in Sources */,
+				730ED0451D1A5F5B00EA93C3 /* AddTeatcherViewController.m in Sources */,
 				7327FC711CEC036300C88F38 /* WelcomeViewController.m in Sources */,
 				7327FC701CEC036300C88F38 /* RootViewController.m in Sources */,
 				EFA2BDCB1D0CE9DE000D1EF2 /* UIViewExt.m in Sources */,
@@ -1220,7 +1288,10 @@
 				EFA2BD7E1D0C038B000D1EF2 /* BabyShowViewController.m in Sources */,
 				EFA3BFD11CEBE69A00724058 /* UIImage+UIColor.m in Sources */,
 				EF65D48C1CEAC42F00463441 /* ViewController.m in Sources */,
+				730ED05B1D1A602C00EA93C3 /* ParentsChatCell.m in Sources */,
 				7327FD051CEC4C0F00C88F38 /* FindPasswordViewController.m in Sources */,
+				730ED0471D1A5F5B00EA93C3 /* TeatcherInfoViewController.m in Sources */,
+				730ED0481D1A5F5B00EA93C3 /* TeatcherManageViewController.m in Sources */,
 				F4CA1AAD1CECAC8A0020BA59 /* AccoutSafeViewController.m in Sources */,
 				7327FC901CEC063E00C88F38 /* ThirdViewController.m in Sources */,
 				EFA3BFE41CEBE8D800724058 /* GFBase64.m in Sources */,
@@ -1237,6 +1308,7 @@
 				EFA2BDB51D0CE9DE000D1EF2 /* SidModel.m in Sources */,
 				EFA2BDCA1D0CE9DE000D1EF2 /* THVideoCell.m in Sources */,
 				7327FC631CEBFF6700C88F38 /* Ivan_UITabBar.m in Sources */,
+				730ED05E1D1A603B00EA93C3 /* ParentsChatViewController.m in Sources */,
 				EFA2BDB81D0CE9DE000D1EF2 /* DetailViewController.m in Sources */,
 				EFA3BFE61CEBE8D800724058 /* NSData+AES.m in Sources */,
 				7327FC931CEC064900C88F38 /* FourthViewController.m in Sources */,
@@ -1245,6 +1317,7 @@
 				EFA3BFE91CEBE8D800724058 /* Secret.m in Sources */,
 				EFA3BFE51CEBE8D800724058 /* GTMBase64.m in Sources */,
 				F4CA1AB31CECB63D0020BA59 /* ChangePhoneViewController.m in Sources */,
+				730ED0461D1A5F5B00EA93C3 /* ClassManageViewController.m in Sources */,
 				EFA2BD871D0C0705000D1EF2 /* NXAddPictureView.m in Sources */,
 				7327FC771CEC039E00C88F38 /* HeaderView.m in Sources */,
 				73DD1AB21CEEE25C0059ADAC /* SchoolCell.m in Sources */,
@@ -1256,6 +1329,7 @@
 				EFA3BFCA1CEBE69A00724058 /* NXBaseRequest.m in Sources */,
 				73DD1AD51CEEF8D30059ADAC /* NewsDetailViewController.m in Sources */,
 				F4CA1AC41CECCA330020BA59 /* SchoolInfoViewController.m in Sources */,
+				730ED0571D1A600800EA93C3 /* AddTeatcherCell.m in Sources */,
 				7327FC6F1CEC036300C88F38 /* HomeViewController.m in Sources */,
 				7327FD0B1CEC551C00C88F38 /* NSTimer+Addition.m in Sources */,
 			);
@@ -1375,7 +1449,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = KinderGarden/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dbn.nx.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1392,7 +1466,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = KinderGarden/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dbn.nx.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";

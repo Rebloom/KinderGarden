@@ -9,7 +9,8 @@
 #import "SchoolInfoViewController.h"
 #import "FifthCell.h"
 #import "BuildClassViewController.h"
-
+#import "ClassManageViewController.h"
+#import "TeatcherManageViewController.h"
 
 @interface SchoolInfoViewController ()
 
@@ -20,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = KFontColorA;
-
+    
     [headerView loadComponentsWithTitle:@"学校信息" withTitleColor:KBlackColor];
     [headerView setBackgroundColor:KFontColorA];
     [headerView backButton];
@@ -98,11 +99,13 @@
     }
     else if (indexPath.row == 4)
     {
-        
+        TeatcherManageViewController * TMVC = [[TeatcherManageViewController alloc] init];
+        [self pushToViewController:TMVC];
     }
     else if (indexPath.row == 5)
     {
-        
+        ClassManageViewController * CMVC = [[ClassManageViewController alloc] init];
+        [self pushToViewController:CMVC];
     }
     else if (indexPath.row == 6)
     {

@@ -7,6 +7,7 @@
 //
 
 #import "BuildClassViewController.h"
+#import "AddTeatcherViewController.h"
 
 @interface BuildClassViewController ()
 
@@ -53,7 +54,7 @@
         [buildClassBtn setBackgroundImage:[@"#e2e2e2".color image] forState:UIControlStateHighlighted];
         [buildClassBtn addTarget:self action:@selector(buildClassBtnOnClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:buildClassBtn];
-
+        
         UILabel * leftLabel = [[UILabel alloc] init];
         leftLabel.text = [leftArr objectAtIndex:i];
         leftLabel.textAlignment = NSTextAlignmentLeft;
@@ -121,6 +122,8 @@
     else if (sender.tag == 1002)
     {
         NSLog(@"添加老师");
+        AddTeatcherViewController * ATVC = [[AddTeatcherViewController alloc] init];
+        [self pushToViewController:ATVC];
     }
 }
 
