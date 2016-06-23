@@ -8,6 +8,9 @@
 
 #import "BasicViewController.h"
 
-@interface FourthViewController : BasicViewController
+@interface FourthViewController : BasicViewController<UITableViewDataSource,UITableViewDelegate>
+{
+    UITableView * infoTableView;
+}
 
 @end

@@ -18,6 +18,8 @@
 #define KFontColorE     @"#bbbbbb".color //灰线
 
 #define KPurpleColor    @"#7e7be5".color
+#define kBackgroundColor    @"#f1f0ef".color
+
 // 用于扩展NSString,转换UIColor
 @interface NSString (UIColor)
 
