@@ -11,24 +11,44 @@
 #import "AccoutInfoViewController.h"
 #import "FifthCell.h"
 #import "SchoolInfoViewController.h"
-
+#import "EditDataViewController.h"
 @interface FifthViewController ()
 
 @end
 
 @implementation FifthViewController
 
+- (void)createEditBtn
+{
+    UIButton * editBtn = [[UIButton alloc] init];
+    editBtn.backgroundColor = [UIColor clearColor];
+    editBtn.titleLabel.font = NormalFontWithSize(14);
+    editBtn.frame = CGRectMake(screenWidth-60, 20, 40, 40);
+    [editBtn setTitle:@"编辑" forState:UIControlStateNormal];
+    [editBtn setTitleColor:KFontColorA forState:UIControlStateNormal];
+    [editBtn addTarget:self action:@selector(editBtnOnClick) forControlEvents:UIControlEventTouchUpInside];
+    [headerView addSubview:editBtn];
+}
+
+- (void)editBtnOnClick
+{
+    EditDataViewController * EDVC = [[EditDataViewController alloc] init];
+    [self pushToViewController:EDVC];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [headerView loadComponentsWithTitle:@"个人中心" withTitleColor:KFontColorA];
     
+    [self createEditBtn];
     [self createTableView];
     [self createUI];
 }
 
 - (void)createTableView
 {
-    infoTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, screenHeight) style:UITableViewStylePlain];
+    infoTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, screenWidth, screenHeight-64) style:UITableViewStylePlain];
     infoTableView.delegate = self;
     infoTableView.dataSource = self;
     infoTableView.showsVerticalScrollIndicator = NO;

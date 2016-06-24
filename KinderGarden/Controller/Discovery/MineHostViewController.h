@@ -1,23 +1,24 @@
 //
-//  ParentsChatViewController.h
+//  MineHostViewController.h
 //  KinderGarden
 //
-//  Created by xdcy on 16/6/22.
+//  Created by xdcy on 16/6/24.
 //  Copyright © 2016年 haonanchen. All rights reserved.
 //
 
 #import "BasicViewController.h"
-#import "ParentCell.h"
-#import "ParentHeaderView.h"
+#import "MineHostCell.h"
+#import "MineHostHeaderView.h"
 
-@interface ParentsChatViewController : BasicViewController<UICollectionViewDataSource,UICollectionViewDelegate,collectionBtnDelegate,parentCellDelegate>
+@interface MineHostViewController : BasicViewController<UICollectionViewDataSource,UICollectionViewDelegate,MineHostCellDelegate>
 {
     NSArray *titlearray;
     UICollectionViewFlowLayout *flowLayout;
     UICollectionView * myCollectionV;
-    NSString * bannerFlag; 
+    NSString * bannerFlag;
 }
 @property(nonatomic,strong) NSMutableArray * imageArr;
 @property(nonatomic,strong) NSMutableArray * heightArr;
+
 
 @end

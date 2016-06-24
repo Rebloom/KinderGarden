@@ -25,7 +25,7 @@
 @synthesize mineBtn;
 @synthesize recommendBtn;
 @synthesize newsBtn;
-
+@synthesize mineHostBtn;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -65,6 +65,15 @@
     photoImageView.layer.masksToBounds = YES;
     photoImageView.image = [UIImage imageNamed:@"beauty3.jpg"];
     [topView addSubview:photoImageView];
+    
+    if (!mineHostBtn)
+    {
+        mineHostBtn = [[UIButton alloc] init];
+    }
+    [mineHostBtn setBackgroundColor:[UIColor clearColor]];
+    mineHostBtn.frame = CGRectMake(0, CGRectGetMaxY(lunboImageView.frame), screenWidth, 100);
+    [mineHostBtn addTarget:self action:@selector(mineHostBtnOnClick) forControlEvents:UIControlEventTouchUpInside];
+    [topView addSubview:mineHostBtn];
     
     if (!nameLabel)
     {
@@ -163,6 +172,14 @@
     if ([self.delegate respondsToSelector:@selector(newtopicOnclick)])
     {
         [self.delegate newtopicOnclick];
+    }
+}
+
+- (void)mineHostBtnOnClick
+{
+    if ([self.delegate respondsToSelector:@selector(pushNextVC)])
+    {
+        [self.delegate pushNextVC];
     }
 }
 

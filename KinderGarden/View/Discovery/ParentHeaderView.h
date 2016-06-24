@@ -12,7 +12,7 @@
 - (void)newtopicOnclick;
 - (void)tuijianOnclick;
 - (void)quanziOnclick;
-
+- (void)pushNextVC;
 @end
 
 
@@ -27,6 +27,7 @@
     UILabel * fensiLabel;
     UILabel * lineLabel;
     
+    UIButton * mineHostBtn;
     UIButton * newsBtn;
     UIButton * recommendBtn;
     UIButton * mineBtn;
@@ -39,6 +40,7 @@
 @property(nonatomic,strong) UILabel * guanzhuLabel;
 @property(nonatomic,strong) UILabel * fensiLabel;
 @property(nonatomic,strong) UILabel * lineLabel;
+@property(nonatomic,strong) UIButton * mineHostBtn;
 @property(nonatomic,strong) UIButton * newsBtn;
 @property(nonatomic,strong) UIButton * recommendBtn;
 @property(nonatomic,strong) UIButton * mineBtn;

@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		730C269B1D1CD3A200286B33 /* EditDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 730C269A1D1CD3A200286B33 /* EditDataViewController.m */; };
+		730C269E1D1CDDA500286B33 /* EditDataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 730C269D1D1CDDA500286B33 /* EditDataCell.m */; };
+		730C26A01D1D122500286B33 /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = 730C269F1D1D122500286B33 /* area.plist */; };
+		730C26A41D1D126400286B33 /* YWBCityPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 730C26A31D1D126400286B33 /* YWBCityPickerView.m */; };
+		730C26A71D1D211D00286B33 /* MineHostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 730C26A61D1D211D00286B33 /* MineHostViewController.m */; };
+		730C26AA1D1D22A400286B33 /* MineHostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 730C26A91D1D22A400286B33 /* MineHostCell.m */; };
+		730C26AD1D1D22BA00286B33 /* MineHostHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 730C26AC1D1D22BA00286B33 /* MineHostHeaderView.m */; };
 		730ED0451D1A5F5B00EA93C3 /* AddTeatcherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 730ED03E1D1A5F5B00EA93C3 /* AddTeatcherViewController.m */; };
 		730ED0461D1A5F5B00EA93C3 /* ClassManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 730ED0401D1A5F5B00EA93C3 /* ClassManageViewController.m */; };
 		730ED0471D1A5F5B00EA93C3 /* TeatcherInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 730ED0421D1A5F5B00EA93C3 /* TeatcherInfoViewController.m */; };
@@ -255,6 +262,19 @@
 /* Begin PBXFileReference section */
 		0BC10A5E3A8DC40DBB06E11D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		615FA94E6B284ABB03BFE0EC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		730C26991D1CD3A200286B33 /* EditDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditDataViewController.h; sourceTree = "<group>"; };
+		730C269A1D1CD3A200286B33 /* EditDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditDataViewController.m; sourceTree = "<group>"; };
+		730C269C1D1CDDA500286B33 /* EditDataCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditDataCell.h; sourceTree = "<group>"; };
+		730C269D1D1CDDA500286B33 /* EditDataCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditDataCell.m; sourceTree = "<group>"; };
+		730C269F1D1D122500286B33 /* area.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = area.plist; sourceTree = "<group>"; };
+		730C26A21D1D126400286B33 /* YWBCityPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWBCityPickerView.h; sourceTree = "<group>"; };
+		730C26A31D1D126400286B33 /* YWBCityPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWBCityPickerView.m; sourceTree = "<group>"; };
+		730C26A51D1D211D00286B33 /* MineHostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineHostViewController.h; sourceTree = "<group>"; };
+		730C26A61D1D211D00286B33 /* MineHostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineHostViewController.m; sourceTree = "<group>"; };
+		730C26A81D1D22A400286B33 /* MineHostCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineHostCell.h; sourceTree = "<group>"; };
+		730C26A91D1D22A400286B33 /* MineHostCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineHostCell.m; sourceTree = "<group>"; };
+		730C26AB1D1D22BA00286B33 /* MineHostHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineHostHeaderView.h; sourceTree = "<group>"; };
+		730C26AC1D1D22BA00286B33 /* MineHostHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineHostHeaderView.m; sourceTree = "<group>"; };
 		730ED03D1D1A5F5B00EA93C3 /* AddTeatcherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTeatcherViewController.h; sourceTree = "<group>"; };
 		730ED03E1D1A5F5B00EA93C3 /* AddTeatcherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTeatcherViewController.m; sourceTree = "<group>"; };
 		730ED03F1D1A5F5B00EA93C3 /* ClassManageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassManageViewController.h; sourceTree = "<group>"; };
@@ -600,6 +620,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		730C26A11D1D126400286B33 /* YWBCityPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				730C26A21D1D126400286B33 /* YWBCityPickerView.h */,
+				730C26A31D1D126400286B33 /* YWBCityPickerView.m */,
+			);
+			path = YWBCityPickerView;
+			sourceTree = "<group>";
+		};
 		730ED0581D1A602C00EA93C3 /* Discovery */ = {
 			isa = PBXGroup;
 			children = (
@@ -607,6 +636,10 @@
 				7349BF021D1B772F00A57243 /* ParentCell.m */,
 				7349BF041D1B777200A57243 /* ParentHeaderView.h */,
 				7349BF051D1B777200A57243 /* ParentHeaderView.m */,
+				730C26A81D1D22A400286B33 /* MineHostCell.h */,
+				730C26A91D1D22A400286B33 /* MineHostCell.m */,
+				730C26AB1D1D22BA00286B33 /* MineHostHeaderView.h */,
+				730C26AC1D1D22BA00286B33 /* MineHostHeaderView.m */,
 				7349BF731D1BBF3300A57243 /* AttentionAndFunsCell.h */,
 				7349BF741D1BBF3300A57243 /* AttentionAndFunsCell.m */,
 				7349BF791D1BD19D00A57243 /* LookCell.h */,
@@ -618,6 +651,7 @@
 		7327FC5B1CEBFF4100C88F38 /* KGView */ = {
 			isa = PBXGroup;
 			children = (
+				730C26A11D1D126400286B33 /* YWBCityPickerView */,
 				7327FC5C1CEBFF6700C88F38 /* CustomNav+Tab */,
 			);
 			path = KGView;
@@ -669,6 +703,8 @@
 				7327FC921CEC064900C88F38 /* FourthViewController.m */,
 				730ED05C1D1A603B00EA93C3 /* ParentsChatViewController.h */,
 				730ED05D1D1A603B00EA93C3 /* ParentsChatViewController.m */,
+				730C26A51D1D211D00286B33 /* MineHostViewController.h */,
+				730C26A61D1D211D00286B33 /* MineHostViewController.m */,
 				7349BF701D1BBCEB00A57243 /* AttentionAndFunsViewController.h */,
 				7349BF711D1BBCEB00A57243 /* AttentionAndFunsViewController.m */,
 				7349BF761D1BD0F900A57243 /* LookViewController.h */,
@@ -722,6 +758,8 @@
 				730ED0421D1A5F5B00EA93C3 /* TeatcherInfoViewController.m */,
 				730ED0431D1A5F5B00EA93C3 /* TeatcherManageViewController.h */,
 				730ED0441D1A5F5B00EA93C3 /* TeatcherManageViewController.m */,
+				730C26991D1CD3A200286B33 /* EditDataViewController.h */,
+				730C269A1D1CD3A200286B33 /* EditDataViewController.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -999,6 +1037,7 @@
 				EF65D4931CEAC42F00463441 /* Assets.xcassets */,
 				EF65D4951CEAC42F00463441 /* LaunchScreen.storyboard */,
 				EF65D4981CEAC42F00463441 /* Info.plist */,
+				730C269F1D1D122500286B33 /* area.plist */,
 				EF65D4901CEAC42F00463441 /* KinderGarden.xcdatamodeld */,
 				EF65D4841CEAC42F00463441 /* Supporting Files */,
 			);
@@ -1198,6 +1237,8 @@
 				F4CA1AA41CECA3B30020BA59 /* FifthCell.m */,
 				730ED0551D1A600800EA93C3 /* AddTeatcherCell.h */,
 				730ED0561D1A600800EA93C3 /* AddTeatcherCell.m */,
+				730C269C1D1CDDA500286B33 /* EditDataCell.h */,
+				730C269D1D1CDDA500286B33 /* EditDataCell.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -1376,6 +1417,7 @@
 				EF65D4971CEAC42F00463441 /* LaunchScreen.storyboard in Resources */,
 				7349BF421D1BB5F700A57243 /* 个人更多@2x.png in Resources */,
 				7349BF591D1BB5F700A57243 /* 添加关注2@3x.png in Resources */,
+				730C26A01D1D122500286B33 /* area.plist in Resources */,
 				F4DCFBC21CF0476700FCB8DF /* dynamic@2x.png in Resources */,
 				F4DCFBCB1CF0476700FCB8DF /* select_discovery@3x.png in Resources */,
 				7327FCF01CEC38DF00C88F38 /* Sina@2x.png in Resources */,
@@ -1527,6 +1569,7 @@
 				7327FD021CEC4B8D00C88F38 /* RegistViewController.m in Sources */,
 				EFA2BD4D1D0BAD47000D1EF2 /* ChildListViewController.m in Sources */,
 				EFA3BFCE1CEBE69A00724058 /* NXGlobalUtil.m in Sources */,
+				730C26A71D1D211D00286B33 /* MineHostViewController.m in Sources */,
 				EFA2BD7E1D0C038B000D1EF2 /* BabyShowViewController.m in Sources */,
 				EFA3BFD11CEBE69A00724058 /* UIImage+UIColor.m in Sources */,
 				EF65D48C1CEAC42F00463441 /* ViewController.m in Sources */,
@@ -1538,6 +1581,7 @@
 				F4CA1AAD1CECAC8A0020BA59 /* AccoutSafeViewController.m in Sources */,
 				7327FC901CEC063E00C88F38 /* ThirdViewController.m in Sources */,
 				EFA3BFE41CEBE8D800724058 /* GFBase64.m in Sources */,
+				730C26AA1D1D22A400286B33 /* MineHostCell.m in Sources */,
 				EF65D4891CEAC42F00463441 /* AppDelegate.m in Sources */,
 				EF65D4861CEAC42F00463441 /* main.m in Sources */,
 				73DF6DB21CEC689F00B67BC1 /* AccoutInfoViewController.m in Sources */,
@@ -1547,14 +1591,18 @@
 				7328850E1CED5758006A5CEC /* BuildClassViewController.m in Sources */,
 				7349BF031D1B772F00A57243 /* ParentCell.m in Sources */,
 				EFA3BFCD1CEBE69A00724058 /* NSString+UIColor.m in Sources */,
+				730C269E1D1CDDA500286B33 /* EditDataCell.m in Sources */,
 				EF65D4921CEAC42F00463441 /* KinderGarden.xcdatamodeld in Sources */,
 				EFA3BFD31CEBE69A00724058 /* UILabel+StringFrame.m in Sources */,
 				7349BF061D1B777200A57243 /* ParentHeaderView.m in Sources */,
 				EFA3BFD41CEBE69A00724058 /* UIView+Snapshot.m in Sources */,
 				EFA2BDB51D0CE9DE000D1EF2 /* SidModel.m in Sources */,
+				730C269B1D1CD3A200286B33 /* EditDataViewController.m in Sources */,
 				EFA2BDCA1D0CE9DE000D1EF2 /* THVideoCell.m in Sources */,
 				7327FC631CEBFF6700C88F38 /* Ivan_UITabBar.m in Sources */,
 				730ED05E1D1A603B00EA93C3 /* ParentsChatViewController.m in Sources */,
+				730C26A41D1D126400286B33 /* YWBCityPickerView.m in Sources */,
+				730C26AD1D1D22BA00286B33 /* MineHostHeaderView.m in Sources */,
 				EFA2BDB81D0CE9DE000D1EF2 /* DetailViewController.m in Sources */,
 				EFA3BFE61CEBE8D800724058 /* NSData+AES.m in Sources */,
 				7327FC931CEC064900C88F38 /* FourthViewController.m in Sources */,

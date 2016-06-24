@@ -1,36 +1,33 @@
 //
-//  ParentsChatViewController.m
+//  MineHostViewController.m
 //  KinderGarden
 //
-//  Created by xdcy on 16/6/22.
+//  Created by xdcy on 16/6/24.
 //  Copyright © 2016年 haonanchen. All rights reserved.
 //
 
-#import "ParentsChatViewController.h"
 #import "MineHostViewController.h"
+#define MyCard    @"MyCard"
+#define HaveSeen     @"HaveSeen"
 
-#define NewTopic    @"newtopic"
-#define Remmand     @"remmand"
-#define Mine        @"Mine"
-
-@interface ParentsChatViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
+@interface MineHostViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
 @end
 
 //设置标识
 static NSString * collectionIndentify = @"collectionIndentify";
-static NSString * headerIndentify = @"ParentHeaderView";
+static NSString * headerIndentify = @"MineHostHeaderView";
 
-@implementation ParentsChatViewController
+@implementation MineHostViewController
 @synthesize imageArr;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [headerView loadComponentsWithTitle:@"父母圈" withTitleColor:KBlackColor];
+    [headerView loadComponentsWithTitle:@"个人主页" withTitleColor:KBlackColor];
     [headerView setStatusBarColor:KFontColorA];
     [headerView backButton];
     
-    bannerFlag = NewTopic;
+    bannerFlag = MyCard;
     
     [self addTheCollectionView];
     
@@ -58,9 +55,9 @@ static NSString * headerIndentify = @"ParentHeaderView";
     myCollectionV.dataSource = self;
     myCollectionV.backgroundColor =[UIColor lightGrayColor];
     
-    [myCollectionV registerClass:[ParentCell class] forCellWithReuseIdentifier:collectionIndentify];
-    [myCollectionV registerClass:[ParentHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerIndentify];
-
+    [myCollectionV registerClass:[MineHostCell class] forCellWithReuseIdentifier:collectionIndentify];
+    [myCollectionV registerClass:[MineHostHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerIndentify];
+    
     [self.view addSubview:myCollectionV];
 }
 
@@ -108,7 +105,7 @@ static NSString * headerIndentify = @"ParentHeaderView";
 //定义每个UICollectionViewCell 的大小
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-   return  CGSizeMake((self.view.bounds.size.width-10)/2, 290);
+    return  CGSizeMake((self.view.bounds.size.width-10)/2, 290);
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
@@ -118,14 +115,14 @@ static NSString * headerIndentify = @"ParentHeaderView";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    ParentCell *cell =[collectionView dequeueReusableCellWithReuseIdentifier:collectionIndentify forIndexPath:indexPath];
+    MineHostCell *cell =[collectionView dequeueReusableCellWithReuseIdentifier:collectionIndentify forIndexPath:indexPath];
     cell.backgroundColor = [UIColor clearColor];
     cell.delegate = self;
     
     cell.pinglunBtn.tag = indexPath.row;
     cell.zanBtn.tag = indexPath.row;
-
-    if ([bannerFlag isEqualToString:NewTopic])
+    
+    if ([bannerFlag isEqualToString:MyCard])
     {
         cell.picImageView.image = [UIImage imageNamed:@"beauty5.jpg"];
         cell.photoImageView.image = [UIImage imageNamed:@"beauty5.jpg"];
@@ -135,7 +132,7 @@ static NSString * headerIndentify = @"ParentHeaderView";
         cell.pinglunLabel.text = @"236";
         cell.zanLabel.text = @"1033";
     }
-    else if ([bannerFlag isEqualToString:Remmand])
+    else if ([bannerFlag isEqualToString:HaveSeen])
     {
         cell.picImageView.image = [UIImage imageNamed:@"beauty3.jpg"];
         cell.photoImageView.image = [UIImage imageNamed:@"beauty3.jpg"];
@@ -145,16 +142,7 @@ static NSString * headerIndentify = @"ParentHeaderView";
         cell.pinglunLabel.text = @"236";
         cell.zanLabel.text = @"1033";
     }
-    else if ([bannerFlag isEqualToString:Mine])
-    {
-        cell.picImageView.image = [UIImage imageNamed:@"beauty0.jpg"];
-        cell.photoImageView.image = [UIImage imageNamed:@"beauty0.jpg"];
-        cell.nameLabel.text = @"Hades";
-        cell.timeLabel.text = @"12天前";
-        cell.contentLabel.text = @"这也是为什么英国加入了欧盟,却一直保留英镑而未加入欧元区的根本原因之一。 如今,德法要通过让英国承担更大责任的方式,一步步地收缩英国的权力,最终...";
-        cell.pinglunLabel.text = @"236";
-        cell.zanLabel.text = @"1033";
-    }
+    
     return cell;
 }
 
@@ -174,8 +162,8 @@ static NSString * headerIndentify = @"ParentHeaderView";
     UICollectionReusableView *reusableView = nil;
     
     if (kind == UICollectionElementKindSectionHeader) {
-        ParentHeaderView *headerV = (ParentHeaderView *)[collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerIndentify forIndexPath:indexPath];
-        headerV.delegate = self;
+        MineHostHeaderView *headerV = (MineHostHeaderView *)[collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerIndentify forIndexPath:indexPath];
+//        headerV.delegate = self;
         reusableView = headerV;
     }
     if (kind == UICollectionElementKindSectionFooter){
@@ -184,16 +172,10 @@ static NSString * headerIndentify = @"ParentHeaderView";
     return reusableView;
 }
 
-- (void)pushNextVC
-{
-    MineHostViewController  * MHVC = [[MineHostViewController alloc] init];
-    [self pushToViewController:MHVC];
-}
-
-- (void)newtopicOnclick
+- (void)MyCardOnclick
 {
     NSLog(@"最新话题");
-    bannerFlag = NewTopic;
+    bannerFlag = MyCard;
     
     [myCollectionV reloadData];
 }
@@ -201,34 +183,24 @@ static NSString * headerIndentify = @"ParentHeaderView";
 - (void)tuijianOnclick
 {
     NSLog(@"推荐达人");
-    bannerFlag = Remmand;
-
+    bannerFlag = HaveSeen;
+    
     [myCollectionV reloadData];
 }
 
-- (void)quanziOnclick
-{
-    NSLog(@"我的圈子");
-    bannerFlag = Mine;
-
-    [myCollectionV reloadData];
-}
 
 //点击单元格
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([bannerFlag isEqualToString:NewTopic])
+    if ([bannerFlag isEqualToString:MyCard])
     {
         
     }
-    else if ([bannerFlag isEqualToString:Remmand])
+    else if ([bannerFlag isEqualToString:HaveSeen])
     {
-    
+        
     }
-    else if ([bannerFlag isEqualToString:Mine])
-    {
-    
-    }
+
     NSLog(@"indexPath.section==%ld,indexPath.row==%ld",(long)indexPath.section,(long)indexPath.row);
 }
 

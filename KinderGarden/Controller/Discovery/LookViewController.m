@@ -24,7 +24,7 @@
     attentionBtn.tag = 2000;
     attentionBtn.frame = CGRectMake(screenWidth/2-100, 20, 100, 44);
     attentionBtn.titleLabel.font = NormalFontWithSize(17);
-    [attentionBtn setTitle:@"我看过我" forState:UIControlStateNormal];
+    [attentionBtn setTitle:@"谁看过我" forState:UIControlStateNormal];
     [attentionBtn setTitleColor:KFontColorA forState:UIControlStateNormal];
     [attentionBtn addTarget:self action:@selector(headerBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
     [headerView addSubview:attentionBtn];
