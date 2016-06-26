@@ -7,6 +7,9 @@
 //
 
 #import "MineHostViewController.h"
+#import "AttentionAndFunsViewController.h"
+#import "LookViewController.h"
+
 #define MyCard    @"MyCard"
 #define HaveSeen     @"HaveSeen"
 
@@ -46,14 +49,14 @@ static NSString * headerIndentify = @"MineHostHeaderView";
                                         Uiedgebottom:0.f
                                          Uiedgeright:0.f
                                          Scdirection:YES];
-    flowLayout.headerReferenceSize = CGSizeMake(screenWidth, 450);
+    flowLayout.headerReferenceSize = CGSizeMake(screenWidth, 400);
     
     //创建一个UICollectionView
     myCollectionV = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 20, self.view.frame.size.width, self.view.frame.size.height-20) collectionViewLayout:flowLayout];
     //设置代理为当前控制器
     myCollectionV.delegate = self;
     myCollectionV.dataSource = self;
-    myCollectionV.backgroundColor =[UIColor lightGrayColor];
+    myCollectionV.backgroundColor = kBackgroundColor;
     
     [myCollectionV registerClass:[MineHostCell class] forCellWithReuseIdentifier:collectionIndentify];
     [myCollectionV registerClass:[MineHostHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerIndentify];
@@ -163,7 +166,7 @@ static NSString * headerIndentify = @"MineHostHeaderView";
     
     if (kind == UICollectionElementKindSectionHeader) {
         MineHostHeaderView *headerV = (MineHostHeaderView *)[collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerIndentify forIndexPath:indexPath];
-//        headerV.delegate = self;
+        headerV.delegate = self;
         reusableView = headerV;
     }
     if (kind == UICollectionElementKindSectionFooter){
@@ -172,15 +175,15 @@ static NSString * headerIndentify = @"MineHostHeaderView";
     return reusableView;
 }
 
-- (void)MyCardOnclick
+- (void)wodeTieziBtnClick
 {
-    NSLog(@"最新话题");
+    NSLog(@"我的帖子");
     bannerFlag = MyCard;
     
     [myCollectionV reloadData];
 }
 
-- (void)tuijianOnclick
+- (void)ILookBtnClick
 {
     NSLog(@"推荐达人");
     bannerFlag = HaveSeen;
@@ -188,6 +191,30 @@ static NSString * headerIndentify = @"MineHostHeaderView";
     [myCollectionV reloadData];
 }
 
+- (void)fangkeBtnClick
+{
+    LookViewController * LVC = [[LookViewController alloc] init];
+    [self pushToViewController:LVC];
+}
+
+- (void)photoBtnClick
+{
+
+}
+
+- (void)guanzhuBtnClick
+{
+    AttentionAndFunsViewController * AAFVC = [[AttentionAndFunsViewController alloc] init];
+    AAFVC.pushFlag = 0;
+    [self pushToViewController:AAFVC];
+}
+
+-(void)funsBtnClick
+{
+    AttentionAndFunsViewController * AAFVC = [[AttentionAndFunsViewController alloc] init];
+    AAFVC.pushFlag = 1;
+    [self pushToViewController:AAFVC];
+}
 
 //点击单元格
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath

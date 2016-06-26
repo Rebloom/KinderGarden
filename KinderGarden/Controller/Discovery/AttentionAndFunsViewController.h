@@ -17,4 +17,7 @@
     
     NSString * statusFlag;//用来记录我的关注和我的粉丝状态
 }
+
+@property(nonatomic,assign) NSInteger pushFlag;//记录跳转状态 =0 进入关注 ； = 1进入粉丝
+
 @end

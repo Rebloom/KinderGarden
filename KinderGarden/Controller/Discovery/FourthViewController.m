@@ -88,14 +88,14 @@
     else if (indexPath.row == 1)
     {
 #warning 测试用
-        AttentionAndFunsViewController * AAFVC = [[AttentionAndFunsViewController alloc] init];
-        [self pushToViewController:AAFVC];
+//        AttentionAndFunsViewController * AAFVC = [[AttentionAndFunsViewController alloc] init];
+//        [self pushToViewController:AAFVC];
     }
     else if (indexPath.row == 2)
     {
 #warning 测试用
-        LookViewController * LVC = [[LookViewController alloc] init];
-        [self pushToViewController:LVC];
+//        LookViewController * LVC = [[LookViewController alloc] init];
+//        [self pushToViewController:LVC];
     }
 }
 

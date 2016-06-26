@@ -49,14 +49,14 @@ static NSString * headerIndentify = @"ParentHeaderView";
                                         Uiedgebottom:0.f
                                          Uiedgeright:0.f
                                          Scdirection:YES];
-    flowLayout.headerReferenceSize = CGSizeMake(screenWidth, 450);
+    flowLayout.headerReferenceSize = CGSizeMake(screenWidth, 460);
     
     //创建一个UICollectionView
     myCollectionV = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 20, self.view.frame.size.width, self.view.frame.size.height-20) collectionViewLayout:flowLayout];
     //设置代理为当前控制器
     myCollectionV.delegate = self;
     myCollectionV.dataSource = self;
-    myCollectionV.backgroundColor =[UIColor lightGrayColor];
+    myCollectionV.backgroundColor = kBackgroundColor;
     
     [myCollectionV registerClass:[ParentCell class] forCellWithReuseIdentifier:collectionIndentify];
     [myCollectionV registerClass:[ParentHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerIndentify];

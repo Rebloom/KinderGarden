@@ -10,7 +10,7 @@
 #import "MineHostCell.h"
 #import "MineHostHeaderView.h"
 
-@interface MineHostViewController : BasicViewController<UICollectionViewDataSource,UICollectionViewDelegate,MineHostCellDelegate>
+@interface MineHostViewController : BasicViewController<UICollectionViewDataSource,UICollectionViewDelegate,MineHostCellDelegate,MineHostHeaderDelegate>
 {
     NSArray *titlearray;
     UICollectionViewFlowLayout *flowLayout;

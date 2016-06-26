@@ -52,7 +52,8 @@
     {
         lunboImageView = [[UIImageView alloc] init];
     }
-    lunboImageView.backgroundColor = KFontColorE;
+    lunboImageView.backgroundColor = kBackgroundColor;
+    lunboImageView.image = [UIImage imageNamed:@"newsImageView"];
     lunboImageView.frame = CGRectMake(0, 0, screenWidth, 238);
     [self addSubview:lunboImageView];
     
@@ -71,7 +72,7 @@
         mineHostBtn = [[UIButton alloc] init];
     }
     [mineHostBtn setBackgroundColor:[UIColor clearColor]];
-    mineHostBtn.frame = CGRectMake(0, CGRectGetMaxY(lunboImageView.frame), screenWidth, 100);
+    mineHostBtn.frame = CGRectMake(0, CGRectGetMaxY(lunboImageView.frame), screenWidth, 160);
     [mineHostBtn addTarget:self action:@selector(mineHostBtnOnClick) forControlEvents:UIControlEventTouchUpInside];
     [topView addSubview:mineHostBtn];
     
@@ -117,7 +118,7 @@
     [topView addSubview:lineLabel];
     
     UIView * grayView = [[UIView alloc] init];
-    grayView.backgroundColor = KFontColorE;
+    grayView.backgroundColor = kBackgroundColor;
     grayView.frame = CGRectMake(0, 400, screenWidth, 10);
     [topView addSubview:grayView];
     
@@ -135,6 +136,7 @@
     [newsBtn setTitleColor:KFontColorC forState:UIControlStateNormal];
     [newsBtn addTarget:self action:@selector(newsBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     [topView addSubview:newsBtn];
+    
     
     if (!recommendBtn)
     {

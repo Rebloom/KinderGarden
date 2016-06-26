@@ -15,6 +15,7 @@
 @end
 
 @implementation AttentionAndFunsViewController
+@synthesize pushFlag;
 
 - (void)createTopView
 {
@@ -46,6 +47,23 @@
     indicatorLabel.backgroundColor = KFontColorA;
     indicatorLabel.tag = 250;
     [headerView addSubview:indicatorLabel];
+    
+    if (self.pushFlag == 0)
+    {
+        //我的关注
+        statusFlag = Attention;
+        
+        [attentionBtn setTitleColor:KFontColorA forState:UIControlStateNormal];
+        [funsBtn setTitleColor:@"#5450a0".color forState:UIControlStateNormal];
+    }
+    else if(self.pushFlag == 1)
+    {
+        //我的粉丝
+        statusFlag = Funs;
+        
+        [attentionBtn setTitleColor:@"#5450a0".color forState:UIControlStateNormal];
+        [funsBtn setTitleColor:KFontColorA forState:UIControlStateNormal];
+    }
 }
 
 - (void)headerBtnClicked:(id)sender
@@ -87,7 +105,16 @@
     [headerView backButton];
     [self createTopView];
     
-    statusFlag = Attention;
+    if (self.pushFlag == 0)
+    {
+        statusFlag = Attention;
+
+    }
+    else if (self.pushFlag == 1)
+    {
+        statusFlag = Funs;
+
+    }
     
     [self createUI];
 }
