@@ -42,7 +42,7 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    return 1;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -54,7 +54,8 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
     }
     
-    NSArray * leftArr= @[@"父母圈",@"待定",@"待定"];
+//    NSArray * leftArr= @[@"父母圈",@"待定",@"待定"];
+    NSArray * leftArr= @[@"父母圈"];
 
     UILabel * leftLable = [[UILabel alloc] init];
     leftLable.textAlignment = NSTextAlignmentLeft;

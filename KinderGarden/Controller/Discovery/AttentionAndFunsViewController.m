@@ -55,6 +55,8 @@
         
         [attentionBtn setTitleColor:KFontColorA forState:UIControlStateNormal];
         [funsBtn setTitleColor:@"#5450a0".color forState:UIControlStateNormal];
+        
+        indicatorLabel.frame = CGRectMake(CGRectGetMinX(attentionBtn.frame), CGRectGetMaxY(attentionBtn.frame)-4, CGRectGetWidth(attentionBtn.frame), 4);
     }
     else if(self.pushFlag == 1)
     {
@@ -63,6 +65,8 @@
         
         [attentionBtn setTitleColor:@"#5450a0".color forState:UIControlStateNormal];
         [funsBtn setTitleColor:KFontColorA forState:UIControlStateNormal];
+        
+        indicatorLabel.frame = CGRectMake(CGRectGetWidth(attentionBtn.frame)+CGRectGetMinX(attentionBtn.frame), CGRectGetMaxY(attentionBtn.frame)-4, CGRectGetWidth(attentionBtn.frame), 4);
     }
 }
 

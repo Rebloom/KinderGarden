@@ -9,6 +9,7 @@
 #import "MineHostViewController.h"
 #import "AttentionAndFunsViewController.h"
 #import "LookViewController.h"
+#import "ArticleDetailViewController.h"
 
 #define MyCard    @"MyCard"
 #define HaveSeen     @"HaveSeen"
@@ -175,33 +176,42 @@ static NSString * headerIndentify = @"MineHostHeaderView";
     return reusableView;
 }
 
+//返回
+- (void)backBtnClick
+{
+    [self back];
+}
+
+//我的帖子
 - (void)wodeTieziBtnClick
 {
-    NSLog(@"我的帖子");
     bannerFlag = MyCard;
     
     [myCollectionV reloadData];
 }
 
+//我看过谁
 - (void)ILookBtnClick
 {
-    NSLog(@"推荐达人");
     bannerFlag = HaveSeen;
     
     [myCollectionV reloadData];
 }
 
+//访客
 - (void)fangkeBtnClick
 {
     LookViewController * LVC = [[LookViewController alloc] init];
     [self pushToViewController:LVC];
 }
 
+//照片
 - (void)photoBtnClick
 {
 
 }
 
+//关注
 - (void)guanzhuBtnClick
 {
     AttentionAndFunsViewController * AAFVC = [[AttentionAndFunsViewController alloc] init];
@@ -209,6 +219,7 @@ static NSString * headerIndentify = @"MineHostHeaderView";
     [self pushToViewController:AAFVC];
 }
 
+//粉丝
 -(void)funsBtnClick
 {
     AttentionAndFunsViewController * AAFVC = [[AttentionAndFunsViewController alloc] init];
@@ -228,12 +239,15 @@ static NSString * headerIndentify = @"MineHostHeaderView";
         
     }
 
+    ArticleDetailViewController * ADVC = [[ArticleDetailViewController alloc] init];
+    [self pushToViewController:ADVC];
+    
     NSLog(@"indexPath.section==%ld,indexPath.row==%ld",(long)indexPath.section,(long)indexPath.row);
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
-    return UIEdgeInsetsMake(5, 5, 5, 5);
+    return UIEdgeInsetsMake(5, 10, 5, 0);
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView

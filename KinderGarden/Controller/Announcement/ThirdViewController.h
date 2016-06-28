@@ -11,6 +11,7 @@
 #import "ChildListViewController.h"
 
 #import "BabyShowViewController.h"
+#import "CoursesViewController.h"
 
 @interface ThirdViewController : BasicViewController <TakePhotoViewDelegate>
 

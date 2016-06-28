@@ -36,6 +36,7 @@
 @synthesize funsBtn;
 @synthesize wodeTieziBtn;
 @synthesize ILookBtn;
+@synthesize backBtn;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -71,6 +72,24 @@
     picImageView.image = [UIImage imageNamed:@"背景图片"];
     picImageView.frame = CGRectMake(screenWidth/2-25-20-37.5, 125, 20, 15);
     [bgImageView addSubview:picImageView];
+    
+    if (!backBtn)
+    {
+        backBtn = [[UIButton alloc] init];
+    }
+    backBtn.frame = CGRectMake(0, 30, 50, 50);
+    backBtn.backgroundColor = [UIColor clearColor];
+    [backBtn addTarget:self action:@selector(backBtnOnClick) forControlEvents:UIControlEventTouchUpInside];
+    [bgImageView addSubview:backBtn];
+    
+    
+    if (!backImageView)
+    {
+        backImageView = [[UIImageView alloc] init];
+    }
+    backImageView.frame = CGRectMake(20,0, 10, 20);
+    backImageView.image = [UIImage imageNamed:@"返回"];
+    [backBtn addSubview:backImageView];
     
     if (!photoImageView)
     {
@@ -303,6 +322,7 @@
     [self addSubview:ILookBtn];
 }
 
+//我的帖子
 - (void)wodeTieziBtnOnClick:(UIButton*)sender
 {    
     [wodeTieziBtn setTitleColor:KFontColorC forState:UIControlStateNormal];
@@ -314,6 +334,16 @@
     }
 }
 
+//返回
+- (void)backBtnOnClick
+{
+    if ([self.delegate respondsToSelector:@selector(backBtnClick)])
+    {
+        [self.delegate backBtnClick];
+    }
+}
+
+//我看过谁
 - (void)ILookBtnOnClick:(UIButton*)sender
 {
     [wodeTieziBtn setTitleColor:KFontColorB forState:UIControlStateNormal];
@@ -325,6 +355,7 @@
     }
 }
 
+//查看访客
 - (void)fangkeBtnOnClick:(UIButton*)sender
 {
     if ([self.delegate respondsToSelector:@selector(fangkeBtnClick)])
@@ -333,6 +364,7 @@
     }
 }
 
+//照片
 - (void)photoBtnOnClick:(UIButton*)sender
 {
     if ([self.delegate respondsToSelector:@selector(photoBtnClick)])
@@ -341,6 +373,7 @@
     }
 }
 
+//关注
 - (void)guanzhuBtnOnClick:(UIButton*)sender
 {
     if ([self.delegate respondsToSelector:@selector(guanzhuBtnClick)])
@@ -349,6 +382,7 @@
     }
 }
 
+//粉丝
 - (void)funsBtnOnClick:(UIButton*)sender
 {
     if ([self.delegate respondsToSelector:@selector(funsBtnClick)])

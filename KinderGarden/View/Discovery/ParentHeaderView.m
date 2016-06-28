@@ -26,6 +26,8 @@
 @synthesize recommendBtn;
 @synthesize newsBtn;
 @synthesize mineHostBtn;
+@synthesize backBtn;
+@synthesize backImageView;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -66,6 +68,24 @@
     photoImageView.layer.masksToBounds = YES;
     photoImageView.image = [UIImage imageNamed:@"beauty3.jpg"];
     [topView addSubview:photoImageView];
+    
+    if (!backBtn)
+    {
+        backBtn = [[UIButton alloc] init];
+    }
+    backBtn.frame = CGRectMake(0, 30, 50, 50);
+    backBtn.backgroundColor = [UIColor clearColor];
+    [backBtn addTarget:self action:@selector(backBtnOnClick) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:backBtn];
+    
+    
+    if (!backImageView)
+    {
+        backImageView = [[UIImageView alloc] init];
+    }
+    backImageView.frame = CGRectMake(20,0, 10, 20);
+    backImageView.image = [UIImage imageNamed:@"返回"];
+    [backBtn addSubview:backImageView];
     
     if (!mineHostBtn)
     {
@@ -159,6 +179,15 @@
     [mineBtn setTitleColor:KFontColorB forState:UIControlStateNormal];
     [mineBtn addTarget:self action:@selector(mineBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     [topView addSubview:mineBtn];
+}
+
+//返回
+- (void)backBtnOnClick
+{
+    if ([self.delegate respondsToSelector:@selector(backBtnClick)])
+    {
+        [self.delegate backBtnClick];
+    }
 }
 
 - (void)newsBtnClick:(UIButton*)sender

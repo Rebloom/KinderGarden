@@ -149,6 +149,11 @@
 		73DD1AD21CEEEFEA0059ADAC /* whiteBack@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 73DD1AC61CEEEFEA0059ADAC /* whiteBack@3x.png */; };
 		73DD1AD51CEEF8D30059ADAC /* NewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73DD1AD41CEEF8D30059ADAC /* NewsDetailViewController.m */; };
 		73DF6DB21CEC689F00B67BC1 /* AccoutInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73DF6DB11CEC689F00B67BC1 /* AccoutInfoViewController.m */; };
+		73EC54111D225F510032C754 /* CoursesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73EC54101D225F510032C754 /* CoursesViewController.m */; };
+		73EC54141D225FB30032C754 /* ArticleDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73EC54131D225FB30032C754 /* ArticleDetailViewController.m */; };
+		73EC54191D225FBB0032C754 /* ArticleDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73EC54161D225FBB0032C754 /* ArticleDetailCell.m */; };
+		73EC541A1D225FBB0032C754 /* ArticleDetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73EC54181D225FBB0032C754 /* ArticleDetailHeaderView.m */; };
+		73EC541C1D225FD00032C754 /* topImageView.png in Resources */ = {isa = PBXBuildFile; fileRef = 73EC541B1D225FD00032C754 /* topImageView.png */; };
 		77E0F474297B0413BB4F17DF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BC10A5E3A8DC40DBB06E11D /* libPods.a */; };
 		EF65D4861CEAC42F00463441 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EF65D4851CEAC42F00463441 /* main.m */; };
 		EF65D4891CEAC42F00463441 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF65D4881CEAC42F00463441 /* AppDelegate.m */; };
@@ -445,6 +450,15 @@
 		73DD1AD41CEEF8D30059ADAC /* NewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsDetailViewController.m; sourceTree = "<group>"; };
 		73DF6DB01CEC689F00B67BC1 /* AccoutInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccoutInfoViewController.h; sourceTree = "<group>"; };
 		73DF6DB11CEC689F00B67BC1 /* AccoutInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccoutInfoViewController.m; sourceTree = "<group>"; };
+		73EC540F1D225F510032C754 /* CoursesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoursesViewController.h; sourceTree = "<group>"; };
+		73EC54101D225F510032C754 /* CoursesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoursesViewController.m; sourceTree = "<group>"; };
+		73EC54121D225FB30032C754 /* ArticleDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleDetailViewController.h; sourceTree = "<group>"; };
+		73EC54131D225FB30032C754 /* ArticleDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleDetailViewController.m; sourceTree = "<group>"; };
+		73EC54151D225FBB0032C754 /* ArticleDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleDetailCell.h; sourceTree = "<group>"; };
+		73EC54161D225FBB0032C754 /* ArticleDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleDetailCell.m; sourceTree = "<group>"; };
+		73EC54171D225FBB0032C754 /* ArticleDetailHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleDetailHeaderView.h; sourceTree = "<group>"; };
+		73EC54181D225FBB0032C754 /* ArticleDetailHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleDetailHeaderView.m; sourceTree = "<group>"; };
+		73EC541B1D225FD00032C754 /* topImageView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topImageView.png; sourceTree = "<group>"; };
 		8778DCFCDBE316D039C62A29 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		EF65D4811CEAC42F00463441 /* KinderGarden.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KinderGarden.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF65D4851CEAC42F00463441 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -644,6 +658,10 @@
 				7349BF741D1BBF3300A57243 /* AttentionAndFunsCell.m */,
 				7349BF791D1BD19D00A57243 /* LookCell.h */,
 				7349BF7A1D1BD19D00A57243 /* LookCell.m */,
+				73EC54151D225FBB0032C754 /* ArticleDetailCell.h */,
+				73EC54161D225FBB0032C754 /* ArticleDetailCell.m */,
+				73EC54171D225FBB0032C754 /* ArticleDetailHeaderView.h */,
+				73EC54181D225FBB0032C754 /* ArticleDetailHeaderView.m */,
 			);
 			path = Discovery;
 			sourceTree = "<group>";
@@ -692,6 +710,8 @@
 				EFA2BD531D0BBD85000D1EF2 /* ChildDetailViewController.m */,
 				EFA2BD7C1D0C038B000D1EF2 /* BabyShowViewController.h */,
 				EFA2BD7D1D0C038B000D1EF2 /* BabyShowViewController.m */,
+				73EC540F1D225F510032C754 /* CoursesViewController.h */,
+				73EC54101D225F510032C754 /* CoursesViewController.m */,
 			);
 			path = Announcement;
 			sourceTree = "<group>";
@@ -709,6 +729,8 @@
 				7349BF711D1BBCEB00A57243 /* AttentionAndFunsViewController.m */,
 				7349BF761D1BD0F900A57243 /* LookViewController.h */,
 				7349BF771D1BD0F900A57243 /* LookViewController.m */,
+				73EC54121D225FB30032C754 /* ArticleDetailViewController.h */,
+				73EC54131D225FB30032C754 /* ArticleDetailViewController.m */,
 			);
 			path = Discovery;
 			sourceTree = "<group>";
@@ -960,6 +982,7 @@
 		73DD1AB31CEEE5110059ADAC /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				73EC541B1D225FD00032C754 /* topImageView.png */,
 				7349BF071D1B77B600A57243 /* beauty0.jpg */,
 				7349BF081D1B77B600A57243 /* beauty1.jpg */,
 				7349BF091D1B77B600A57243 /* beauty2.jpg */,
@@ -1427,6 +1450,7 @@
 				73DD1ACF1CEEEFEA0059ADAC /* shaixuan@2x.png in Resources */,
 				EF65D4941CEAC42F00463441 /* Assets.xcassets in Resources */,
 				F4DCFBC31CF0476700FCB8DF /* dynamic@3x.png in Resources */,
+				73EC541C1D225FD00032C754 /* topImageView.png in Resources */,
 				F4DCFBCA1CF0476700FCB8DF /* select_discovery@2x.png in Resources */,
 				73DD1ACB1CEEEFEA0059ADAC /* read@2x.png in Resources */,
 				F4DCFBC01CF0476700FCB8DF /* discovery@2x.png in Resources */,
@@ -1546,14 +1570,17 @@
 			files = (
 				7327FCB51CEC1ED900C88F38 /* LoginViewController.m in Sources */,
 				7327FC641CEBFF6700C88F38 /* UIBadgeView.m in Sources */,
+				73EC54141D225FB30032C754 /* ArticleDetailViewController.m in Sources */,
 				EFA2BDB91D0CE9DE000D1EF2 /* HTPlayer.m in Sources */,
 				7327FC781CEC039E00C88F38 /* WebViewController.m in Sources */,
+				73EC541A1D225FBB0032C754 /* ArticleDetailHeaderView.m in Sources */,
 				EFA3BFCF1CEBE69A00724058 /* TKAlertCenter.m in Sources */,
 				EFA2BD7B1D0BF8C7000D1EF2 /* TakePhotoView.m in Sources */,
 				7349BF7B1D1BD19D00A57243 /* LookCell.m in Sources */,
 				EFA3BFD01CEBE69A00724058 /* UIView+TKCategory.m in Sources */,
 				F4CA1AC11CECC2920020BA59 /* ResetPasswordViewController.m in Sources */,
 				EFA2BD541D0BBD85000D1EF2 /* ChildDetailViewController.m in Sources */,
+				73EC54111D225F510032C754 /* CoursesViewController.m in Sources */,
 				7327FC961CEC065300C88F38 /* FifthViewController.m in Sources */,
 				EFA2BDB41D0CE9DE000D1EF2 /* DataManager.m in Sources */,
 				7327FC6E1CEC036300C88F38 /* BasicViewController.m in Sources */,
@@ -1626,6 +1653,7 @@
 				730ED0571D1A600800EA93C3 /* AddTeatcherCell.m in Sources */,
 				7327FC6F1CEC036300C88F38 /* HomeViewController.m in Sources */,
 				7327FD0B1CEC551C00C88F38 /* NSTimer+Addition.m in Sources */,
+				73EC54191D225FBB0032C754 /* ArticleDetailCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,7 @@
 
 #import "ParentsChatViewController.h"
 #import "MineHostViewController.h"
+#import "ArticleDetailViewController.h"
 
 #define NewTopic    @"newtopic"
 #define Remmand     @"remmand"
@@ -184,6 +185,11 @@ static NSString * headerIndentify = @"ParentHeaderView";
     return reusableView;
 }
 
+- (void)backBtnClick
+{
+    [self back];
+}
+
 - (void)pushNextVC
 {
     MineHostViewController  * MHVC = [[MineHostViewController alloc] init];
@@ -229,12 +235,16 @@ static NSString * headerIndentify = @"ParentHeaderView";
     {
     
     }
+    
+    ArticleDetailViewController * ADVC = [[ArticleDetailViewController alloc] init];
+    [self pushToViewController:ADVC];
+    
     NSLog(@"indexPath.section==%ld,indexPath.row==%ld",(long)indexPath.section,(long)indexPath.row);
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
-    return UIEdgeInsetsMake(5, 5, 5, 5);
+    return UIEdgeInsetsMake(5, 10, 5, 0);
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView

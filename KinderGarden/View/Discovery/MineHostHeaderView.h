@@ -15,6 +15,7 @@
 - (void)wodeTieziBtnClick;
 - (void)ILookBtnClick;
 - (void)fangkeBtnClick;
+- (void)backBtnClick;
 @end
 
 
@@ -26,6 +27,9 @@
     UIImageView * photoImageView;
     UIImageView * setImageView;
     UIImageView * placeImageView;
+    
+    UIButton * backBtn;
+    UIImageView * backImageView;
     
     UILabel * nameLabel;
     UILabel * placeLabel;
@@ -55,7 +59,8 @@
     UIButton * wodeTieziBtn;
     UIButton * ILookBtn;
 }
-
+@property(nonatomic,strong) UIButton * backBtn;
+@property(nonatomic,strong) UIImageView * backImageView;
 @property(nonatomic,strong) UIImageView * bgImageView;
 @property(nonatomic,strong) UIImageView * picImageView;
 @property(nonatomic,strong) UIImageView * photoImageView;

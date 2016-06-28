@@ -164,7 +164,8 @@
     }
     else if (sender.tag == 1005)
     {
-        NSLog(@"课程");
+        CoursesViewController * CVC = [[CoursesViewController alloc] init];
+        [self pushToViewController:CVC];
     }
     else if (sender.tag == 1006)
     {
@@ -172,7 +173,6 @@
         [self pushToViewController:BSVC];
     }
 }
-
 
 //加模糊效果，image是图片，blur是模糊度
 - (UIImage *)blurryImage:(UIImage *)image withBlurLevel:(CGFloat)blur

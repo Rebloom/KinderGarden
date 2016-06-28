@@ -12,6 +12,7 @@
 #import "FifthCell.h"
 #import "SchoolInfoViewController.h"
 #import "EditDataViewController.h"
+
 @interface FifthViewController ()
 
 @end
@@ -111,7 +112,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return 6;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -123,7 +124,7 @@
     {
         cell = [[FifthCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
     }
-    NSArray * titleArr = @[@"账号信息",@"学校信息",@"父母圈",@"设置",@"家长咨询"];
+    NSArray * titleArr = @[@"账号信息",@"完善资料",@"学校信息",@"父母圈",@"设置",@"家长咨询"];
     
     cell.nameLabel.text = [titleArr objectAtIndex:indexPath.row];
     
@@ -145,12 +146,13 @@
     }
     else if (indexPath.row == 1)
     {
-        SchoolInfoViewController * SIVC = [[SchoolInfoViewController alloc] init];
-        [self pushToViewController:SIVC];
+        EditDataViewController * EDVC = [[EditDataViewController alloc] init];
+        [self pushToViewController:EDVC];
     }
     else if (indexPath.row == 2)
     {
-        
+        SchoolInfoViewController * SIVC = [[SchoolInfoViewController alloc] init];
+        [self pushToViewController:SIVC];
     }
     else if (indexPath.row == 3)
     {

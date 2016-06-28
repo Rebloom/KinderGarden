@@ -13,6 +13,8 @@
 - (void)tuijianOnclick;
 - (void)quanziOnclick;
 - (void)pushNextVC;
+- (void)backBtnClick;
+
 @end
 
 
@@ -32,8 +34,12 @@
     UIButton * recommendBtn;
     UIButton * mineBtn;
 
+    UIButton * backBtn;
+    UIImageView * backImageView;
 }
 @property(nonatomic,strong) UIView * topView;
+@property(nonatomic,strong) UIButton * backBtn;
+@property(nonatomic,strong) UIImageView * backImageView;
 @property(nonatomic,strong) UIImageView * lunboImageView;
 @property(nonatomic,strong) UIImageView * photoImageView;
 @property(nonatomic,strong) UILabel * nameLabel;
