@@ -231,6 +231,15 @@
 		EFA3BFE71CEBE8D800724058 /* NSString+Encryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA3BFDF1CEBE8D800724058 /* NSString+Encryptor.m */; };
 		EFA3BFE81CEBE8D800724058 /* NSString+Reverse.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA3BFE11CEBE8D800724058 /* NSString+Reverse.m */; };
 		EFA3BFE91CEBE8D800724058 /* Secret.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA3BFE31CEBE8D800724058 /* Secret.m */; };
+		F49ECBAB1D290E8200DA6A3A /* CoursesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F49ECBAA1D290E8200DA6A3A /* CoursesCell.m */; };
+		F49ECBB01D29153100DA6A3A /* 未筛选@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F49ECBAC1D29153100DA6A3A /* 未筛选@2x.png */; };
+		F49ECBB11D29153100DA6A3A /* 未筛选@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F49ECBAD1D29153100DA6A3A /* 未筛选@3x.png */; };
+		F49ECBB21D29153100DA6A3A /* 已筛选@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F49ECBAE1D29153100DA6A3A /* 已筛选@2x.png */; };
+		F49ECBB31D29153100DA6A3A /* 已筛选@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F49ECBAF1D29153100DA6A3A /* 已筛选@3x.png */; };
+		F49ECBB81D2918FD00DA6A3A /* 班级未选中@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F49ECBB41D2918FD00DA6A3A /* 班级未选中@2x.png */; };
+		F49ECBB91D2918FD00DA6A3A /* 班级未选中@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F49ECBB51D2918FD00DA6A3A /* 班级未选中@3x.png */; };
+		F49ECBBA1D2918FD00DA6A3A /* 班级选择@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F49ECBB61D2918FD00DA6A3A /* 班级选择@2x.png */; };
+		F49ECBBB1D2918FD00DA6A3A /* 班级选择@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F49ECBB71D2918FD00DA6A3A /* 班级选择@3x.png */; };
 		F4CA1AA51CECA3B30020BA59 /* FifthCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4CA1AA41CECA3B30020BA59 /* FifthCell.m */; };
 		F4CA1AA91CECA6380020BA59 /* right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F4CA1AA71CECA6380020BA59 /* right@2x.png */; };
 		F4CA1AAA1CECA6380020BA59 /* right@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F4CA1AA81CECA6380020BA59 /* right@3x.png */; };
@@ -573,6 +582,16 @@
 		EFA3BFE21CEBE8D800724058 /* Secret.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Secret.h; sourceTree = "<group>"; };
 		EFA3BFE31CEBE8D800724058 /* Secret.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Secret.m; sourceTree = "<group>"; };
 		EFA3BFEA1CEBEA9A00724058 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		F49ECBA91D290E8200DA6A3A /* CoursesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoursesCell.h; sourceTree = "<group>"; };
+		F49ECBAA1D290E8200DA6A3A /* CoursesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoursesCell.m; sourceTree = "<group>"; };
+		F49ECBAC1D29153100DA6A3A /* 未筛选@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "未筛选@2x.png"; sourceTree = "<group>"; };
+		F49ECBAD1D29153100DA6A3A /* 未筛选@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "未筛选@3x.png"; sourceTree = "<group>"; };
+		F49ECBAE1D29153100DA6A3A /* 已筛选@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "已筛选@2x.png"; sourceTree = "<group>"; };
+		F49ECBAF1D29153100DA6A3A /* 已筛选@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "已筛选@3x.png"; sourceTree = "<group>"; };
+		F49ECBB41D2918FD00DA6A3A /* 班级未选中@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "班级未选中@2x.png"; sourceTree = "<group>"; };
+		F49ECBB51D2918FD00DA6A3A /* 班级未选中@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "班级未选中@3x.png"; sourceTree = "<group>"; };
+		F49ECBB61D2918FD00DA6A3A /* 班级选择@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "班级选择@2x.png"; sourceTree = "<group>"; };
+		F49ECBB71D2918FD00DA6A3A /* 班级选择@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "班级选择@3x.png"; sourceTree = "<group>"; };
 		F4CA1AA31CECA3B30020BA59 /* FifthCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FifthCell.h; sourceTree = "<group>"; };
 		F4CA1AA41CECA3B30020BA59 /* FifthCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FifthCell.m; sourceTree = "<group>"; };
 		F4CA1AA71CECA6380020BA59 /* right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right@2x.png"; sourceTree = "<group>"; };
@@ -873,6 +892,14 @@
 		7328850F1CED9636006A5CEC /* Announcement */ = {
 			isa = PBXGroup;
 			children = (
+				F49ECBB41D2918FD00DA6A3A /* 班级未选中@2x.png */,
+				F49ECBB51D2918FD00DA6A3A /* 班级未选中@3x.png */,
+				F49ECBB61D2918FD00DA6A3A /* 班级选择@2x.png */,
+				F49ECBB71D2918FD00DA6A3A /* 班级选择@3x.png */,
+				F49ECBAC1D29153100DA6A3A /* 未筛选@2x.png */,
+				F49ECBAD1D29153100DA6A3A /* 未筛选@3x.png */,
+				F49ECBAE1D29153100DA6A3A /* 已筛选@2x.png */,
+				F49ECBAF1D29153100DA6A3A /* 已筛选@3x.png */,
 				EFA2BD881D0C1374000D1EF2 /* icon_takePicture@2x.png */,
 				EFA2BD891D0C1374000D1EF2 /* icon_takePicture@3x.png */,
 				EFA2BD551D0BEA71000D1EF2 /* icon_arrow_down@2x.png */,
@@ -1226,6 +1253,7 @@
 				EFA2BD791D0BF8C7000D1EF2 /* TakePhotoView.h */,
 				EFA2BD7A1D0BF8C7000D1EF2 /* TakePhotoView.m */,
 				730ED0581D1A602C00EA93C3 /* Discovery */,
+				F49ECBA81D290E5300DA6A3A /* Announcement */,
 				73DD1AAF1CEEE2450059ADAC /* Dynamic */,
 				F4CA1AA21CECA39B0020BA59 /* Mine */,
 				7327FC721CEC039E00C88F38 /* PublicView */,
@@ -1251,6 +1279,15 @@
 				EFA3BFE31CEBE8D800724058 /* Secret.m */,
 			);
 			path = Secret;
+			sourceTree = "<group>";
+		};
+		F49ECBA81D290E5300DA6A3A /* Announcement */ = {
+			isa = PBXGroup;
+			children = (
+				F49ECBA91D290E8200DA6A3A /* CoursesCell.h */,
+				F49ECBAA1D290E8200DA6A3A /* CoursesCell.m */,
+			);
+			path = Announcement;
 			sourceTree = "<group>";
 		};
 		F4CA1AA21CECA39B0020BA59 /* Mine */ = {
@@ -1350,11 +1387,13 @@
 				7349BF691D1BB5F700A57243 /* 评论@3x.png in Resources */,
 				EFA2BD731D0BEA71000D1EF2 /* icon_leave@2x.png in Resources */,
 				7349BF4A1D1BB5F700A57243 /* 向左滑动删除@2x.png in Resources */,
+				F49ECBB91D2918FD00DA6A3A /* 班级未选中@3x.png in Resources */,
 				7349BF431D1BB5F700A57243 /* 个人更多@3x.png in Resources */,
 				7349BF521D1BB5F700A57243 /* 已经关注@2x.png in Resources */,
 				7349BF471D1BB5F700A57243 /* 分享@3x.png in Resources */,
 				730ED04F1D1A5F7500EA93C3 /* icon_xiajiantou.png in Resources */,
 				EFA2BD6A1D0BEA71000D1EF2 /* icon_baby_archive@3x.png in Resources */,
+				F49ECBB81D2918FD00DA6A3A /* 班级未选中@2x.png in Resources */,
 				7349BF4F1D1BB5F700A57243 /* 定位@3x.png in Resources */,
 				F4CA1ABB1CECB7A60020BA59 /* whiteBack@3x.png in Resources */,
 				7349BF651D1BB5F700A57243 /* 背景图片@3x.png in Resources */,
@@ -1369,6 +1408,7 @@
 				73DD1ACA1CEEEFEA0059ADAC /* pinglun@3x.png in Resources */,
 				7349BF6D1D1BB5F700A57243 /* 轮播dot_激活@3x.png in Resources */,
 				732885211CED9636006A5CEC /* anounce@3x.png in Resources */,
+				F49ECBB21D29153100DA6A3A /* 已筛选@2x.png in Resources */,
 				7349BF491D1BB5F700A57243 /* 加载更多@3x.png in Resources */,
 				7327FCEE1CEC38DF00C88F38 /* QQ@2x.png in Resources */,
 				73DD1AC91CEEEFEA0059ADAC /* pinglun@2x.png in Resources */,
@@ -1376,6 +1416,7 @@
 				F4DCFBBF1CF0476700FCB8DF /* announce@3x.png in Resources */,
 				73DD1AD01CEEEFEA0059ADAC /* shaixuan@3x.png in Resources */,
 				7349BF6E1D1BB5F700A57243 /* 返回@2x.png in Resources */,
+				F49ECBB01D29153100DA6A3A /* 未筛选@2x.png in Resources */,
 				732885261CED9636006A5CEC /* babyShow@2x.png in Resources */,
 				732885231CED9636006A5CEC /* ask@3x.png in Resources */,
 				730ED0531D1A5F7500EA93C3 /* teatcherChat@2x.png in Resources */,
@@ -1401,6 +1442,7 @@
 				730ED0541D1A5F7500EA93C3 /* teatcherChat@3x.png in Resources */,
 				EFA2BD511D0BBCB7000D1EF2 /* icon_child@3x.png in Resources */,
 				7327FCEB1CEC38DF00C88F38 /* backImage.jpg in Resources */,
+				F49ECBB11D29153100DA6A3A /* 未筛选@3x.png in Resources */,
 				7349BF5E1D1BB5F700A57243 /* 点赞@2x.png in Resources */,
 				732885201CED9636006A5CEC /* anounce@2x.png in Resources */,
 				EFA2BD751D0BEA71000D1EF2 /* icon_video@2x.png in Resources */,
@@ -1412,6 +1454,7 @@
 				7328852C1CED9636006A5CEC /* course@2x.png in Resources */,
 				7349BF621D1BB5F700A57243 /* 看过@2x.png in Resources */,
 				F4CA1AB81CECB7A60020BA59 /* back@2x.png in Resources */,
+				F49ECBBA1D2918FD00DA6A3A /* 班级选择@2x.png in Resources */,
 				7328852A1CED9636006A5CEC /* chat@2x.png in Resources */,
 				7328852B1CED9636006A5CEC /* chat@3x.png in Resources */,
 				7349BF4D1D1BB5F700A57243 /* 回复@3x.png in Resources */,
@@ -1431,6 +1474,7 @@
 				EFA2BD6E1D0BEA71000D1EF2 /* icon_browsed@3x.png in Resources */,
 				732885291CED9636006A5CEC /* bgPic@2x.png in Resources */,
 				7327FCF41CEC38DF00C88F38 /* WX@2x.png in Resources */,
+				F49ECBBB1D2918FD00DA6A3A /* 班级选择@3x.png in Resources */,
 				EFA2BDC21D0CE9DE000D1EF2 /* nonfullscreen@2x.png in Resources */,
 				EFA2BDC81D0CE9DE000D1EF2 /* play@3x.png in Resources */,
 				EFA2BDC61D0CE9DE000D1EF2 /* play.png in Resources */,
@@ -1505,6 +1549,7 @@
 				73DD1ACE1CEEEFEA0059ADAC /* search@3x.png in Resources */,
 				EFA2BD671D0BEA71000D1EF2 /* icon_arrow_down@2x.png in Resources */,
 				EFA2BD681D0BEA71000D1EF2 /* icon_arrow_down@3x.png in Resources */,
+				F49ECBB31D29153100DA6A3A /* 已筛选@3x.png in Resources */,
 				7349BF6A1D1BB5F700A57243 /* 轮播dot_未激活@2x.png in Resources */,
 				F4DCFBCD1CF0476700FCB8DF /* select_dynamic@3x.png in Resources */,
 				F4DCFBC91CF0476700FCB8DF /* select_announce@3x.png in Resources */,
@@ -1627,6 +1672,7 @@
 				730C269B1D1CD3A200286B33 /* EditDataViewController.m in Sources */,
 				EFA2BDCA1D0CE9DE000D1EF2 /* THVideoCell.m in Sources */,
 				7327FC631CEBFF6700C88F38 /* Ivan_UITabBar.m in Sources */,
+				F49ECBAB1D290E8200DA6A3A /* CoursesCell.m in Sources */,
 				730ED05E1D1A603B00EA93C3 /* ParentsChatViewController.m in Sources */,
 				730C26A41D1D126400286B33 /* YWBCityPickerView.m in Sources */,
 				730C26AD1D1D22BA00286B33 /* MineHostHeaderView.m in Sources */,
