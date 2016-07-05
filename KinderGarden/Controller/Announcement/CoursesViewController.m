@@ -43,6 +43,7 @@
     [headerView loadComponentsWithTitle:classTitle withTitleColor:KFontColorA];
 }
 
+#pragma mark ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓封装筛选班级↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
 - (void)selectBtnOnClick:(UIButton*)sender
 {
     UIImageView * oneIV = (UIImageView*)[bgView viewWithTag:2000];
@@ -263,6 +264,8 @@
     
     mainView.hidden = YES;
 }
+#pragma mark ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑封装筛选班级↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -271,15 +274,24 @@
     
     [headerView loadComponentsWithTitle:@"" withTitleColor:KFontColorA];
     [headerView backButton];
-    
+
+    classOneArr = [[NSMutableArray alloc] initWithCapacity:10];
+    classTwoArr = [[NSMutableArray alloc] initWithCapacity:10];
     classNum = 0;
     classTitle = @"";
+    recordSection = 0;
+    recordRow = 0;
     
     [self createClass];
-    [self createSelectClssView];
     [self createScrollView];
     [self createUI];
-    
+
+#warning 待封装
+    [self createSelectClssView];
+    [self createEditView];
+
+    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapped:)];
+    [self.view addGestureRecognizer:tap];
 }
 
 - (void)createScrollView
@@ -377,20 +389,28 @@
     view.backgroundColor = KFontColorA;
     
     UILabel * firstLabel = [[UILabel alloc] init];
-    firstLabel.frame = CGRectMake(50, 0, 60, 40);
+    firstLabel.frame = CGRectMake(30, 0, 60, 40);
     firstLabel.textAlignment = NSTextAlignmentLeft;
     firstLabel.textColor = KFontColorB;
-    firstLabel.text = @"节次";
+    if(section == 0)
+    {
+        firstLabel.text = @"上午";
+    }
+    else if (section == 1)
+    {
+        firstLabel.text = @"下午";
+    }
     firstLabel.font = NormalFontWithSize(14);
     [view addSubview:firstLabel];
     
     UILabel * secondLabel = [[UILabel alloc] init];
-    secondLabel.frame = CGRectMake(screenWidth/2, 0, 60, 40);
+    secondLabel.frame = CGRectMake(screenWidth/2-40, 0, 60, 40);
     secondLabel.textAlignment = NSTextAlignmentLeft;
     secondLabel.textColor = KFontColorB;
     secondLabel.text = @"课程";
     secondLabel.font = NormalFontWithSize(14);
     [view addSubview:secondLabel];
+    
     
     return view;
 }
@@ -414,13 +434,11 @@
 {
     if (section == 0)
     {
-        //上午三节课，加上 一行添加课程，总共4行
-        classNum = 3;
-        return classNum+1;
+        return classOneArr.count+1;
     }
     else
     {
-        return 3;
+        return classTwoArr.count+1;;
     }
 }
 
@@ -435,57 +453,276 @@
     }
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
+    cell.delegate = self;
+    cell.section = indexPath.section;
+
     if (indexPath.section == 0)
     {
         cell.addClassBtn.tag = indexPath.section;
-        
-        if (indexPath.row == 3)
+        cell.editClassBtn.tag = indexPath.row;
+
+        if (classOneArr.count>0)
         {
-            cell.numLabel.hidden = YES;
-            cell.classNameLabel.hidden = YES;
-            
-            cell.addClassBtn.hidden = NO;
-            
+            if (indexPath.row<classOneArr.count)
+            {
+                cell.numLabel.hidden = NO;
+                cell.classNameLabel.hidden = NO;
+                cell.editClassBtn.hidden = NO;
+                cell.deleteBtn.hidden = NO;
+                cell.deleteBtn.tag = indexPath.row;
+                
+                cell.addClassBtn.hidden = YES;
+                cell.numLabel.text = [NSString stringWithFormat:@"第%ld节课",(long)indexPath.row+1];
+                cell.classNameLabel.text = [NSString stringWithFormat:@"     %@",[classOneArr objectAtIndex:indexPath.row]];
+            }
+            else
+            {
+                cell.numLabel.hidden = YES;
+                cell.classNameLabel.hidden = YES;
+                cell.editClassBtn.hidden = YES;
+                cell.deleteBtn.hidden = YES;
+                cell.addClassBtn.hidden = NO;
+            }
         }
         else
         {
-            cell.numLabel.hidden = NO;
-            cell.classNameLabel.hidden = NO;
-            
-            cell.addClassBtn.hidden = YES;
-            cell.numLabel.text = [NSString stringWithFormat:@"第%ld节课",(long)indexPath.row+1];
+            cell.numLabel.hidden = YES;
+            cell.classNameLabel.hidden = YES;
+            cell.editClassBtn.hidden = YES;
+            cell.deleteBtn.hidden = YES;
+            cell.addClassBtn.hidden = NO;
         }
     }
     else if (indexPath.section == 1)
     {
         cell.addClassBtn.tag = indexPath.section;
-
-        if (indexPath.row == 2)
+        cell.editClassBtn.tag = indexPath.row;
+        if (classTwoArr.count>0)
         {
-            cell.numLabel.hidden = YES;
-            cell.classNameLabel.hidden = YES;
-            
-            cell.addClassBtn.hidden = NO;
+            if (indexPath.row <classTwoArr.count)
+            {
+                cell.numLabel.hidden = NO;
+                cell.classNameLabel.hidden = NO;
+                cell.editClassBtn.hidden = NO;
+                cell.deleteBtn.hidden = NO;
+                cell.addClassBtn.hidden = YES;
+                
+                cell.deleteBtn.tag = indexPath.row;
+                cell.numLabel.text = [NSString stringWithFormat:@"第%ld节课",(long)indexPath.row+classOneArr.count+1];
+                cell.classNameLabel.text = [NSString stringWithFormat:@"     %@",[classTwoArr objectAtIndex:indexPath.row]];
+            }
+            else
+            {
+                cell.numLabel.hidden = YES;
+                cell.classNameLabel.hidden = YES;
+                cell.editClassBtn.hidden = YES;
+                cell.deleteBtn.hidden = YES;
+                cell.addClassBtn.hidden = NO;
+            }
         }
         else
         {
-            cell.numLabel.hidden = NO;
-            cell.classNameLabel.hidden = NO;
-            
-            cell.addClassBtn.hidden = YES;
-            cell.numLabel.text = [NSString stringWithFormat:@"第%ld节课",(long)indexPath.row+classNum+1];
-
+            cell.numLabel.hidden = YES;
+            cell.classNameLabel.hidden = YES;
+            cell.editClassBtn.hidden = YES;
+            cell.deleteBtn.hidden =YES;
+            cell.addClassBtn.hidden = NO;
         }
     }
-    
     
     return cell;
 }
 
+//添加课程
 - (void)addClassWithIndex:(NSInteger)index
 {
-    NSLog(@"---%ld 添加课程",(long)index);
+    if (index == 0)
+    {
+        [classOneArr addObject:@""];
+    }
+    else if (index == 1)
+    {
+        [classTwoArr addObject:@""];
+    }
+    [infoTablView reloadData];
+}
+
+#pragma mark ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓封装编辑视图↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+
+- (void)createEditView
+{
+    if (!mainTwoView)
+    {
+        mainTwoView = [[UIView alloc] init];
+    }
+    mainTwoView.frame = CGRectMake(0, 0, screenWidth, screenHeight);
+    mainTwoView.backgroundColor = [KFontColorC colorWithAlphaComponent:0.3];
+    [self.view addSubview:mainTwoView];
+    
+    if (!hideTwoBtn)
+    {
+        hideTwoBtn = [[UIButton alloc] init];
+    }
+    hideTwoBtn.frame = CGRectMake(0, 0, screenWidth, screenHeight);
+    hideTwoBtn.backgroundColor = [UIColor clearColor];
+    [hideTwoBtn addTarget:self action:@selector(hideTwoBtnOnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [mainTwoView addSubview:hideTwoBtn];
+    
+    if (!editView)
+    {
+        editView = [[UIView alloc] init];
+    }
+    editView.backgroundColor = KFontColorA;
+    editView.layer.cornerRadius = 8;
+    editView.clipsToBounds = YES;
+    editView.layer.masksToBounds = YES;
+    editView.frame = CGRectMake((screenWidth-270)/2, 200, 270, 150);
+    [mainTwoView addSubview:editView];
+    
+    if (!editTF)
+    {
+        editTF = [[UITextField alloc] init];
+    }
+    editTF.frame = CGRectMake(20, 30, 230, 45);
+    editTF.textColor = KFontColorC;
+    editTF.backgroundColor = KFontColorA;
+    editTF.layer.borderWidth = 0.7f;
+    editTF.layer.borderColor = KFontColorE.CGColor;
+    editTF.delegate = self;
+    editTF.text = @"";
+    editTF.returnKeyType = UIReturnKeyDone;
+    [editView addSubview:editTF];
+    
+    if (!lineTwoLabel)
+    {
+        lineTwoLabel = [[UILabel alloc] init];
+    }
+    lineTwoLabel.backgroundColor = KFontColorE;
+    lineTwoLabel.frame = CGRectMake(0, CGRectGetMaxY(editTF.frame)+30, CGRectGetWidth(editView.frame), 0.5);
+    [editView addSubview:lineTwoLabel];
+    
+    if (!sureBtn)
+    {
+        sureBtn = [[UIButton alloc] init];
+    }
+    sureBtn.titleLabel.font = NormalFontWithSize(15);
+    sureBtn.frame = CGRectMake(0, CGRectGetMaxY(lineTwoLabel.frame), CGRectGetWidth(editView.frame), 44);
+    [sureBtn setTitle:@"确定" forState:UIControlStateNormal];
+    [sureBtn setTitleColor:KFontColorC forState:UIControlStateNormal];
+    [sureBtn setBackgroundImage:[KFontColorA image] forState:UIControlStateNormal];
+    [sureBtn addTarget:self action:@selector(sureBtnOnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [editView addSubview:sureBtn];
+    
+    mainTwoView.hidden = YES;
+}
+
+- (void)hideTwoBtnOnClick:(UIButton*)sender
+{
+    mainTwoView.hidden = YES;
+    [editTF resignFirstResponder];
+}
+
+- (void)sureBtnOnClick:(UIButton*)sender
+{
+    if (recordSection == 0)
+    {
+        [classOneArr replaceObjectAtIndex:recordRow withObject:editTF.text];
+    }
+    else
+    {
+        [classTwoArr replaceObjectAtIndex:recordRow withObject:editTF.text];
+    }
+    
+    mainTwoView.hidden = YES;
+    editTF.text = @"";
+    
+    [infoTablView reloadData];
+}
+
+#pragma mark ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑封装编辑视图↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
+
+//编辑课程
+- (void)editClassWithIndex:(UIButton *)sender WithSection:(NSInteger)section
+{
+    recordRow = sender.tag;
+    recordSection = section;
+    mainTwoView.hidden = NO;
+    [editTF becomeFirstResponder];
+    
+    if (section == 0)
+    {
+        if ([classOneArr objectAtIndex:sender.tag])
+        {
+            editTF.text = [classOneArr objectAtIndex:sender.tag];
+        }
+        else
+        {
+            editTF.text = @"";
+        }
+    }
+    else
+    {
+        if ([classTwoArr objectAtIndex:sender.tag])
+        {
+            editTF.text = [classTwoArr objectAtIndex:sender.tag];
+        }
+        else
+        {
+            editTF.text = @"";
+        }
+    }
+        
+    [infoTablView reloadData];
+}
+
+- (void)deleteWithIndex:(UIButton *)sender WithSection:(NSInteger)section
+{
+    recordRow = sender.tag;
+    recordSection = section;
+    
+    if (section == 0)
+    {
+        [classOneArr removeObjectAtIndex:sender.tag];
+    }
+    else
+    {
+        [classTwoArr removeObjectAtIndex:sender.tag];
+    }
+    
+    [infoTablView reloadData];
+}
+
+//重写返回，弹出列表选择是否退出
+- (void)back
+{
+    NSLog(@"走起");
+    UIActionSheet * actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"保存草稿",@"退出编辑",nil];
+    actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
+    [actionSheet showInView:self.view];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1)
+    {
+        if (self.navigationController && self.navigationController.viewControllers.count>1)
+        {
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+        else
+        {
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
+    }
+}
+
+// 点击页面，输入框失去焦点
+- (void)viewTapped:(UITapGestureRecognizer*)ges
+{
+    if([editTF isFirstResponder])
+    {
+        [editTF resignFirstResponder];
+    }
 }
 
 @end

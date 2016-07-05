@@ -10,25 +10,26 @@
 
 @protocol CourcesDelegate <NSObject>
 
-- (void)deleteWithIndex:(NSInteger)index;
+- (void)deleteWithIndex:(UIButton*)sender WithSection:(NSInteger)section;
 - (void)addClassWithIndex:(NSInteger)index;
-
+- (void)editClassWithIndex:(UIButton*)sender WithSection:(NSInteger)section ;
 @end
 
 @interface CoursesCell : UITableViewCell
 {
     UILabel * numLabel;
     UILabel * classNameLabel;
-    
     UIButton * deleteBtn;
-    
     UIButton * addClassBtn;
+    UIButton * editClassBtn;
 }
 
 @property(nonatomic,strong) UILabel * numLabel;
 @property(nonatomic,strong) UILabel * classNameLabel;
 @property(nonatomic,strong) UIButton * deleteBtn;
 @property(nonatomic,strong) UIButton * addClassBtn;
+@property(nonatomic,strong) UIButton * editClassBtn;
 @property(nonatomic,assign) id<CourcesDelegate>delegate;
+@property(nonatomic)NSInteger section;
 
 @end

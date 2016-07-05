@@ -14,6 +14,7 @@
 		730C26A71D1D211D00286B33 /* MineHostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 730C26A61D1D211D00286B33 /* MineHostViewController.m */; };
 		730C26AA1D1D22A400286B33 /* MineHostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 730C26A91D1D22A400286B33 /* MineHostCell.m */; };
 		730C26AD1D1D22BA00286B33 /* MineHostHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 730C26AC1D1D22BA00286B33 /* MineHostHeaderView.m */; };
+		730DF0B21D2B4E68009C8DA2 /* 课程编辑删除@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 730DF0B11D2B4E68009C8DA2 /* 课程编辑删除@2X.png */; };
 		730ED0451D1A5F5B00EA93C3 /* AddTeatcherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 730ED03E1D1A5F5B00EA93C3 /* AddTeatcherViewController.m */; };
 		730ED0461D1A5F5B00EA93C3 /* ClassManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 730ED0401D1A5F5B00EA93C3 /* ClassManageViewController.m */; };
 		730ED0471D1A5F5B00EA93C3 /* TeatcherInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 730ED0421D1A5F5B00EA93C3 /* TeatcherInfoViewController.m */; };
@@ -289,6 +290,7 @@
 		730C26A91D1D22A400286B33 /* MineHostCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineHostCell.m; sourceTree = "<group>"; };
 		730C26AB1D1D22BA00286B33 /* MineHostHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineHostHeaderView.h; sourceTree = "<group>"; };
 		730C26AC1D1D22BA00286B33 /* MineHostHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineHostHeaderView.m; sourceTree = "<group>"; };
+		730DF0B11D2B4E68009C8DA2 /* 课程编辑删除@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "课程编辑删除@2X.png"; sourceTree = "<group>"; };
 		730ED03D1D1A5F5B00EA93C3 /* AddTeatcherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTeatcherViewController.h; sourceTree = "<group>"; };
 		730ED03E1D1A5F5B00EA93C3 /* AddTeatcherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTeatcherViewController.m; sourceTree = "<group>"; };
 		730ED03F1D1A5F5B00EA93C3 /* ClassManageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassManageViewController.h; sourceTree = "<group>"; };
@@ -894,6 +896,7 @@
 			children = (
 				F49ECBB41D2918FD00DA6A3A /* 班级未选中@2x.png */,
 				F49ECBB51D2918FD00DA6A3A /* 班级未选中@3x.png */,
+				730DF0B11D2B4E68009C8DA2 /* 课程编辑删除@2X.png */,
 				F49ECBB61D2918FD00DA6A3A /* 班级选择@2x.png */,
 				F49ECBB71D2918FD00DA6A3A /* 班级选择@3x.png */,
 				F49ECBAC1D29153100DA6A3A /* 未筛选@2x.png */,
@@ -1508,6 +1511,7 @@
 				F4CA1AB91CECB7A60020BA59 /* back@3x.png in Resources */,
 				7349BF4E1D1BB5F700A57243 /* 定位@2x.png in Resources */,
 				EFA2BDBE1D0CE9DE000D1EF2 /* dot@3x.png in Resources */,
+				730DF0B21D2B4E68009C8DA2 /* 课程编辑删除@2X.png in Resources */,
 				730ED0511D1A5F7500EA93C3 /* select@2x.png in Resources */,
 				EFA2BD6B1D0BEA71000D1EF2 /* icon_baby_chat@2x.png in Resources */,
 				732885241CED9636006A5CEC /* babyFile@2x.png in Resources */,
@@ -1814,14 +1818,14 @@
 			baseConfigurationReference = 615FA94E6B284ABB03BFE0EC /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Shenli Luan (75B2MMWUR7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Shenli Luan (75B2MMWUR7)";
 				INFOPLIST_FILE = KinderGarden/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dbn.nx.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xdcy.gf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0a720b6e-59b2-41dd-b673-ac801a22904e";
+				PROVISIONING_PROFILE = "85544f37-41f9-4ef8-af42-95d40b0fb5da";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1831,14 +1835,14 @@
 			baseConfigurationReference = 8778DCFCDBE316D039C62A29 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Shenli Luan (75B2MMWUR7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Shenli Luan (75B2MMWUR7)";
 				INFOPLIST_FILE = KinderGarden/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dbn.nx.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xdcy.gf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0a720b6e-59b2-41dd-b673-ac801a22904e";
+				PROVISIONING_PROFILE = "85544f37-41f9-4ef8-af42-95d40b0fb5da";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

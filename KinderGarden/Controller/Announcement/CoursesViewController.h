@@ -9,7 +9,7 @@
 #import "BasicViewController.h"
 #import "CoursesCell.h"
 
-@interface CoursesViewController : BasicViewController<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate,CourcesDelegate>
+@interface CoursesViewController : BasicViewController<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate,CourcesDelegate,UIActionSheetDelegate,UITextFieldDelegate>
 {
     UITableView * infoTablView;
     UIScrollView * SV;
@@ -21,5 +21,19 @@
     UIView * bgView;
     UIView * mainView;
     UIButton * hideBtn;
+
+    UIView * editView;
+    UIView * mainTwoView;
+    UIButton * hideTwoBtn;
+    UITextField * editTF;
+    UIButton * sureBtn;
+    UILabel * lineTwoLabel;
+    
+    
+    NSMutableArray * classOneArr;
+    NSMutableArray * classTwoArr;
+    
+    NSInteger recordSection;
+    NSInteger recordRow;
 }
 @end

@@ -16,6 +16,8 @@
 @synthesize classNameLabel;
 @synthesize deleteBtn;
 @synthesize addClassBtn;
+@synthesize section;
+@synthesize editClassBtn;
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -48,22 +50,34 @@
     numLabel.font = NormalFontWithSize(14);
     [self addSubview:numLabel];
     
+    if (!editClassBtn)
+    {
+        editClassBtn = [[UIButton alloc] init];
+    }
+    editClassBtn.backgroundColor = [UIColor redColor];
+    editClassBtn.frame = CGRectMake(CGRectGetMaxX(numLabel.frame)+20, 25, 210, 35);
+    [editClassBtn addTarget:self action:@selector(editClassBtnOnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:editClassBtn];
+
+    
     if (!classNameLabel)
     {
         classNameLabel = [[UILabel alloc] init];
     }
-    classNameLabel.frame = CGRectMake(CGRectGetMaxX(numLabel.frame)+20, 25, 210, 35);
+    classNameLabel.frame = CGRectMake(0, 0, 210, 35);
     classNameLabel.textAlignment = NSTextAlignmentLeft;
     classNameLabel.textColor = KFontColorC;
     classNameLabel.backgroundColor = KFontColorA;
-    classNameLabel.text = @"     手工课";
     classNameLabel.font = NormalFontWithSize(14);
-    [self addSubview:classNameLabel];
+    [editClassBtn addSubview:classNameLabel];
     
     if (!deleteBtn)
     {
         deleteBtn = [[UIButton alloc] init];
     }
+    deleteBtn.backgroundColor = [UIColor redColor];
+    deleteBtn.frame = CGRectMake(CGRectGetMaxX(editClassBtn.frame)+30, CGRectGetMinY(editClassBtn.frame), 40, 35);
+    [deleteBtn addTarget:self action:@selector(deleteBtnOnClick:WithSection:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:deleteBtn];
     
     if (!addClassBtn)
@@ -87,7 +101,21 @@
     }
 }
 
+- (void)deleteBtnOnClick:(UIButton*)sender WithSection:(NSInteger)section
+{
+    if ([self.delegate respondsToSelector:@selector(deleteWithIndex:WithSection:)])
+    {
+        [self.delegate deleteWithIndex:sender WithSection:self.section];
+    }
+}
 
+- (void)editClassBtnOnClick:(UIButton*)sender
+{
+    if ([self.delegate respondsToSelector:@selector(editClassWithIndex:WithSection:)])
+    {
+        [self.delegate editClassWithIndex:sender WithSection:self.section];
+    }
+}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
