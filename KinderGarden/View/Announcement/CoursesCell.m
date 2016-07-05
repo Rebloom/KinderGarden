@@ -18,6 +18,7 @@
 @synthesize addClassBtn;
 @synthesize section;
 @synthesize editClassBtn;
+@synthesize deleteImageView;
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -59,7 +60,7 @@
     [editClassBtn addTarget:self action:@selector(editClassBtnOnClick:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:editClassBtn];
 
-    
+   
     if (!classNameLabel)
     {
         classNameLabel = [[UILabel alloc] init];
@@ -75,10 +76,17 @@
     {
         deleteBtn = [[UIButton alloc] init];
     }
-    deleteBtn.backgroundColor = [UIColor redColor];
-    deleteBtn.frame = CGRectMake(CGRectGetMaxX(editClassBtn.frame)+30, CGRectGetMinY(editClassBtn.frame), 40, 35);
+    deleteBtn.frame = CGRectMake(CGRectGetMaxX(editClassBtn.frame)+20, CGRectGetMinY(editClassBtn.frame), 40, 35);
     [deleteBtn addTarget:self action:@selector(deleteBtnOnClick:WithSection:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:deleteBtn];
+   
+    if (!deleteImageView)
+    {
+        deleteImageView = [[UIImageView alloc] init];
+    }
+    deleteImageView.image = [UIImage imageNamed:@"课程编辑删除"];
+    deleteImageView.frame = CGRectMake(11, 8.5, 18, 18);
+    [deleteBtn addSubview:deleteImageView];
     
     if (!addClassBtn)
     {

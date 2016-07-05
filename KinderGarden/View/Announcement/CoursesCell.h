@@ -19,6 +19,7 @@
 {
     UILabel * numLabel;
     UILabel * classNameLabel;
+    UIImageView * deleteImageView;
     UIButton * deleteBtn;
     UIButton * addClassBtn;
     UIButton * editClassBtn;
@@ -27,6 +28,7 @@
 @property(nonatomic,strong) UILabel * numLabel;
 @property(nonatomic,strong) UILabel * classNameLabel;
 @property(nonatomic,strong) UIButton * deleteBtn;
+@property(nonatomic,strong) UIImageView * deleteImageView;
 @property(nonatomic,strong) UIButton * addClassBtn;
 @property(nonatomic,strong) UIButton * editClassBtn;
 @property(nonatomic,assign) id<CourcesDelegate>delegate;
