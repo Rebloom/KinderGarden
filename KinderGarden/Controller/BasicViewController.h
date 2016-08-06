@@ -19,9 +19,11 @@
 #import "TKAlertCenter.h"
 #import "MBProgressHUD.h"
 
+#import "NXRequestManager.h"
+
 #import "YYKit.h"
 
-@interface BasicViewController : UIViewController<HeaderViewDelegate,UIAlertViewDelegate>
+@interface BasicViewController : UIViewController<HeaderViewDelegate,UIAlertViewDelegate,NXRequestDelegate>
 {
     HeaderView * headerView;
 }

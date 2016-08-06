@@ -219,11 +219,17 @@
 //获取验证码
 - (void)codeBtnOnClick:(UIButton*)sender
 {
-    [self Countdown];
+    [LoginRequest getRegisterCheckCodeWithPhoneNumber:userNameTf.text delegate:self];
+    [self countDown];
+}
+
+- (void)nxRequestFinished:(NXBaseRequest *)request
+{
+    NSLog(@"Request.params is %@",request.responseString);
 }
 
 // 倒计时
-- (void)Countdown
+- (void)countDown
 {
     [getCodeBtn setTitle:@"剩余60秒" forState:UIControlStateNormal];
     [getCodeBtn setBackgroundImage:[@"#767676".color image] forState:UIControlStateNormal];

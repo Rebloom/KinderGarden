@@ -232,6 +232,7 @@
 		EFA3BFE71CEBE8D800724058 /* NSString+Encryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA3BFDF1CEBE8D800724058 /* NSString+Encryptor.m */; };
 		EFA3BFE81CEBE8D800724058 /* NSString+Reverse.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA3BFE11CEBE8D800724058 /* NSString+Reverse.m */; };
 		EFA3BFE91CEBE8D800724058 /* Secret.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA3BFE31CEBE8D800724058 /* Secret.m */; };
+		EFF9817F1D55BBFC005043BC /* LoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EFF9817E1D55BBFC005043BC /* LoginRequest.m */; };
 		F49ECBAB1D290E8200DA6A3A /* CoursesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F49ECBAA1D290E8200DA6A3A /* CoursesCell.m */; };
 		F49ECBB01D29153100DA6A3A /* 未筛选@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F49ECBAC1D29153100DA6A3A /* 未筛选@2x.png */; };
 		F49ECBB11D29153100DA6A3A /* 未筛选@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F49ECBAD1D29153100DA6A3A /* 未筛选@3x.png */; };
@@ -584,6 +585,8 @@
 		EFA3BFE21CEBE8D800724058 /* Secret.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Secret.h; sourceTree = "<group>"; };
 		EFA3BFE31CEBE8D800724058 /* Secret.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Secret.m; sourceTree = "<group>"; };
 		EFA3BFEA1CEBEA9A00724058 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		EFF9817D1D55BBFC005043BC /* LoginRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginRequest.h; sourceTree = "<group>"; };
+		EFF9817E1D55BBFC005043BC /* LoginRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginRequest.m; sourceTree = "<group>"; };
 		F49ECBA91D290E8200DA6A3A /* CoursesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoursesCell.h; sourceTree = "<group>"; };
 		F49ECBAA1D290E8200DA6A3A /* CoursesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoursesCell.m; sourceTree = "<group>"; };
 		F49ECBAC1D29153100DA6A3A /* 未筛选@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "未筛选@2x.png"; sourceTree = "<group>"; };
@@ -1074,6 +1077,7 @@
 		EF65D4831CEAC42F00463441 /* KinderGarden */ = {
 			isa = PBXGroup;
 			children = (
+				EFF9817C1D55BBEB005043BC /* Requests */,
 				EFA2BD8C1D0CE9DE000D1EF2 /* NXPlayer */,
 				EF65D4871CEAC42F00463441 /* AppDelegate.h */,
 				EF65D4881CEAC42F00463441 /* AppDelegate.m */,
@@ -1282,6 +1286,15 @@
 				EFA3BFE31CEBE8D800724058 /* Secret.m */,
 			);
 			path = Secret;
+			sourceTree = "<group>";
+		};
+		EFF9817C1D55BBEB005043BC /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				EFF9817D1D55BBFC005043BC /* LoginRequest.h */,
+				EFF9817E1D55BBFC005043BC /* LoginRequest.m */,
+			);
+			path = Requests;
 			sourceTree = "<group>";
 		};
 		F49ECBA81D290E5300DA6A3A /* Announcement */ = {
@@ -1676,6 +1689,7 @@
 				730C269B1D1CD3A200286B33 /* EditDataViewController.m in Sources */,
 				EFA2BDCA1D0CE9DE000D1EF2 /* THVideoCell.m in Sources */,
 				7327FC631CEBFF6700C88F38 /* Ivan_UITabBar.m in Sources */,
+				EFF9817F1D55BBFC005043BC /* LoginRequest.m in Sources */,
 				F49ECBAB1D290E8200DA6A3A /* CoursesCell.m in Sources */,
 				730ED05E1D1A603B00EA93C3 /* ParentsChatViewController.m in Sources */,
 				730C26A41D1D126400286B33 /* YWBCityPickerView.m in Sources */,
@@ -1818,14 +1832,14 @@
 			baseConfigurationReference = 615FA94E6B284ABB03BFE0EC /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Shenli Luan (75B2MMWUR7)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Shenli Luan (75B2MMWUR7)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: zhu hua (62B9C8XKWN)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zhu hua (62B9C8XKWN)";
 				INFOPLIST_FILE = KinderGarden/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.xdcy.gf;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dbn.nx.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "85544f37-41f9-4ef8-af42-95d40b0fb5da";
+				PROVISIONING_PROFILE = "13cdddc3-da28-4979-b425-7b637f1761f9";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1835,14 +1849,14 @@
 			baseConfigurationReference = 8778DCFCDBE316D039C62A29 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Shenli Luan (75B2MMWUR7)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Shenli Luan (75B2MMWUR7)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Da Bei Nong Science and Technology Group, Co., Ltd. (P36C9Q8TAF)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beijing Da Bei Nong Science and Technology Group, Co., Ltd. (P36C9Q8TAF)";
 				INFOPLIST_FILE = KinderGarden/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.xdcy.gf;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dbn.nx.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "85544f37-41f9-4ef8-af42-95d40b0fb5da";
+				PROVISIONING_PROFILE = "13cdddc3-da28-4979-b425-7b637f1761f9";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

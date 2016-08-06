@@ -107,23 +107,31 @@ static NSString * serverOutTime     = @"请求超时,请稍后重试";
 
 - (void)addNXPostRequest:(NXBaseRequest *)request
 {
-    NSString * mainUrlString = @"";
+    NSString * mainUrlString = @"http://123.206.43.102:8080/support/";
+    
+    mainUrlString = [mainUrlString stringByAppendingString:request.vrCodeString];
+
+    NSString * bodyString = @"";
+    for (NSString * key in request.params)
+    {
+        if ([request.params.allKeys indexOfObject:key] == 0)
+        {
+            bodyString = [bodyString stringByAppendingString:[NSString stringWithFormat:@"%@=%@",key,[request.params objectForKey:key]]];
+        }
+        else
+        {
+            bodyString = [bodyString stringByAppendingString:[NSString stringWithFormat:@"&%@=%@",key,[request.params objectForKey:key]]];
+        }
+    }
+    mainUrlString = [mainUrlString stringByAppendingString:bodyString];
     // 基于NSMutableUrlRequest
     NSMutableURLRequest * mRequest = [[NSMutableURLRequest alloc] init];
     // 填写主地址，从子类带过来
     [mRequest setURL:[NSURL URLWithString:mainUrlString]];
     // 设置请求方式
-    [mRequest setHTTPMethod:@"POST"];
+    [mRequest setHTTPMethod:@"GET"];
     // 设置报头格式
     [mRequest setValue:@"text/xml" forHTTPHeaderField:@"Content-Type"];
-    // 设置User—Agent
-    
-    [mRequest setValue:[NXNetworkConfig getUserAgent] forHTTPHeaderField:@"User-Agent"];
-    // 构建提交的JSON参数
-    NSString * jsonString = [NXNetworkConfig buildJSONStringWithString:request.vrCodeString params:request.params domainParams:request.domainParams base64:YES];
-    // 设置请求的body
-    [mRequest setHTTPBody:[jsonString dataUsingEncoding:NSUTF8StringEncoding]];
-    
     // 设定Manager
     self.sessionManager.operationQueue.maxConcurrentOperationCount = 1;
     self.sessionManager.securityPolicy = [AFSecurityPolicy defaultPolicy];
