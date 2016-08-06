@@ -1839,7 +1839,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dbn.nx.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "13cdddc3-da28-4979-b425-7b637f1761f9";
+				PROVISIONING_PROFILE = "341202eb-bd68-4848-b9b6-d9a6a66efa33";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1856,7 +1856,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dbn.nx.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "13cdddc3-da28-4979-b425-7b637f1761f9";
+				PROVISIONING_PROFILE = "341202eb-bd68-4848-b9b6-d9a6a66efa33";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

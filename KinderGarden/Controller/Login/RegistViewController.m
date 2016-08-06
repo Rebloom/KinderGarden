@@ -213,7 +213,24 @@
 
 - (void)registBtnOnClick:(UIButton*)sender
 {
-    NSLog(@"注册");
+    if (userNameTf.text.length == 0)
+    {
+        [[TKAlertCenter defaultCenter] postAlertWithMessage:@"请填写手机号"];
+        return;
+    }
+    if (pwdTf.text.length == 0)
+    {
+        [[TKAlertCenter defaultCenter] postAlertWithMessage:@"请填写密码"];
+        return;
+    }
+    if (codeTf.text.length == 0)
+    {
+        [[TKAlertCenter defaultCenter] postAlertWithMessage:@"请填写验证码"];
+        return;
+    }
+    
+    [LoginRequest registerWithUserName:userNameTf.text password:pwdTf.text code:codeTf.text delegate:self];
+    
 }
 
 //获取验证码
@@ -225,7 +242,16 @@
 
 - (void)nxRequestFinished:(NXBaseRequest *)request
 {
-    NSLog(@"Request.params is %@",request.responseString);
+    if ([request.vrCodeString isEqualToString:kTagRegisterGetCodeRequest])
+    {
+        //
+        [[TKAlertCenter defaultCenter] postAlertWithMessage:@"发送成功"];
+    }
+    else if ([request.vrCodeString isEqualToString:kTagRegisterRequest])
+    {
+        [[TKAlertCenter defaultCenter] postAlertWithMessage:@"注册成功"];
+        [self back];
+    }
 }
 
 // 倒计时

@@ -23,6 +23,7 @@
     
     [getCodeBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
     [getCodeBtn setTitleColor:KFontColorA forState:UIControlStateNormal];
+    getCodeBtn.userInteractionEnabled = YES;
 }
 
 - (void)viewDidLoad {
@@ -140,10 +141,20 @@
 
 - (void)nextBtnOnClick:(UIButton*)sender
 {
-    NSLog(@"下一步");
-#warning 验证成功跳转重置密码页面
-    SetPasswordViewController * SPVC = [[SetPasswordViewController alloc] init];
-    [self pushToViewController:SPVC];
+    if (userNameTf.text.length == 0)
+    {
+        [[TKAlertCenter defaultCenter] postAlertWithMessage:@"请填写手机号"];
+        return;
+    }
+    if (codeTf.text.length == 0)
+    {
+        [[TKAlertCenter defaultCenter] postAlertWithMessage:@"请填写手机号"];
+        return;
+    }
+//    NSLog(@"下一步");
+//#warning 验证成功跳转重置密码页面
+//    SetPasswordViewController * SPVC = [[SetPasswordViewController alloc] init];
+//    [self pushToViewController:SPVC];
 }
 
 //获取验证码

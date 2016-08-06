@@ -179,12 +179,29 @@
 //登录
 - (void)loginBtnOnClick:(UIButton*)sender
 {
-    NSLog(@"登录");
-#warning 验证成功登陆
-    HomeViewController * HVC = [[HomeViewController alloc] init];
-    [HVC setSelectedTab:TabSelectedFirst];
-    [HVC showTabbar];
-    [self presentViewController:HVC animated:NO completion:nil];
+    if (userNameTf.text.length == 0)
+    {
+        [[TKAlertCenter defaultCenter] postAlertWithMessage:@"请填写手机号"];
+        return;
+    }
+    if (pwdTf.text.length == 0)
+    {
+        [[TKAlertCenter defaultCenter] postAlertWithMessage:@"请填写密码"];
+        return;
+    }
+    
+    [LoginRequest loginWithUserName:userNameTf.text password:pwdTf.text delegate:self];
+}
+
+- (void)nxRequestFinished:(NXBaseRequest *)request
+{
+    if ([request.vrCodeString isEqualToString:kTagLoginRequest])
+    {
+        HomeViewController * HVC = [[HomeViewController alloc] init];
+        [HVC setSelectedTab:TabSelectedFirst];
+        [HVC showTabbar];
+        [self presentViewController:HVC animated:NO completion:nil];
+    }
 }
 
 //忘记密码

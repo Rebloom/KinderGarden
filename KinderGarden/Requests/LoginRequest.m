@@ -20,4 +20,31 @@
     [request start];
 }
 
++ (void)registerWithUserName:(NSString *)phone password:(NSString *)password code:(NSString *)code delegate:(id)_delegate
+{
+    LoginRequest * request = [[LoginRequest alloc] init];
+    request.vrCodeString = kTagRegisterRequest;
+    request.delegate = _delegate;
+    
+    [request.params setObject:phone forKey:@"phone"];
+    [request.params setObject:password forKey:@"passwd"];
+    [request.params setObject:code forKey:@"code"];
+    [request.params setObject:code forKey:@"phoneCode"];
+    
+    [request start];
+}
+
++ (void)loginWithUserName:(NSString *)phone password:(NSString *)password delegate:(id)_delegate
+{
+    LoginRequest * request = [[LoginRequest alloc] init];
+    request.vrCodeString = kTagLoginRequest;
+    request.delegate = _delegate;
+    
+    [request.params setObject:phone forKey:@"phone"];
+    [request.params setObject:password forKey:@"passwd"];
+    
+    [request start];
+}
+
+
 @end

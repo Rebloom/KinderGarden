@@ -8,6 +8,8 @@
 
 #import "BasicViewController.h"
 
+#import "LoginRequest.h"
+
 @interface LoginViewController : BasicViewController<UITextFieldDelegate>
 {
     UITextField * userNameTf;

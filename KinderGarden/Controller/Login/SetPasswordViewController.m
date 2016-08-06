@@ -105,6 +105,11 @@
     [self.view addSubview:nextBtn];
 }
 
+- (void)nxRequestFinished:(NXBaseRequest *)request
+{
+    
+}
+
 //下一步
 - (void)nextBtnOnClick:(UIButton*)sender
 {

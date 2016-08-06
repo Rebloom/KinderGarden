@@ -199,26 +199,19 @@ static NSString * serverOutTime     = @"请求超时,请稍后重试";
         if ([self checkResult:request])
         {
             // 如果业务逻辑层请求合法
-            NSDictionary * back = nil;//[[Tools decodeBase64:request.responseString] jsonValueDecoded];
-            if ([back objectForKey:@"r"])
+            NSDictionary * back = [request.responseString jsonValueDecoded];
+            NSLog(@"返回的数据是 %@",back);
+            if ([back objectForKey:@"success"])
             {
-                if ([[back objectForKey:@"r"] integerValue])
+                if ([[back objectForKey:@"success"] integerValue] == 0)
                 {
                     if (request.delegate && [request.delegate respondsToSelector:@selector(nxRequestFailed:)]) {
                         [request.delegate nxRequestFailed:request];
                     }
                     
-                    // 如果需要单独处理ErrorCode，则回调可选的Delegate
-                    if (request.delegate && request.handleErrorCode && [request.delegate respondsToSelector:@selector(nxRequestFinishedWithErrorType:)])
-                    {
-                        [request.delegate nxRequestFinishedWithErrorType:[[back objectForKey:@"r"] integerValue]];
-                    }
-                    else
-                    {
-                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                          [[TKAlertCenter defaultCenter] postAlertWithMessage:[[back objectForKey:@"m"] description].length?[back objectForKey:@"m"]:serverErrorString];
-                        });
-                    }
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                        [[TKAlertCenter defaultCenter] postAlertWithMessage:[[back objectForKey:@"msg"] description].length?[back objectForKey:@"msg"]:serverErrorString];
+                    });
 
                 }
                 else
@@ -232,6 +225,7 @@ static NSString * serverOutTime     = @"请求超时,请稍后重试";
                     if (request.successCompletionBlock) {
                         request.successCompletionBlock(request);
                     }
+                    
                 }
             }
             // 请求超时返回200的情况
