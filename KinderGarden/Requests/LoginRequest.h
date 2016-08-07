@@ -12,6 +12,9 @@
 #define kTagRegisterRequest             @"jgkj/regtuser?"
 #define kTagLoginRequest                @"jgkj/loginUser?"
 
+#define kTagResetPasswordCheckCode      @"jgkj/jgkjGetPassCheck?"
+#define kTagResetPasswordRequest        @"jgkj/jgeditPass?"
+
 @interface LoginRequest : NXBaseRequest
 
 + (void)getRegisterCheckCodeWithPhoneNumber:(NSString *)phone delegate:(id)_delegate;
@@ -19,5 +22,9 @@
 + (void)registerWithUserName:(NSString *)phone password:(NSString *)password code:(NSString *)code delegate:(id)_delegate;
 
 + (void)loginWithUserName:(NSString *)phone password:(NSString *)password delegate:(id)_delegate;
+
++ (void)resetPasswordWithPhone:(NSString *)phone checkCode:(NSString *)code delegate:(id)_delegate;
+
++ (void)resetPasswordWithPhone:(NSString *)phone password:(NSString *)password delegate:(id)_delegate;
 
 @end

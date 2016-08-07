@@ -14,6 +14,13 @@
 
 #define kTagUserKeyWelcomed @"kTagUserKeyWelcomed"
 #define kTagUserKeyToken    @"kTagUserKeyToken"
+
+
+// 用户手机号
+#define kTagUserPhone                   @"kTagUserPhone"
+// 用户id
+#define kTagUserKeyID                   @"kTagUserKeyID"
+
 @interface GFStaticData : NSObject
 
 + (GFStaticData *)defaultDataCenter;

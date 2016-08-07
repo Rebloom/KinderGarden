@@ -8,6 +8,8 @@
 
 #import "BasicViewController.h"
 
+#import "UserRequest.h"
+
 @interface FifthViewController : BasicViewController<UITableViewDataSource,UITableViewDelegate>
 {
     UITableView * infoTableView;

@@ -156,6 +156,11 @@
 		73EC541A1D225FBB0032C754 /* ArticleDetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73EC54181D225FBB0032C754 /* ArticleDetailHeaderView.m */; };
 		73EC541C1D225FD00032C754 /* topImageView.png in Resources */ = {isa = PBXBuildFile; fileRef = 73EC541B1D225FD00032C754 /* topImageView.png */; };
 		77E0F474297B0413BB4F17DF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BC10A5E3A8DC40DBB06E11D /* libPods.a */; };
+		EF2FC6821D56D77200E31139 /* UserRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EF2FC6811D56D77200E31139 /* UserRequest.m */; };
+		EF2FC6851D56E25B00E31139 /* UserCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = EF2FC6841D56E25B00E31139 /* UserCenter.m */; };
+		EF2FC6881D56EEED00E31139 /* ClassRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EF2FC6871D56EEED00E31139 /* ClassRequest.m */; };
+		EF2FC68B1D56F45A00E31139 /* PublicRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EF2FC68A1D56F45A00E31139 /* PublicRequest.m */; };
+		EF451CD51D5758080038DFFD /* CourseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EF451CD41D5758080038DFFD /* CourseRequest.m */; };
 		EF65D4861CEAC42F00463441 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EF65D4851CEAC42F00463441 /* main.m */; };
 		EF65D4891CEAC42F00463441 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF65D4881CEAC42F00463441 /* AppDelegate.m */; };
 		EF65D48C1CEAC42F00463441 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF65D48B1CEAC42F00463441 /* ViewController.m */; };
@@ -472,6 +477,16 @@
 		73EC54181D225FBB0032C754 /* ArticleDetailHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleDetailHeaderView.m; sourceTree = "<group>"; };
 		73EC541B1D225FD00032C754 /* topImageView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topImageView.png; sourceTree = "<group>"; };
 		8778DCFCDBE316D039C62A29 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		EF2FC6801D56D77200E31139 /* UserRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserRequest.h; sourceTree = "<group>"; };
+		EF2FC6811D56D77200E31139 /* UserRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserRequest.m; sourceTree = "<group>"; };
+		EF2FC6831D56E25B00E31139 /* UserCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserCenter.h; path = KinderGarden/Requests/UserCenter.h; sourceTree = SOURCE_ROOT; };
+		EF2FC6841D56E25B00E31139 /* UserCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserCenter.m; path = KinderGarden/Requests/UserCenter.m; sourceTree = SOURCE_ROOT; };
+		EF2FC6861D56EEED00E31139 /* ClassRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassRequest.h; sourceTree = "<group>"; };
+		EF2FC6871D56EEED00E31139 /* ClassRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassRequest.m; sourceTree = "<group>"; };
+		EF2FC6891D56F45A00E31139 /* PublicRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicRequest.h; sourceTree = "<group>"; };
+		EF2FC68A1D56F45A00E31139 /* PublicRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicRequest.m; sourceTree = "<group>"; };
+		EF451CD31D5758080038DFFD /* CourseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseRequest.h; sourceTree = "<group>"; };
+		EF451CD41D5758080038DFFD /* CourseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseRequest.m; sourceTree = "<group>"; };
 		EF65D4811CEAC42F00463441 /* KinderGarden.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KinderGarden.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF65D4851CEAC42F00463441 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EF65D4871CEAC42F00463441 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -1198,6 +1213,8 @@
 		EFA3BFAF1CEBE69A00724058 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EF2FC6831D56E25B00E31139 /* UserCenter.h */,
+				EF2FC6841D56E25B00E31139 /* UserCenter.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1293,6 +1310,14 @@
 			children = (
 				EFF9817D1D55BBFC005043BC /* LoginRequest.h */,
 				EFF9817E1D55BBFC005043BC /* LoginRequest.m */,
+				EF2FC6801D56D77200E31139 /* UserRequest.h */,
+				EF2FC6811D56D77200E31139 /* UserRequest.m */,
+				EF2FC6861D56EEED00E31139 /* ClassRequest.h */,
+				EF2FC6871D56EEED00E31139 /* ClassRequest.m */,
+				EF2FC6891D56F45A00E31139 /* PublicRequest.h */,
+				EF2FC68A1D56F45A00E31139 /* PublicRequest.m */,
+				EF451CD31D5758080038DFFD /* CourseRequest.h */,
+				EF451CD41D5758080038DFFD /* CourseRequest.m */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -1368,7 +1393,7 @@
 				TargetAttributes = {
 					EF65D4801CEAC42F00463441 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = P36C9Q8TAF;
+						DevelopmentTeam = 6WBU34ZMWD;
 					};
 				};
 			};
@@ -1647,13 +1672,16 @@
 				EFA2BDB41D0CE9DE000D1EF2 /* DataManager.m in Sources */,
 				7327FC6E1CEC036300C88F38 /* BasicViewController.m in Sources */,
 				EFA2BDB71D0CE9DE000D1EF2 /* VideoModel.m in Sources */,
+				EF2FC6851D56E25B00E31139 /* UserCenter.m in Sources */,
 				EFA3BFCC1CEBE69A00724058 /* NXRequestManager.m in Sources */,
 				730ED0451D1A5F5B00EA93C3 /* AddTeatcherViewController.m in Sources */,
 				7327FC711CEC036300C88F38 /* WelcomeViewController.m in Sources */,
 				7327FC701CEC036300C88F38 /* RootViewController.m in Sources */,
 				EFA2BDCB1D0CE9DE000D1EF2 /* UIViewExt.m in Sources */,
+				EF2FC6881D56EEED00E31139 /* ClassRequest.m in Sources */,
 				EFA3BFCB1CEBE69A00724058 /* NXNetworkConfig.m in Sources */,
 				7327FC8D1CEC063300C88F38 /* SecondViewController.m in Sources */,
+				EF2FC68B1D56F45A00E31139 /* PublicRequest.m in Sources */,
 				F4CA1AA51CECA3B30020BA59 /* FifthCell.m in Sources */,
 				7327FD021CEC4B8D00C88F38 /* RegistViewController.m in Sources */,
 				EFA2BD4D1D0BAD47000D1EF2 /* ChildListViewController.m in Sources */,
@@ -1688,6 +1716,7 @@
 				EFA2BDB51D0CE9DE000D1EF2 /* SidModel.m in Sources */,
 				730C269B1D1CD3A200286B33 /* EditDataViewController.m in Sources */,
 				EFA2BDCA1D0CE9DE000D1EF2 /* THVideoCell.m in Sources */,
+				EF2FC6821D56D77200E31139 /* UserRequest.m in Sources */,
 				7327FC631CEBFF6700C88F38 /* Ivan_UITabBar.m in Sources */,
 				EFF9817F1D55BBFC005043BC /* LoginRequest.m in Sources */,
 				F49ECBAB1D290E8200DA6A3A /* CoursesCell.m in Sources */,
@@ -1698,6 +1727,7 @@
 				EFA3BFE61CEBE8D800724058 /* NSData+AES.m in Sources */,
 				7327FC931CEC064900C88F38 /* FourthViewController.m in Sources */,
 				EFA3BFE81CEBE8D800724058 /* NSString+Reverse.m in Sources */,
+				EF451CD51D5758080038DFFD /* CourseRequest.m in Sources */,
 				F4E8BD9B1CFFD73C0004B8EA /* CountView.m in Sources */,
 				EFA3BFE91CEBE8D800724058 /* Secret.m in Sources */,
 				EFA3BFE51CEBE8D800724058 /* GTMBase64.m in Sources */,
@@ -1832,14 +1862,14 @@
 			baseConfigurationReference = 615FA94E6B284ABB03BFE0EC /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: zhu hua (62B9C8XKWN)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zhu hua (62B9C8XKWN)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: WEI GONG (7ZMCBB6GJL)";
 				INFOPLIST_FILE = KinderGarden/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dbn.nx.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jiugong.kingdergarden;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "341202eb-bd68-4848-b9b6-d9a6a66efa33";
+				PROVISIONING_PROFILE = "33340a76-116a-4571-883e-309615696035";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1849,14 +1879,14 @@
 			baseConfigurationReference = 8778DCFCDBE316D039C62A29 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Da Bei Nong Science and Technology Group, Co., Ltd. (P36C9Q8TAF)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beijing Da Bei Nong Science and Technology Group, Co., Ltd. (P36C9Q8TAF)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: WEI GONG (7ZMCBB6GJL)";
 				INFOPLIST_FILE = KinderGarden/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dbn.nx.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jiugong.kingdergarden;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "341202eb-bd68-4848-b9b6-d9a6a66efa33";
+				PROVISIONING_PROFILE = "33340a76-116a-4571-883e-309615696035";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

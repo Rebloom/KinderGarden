@@ -197,6 +197,10 @@
 {
     if ([request.vrCodeString isEqualToString:kTagLoginRequest])
     {
+        // 保存用户信息
+        [GFStaticData saveObject:[request.attributeDic objectForKey:@"id"] forKey:kTagUserKeyID];
+        [GFStaticData saveObject:[request.attributeDic objectForKey:@"phone"] forKey:kTagUserPhone];
+        
         HomeViewController * HVC = [[HomeViewController alloc] init];
         [HVC setSelectedTab:TabSelectedFirst];
         [HVC showTabbar];

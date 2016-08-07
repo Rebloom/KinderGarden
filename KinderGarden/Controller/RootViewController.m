@@ -31,32 +31,41 @@
 // 判断去哪个页面
 - (void)judgeToViewController
 {
-    // well变量是登陆录过的标识
-#warning 欢迎页面
-//    NSString * well = [GFStaticData getObjectForKey:kTagUserKeyWelcomed];
-    NSString * token = [GFStaticData getObjectForKey:kTagUserKeyToken];
-//    if (well)
-//    {
-        if (token)
-        {
-            if (token.length)
-            {
-                [self performSelector:@selector(toHomeViewController) withObject:nil afterDelay:.5];
-            }
-            else
-            {
-                [self performSelector:@selector(toLoginViewController) withObject:nil afterDelay:.5];
-            }
-        }
-        else
-        {
-            [self performSelector:@selector(toLoginViewController) withObject:nil afterDelay:.5];
-        }
-//    }
-//    else
-//    {
-//        [self performSelector:@selector(toWelcomeViewController) withObject:nil afterDelay:.5];
-//    }
+    if ([GFStaticData getObjectForKey:kTagUserKeyID])
+    {
+        [self performSelector:@selector(toHomeViewController) withObject:nil afterDelay:.5];
+    }
+    else
+    {
+        [self performSelector:@selector(toLoginViewController) withObject:nil afterDelay:.5];
+    }
+    
+//    // well变量是登陆录过的标识
+//#warning 欢迎页面
+////    NSString * well = [GFStaticData getObjectForKey:kTagUserKeyWelcomed];
+//    NSString * token = [GFStaticData getObjectForKey:kTagUserKeyToken];
+////    if (well)
+////    {
+//        if (token)
+//        {
+//            if (token.length)
+//            {
+//                [self performSelector:@selector(toHomeViewController) withObject:nil afterDelay:.5];
+//            }
+//            else
+//            {
+//                [self performSelector:@selector(toLoginViewController) withObject:nil afterDelay:.5];
+//            }
+//        }
+//        else
+//        {
+//            [self performSelector:@selector(toLoginViewController) withObject:nil afterDelay:.5];
+//        }
+////    }
+////    else
+////    {
+////        [self performSelector:@selector(toWelcomeViewController) withObject:nil afterDelay:.5];
+////    }
 }
 
 - (void)viewDidLoad

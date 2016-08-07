@@ -46,5 +46,29 @@
     [request start];
 }
 
++ (void)resetPasswordWithPhone:(NSString *)phone checkCode:(NSString *)code delegate:(id)_delegate
+{
+    LoginRequest * request = [[LoginRequest alloc] init];
+    request.vrCodeString = kTagResetPasswordCheckCode;
+    request.delegate = _delegate;
+    
+    [request.params setObject:phone forKey:@"phone"];
+    [request.params setObject:code forKey:@"phoneCode"];
+    
+    [request start];
+}
+
++ (void)resetPasswordWithPhone:(NSString *)phone password:(NSString *)password delegate:(id)_delegate
+{
+    LoginRequest * request = [[LoginRequest alloc] init];
+    request.vrCodeString = kTagResetPasswordRequest;
+    request.delegate = _delegate;
+    
+    [request.params setObject:phone forKey:@"phone"];
+    [request.params setObject:password forKey:@"passwd"];
+    
+    [request start];
+}
+
 
 @end

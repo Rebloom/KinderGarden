@@ -62,7 +62,6 @@
 #define kTagShowTabbarNoti              @"kTagShowTabbarNoti"
 #define kTagHideTabbarNoti              @"kTagHideTabbarNoti"
 
-#define kTagUserPhone                   @"kTagUserPhone"
 
 #endif /* NXMacro_h */
 

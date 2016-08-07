@@ -217,7 +217,7 @@ static NSString * serverOutTime     = @"请求超时,请稍后重试";
                 else
                 {
                     // 正常请求拿到数据放回request准备好的容器
-                    request.attributeDic = [[back objectForKey:@"d"] objectForKey:@"attrs"];
+                    request.attributeDic = [back objectForKey:@"obj"];
                     request.domainDic = [[back objectForKey:@"d"] objectForKey:@"domains"];
                     if (request.delegate && [request.delegate respondsToSelector:@selector(nxRequestFinished:)]) {
                         [request.delegate nxRequestFinished:request];

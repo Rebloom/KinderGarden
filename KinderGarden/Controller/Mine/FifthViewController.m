@@ -45,6 +45,18 @@
     [self createEditBtn];
     [self createTableView];
     [self createUI];
+    
+    [self requestTeacherInfo];
+}
+
+- (void)requestTeacherInfo
+{
+    [UserRequest requestTeacherInfoWithDelegate:self];
+}
+
+- (void)nxRequestFinished:(NXBaseRequest *)request
+{
+    NSLog(@"request back is %@",request.attributeDic);
 }
 
 - (void)createTableView
