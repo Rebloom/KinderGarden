@@ -159,6 +159,10 @@
 		EF2FC6881D56EEED00E31139 /* ClassRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EF2FC6871D56EEED00E31139 /* ClassRequest.m */; };
 		EF2FC68B1D56F45A00E31139 /* PublicRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EF2FC68A1D56F45A00E31139 /* PublicRequest.m */; };
 		EF451CD51D5758080038DFFD /* CourseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EF451CD41D5758080038DFFD /* CourseRequest.m */; };
+		EF451CE41D5F96DD0038DFFD /* NSObject+AssertNilValue.m in Sources */ = {isa = PBXBuildFile; fileRef = EF451CE31D5F96DD0038DFFD /* NSObject+AssertNilValue.m */; };
+		EF451CE71D5F97120038DFFD /* NSMutableDictionary+AssertNilValue.m in Sources */ = {isa = PBXBuildFile; fileRef = EF451CE61D5F97120038DFFD /* NSMutableDictionary+AssertNilValue.m */; };
+		EF4A24741D604C15009AD380 /* DetailUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF4A24731D604C15009AD380 /* DetailUserInfoViewController.m */; };
+		EF4A24771D60AD33009AD380 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF4A24761D60AD33009AD380 /* MainViewController.m */; };
 		EF65D4861CEAC42F00463441 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EF65D4851CEAC42F00463441 /* main.m */; };
 		EF65D4891CEAC42F00463441 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF65D4881CEAC42F00463441 /* AppDelegate.m */; };
 		EF65D48C1CEAC42F00463441 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF65D48B1CEAC42F00463441 /* ViewController.m */; };
@@ -485,6 +489,14 @@
 		EF2FC68A1D56F45A00E31139 /* PublicRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicRequest.m; sourceTree = "<group>"; };
 		EF451CD31D5758080038DFFD /* CourseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseRequest.h; sourceTree = "<group>"; };
 		EF451CD41D5758080038DFFD /* CourseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseRequest.m; sourceTree = "<group>"; };
+		EF451CE21D5F96DD0038DFFD /* NSObject+AssertNilValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+AssertNilValue.h"; sourceTree = "<group>"; };
+		EF451CE31D5F96DD0038DFFD /* NSObject+AssertNilValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AssertNilValue.m"; sourceTree = "<group>"; };
+		EF451CE51D5F97120038DFFD /* NSMutableDictionary+AssertNilValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+AssertNilValue.h"; sourceTree = "<group>"; };
+		EF451CE61D5F97120038DFFD /* NSMutableDictionary+AssertNilValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+AssertNilValue.m"; sourceTree = "<group>"; };
+		EF4A24721D604C15009AD380 /* DetailUserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailUserInfoViewController.h; sourceTree = "<group>"; };
+		EF4A24731D604C15009AD380 /* DetailUserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailUserInfoViewController.m; sourceTree = "<group>"; };
+		EF4A24751D60AD33009AD380 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		EF4A24761D60AD33009AD380 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		EF65D4811CEAC42F00463441 /* KinderGarden.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KinderGarden.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF65D4851CEAC42F00463441 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EF65D4871CEAC42F00463441 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -790,6 +802,8 @@
 			children = (
 				7327FC881CEC062600C88F38 /* FirstViewController.h */,
 				7327FC891CEC062600C88F38 /* FirstViewController.m */,
+				EF4A24751D60AD33009AD380 /* MainViewController.h */,
+				EF4A24761D60AD33009AD380 /* MainViewController.m */,
 			);
 			path = KinderGarden;
 			sourceTree = "<group>";
@@ -821,6 +835,8 @@
 				730ED0441D1A5F5B00EA93C3 /* TeatcherManageViewController.m */,
 				730C26991D1CD3A200286B33 /* EditDataViewController.h */,
 				730C269A1D1CD3A200286B33 /* EditDataViewController.m */,
+				EF4A24721D604C15009AD380 /* DetailUserInfoViewController.h */,
+				EF4A24731D604C15009AD380 /* DetailUserInfoViewController.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -1254,6 +1270,10 @@
 				7327FC9B1CEC08B600C88F38 /* GFStaticData.m */,
 				7327FD091CEC551C00C88F38 /* NSTimer+Addition.h */,
 				7327FD0A1CEC551C00C88F38 /* NSTimer+Addition.m */,
+				EF451CE21D5F96DD0038DFFD /* NSObject+AssertNilValue.h */,
+				EF451CE31D5F96DD0038DFFD /* NSObject+AssertNilValue.m */,
+				EF451CE51D5F97120038DFFD /* NSMutableDictionary+AssertNilValue.h */,
+				EF451CE61D5F97120038DFFD /* NSMutableDictionary+AssertNilValue.m */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -1683,6 +1703,7 @@
 				7327FC8D1CEC063300C88F38 /* SecondViewController.m in Sources */,
 				EF2FC68B1D56F45A00E31139 /* PublicRequest.m in Sources */,
 				F4CA1AA51CECA3B30020BA59 /* FifthCell.m in Sources */,
+				EF451CE71D5F97120038DFFD /* NSMutableDictionary+AssertNilValue.m in Sources */,
 				7327FD021CEC4B8D00C88F38 /* RegistViewController.m in Sources */,
 				EFA2BD4D1D0BAD47000D1EF2 /* ChildListViewController.m in Sources */,
 				EFA3BFCE1CEBE69A00724058 /* NXGlobalUtil.m in Sources */,
@@ -1696,6 +1717,7 @@
 				730ED0481D1A5F5B00EA93C3 /* TeatcherManageViewController.m in Sources */,
 				7349BF721D1BBCEB00A57243 /* AttentionAndFunsViewController.m in Sources */,
 				F4CA1AAD1CECAC8A0020BA59 /* AccoutSafeViewController.m in Sources */,
+				EF451CE41D5F96DD0038DFFD /* NSObject+AssertNilValue.m in Sources */,
 				7327FC901CEC063E00C88F38 /* ThirdViewController.m in Sources */,
 				EFA3BFE41CEBE8D800724058 /* GFBase64.m in Sources */,
 				730C26AA1D1D22A400286B33 /* MineHostCell.m in Sources */,
@@ -1719,6 +1741,7 @@
 				EF2FC6821D56D77200E31139 /* UserRequest.m in Sources */,
 				7327FC631CEBFF6700C88F38 /* Ivan_UITabBar.m in Sources */,
 				EFF9817F1D55BBFC005043BC /* LoginRequest.m in Sources */,
+				EF4A24771D60AD33009AD380 /* MainViewController.m in Sources */,
 				F49ECBAB1D290E8200DA6A3A /* CoursesCell.m in Sources */,
 				730ED05E1D1A603B00EA93C3 /* ParentsChatViewController.m in Sources */,
 				730C26A41D1D126400286B33 /* YWBCityPickerView.m in Sources */,
@@ -1739,6 +1762,7 @@
 				7327FC8A1CEC062600C88F38 /* FirstViewController.m in Sources */,
 				7327FC651CEBFF6700C88F38 /* UINavBar.m in Sources */,
 				F4CA1ABE1CECC1EC0020BA59 /* SetPasswordViewController.m in Sources */,
+				EF4A24741D604C15009AD380 /* DetailUserInfoViewController.m in Sources */,
 				7327FC9C1CEC08B600C88F38 /* GFStaticData.m in Sources */,
 				EFA3BFD21CEBE69A00724058 /* UIImageView+NXExtend.m in Sources */,
 				EFA3BFCA1CEBE69A00724058 /* NXBaseRequest.m in Sources */,

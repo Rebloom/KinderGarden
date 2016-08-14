@@ -80,6 +80,16 @@
     UIView * footView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, 0.5)];
     footView.backgroundColor = KFontColorE;
     infoTableView.tableFooterView = footView;
+    
+    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(headerViewTapped:)];
+    tap.cancelsTouchesInView = NO;
+    [headView addGestureRecognizer:tap];
+}
+
+- (void)headerViewTapped:(id)sender
+{
+    AccoutInfoViewController * AIVC = [[AccoutInfoViewController alloc] init];
+    [self pushToViewController:AIVC];
 }
 
 -(void)createUI
@@ -102,7 +112,7 @@
     nameLabel.textAlignment = NSTextAlignmentLeft;
     nameLabel.frame = CGRectMake(CGRectGetMaxX(iconView.frame)+6, CGRectGetMinY(iconView.frame)+15, 180, 25);
     nameLabel.textColor = KFontColorA;
-    nameLabel.text = @"娇娇老师";
+    nameLabel.text = @"老师";
     [headView addSubview:nameLabel];
     
     if (!phoneLabel)
@@ -113,7 +123,7 @@
     phoneLabel.textAlignment = NSTextAlignmentLeft;
     phoneLabel.frame = CGRectMake(CGRectGetMaxX(iconView.frame)+6, CGRectGetMaxY(nameLabel.frame), 180, 20);
     phoneLabel.textColor = KFontColorA;
-    phoneLabel.text = @"手机号：15112345678";
+    phoneLabel.text = @"手机号";
     [headView addSubview:phoneLabel];
 }
 
@@ -124,7 +134,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 6;
+    return 5;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -136,7 +146,7 @@
     {
         cell = [[FifthCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
     }
-    NSArray * titleArr = @[@"账号信息",@"完善资料",@"学校信息",@"父母圈",@"设置",@"家长咨询"];
+    NSArray * titleArr = @[@"账号信息",@"学校信息",@"父母圈",@"设置",@"家长咨询"];
     
     cell.nameLabel.text = [titleArr objectAtIndex:indexPath.row];
     
@@ -153,18 +163,17 @@
     [infoTableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.row == 0)
     {
-        AccoutInfoViewController * AIVC = [[AccoutInfoViewController alloc] init];
-        [self pushToViewController:AIVC];
-    }
-    else if (indexPath.row == 1)
-    {
         EditDataViewController * EDVC = [[EditDataViewController alloc] init];
         [self pushToViewController:EDVC];
     }
-    else if (indexPath.row == 2)
+    else if (indexPath.row == 1)
     {
         SchoolInfoViewController * SIVC = [[SchoolInfoViewController alloc] init];
         [self pushToViewController:SIVC];
+    }
+    else if (indexPath.row == 2)
+    {
+
     }
     else if (indexPath.row == 3)
     {

@@ -130,4 +130,15 @@
     [request start];
 }
 
++ (void)getQiniuTokenWithImageName:(NSString *)name delegate:(id)_delegate
+{
+    PublicRequest * request = [[PublicRequest alloc] init];
+    request.vrCodeString = kTagRequestQNToken;
+    request.delegate = _delegate;
+    
+    [request.params setObject:name forKey:@"bucketname"];
+    
+    [request start];
+}
+
 @end

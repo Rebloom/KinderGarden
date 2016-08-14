@@ -21,6 +21,8 @@
 
 #import "AFNetworking.h"
 
+#import "NSMutableDictionary+AssertNilValue.h"
+
 // 宏定义Restful API的常用请求方法
 typedef NS_ENUM(NSInteger, NXRequestMethod)
 {

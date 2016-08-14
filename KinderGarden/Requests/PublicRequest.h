@@ -29,6 +29,9 @@
 // 父母圈发帖
 #define kTagParrentPublishRequest       @"/parentTopic/save?"
 
+// 请求七牛token
+#define kTagRequestQNToken              @"/jgkj/getQiniuToken?"
+
 @interface PublicRequest : NXBaseRequest
 
 + (void)publishPublicInfoWithTitle:(NSString *)title bannerImage:(NSString *)bannerImage content:(NSString *)announcement range:(NSString *)selectrange images:(NSMutableArray *)images videoUrl:(NSString *)videoUrl operatePersonID:(NSString *)personID delegate:(id)_delegate;
@@ -40,5 +43,7 @@
 + (void)shareArticleWithArticleID:(NSString *)articleID operateID:(NSString *)personID role:(NSString *)role shareType:(NSString *)type sourceType:(NSString *)sourceType delegate:(id)_delegate;\
 
 + (void)praiseWithOurID:(NSString *)outID operateID:(NSString *)personID praiseType:(NSString *)type delegate:(id)_delegate;
+
++ (void)getQiniuTokenWithImageName:(NSString *)name delegate:(id)_delegate;
 
 @end
