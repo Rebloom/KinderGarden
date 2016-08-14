@@ -14,5 +14,9 @@
 #import "CoursesViewController.h"
 
 @interface ThirdViewController : BasicViewController <TakePhotoViewDelegate>
+{
+    UIImageView  * mainView;
+    
+}
 
 @end

@@ -9,154 +9,104 @@
 #import "ThirdViewController.h"
 #import <Accelerate/Accelerate.h>
 
-#define EQULEWIDTH   90
 @interface ThirdViewController ()
 
 @end
 
 @implementation ThirdViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    [self createRound];
+- (void)createMyAnounce
+{
+    UIButton * myAnounceBtn = [[UIButton alloc] init];
+    myAnounceBtn.backgroundColor = [UIColor clearColor];
+    myAnounceBtn.titleLabel.font = NormalFontWithSize(14);
+    myAnounceBtn.frame = CGRectMake(screenWidth-70, 25, 60, 30);
+    [myAnounceBtn setTitle:@"我的发布" forState:UIControlStateNormal];
+    [myAnounceBtn setTitleColor:KFontColorA forState:UIControlStateNormal];
+    [myAnounceBtn addTarget:self action:@selector(myAnounceBtnOnClick) forControlEvents:UIControlEventTouchUpInside];
+    [headerView addSubview:myAnounceBtn];
 }
 
-- (void)createRound
+- (void)myAnounceBtnOnClick
 {
-    //背景图
-    UIImageView * iamgeView = [[UIImageView alloc] init];
-    iamgeView.frame = CGRectMake(0, 0, screenWidth, screenHeight);
-    CGRect rect1 = CGRectMake(0, 0, screenWidth*2, screenHeight*2);
-    UIImage * image2 = [UIImage imageWithCGImage:CGImageCreateWithImageInRect([[UIImage imageNamed:@"backImage.jpg"] CGImage], rect1)];
-    iamgeView.image = [self blurryImage:image2 withBlurLevel:0.8];
-    [self.view addSubview:iamgeView];
+    NSLog(@"我的发布");
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
     
-    UIImageView * bgView = [[UIImageView alloc] init];
-    bgView.image = [UIImage imageNamed:@"bgPic"];
-    bgView.frame = CGRectMake(0, 0, screenWidth, screenHeight);
-    [iamgeView addSubview:bgView];
+    [headerView loadComponentsWithTitle:@"选择发布类别" withTitleColor:KFontColorA];
+    [self createMyAnounce];
+    [self createUI];
+}
+
+- (void)createUI
+{
+    NSArray * titleArr = @[@"宝宝秀",@"发布通知",@"饮食",@"课程表",@"父母圈",@"宝宝档案",@"聊天"];
+    NSArray * picArr = @[@"babyShow",@"anounce",@"diet",@"course",@"FMChat",@"babyFile",@"chat"];
     
-    UIImageView * roundView = [[UIImageView alloc] init];
-    roundView.clipsToBounds = YES;
-    roundView.frame = CGRectMake(10,screenHeight/2-screenWidth/2, screenWidth-20, screenWidth-20);
-    roundView.layer.masksToBounds = YES;
-    roundView.layer.cornerRadius = (screenWidth-20)/2;
-    roundView.backgroundColor = [@"#d5d4fb".color colorWithAlphaComponent:0.3];
-    [self.view addSubview:roundView];
-    
-    NSArray * titleArr = @[@"聊天",@"问答",@"发布通知",@"宝宝档案",@"父母圈",@"课程",@"宝宝秀"];
-    NSArray * picArr = @[@"chat",@"ask",@"anounce",@"babyFile",@"FMChat",@"course",@"babyShow"];
-    for (int i = 0; i<7; i++)
+    if(!mainView)
+    {
+        mainView = [[UIImageView alloc] init];
+    }
+    mainView.backgroundColor = [@"e4e5e7".color colorWithAlphaComponent:0.4];
+    mainView.frame = CGRectMake(0, 64, screenWidth, screenHeight-64);
+    mainView.userInteractionEnabled = YES;
+    [self.view addSubview:mainView];
+
+    for (int i =0; i<7; i++)
     {
         UIButton * cheakBtn = [[UIButton alloc] init];
         cheakBtn.tag = 1000 +i;
-        cheakBtn.layer.cornerRadius = EQULEWIDTH/2;
-        cheakBtn.layer.masksToBounds = YES;
-        cheakBtn.userInteractionEnabled = YES;
         [cheakBtn setBackgroundImage:[[UIColor clearColor] image] forState:UIControlStateNormal];
         [cheakBtn addTarget:self action:@selector(cheakBtnOnClick:) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:cheakBtn];
-    
+        [mainView addSubview:cheakBtn];
+        
         UIImageView * imageView = [[UIImageView alloc] init];
         imageView.image = [UIImage imageNamed:[picArr objectAtIndex:i]];
         [cheakBtn addSubview:imageView];
-
-        if(i == 0)
-        {
-            cheakBtn.frame = CGRectMake(CGRectGetWidth(roundView.frame)/2-45+CGRectGetMinX(roundView.frame), 0+CGRectGetMinY(roundView.frame), EQULEWIDTH, EQULEWIDTH);
-            imageView.frame = CGRectMake((CGRectGetWidth(cheakBtn.frame)-54)/2, (CGRectGetHeight(cheakBtn.frame)-43)/2, 54, 43);
-
-        }
-        else if (i == 1)
-        {
-            cheakBtn.frame = CGRectMake(CGRectGetWidth(roundView.frame)-105+CGRectGetMinX(roundView.frame), 65+CGRectGetMinY(roundView.frame), EQULEWIDTH, EQULEWIDTH);
-            imageView.frame = CGRectMake((CGRectGetWidth(cheakBtn.frame)-50)/2, (CGRectGetHeight(cheakBtn.frame)-50)/2, 50, 50);
-        }
-        else if (i == 2)
-        {
-            if (iPhone5||iPhone4s)
-            {
-                cheakBtn.frame = CGRectMake(CGRectGetWidth(roundView.frame)-105+CGRectGetMinX(roundView.frame), 160+CGRectGetMinY(roundView.frame), EQULEWIDTH, EQULEWIDTH);
-            }
-            else if(iPhone6)
-            {
-                cheakBtn.frame = CGRectMake(CGRectGetWidth(roundView.frame)-105+CGRectGetMinX(roundView.frame), 180+CGRectGetMinY(roundView.frame), EQULEWIDTH, EQULEWIDTH);
-            }
-            else if(iPhone6Plus)
-            {
-                cheakBtn.frame = CGRectMake(CGRectGetWidth(roundView.frame)-105+CGRectGetMinX(roundView.frame), 220+CGRectGetMinY(roundView.frame), EQULEWIDTH, EQULEWIDTH);
-            }
-            else
-            {
-                 cheakBtn.frame = CGRectMake(CGRectGetWidth(roundView.frame)-105+CGRectGetMinX(roundView.frame), 190+CGRectGetMinY(roundView.frame), EQULEWIDTH, EQULEWIDTH);
-            }
-            imageView.frame = CGRectMake((CGRectGetWidth(cheakBtn.frame)-43)/2, (CGRectGetHeight(cheakBtn.frame)-45)/2, 43, 45);
-        }
-        else if (i == 3)
-        {
-            cheakBtn.frame = CGRectMake(CGRectGetWidth(roundView.frame)/2-45+CGRectGetMinX(roundView.frame), CGRectGetHeight(roundView.frame)-100+CGRectGetMinY(roundView.frame), EQULEWIDTH, EQULEWIDTH);
-            imageView.frame = CGRectMake((CGRectGetWidth(cheakBtn.frame)-44)/2, (CGRectGetHeight(cheakBtn.frame)-46)/2, 44, 46);
-        }
-        else if (i == 4)
-        {
-            if (iPhone5||iPhone4s)
-            {
-                cheakBtn.frame = CGRectMake(15+CGRectGetMinX(roundView.frame), 160+CGRectGetMinY(roundView.frame), EQULEWIDTH, EQULEWIDTH);
-            }
-            else if(iPhone6)
-            {
-                cheakBtn.frame = CGRectMake(15+CGRectGetMinX(roundView.frame), 180+CGRectGetMinY(roundView.frame), EQULEWIDTH, EQULEWIDTH);
-            }
-            else if(iPhone6Plus)
-            {
-                cheakBtn.frame = CGRectMake(15+CGRectGetMinX(roundView.frame), 220+CGRectGetMinY(roundView.frame), EQULEWIDTH, EQULEWIDTH);
-            }
-            else
-            {
-                cheakBtn.frame = CGRectMake(15+CGRectGetMinX(roundView.frame), 190+CGRectGetMinY(roundView.frame), EQULEWIDTH, EQULEWIDTH);
-            }
-            imageView.frame = CGRectMake((CGRectGetWidth(cheakBtn.frame)-45)/2, (CGRectGetHeight(cheakBtn.frame)-45)/2,45, 45);
-        }
-        else if (i == 5)
-        {
-            cheakBtn.frame = CGRectMake(15+CGRectGetMinX(roundView.frame), 65+CGRectGetMinY(roundView.frame), EQULEWIDTH, EQULEWIDTH);
-            imageView.frame = CGRectMake((CGRectGetWidth(cheakBtn.frame)-55)/2, (CGRectGetHeight(cheakBtn.frame)-45)/2, 55, 45);
-        }
-        else if (i == 6)
-        {
-            cheakBtn.frame = CGRectMake(CGRectGetWidth(roundView.frame)/2-45+CGRectGetMinX(roundView.frame), CGRectGetHeight(roundView.frame)/2-45+CGRectGetMinY(roundView.frame), EQULEWIDTH, EQULEWIDTH);
-            imageView.frame = CGRectMake((CGRectGetWidth(cheakBtn.frame)-45)/2, (CGRectGetHeight(cheakBtn.frame)-40)/2, 45, 40);
-            [cheakBtn setBackgroundImage:[@"#817fd1".color image] forState:UIControlStateNormal];
-        }
         
         UILabel * titleLabel = [[UILabel alloc] init];
         titleLabel.text = [titleArr objectAtIndex:i];
-        titleLabel.textColor = KFontColorA;
+        titleLabel.textColor = KFontColorC;
         titleLabel.textAlignment = NSTextAlignmentCenter;
         titleLabel.font = NormalFontWithSize(13);
-        titleLabel.frame = CGRectMake(0, CGRectGetMaxY(imageView.frame), CGRectGetWidth(cheakBtn.frame), 20);
         [cheakBtn addSubview:titleLabel];
+        
+        if(i <4)
+        {
+            cheakBtn.frame = CGRectMake(i*(screenWidth/4),0,screenWidth/4,100);
+            imageView.frame = CGRectMake((screenWidth/4-46)/2,20 ,46, 46);
+            titleLabel.frame = CGRectMake(0, CGRectGetMaxY(imageView.frame)+5, CGRectGetWidth(cheakBtn.frame), 20);
+        }
+        else
+        {
+            cheakBtn.frame = CGRectMake((i-4)*(screenWidth/4),100,screenWidth/4,100);
+            imageView.frame = CGRectMake((screenWidth/4-46)/2,20 ,46, 46);
+            titleLabel.frame = CGRectMake(0, CGRectGetMaxY(imageView.frame)+5, CGRectGetWidth(cheakBtn.frame), 20);
+        }
     }
- }
+}
 
 - (void)cheakBtnOnClick:(UIButton*)sender
 {
     if (sender.tag == 1000)
     {
-        NSLog(@"聊天");
+        BabyShowViewController * BSVC = [[BabyShowViewController alloc] init];
+        [self pushToViewController:BSVC];
     }
     else if (sender.tag == 1001)
     {
-        NSLog(@"问答");
+        NSLog(@"发布通知");
     }
     else if (sender.tag == 1002)
     {
-        NSLog(@"发布通知");
+       NSLog(@"饮食");
     }
     else if (sender.tag == 1003)
     {
-        ChildListViewController * CLVC = [[ChildListViewController alloc] init];
-        [self pushToViewController:CLVC];
+        CoursesViewController * CVC = [[CoursesViewController alloc] init];
+        [self pushToViewController:CVC];
     }
     else if (sender.tag == 1004)
     {
@@ -164,13 +114,13 @@
     }
     else if (sender.tag == 1005)
     {
-        CoursesViewController * CVC = [[CoursesViewController alloc] init];
-        [self pushToViewController:CVC];
+        ChildListViewController * CLVC = [[ChildListViewController alloc] init];
+        [self pushToViewController:CLVC];
     }
+
     else if (sender.tag == 1006)
     {
-        BabyShowViewController * BSVC = [[BabyShowViewController alloc] init];
-        [self pushToViewController:BSVC];
+        NSLog(@"聊天");
     }
 }
 
