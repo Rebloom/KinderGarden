@@ -8,13 +8,15 @@
 
 #import "BasicViewController.h"
 
-@interface AccoutInfoViewController : BasicViewController<UITableViewDataSource,UITableViewDelegate>
+@interface AccoutInfoViewController : BasicViewController<UITableViewDataSource,UITableViewDelegate,UIActionSheetDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 {
     UITableView * infoTableView;
     UIImageView * headView;
     UIImageView * iconView;
     UILabel * nameLabel;
     UILabel * phoneLabel;
+    UIImagePickerController * imagePicker;
+    UIButton * photoBtn;
 }
 
 @end

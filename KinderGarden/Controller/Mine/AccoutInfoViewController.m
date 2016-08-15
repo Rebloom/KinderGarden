@@ -44,6 +44,7 @@
     {
         headView = [[UIImageView alloc] init];
     }
+    headView.userInteractionEnabled = YES;
     headView.frame = CGRectMake(0, 0, screenWidth, 170);
     CGRect rect1 = CGRectMake(0, 0, screenWidth, 170);
     UIImage * image2 = [UIImage imageWithCGImage:CGImageCreateWithImageInRect([[UIImage imageNamed:@"backImage.jpg"] CGImage], rect1)];
@@ -67,6 +68,15 @@
     iconView.layer.masksToBounds = YES;
     [headView addSubview:iconView];
     
+    if (!photoBtn)
+    {
+        photoBtn = [[UIButton alloc]init];
+    }
+    photoBtn.backgroundColor = [UIColor clearColor];
+    photoBtn.frame = CGRectMake(9, 70, 75, 75);
+    [photoBtn addTarget:self action:@selector(photoBtnOnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [headView addSubview:photoBtn];
+    
     if (!nameLabel)
     {
         nameLabel = [[UILabel alloc] init];
@@ -88,6 +98,11 @@
     phoneLabel.textColor = KFontColorA;
     phoneLabel.text = @"手机号：15112345678";
     [headView addSubview:phoneLabel];
+}
+
+- (void)photoBtnOnClick:(UIButton*)sender
+{
+    [self takePhoto];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -148,6 +163,73 @@
     {
         
     }
+}
+
+//更换头像
+- (void)takePhoto
+{
+    UIActionSheet * sheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"拍照",@"从手机相册选择", nil];
+    [sheet showInView:self.view];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSUInteger sourceType = 0;
+    
+    // 判断是否支持相机
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+    {
+        if (buttonIndex == 0)
+        {
+            sourceType = UIImagePickerControllerSourceTypeCamera;
+        }
+        else if (buttonIndex == 1)
+        {
+            sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        }
+        else
+        {
+            return;
+        }
+    }
+    else
+    {
+        if (buttonIndex == 0)
+        {
+            sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+        }
+        else if (buttonIndex == 1)
+        {
+            sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+        }
+        else
+        {
+            return;
+        }
+    }
+    
+    // 跳转到相机或相册页面
+    if (!imagePicker)
+    {
+        imagePicker = [[UIImagePickerController alloc] init];
+    }
+    imagePicker.delegate = self;
+    imagePicker.allowsEditing = YES;
+    imagePicker.sourceType = sourceType;
+    [self presentViewController:imagePicker animated:YES completion:^{}];
+    
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    [picker dismissViewControllerAnimated:YES completion:^{}];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
 }
 
 //加模糊效果，image是图片，blur是模糊度

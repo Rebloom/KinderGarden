@@ -24,7 +24,7 @@
     UIButton * editBtn = [[UIButton alloc] init];
     editBtn.backgroundColor = [UIColor clearColor];
     editBtn.titleLabel.font = NormalFontWithSize(14);
-    editBtn.frame = CGRectMake(screenWidth-60, 20, 40, 40);
+    editBtn.frame = CGRectMake(screenWidth-50, 25, 40, 35);
     [editBtn setTitle:@"编辑" forState:UIControlStateNormal];
     [editBtn setTitleColor:KFontColorA forState:UIControlStateNormal];
     [editBtn addTarget:self action:@selector(editBtnOnClick) forControlEvents:UIControlEventTouchUpInside];
@@ -71,6 +71,7 @@
     {
         headView = [[UIImageView alloc] init];
     }
+    headView.userInteractionEnabled = YES;
     headView.frame = CGRectMake(0, 0, screenWidth, 170);
     CGRect rect1 = CGRectMake(0, 0, screenWidth, 170);
     UIImage * image2 = [UIImage imageWithCGImage:CGImageCreateWithImageInRect([[UIImage imageNamed:@"backImage.jpg"] CGImage], rect1)];
@@ -112,7 +113,7 @@
     nameLabel.textAlignment = NSTextAlignmentLeft;
     nameLabel.frame = CGRectMake(CGRectGetMaxX(iconView.frame)+6, CGRectGetMinY(iconView.frame)+15, 180, 25);
     nameLabel.textColor = KFontColorA;
-    nameLabel.text = @"老师";
+    nameLabel.text = @"娇娇老师";
     [headView addSubview:nameLabel];
     
     if (!phoneLabel)
@@ -123,7 +124,7 @@
     phoneLabel.textAlignment = NSTextAlignmentLeft;
     phoneLabel.frame = CGRectMake(CGRectGetMaxX(iconView.frame)+6, CGRectGetMaxY(nameLabel.frame), 180, 20);
     phoneLabel.textColor = KFontColorA;
-    phoneLabel.text = @"手机号";
+    phoneLabel.text = @"手机号：15143537236";
     [headView addSubview:phoneLabel];
 }
 
@@ -163,8 +164,8 @@
     [infoTableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.row == 0)
     {
-        EditDataViewController * EDVC = [[EditDataViewController alloc] init];
-        [self pushToViewController:EDVC];
+        AccoutInfoViewController * AIVC = [[AccoutInfoViewController alloc] init];
+        [self pushToViewController:AIVC];
     }
     else if (indexPath.row == 1)
     {

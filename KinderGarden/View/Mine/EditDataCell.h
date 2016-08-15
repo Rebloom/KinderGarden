@@ -14,7 +14,6 @@
     UILabel * rightLabel;
     UILabel * lineLabel;
     UIImageView * rightImageView;
-    UIImageView * photoImageView;
     UITextField * rightTextField;
 }
 
@@ -22,7 +21,6 @@
 @property(nonatomic,strong) UILabel * rightLabel;
 @property(nonatomic,strong) UILabel * lineLabel;
 @property(nonatomic,strong) UIImageView * rightImageView;
-@property(nonatomic,strong) UIImageView * photoImageView;
 @property(nonatomic,strong) UITextField * rightTextField;
 
 @end

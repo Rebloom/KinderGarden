@@ -16,7 +16,7 @@
 @synthesize rightLabel;
 @synthesize lineLabel;
 @synthesize rightImageView;
-@synthesize photoImageView;
+@synthesize rightTextField;
 
 - (void)awakeFromNib
 {
@@ -63,13 +63,6 @@
     rightImageView.image = [UIImage imageNamed:@"right"];
     rightImageView.frame = CGRectMake(screenWidth - 20.5, 22.5, 8.5, 15);
     [self addSubview:rightImageView];
-    
-    if (!photoImageView)
-    {
-        photoImageView = [[UIImageView alloc] init];
-    }
-    photoImageView.frame = CGRectMake(screenWidth-80, 10, 40, 40);
-    [self addSubview:photoImageView];
     
     if (!lineLabel)
     {
