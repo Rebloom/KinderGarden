@@ -149,6 +149,7 @@
 		73DD1AD51CEEF8D30059ADAC /* NewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73DD1AD41CEEF8D30059ADAC /* NewsDetailViewController.m */; };
 		73DF6DB21CEC689F00B67BC1 /* AccoutInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73DF6DB11CEC689F00B67BC1 /* AccoutInfoViewController.m */; };
 		73E47B891D61A89C00626AE6 /* SelectClassCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73E47B881D61A89C00626AE6 /* SelectClassCell.m */; };
+		73E47B8C1D61B0C600626AE6 /* EditView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73E47B8B1D61B0C600626AE6 /* EditView.m */; };
 		73EC54111D225F510032C754 /* CoursesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73EC54101D225F510032C754 /* CoursesViewController.m */; };
 		73EC54141D225FB30032C754 /* ArticleDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73EC54131D225FB30032C754 /* ArticleDetailViewController.m */; };
 		73EC54191D225FBB0032C754 /* ArticleDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73EC54161D225FBB0032C754 /* ArticleDetailCell.m */; };
@@ -498,6 +499,8 @@
 		73DF6DB11CEC689F00B67BC1 /* AccoutInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccoutInfoViewController.m; sourceTree = "<group>"; };
 		73E47B871D61A89C00626AE6 /* SelectClassCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectClassCell.h; sourceTree = "<group>"; };
 		73E47B881D61A89C00626AE6 /* SelectClassCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectClassCell.m; sourceTree = "<group>"; };
+		73E47B8A1D61B0C600626AE6 /* EditView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditView.h; sourceTree = "<group>"; };
+		73E47B8B1D61B0C600626AE6 /* EditView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditView.m; sourceTree = "<group>"; };
 		73EC540F1D225F510032C754 /* CoursesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoursesViewController.h; sourceTree = "<group>"; };
 		73EC54101D225F510032C754 /* CoursesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoursesViewController.m; sourceTree = "<group>"; };
 		73EC54121D225FB30032C754 /* ArticleDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleDetailViewController.h; sourceTree = "<group>"; };
@@ -1438,6 +1441,8 @@
 				73F3F1AC1D61682D007A8ACD /* SelectClssView.m */,
 				73E47B871D61A89C00626AE6 /* SelectClassCell.h */,
 				73E47B881D61A89C00626AE6 /* SelectClassCell.m */,
+				73E47B8A1D61B0C600626AE6 /* EditView.h */,
+				73E47B8B1D61B0C600626AE6 /* EditView.m */,
 				F49ECBA91D290E8200DA6A3A /* CoursesCell.h */,
 				F49ECBAA1D290E8200DA6A3A /* CoursesCell.m */,
 			);
@@ -1851,6 +1856,7 @@
 				73F3F1AD1D61682D007A8ACD /* SelectClssView.m in Sources */,
 				73E47B891D61A89C00626AE6 /* SelectClassCell.m in Sources */,
 				730C269E1D1CDDA500286B33 /* EditDataCell.m in Sources */,
+				73E47B8C1D61B0C600626AE6 /* EditView.m in Sources */,
 				EF65D4921CEAC42F00463441 /* KinderGarden.xcdatamodeld in Sources */,
 				EFA3BFD31CEBE69A00724058 /* UILabel+StringFrame.m in Sources */,
 				7349BF061D1B777200A57243 /* ParentHeaderView.m in Sources */,

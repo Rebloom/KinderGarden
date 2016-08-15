@@ -18,6 +18,7 @@
 @synthesize rowNum;
 @synthesize classArr;
 @synthesize delegate;
+
 - (void)dealloc
 {
 }

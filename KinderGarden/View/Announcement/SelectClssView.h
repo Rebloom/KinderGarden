@@ -27,7 +27,6 @@
     NSInteger indexNum;
 }
 
-@property (nonatomic,strong) UIView * bgView;
 @property (nonatomic,strong) UIView * mainView;
 @property (nonatomic,strong) UIButton * hideBtn;
 @property (nonatomic,assign) BOOL isShow;
