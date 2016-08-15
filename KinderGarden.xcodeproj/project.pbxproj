@@ -154,6 +154,31 @@
 		73EC541A1D225FBB0032C754 /* ArticleDetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73EC54181D225FBB0032C754 /* ArticleDetailHeaderView.m */; };
 		73EC541C1D225FD00032C754 /* topImageView.png in Resources */ = {isa = PBXBuildFile; fileRef = 73EC541B1D225FD00032C754 /* topImageView.png */; };
 		77E0F474297B0413BB4F17DF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BC10A5E3A8DC40DBB06E11D /* libPods.a */; };
+		EF02DC001D60DC480011483A /* banner.png in Resources */ = {isa = PBXBuildFile; fileRef = EF02DBE71D60DC480011483A /* banner.png */; };
+		EF02DC011D60DC480011483A /* 听吧@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF02DBE81D60DC480011483A /* 听吧@2x.png */; };
+		EF02DC021D60DC480011483A /* 听吧@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF02DBE91D60DC480011483A /* 听吧@3x.png */; };
+		EF02DC031D60DC480011483A /* 在线讲堂@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF02DBEA1D60DC480011483A /* 在线讲堂@2x.png */; };
+		EF02DC041D60DC480011483A /* 在线讲堂@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF02DBEB1D60DC480011483A /* 在线讲堂@3x.png */; };
+		EF02DC051D60DC480011483A /* 安全接送@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF02DBEC1D60DC480011483A /* 安全接送@2x.png */; };
+		EF02DC061D60DC480011483A /* 安全接送@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF02DBED1D60DC480011483A /* 安全接送@3x.png */; };
+		EF02DC071D60DC480011483A /* 宝宝档案@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF02DBEE1D60DC480011483A /* 宝宝档案@2x.png */; };
+		EF02DC081D60DC480011483A /* 宝宝档案@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF02DBEF1D60DC480011483A /* 宝宝档案@3x.png */; };
+		EF02DC091D60DC480011483A /* 成长日记@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF02DBF01D60DC480011483A /* 成长日记@2x.png */; };
+		EF02DC0A1D60DC480011483A /* 成长日记@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF02DBF11D60DC480011483A /* 成长日记@3x.png */; };
+		EF02DC0B1D60DC480011483A /* 父母圈@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF02DBF21D60DC480011483A /* 父母圈@2x.png */; };
+		EF02DC0C1D60DC480011483A /* 父母圈@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF02DBF31D60DC480011483A /* 父母圈@3x.png */; };
+		EF02DC0D1D60DC480011483A /* 视频公开课@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF02DBF41D60DC480011483A /* 视频公开课@2x.png */; };
+		EF02DC0E1D60DC480011483A /* 视频公开课@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF02DBF51D60DC480011483A /* 视频公开课@3x.png */; };
+		EF02DC0F1D60DC480011483A /* 课程表@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF02DBF61D60DC480011483A /* 课程表@2x.png */; };
+		EF02DC101D60DC480011483A /* 课程表@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF02DBF71D60DC480011483A /* 课程表@3x.png */; };
+		EF02DC111D60DC480011483A /* 轮播dot.png in Resources */ = {isa = PBXBuildFile; fileRef = EF02DBF81D60DC480011483A /* 轮播dot.png */; };
+		EF02DC121D60DC480011483A /* 轮播dot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF02DBF91D60DC480011483A /* 轮播dot@2x.png */; };
+		EF02DC131D60DC480011483A /* 轮播dot@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF02DBFA1D60DC480011483A /* 轮播dot@3x.png */; };
+		EF02DC141D60DC480011483A /* 轮播dot_激活.png in Resources */ = {isa = PBXBuildFile; fileRef = EF02DBFB1D60DC480011483A /* 轮播dot_激活.png */; };
+		EF02DC151D60DC480011483A /* 轮播dot_激活@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF02DBFC1D60DC480011483A /* 轮播dot_激活@2x.png */; };
+		EF02DC161D60DC480011483A /* 轮播dot_激活@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF02DBFD1D60DC480011483A /* 轮播dot_激活@3x.png */; };
+		EF02DC171D60DC480011483A /* 饮食@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF02DBFE1D60DC480011483A /* 饮食@2x.png */; };
+		EF02DC181D60DC480011483A /* 饮食@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF02DBFF1D60DC480011483A /* 饮食@3x.png */; };
 		EF2FC6821D56D77200E31139 /* UserRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EF2FC6811D56D77200E31139 /* UserRequest.m */; };
 		EF2FC6851D56E25B00E31139 /* UserCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = EF2FC6841D56E25B00E31139 /* UserCenter.m */; };
 		EF2FC6881D56EEED00E31139 /* ClassRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EF2FC6871D56EEED00E31139 /* ClassRequest.m */; };
@@ -479,6 +504,31 @@
 		73EC54181D225FBB0032C754 /* ArticleDetailHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleDetailHeaderView.m; sourceTree = "<group>"; };
 		73EC541B1D225FD00032C754 /* topImageView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topImageView.png; sourceTree = "<group>"; };
 		8778DCFCDBE316D039C62A29 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		EF02DBE71D60DC480011483A /* banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = banner.png; sourceTree = "<group>"; };
+		EF02DBE81D60DC480011483A /* 听吧@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "听吧@2x.png"; sourceTree = "<group>"; };
+		EF02DBE91D60DC480011483A /* 听吧@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "听吧@3x.png"; sourceTree = "<group>"; };
+		EF02DBEA1D60DC480011483A /* 在线讲堂@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "在线讲堂@2x.png"; sourceTree = "<group>"; };
+		EF02DBEB1D60DC480011483A /* 在线讲堂@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "在线讲堂@3x.png"; sourceTree = "<group>"; };
+		EF02DBEC1D60DC480011483A /* 安全接送@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "安全接送@2x.png"; sourceTree = "<group>"; };
+		EF02DBED1D60DC480011483A /* 安全接送@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "安全接送@3x.png"; sourceTree = "<group>"; };
+		EF02DBEE1D60DC480011483A /* 宝宝档案@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "宝宝档案@2x.png"; sourceTree = "<group>"; };
+		EF02DBEF1D60DC480011483A /* 宝宝档案@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "宝宝档案@3x.png"; sourceTree = "<group>"; };
+		EF02DBF01D60DC480011483A /* 成长日记@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "成长日记@2x.png"; sourceTree = "<group>"; };
+		EF02DBF11D60DC480011483A /* 成长日记@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "成长日记@3x.png"; sourceTree = "<group>"; };
+		EF02DBF21D60DC480011483A /* 父母圈@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "父母圈@2x.png"; sourceTree = "<group>"; };
+		EF02DBF31D60DC480011483A /* 父母圈@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "父母圈@3x.png"; sourceTree = "<group>"; };
+		EF02DBF41D60DC480011483A /* 视频公开课@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "视频公开课@2x.png"; sourceTree = "<group>"; };
+		EF02DBF51D60DC480011483A /* 视频公开课@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "视频公开课@3x.png"; sourceTree = "<group>"; };
+		EF02DBF61D60DC480011483A /* 课程表@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "课程表@2x.png"; sourceTree = "<group>"; };
+		EF02DBF71D60DC480011483A /* 课程表@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "课程表@3x.png"; sourceTree = "<group>"; };
+		EF02DBF81D60DC480011483A /* 轮播dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "轮播dot.png"; sourceTree = "<group>"; };
+		EF02DBF91D60DC480011483A /* 轮播dot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "轮播dot@2x.png"; sourceTree = "<group>"; };
+		EF02DBFA1D60DC480011483A /* 轮播dot@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "轮播dot@3x.png"; sourceTree = "<group>"; };
+		EF02DBFB1D60DC480011483A /* 轮播dot_激活.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "轮播dot_激活.png"; sourceTree = "<group>"; };
+		EF02DBFC1D60DC480011483A /* 轮播dot_激活@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "轮播dot_激活@2x.png"; sourceTree = "<group>"; };
+		EF02DBFD1D60DC480011483A /* 轮播dot_激活@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "轮播dot_激活@3x.png"; sourceTree = "<group>"; };
+		EF02DBFE1D60DC480011483A /* 饮食@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "饮食@2x.png"; sourceTree = "<group>"; };
+		EF02DBFF1D60DC480011483A /* 饮食@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "饮食@3x.png"; sourceTree = "<group>"; };
 		EF2FC6801D56D77200E31139 /* UserRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserRequest.h; sourceTree = "<group>"; };
 		EF2FC6811D56D77200E31139 /* UserRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserRequest.m; sourceTree = "<group>"; };
 		EF2FC6831D56E25B00E31139 /* UserCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserCenter.h; path = KinderGarden/Requests/UserCenter.h; sourceTree = SOURCE_ROOT; };
@@ -859,6 +909,7 @@
 		7327FCD21CEC38DF00C88F38 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				EF02DBE61D60DC480011483A /* MainChannel */,
 				7349BF131D1BB5F700A57243 /* Discovery */,
 				73DD1AB61CEEECA40059ADAC /* Dynamic */,
 				73DD1AB31CEEE5110059ADAC /* Test */,
@@ -1085,6 +1136,38 @@
 				0BC10A5E3A8DC40DBB06E11D /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EF02DBE61D60DC480011483A /* MainChannel */ = {
+			isa = PBXGroup;
+			children = (
+				EF02DBE71D60DC480011483A /* banner.png */,
+				EF02DBE81D60DC480011483A /* 听吧@2x.png */,
+				EF02DBE91D60DC480011483A /* 听吧@3x.png */,
+				EF02DBEA1D60DC480011483A /* 在线讲堂@2x.png */,
+				EF02DBEB1D60DC480011483A /* 在线讲堂@3x.png */,
+				EF02DBEC1D60DC480011483A /* 安全接送@2x.png */,
+				EF02DBED1D60DC480011483A /* 安全接送@3x.png */,
+				EF02DBEE1D60DC480011483A /* 宝宝档案@2x.png */,
+				EF02DBEF1D60DC480011483A /* 宝宝档案@3x.png */,
+				EF02DBF01D60DC480011483A /* 成长日记@2x.png */,
+				EF02DBF11D60DC480011483A /* 成长日记@3x.png */,
+				EF02DBF21D60DC480011483A /* 父母圈@2x.png */,
+				EF02DBF31D60DC480011483A /* 父母圈@3x.png */,
+				EF02DBF41D60DC480011483A /* 视频公开课@2x.png */,
+				EF02DBF51D60DC480011483A /* 视频公开课@3x.png */,
+				EF02DBF61D60DC480011483A /* 课程表@2x.png */,
+				EF02DBF71D60DC480011483A /* 课程表@3x.png */,
+				EF02DBF81D60DC480011483A /* 轮播dot.png */,
+				EF02DBF91D60DC480011483A /* 轮播dot@2x.png */,
+				EF02DBFA1D60DC480011483A /* 轮播dot@3x.png */,
+				EF02DBFB1D60DC480011483A /* 轮播dot_激活.png */,
+				EF02DBFC1D60DC480011483A /* 轮播dot_激活@2x.png */,
+				EF02DBFD1D60DC480011483A /* 轮播dot_激活@3x.png */,
+				EF02DBFE1D60DC480011483A /* 饮食@2x.png */,
+				EF02DBFF1D60DC480011483A /* 饮食@3x.png */,
+			);
+			path = MainChannel;
 			sourceTree = "<group>";
 		};
 		EF65D4781CEAC42F00463441 = {
@@ -1442,17 +1525,21 @@
 			files = (
 				7349BF661D1BB5F700A57243 /* 设置@2x.png in Resources */,
 				EFA2BD501D0BBCB7000D1EF2 /* icon_child@2x.png in Resources */,
+				EF02DC021D60DC480011483A /* 听吧@3x.png in Resources */,
 				73DD1AB91CEEECA40059ADAC /* share@2x.png in Resources */,
 				F4DCFBC41CF0476700FCB8DF /* main@2x.png in Resources */,
 				EFA2BD781D0BEA71000D1EF2 /* icon_write@3x.png in Resources */,
 				7349BF691D1BB5F700A57243 /* 评论@3x.png in Resources */,
 				EFA2BD731D0BEA71000D1EF2 /* icon_leave@2x.png in Resources */,
+				EF02DC051D60DC480011483A /* 安全接送@2x.png in Resources */,
 				7349BF4A1D1BB5F700A57243 /* 向左滑动删除@2x.png in Resources */,
 				F49ECBB91D2918FD00DA6A3A /* 班级未选中@3x.png in Resources */,
 				7349BF431D1BB5F700A57243 /* 个人更多@3x.png in Resources */,
 				7349BF521D1BB5F700A57243 /* 已经关注@2x.png in Resources */,
 				7349BF471D1BB5F700A57243 /* 分享@3x.png in Resources */,
+				EF02DC171D60DC480011483A /* 饮食@2x.png in Resources */,
 				730ED04F1D1A5F7500EA93C3 /* icon_xiajiantou.png in Resources */,
+				EF02DC141D60DC480011483A /* 轮播dot_激活.png in Resources */,
 				EFA2BD6A1D0BEA71000D1EF2 /* icon_baby_archive@3x.png in Resources */,
 				F49ECBB81D2918FD00DA6A3A /* 班级未选中@2x.png in Resources */,
 				7349BF4F1D1BB5F700A57243 /* 定位@3x.png in Resources */,
@@ -1465,6 +1552,7 @@
 				7349BF0D1D1B77B600A57243 /* beauty0.jpg in Resources */,
 				7349BF0F1D1B77B600A57243 /* beauty2.jpg in Resources */,
 				EFA2BD771D0BEA71000D1EF2 /* icon_write@2x.png in Resources */,
+				EF02DC121D60DC480011483A /* 轮播dot@2x.png in Resources */,
 				F4DCFBCF1CF0476700FCB8DF /* select_mine@3x.png in Resources */,
 				73DD1ACA1CEEEFEA0059ADAC /* pinglun@3x.png in Resources */,
 				7349BF6D1D1BB5F700A57243 /* 轮播dot_激活@3x.png in Resources */,
@@ -1481,8 +1569,10 @@
 				732885261CED9636006A5CEC /* babyShow@2x.png in Resources */,
 				730ED0531D1A5F7500EA93C3 /* teatcherChat@2x.png in Resources */,
 				7349BF6F1D1BB5F700A57243 /* 返回@3x.png in Resources */,
+				EF02DC181D60DC480011483A /* 饮食@3x.png in Resources */,
 				7327FCF51CEC38DF00C88F38 /* WX@3x.png in Resources */,
 				EFA2BD8A1D0C1374000D1EF2 /* icon_takePicture@2x.png in Resources */,
+				EF02DC151D60DC480011483A /* 轮播dot_激活@2x.png in Resources */,
 				7349BF481D1BB5F700A57243 /* 加载更多@2x.png in Resources */,
 				7349BF111D1B77B600A57243 /* beauty4.jpg in Resources */,
 				7349BF601D1BB5F700A57243 /* 皇冠@2x.png in Resources */,
@@ -1492,6 +1582,7 @@
 				EFA2BD721D0BEA71000D1EF2 /* icon_group@3x.png in Resources */,
 				730ED0521D1A5F7500EA93C3 /* select@3x.png in Resources */,
 				EFA2BDC31D0CE9DE000D1EF2 /* nonfullscreen@3x.png in Resources */,
+				EF02DC111D60DC480011483A /* 轮播dot.png in Resources */,
 				EFA2BDC91D0CE9DE000D1EF2 /* playcount.png in Resources */,
 				F4DCFBCC1CF0476700FCB8DF /* select_dynamic@2x.png in Resources */,
 				7349BF5D1D1BB5F700A57243 /* 点击关注@3x.png in Resources */,
@@ -1499,6 +1590,7 @@
 				7349BF681D1BB5F700A57243 /* 评论@2x.png in Resources */,
 				73DD1ACC1CEEEFEA0059ADAC /* read@3x.png in Resources */,
 				F4DCFBCE1CF0476700FCB8DF /* select_mine@2x.png in Resources */,
+				EF02DC031D60DC480011483A /* 在线讲堂@2x.png in Resources */,
 				730ED0541D1A5F7500EA93C3 /* teatcherChat@3x.png in Resources */,
 				EFA2BD511D0BBCB7000D1EF2 /* icon_child@3x.png in Resources */,
 				7327FCEB1CEC38DF00C88F38 /* backImage.jpg in Resources */,
@@ -1506,13 +1598,17 @@
 				7349BF5E1D1BB5F700A57243 /* 点赞@2x.png in Resources */,
 				732885201CED9636006A5CEC /* anounce@2x.png in Resources */,
 				EFA2BD751D0BEA71000D1EF2 /* icon_video@2x.png in Resources */,
+				EF02DC161D60DC480011483A /* 轮播dot_激活@3x.png in Resources */,
+				EF02DC091D60DC480011483A /* 成长日记@2x.png in Resources */,
 				73DD1ACD1CEEEFEA0059ADAC /* search@2x.png in Resources */,
 				7349BF541D1BB5F700A57243 /* 推荐达人皇冠@2x.png in Resources */,
 				73DD1AC71CEEEFEA0059ADAC /* nozan@2x.png in Resources */,
 				7327FCEC1CEC38DF00C88F38 /* pwd@2x.png in Resources */,
 				73DD1AC81CEEEFEA0059ADAC /* nozan@3x.png in Resources */,
 				7328852C1CED9636006A5CEC /* course@2x.png in Resources */,
+				EF02DC0E1D60DC480011483A /* 视频公开课@3x.png in Resources */,
 				7349BF621D1BB5F700A57243 /* 看过@2x.png in Resources */,
+				EF02DC0C1D60DC480011483A /* 父母圈@3x.png in Resources */,
 				F4CA1AB81CECB7A60020BA59 /* back@2x.png in Resources */,
 				F49ECBBA1D2918FD00DA6A3A /* 班级选择@2x.png in Resources */,
 				7328852A1CED9636006A5CEC /* chat@2x.png in Resources */,
@@ -1528,6 +1624,7 @@
 				7349BF5F1D1BB5F700A57243 /* 点赞@3x.png in Resources */,
 				EFA2BD6C1D0BEA71000D1EF2 /* icon_baby_chat@3x.png in Resources */,
 				EFA2BD6D1D0BEA71000D1EF2 /* icon_browsed@2x.png in Resources */,
+				EF02DC071D60DC480011483A /* 宝宝档案@2x.png in Resources */,
 				7349BF631D1BB5F700A57243 /* 看过@3x.png in Resources */,
 				7349BF6B1D1BB5F700A57243 /* 轮播dot_未激活@3x.png in Resources */,
 				EFA2BD691D0BEA71000D1EF2 /* icon_baby_archive@2x.png in Resources */,
@@ -1552,8 +1649,10 @@
 				7328852E1CED9636006A5CEC /* FMChat@2x.png in Resources */,
 				7327FCED1CEC38DF00C88F38 /* pwd@3x.png in Resources */,
 				732885251CED9636006A5CEC /* babyFile@3x.png in Resources */,
+				EF02DC0F1D60DC480011483A /* 课程表@2x.png in Resources */,
 				73DD1ACF1CEEEFEA0059ADAC /* shaixuan@2x.png in Resources */,
 				EF65D4941CEAC42F00463441 /* Assets.xcassets in Resources */,
+				EF02DC0D1D60DC480011483A /* 视频公开课@2x.png in Resources */,
 				F4DCFBC31CF0476700FCB8DF /* dynamic@3x.png in Resources */,
 				73EC541C1D225FD00032C754 /* topImageView.png in Resources */,
 				F4DCFBCA1CF0476700FCB8DF /* select_discovery@2x.png in Resources */,
@@ -1568,9 +1667,11 @@
 				F47D4B1D1D603965003E38B2 /* diet@3x.png in Resources */,
 				732885281CED9636006A5CEC /* bgPic 23@3x.png in Resources */,
 				F4CA1AB91CECB7A60020BA59 /* back@3x.png in Resources */,
+				EF02DC081D60DC480011483A /* 宝宝档案@3x.png in Resources */,
 				7349BF4E1D1BB5F700A57243 /* 定位@2x.png in Resources */,
 				EFA2BDBE1D0CE9DE000D1EF2 /* dot@3x.png in Resources */,
 				730DF0B21D2B4E68009C8DA2 /* 课程编辑删除@2x.png in Resources */,
+				EF02DC101D60DC480011483A /* 课程表@3x.png in Resources */,
 				730ED0511D1A5F7500EA93C3 /* select@2x.png in Resources */,
 				EFA2BD6B1D0BEA71000D1EF2 /* icon_baby_chat@2x.png in Resources */,
 				732885241CED9636006A5CEC /* babyFile@2x.png in Resources */,
@@ -1581,6 +1682,7 @@
 				F4DCFBC11CF0476700FCB8DF /* discovery@3x.png in Resources */,
 				7349BF441D1BB5F700A57243 /* 分享2@2x.png in Resources */,
 				EFA2BD701D0BEA71000D1EF2 /* icon_comment@3x.png in Resources */,
+				EF02DC001D60DC480011483A /* banner.png in Resources */,
 				F4CA1AAA1CECA6380020BA59 /* right@3x.png in Resources */,
 				EFA2BDC01D0CE9DE000D1EF2 /* fullscreen@3x.png in Resources */,
 				730ED0501D1A5F7500EA93C3 /* icon_youjiantou.png in Resources */,
@@ -1588,6 +1690,7 @@
 				F4DCFBC51CF0476700FCB8DF /* main@3x.png in Resources */,
 				7327FCF11CEC38DF00C88F38 /* Sina@3x.png in Resources */,
 				7349BF501D1BB5F700A57243 /* 已点赞@2x.png in Resources */,
+				EF02DC061D60DC480011483A /* 安全接送@3x.png in Resources */,
 				EFA2BDB61D0CE9DE000D1EF2 /* video_play_btn_bg@2x.png in Resources */,
 				EFA2BDBB1D0CE9DE000D1EF2 /* close@2x.png in Resources */,
 				7349BF571D1BB5F700A57243 /* 未关注按钮@3x.png in Resources */,
@@ -1601,12 +1704,16 @@
 				7349BF511D1BB5F700A57243 /* 已点赞@3x.png in Resources */,
 				732885271CED9636006A5CEC /* babyShow@3x.png in Resources */,
 				EFA2BDBC1D0CE9DE000D1EF2 /* close@3x.png in Resources */,
+				EF02DC0A1D60DC480011483A /* 成长日记@3x.png in Resources */,
 				F4DCFBC81CF0476700FCB8DF /* select_announce@2x.png in Resources */,
+				EF02DC131D60DC480011483A /* 轮播dot@3x.png in Resources */,
 				EFA2BD711D0BEA71000D1EF2 /* icon_group@2x.png in Resources */,
 				7327FCF21CEC38DF00C88F38 /* user@2x.png in Resources */,
 				7349BF641D1BB5F700A57243 /* 背景图片@2x.png in Resources */,
+				EF02DC0B1D60DC480011483A /* 父母圈@2x.png in Resources */,
 				EFA2BDC71D0CE9DE000D1EF2 /* play@2x.png in Resources */,
 				EFA2BDBF1D0CE9DE000D1EF2 /* fullscreen@2x.png in Resources */,
+				EF02DC041D60DC480011483A /* 在线讲堂@3x.png in Resources */,
 				EFA2BDBA1D0CE9DE000D1EF2 /* clear@2x.png in Resources */,
 				73DD1ACE1CEEEFEA0059ADAC /* search@3x.png in Resources */,
 				EFA2BD671D0BEA71000D1EF2 /* icon_arrow_down@2x.png in Resources */,
@@ -1614,6 +1721,7 @@
 				F49ECBB31D29153100DA6A3A /* 已筛选@3x.png in Resources */,
 				7349BF6A1D1BB5F700A57243 /* 轮播dot_未激活@2x.png in Resources */,
 				F4DCFBCD1CF0476700FCB8DF /* select_dynamic@3x.png in Resources */,
+				EF02DC011D60DC480011483A /* 听吧@2x.png in Resources */,
 				F4DCFBC91CF0476700FCB8DF /* select_announce@3x.png in Resources */,
 				7349BF611D1BB5F700A57243 /* 皇冠@3x.png in Resources */,
 				7349BF4C1D1BB5F700A57243 /* 回复@2x.png in Resources */,

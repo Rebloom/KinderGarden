@@ -9,6 +9,8 @@
 #import "HomeViewController.h"
 #import "AppDelegate.h"
 
+#import "MainViewController.h"
+
 @interface HomeViewController ()
 
 @end
@@ -41,7 +43,7 @@
 
 - (void)setSelectedTab:(NSInteger)index
 {
-    FirstViewController * first = [[FirstViewController alloc] init];
+    MainViewController * first = [[MainViewController alloc] init];
     SecondViewController * second = [[SecondViewController alloc] init];
     ThirdViewController * third = [[ThirdViewController alloc] init];
     FourthViewController * fourth = [[FourthViewController alloc] init];

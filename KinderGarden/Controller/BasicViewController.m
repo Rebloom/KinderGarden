@@ -42,7 +42,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:YES];
-    if ([NSStringFromClass([self class]) isEqualToString:@"FirstViewController"] ||
+    if ([NSStringFromClass([self class]) isEqualToString:@"MainViewController"] ||
         [NSStringFromClass([self class]) isEqualToString:@"SecondViewController"] ||
         [NSStringFromClass([self class]) isEqualToString:@"ThirdViewController"] ||
         [NSStringFromClass([self class]) isEqualToString:@"FourthViewController"] ||

@@ -8,6 +8,10 @@
 
 #import "BasicViewController.h"
 
-@interface MainViewController : BasicViewController
+@interface MainViewController : BasicViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic, retain) NSMutableArray * infoArray;
+
+@property (nonatomic, retain) UITableView * infoTable;
 
 @end
