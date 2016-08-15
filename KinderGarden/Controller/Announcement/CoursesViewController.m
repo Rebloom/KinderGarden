@@ -30,266 +30,62 @@
 //筛选班级
 - (void)shaixuanBtnOnClick:(UIButton*)sender
 {
-    mainView.hidden = NO;
-    [self.view bringSubviewToFront:mainView];
+    NSArray * arr = @[@"大一班",@"大二班",@"大三班",@"中一班",@"中二班",@"中三班",@"小一班",@"小二班",@"小三班"];
+    [self deliverArray:arr];
 }
 
-//完成
-- (void)finishBtnOnClick:(UIButton*)sender
+- (void)deliverArray:(NSArray*)arr
 {
-    NSLog(@"完成");
-    
-    mainView.hidden = YES;
-    [headerView loadComponentsWithTitle:classTitle withTitleColor:KFontColorA];
+    selectView = [[SelectClssView defaultSelectClssView] initWithArray:arr withDelegate:self];
+    selectView.delegate = self;
+    [selectView showView];
 }
 
-#pragma mark ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓封装筛选班级↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
-- (void)selectBtnOnClick:(UIButton*)sender
+// 选择班级模块代理方法
+- (void)finishClick:(NSString *)title
 {
-    UIImageView * oneIV = (UIImageView*)[bgView viewWithTag:2000];
-    UIImageView * towIV = (UIImageView*)[bgView viewWithTag:2001];
-    UIImageView * threeIV = (UIImageView*)[bgView viewWithTag:2002];
-    UIImageView * fourIV = (UIImageView*)[bgView viewWithTag:2003];
-    UIImageView * fiveIV = (UIImageView*)[bgView viewWithTag:2004];
-    UIImageView * sixIV = (UIImageView*)[bgView viewWithTag:2005];
-    UIImageView * sevenIV = (UIImageView*)[bgView viewWithTag:2006];
-    UIImageView * eightIV = (UIImageView*)[bgView viewWithTag:2007];
-    UIImageView * nineIV = (UIImageView*)[bgView viewWithTag:2008];
+    [selectView hideView];
 
-    if (sender.tag == 3000)
+    //先清空headerView上的label，在显示新信息
+    if (headerView)
     {
-        classTitle = @"大一班课程";
-        
-        oneIV.image = [UIImage imageNamed:@"班级选择"];
-        towIV.image = [UIImage imageNamed:@"班级未选中"];
-        threeIV.image = [UIImage imageNamed:@"班级未选中"];
-        fourIV.image = [UIImage imageNamed:@"班级未选中"];
-        fiveIV.image = [UIImage imageNamed:@"班级未选中"];
-        sixIV.image = [UIImage imageNamed:@"班级未选中"];
-        sevenIV.image = [UIImage imageNamed:@"班级未选中"];
-        eightIV.image = [UIImage imageNamed:@"班级未选中"];
-        nineIV.image = [UIImage imageNamed:@"班级未选中"];
+        for (UIView * view in headerView.subviews)
+        {
+            if ([view isKindOfClass:[UILabel class]])
+            {
+                [view removeFromSuperview];
+            }
+        }
     }
-    else if (sender.tag == 3001)
-    {
-        classTitle = @"大二班课程";
-
-        oneIV.image = [UIImage imageNamed:@"班级未选中"];
-        towIV.image = [UIImage imageNamed:@"班级选择"];
-        threeIV.image = [UIImage imageNamed:@"班级未选中"];
-        fourIV.image = [UIImage imageNamed:@"班级未选中"];
-        fiveIV.image = [UIImage imageNamed:@"班级未选中"];
-        sixIV.image = [UIImage imageNamed:@"班级未选中"];
-        sevenIV.image = [UIImage imageNamed:@"班级未选中"];
-        eightIV.image = [UIImage imageNamed:@"班级未选中"];
-        nineIV.image = [UIImage imageNamed:@"班级未选中"];
-    }
-    else if (sender.tag == 3002)
-    {
-        classTitle = @"大三班课程";
-
-        oneIV.image = [UIImage imageNamed:@"班级未选中"];
-        towIV.image = [UIImage imageNamed:@"班级未选中"];
-        threeIV.image = [UIImage imageNamed:@"班级选择"];
-        fourIV.image = [UIImage imageNamed:@"班级未选中"];
-        fiveIV.image = [UIImage imageNamed:@"班级未选中"];
-        sixIV.image = [UIImage imageNamed:@"班级未选中"];
-        sevenIV.image = [UIImage imageNamed:@"班级未选中"];
-        eightIV.image = [UIImage imageNamed:@"班级未选中"];
-        nineIV.image = [UIImage imageNamed:@"班级未选中"];
-    }
-    else if (sender.tag == 3003)
-    {
-        classTitle = @"中一班课程";
-
-        oneIV.image = [UIImage imageNamed:@"班级未选中"];
-        towIV.image = [UIImage imageNamed:@"班级未选中"];
-        threeIV.image = [UIImage imageNamed:@"班级未选中"];
-        fourIV.image = [UIImage imageNamed:@"班级选择"];
-        fiveIV.image = [UIImage imageNamed:@"班级未选中"];
-        sixIV.image = [UIImage imageNamed:@"班级未选中"];
-        sevenIV.image = [UIImage imageNamed:@"班级未选中"];
-        eightIV.image = [UIImage imageNamed:@"班级未选中"];
-        nineIV.image = [UIImage imageNamed:@"班级未选中"];
-    }
-    else if (sender.tag == 3004)
-    {
-        classTitle = @"中二班课程";
-
-        oneIV.image = [UIImage imageNamed:@"班级未选中"];
-        towIV.image = [UIImage imageNamed:@"班级未选中"];
-        threeIV.image = [UIImage imageNamed:@"班级未选中"];
-        fourIV.image = [UIImage imageNamed:@"班级未选中"];
-        fiveIV.image = [UIImage imageNamed:@"班级选择"];
-        sixIV.image = [UIImage imageNamed:@"班级未选中"];
-        sevenIV.image = [UIImage imageNamed:@"班级未选中"];
-        eightIV.image = [UIImage imageNamed:@"班级未选中"];
-        nineIV.image = [UIImage imageNamed:@"班级未选中"];
-    }
-    else if (sender.tag == 3005)
-    {
-        classTitle = @"中三班课程";
-
-        oneIV.image = [UIImage imageNamed:@"班级未选中"];
-        towIV.image = [UIImage imageNamed:@"班级未选中"];
-        threeIV.image = [UIImage imageNamed:@"班级未选中"];
-        fourIV.image = [UIImage imageNamed:@"班级未选中"];
-        fiveIV.image = [UIImage imageNamed:@"班级未选中"];
-        sixIV.image = [UIImage imageNamed:@"班级选择"];
-        sevenIV.image = [UIImage imageNamed:@"班级未选中"];
-        eightIV.image = [UIImage imageNamed:@"班级未选中"];
-        nineIV.image = [UIImage imageNamed:@"班级未选中"];
-    }
-    else if (sender.tag == 3006)
-    {
-        classTitle = @"小一班课程";
-
-        oneIV.image = [UIImage imageNamed:@"班级未选中"];
-        towIV.image = [UIImage imageNamed:@"班级未选中"];
-        threeIV.image = [UIImage imageNamed:@"班级未选中"];
-        fourIV.image = [UIImage imageNamed:@"班级未选中"];
-        fiveIV.image = [UIImage imageNamed:@"班级未选中"];
-        sixIV.image = [UIImage imageNamed:@"班级未选中"];
-        sevenIV.image = [UIImage imageNamed:@"班级选择"];
-        eightIV.image = [UIImage imageNamed:@"班级未选中"];
-        nineIV.image = [UIImage imageNamed:@"班级未选中"];
-    }
-    else if (sender.tag == 3007)
-    {
-        classTitle = @"小二班课程";
-
-        oneIV.image = [UIImage imageNamed:@"班级未选中"];
-        towIV.image = [UIImage imageNamed:@"班级未选中"];
-        threeIV.image = [UIImage imageNamed:@"班级未选中"];
-        fourIV.image = [UIImage imageNamed:@"班级未选中"];
-        fiveIV.image = [UIImage imageNamed:@"班级未选中"];
-        sixIV.image = [UIImage imageNamed:@"班级未选中"];
-        sevenIV.image = [UIImage imageNamed:@"班级未选中"];
-        eightIV.image = [UIImage imageNamed:@"班级选择"];
-        nineIV.image = [UIImage imageNamed:@"班级未选中"];
-    }
-    else if (sender.tag == 3008)
-    {
-        classTitle = @"小三班课程";
-
-        oneIV.image = [UIImage imageNamed:@"班级未选中"];
-        towIV.image = [UIImage imageNamed:@"班级未选中"];
-        threeIV.image = [UIImage imageNamed:@"班级未选中"];
-        fourIV.image = [UIImage imageNamed:@"班级未选中"];
-        fiveIV.image = [UIImage imageNamed:@"班级未选中"];
-        sixIV.image = [UIImage imageNamed:@"班级未选中"];
-        sevenIV.image = [UIImage imageNamed:@"班级未选中"];
-        eightIV.image = [UIImage imageNamed:@"班级未选中"];
-        nineIV.image = [UIImage imageNamed:@"班级选择"];
-    }
+    [headerView loadComponentsWithTitle:title withTitleColor:KFontColorA];
 }
 
-//隐藏视图
-- (void)hideBtnOnClick:(UIButton*)sender
+//隐藏选择班级
+- (void)hideClicked
 {
-    mainView.hidden = YES;
+    [selectView hideView];
 }
-
-- (void)createSelectClssView
-{
-    if (!mainView)
-    {
-        mainView = [[UIView alloc] init];
-    }
-    mainView.frame = CGRectMake(0, 0, screenWidth, screenHeight);
-    mainView.backgroundColor = [KFontColorC colorWithAlphaComponent:0.3];
-    [self.view addSubview:mainView];
-    
-    if (!hideBtn)
-    {
-        hideBtn = [[UIButton alloc] init];
-    }
-    hideBtn.frame = CGRectMake(0, 0, screenWidth, screenHeight);
-    hideBtn.backgroundColor = [UIColor clearColor];
-    [hideBtn addTarget:self action:@selector(hideBtnOnClick:) forControlEvents:UIControlEventTouchUpInside];
-    [mainView addSubview:hideBtn];
-    
-    if (!bgView)
-    {
-        bgView = [[UIView alloc] init];
-    }
-    bgView.backgroundColor = KFontColorA;
-    bgView.layer.cornerRadius = 4;
-    bgView.layer.masksToBounds = YES;
-    bgView.frame = CGRectMake((screenWidth-270)/2, 64, 270, 380);
-    [mainView addSubview:bgView];
-    
-    UILabel * titleLabel = [[UILabel alloc] init];
-    titleLabel.frame = CGRectMake(0, 22,  CGRectGetWidth(bgView.frame), 20);
-    titleLabel.textAlignment = NSTextAlignmentCenter;
-    titleLabel.textColor = KFontColorB;
-    titleLabel.text = @"选择班级";
-    titleLabel.font = MediumSTFontWithSize(15);
-    [bgView addSubview:titleLabel];
-    
-    NSArray * classArr = @[@"大一班",@"大二班",@"大三班",@"中一班",@"中二班",@"中三班",@"小一班",@"小二班",@"小三班"];
-    
-    for (int i = 0; i<9; i++)
-    {
-        UILabel * classLabel = [[UILabel alloc] init];
-        classLabel.frame = CGRectMake(25, 50+30*i, 100, 20);
-        classLabel.textAlignment = NSTextAlignmentLeft;
-        classLabel.textColor = KFontColorC;
-        classLabel.text = [classArr objectAtIndex:i];
-        classLabel.font = MediumSTFontWithSize(13);
-        [bgView addSubview:classLabel];
-        
-        UIImageView * selectImageView = [[UIImageView alloc] init];
-        selectImageView.image = [UIImage imageNamed:@"班级未选中"];
-        selectImageView.tag = 2000+i;
-        selectImageView.frame = CGRectMake(CGRectGetWidth(bgView.frame)-37-10, CGRectGetMinY(classLabel.frame)+10, 10.5, 10.5);
-        [bgView addSubview:selectImageView];
-        
-        UIButton * selectBtn = [[UIButton alloc] init];
-        selectBtn.frame = CGRectMake(CGRectGetWidth(bgView.frame)-37-20,  CGRectGetMinY(classLabel.frame), 30, 30);
-        selectBtn.tag = 3000+i;
-        [selectBtn addTarget:self action:@selector(selectBtnOnClick:) forControlEvents:UIControlEventTouchUpInside];
-        [bgView addSubview:selectBtn];
-    }
-    
-    
-    UIButton * finishBtn = [[UIButton alloc] init];
-    finishBtn.frame = CGRectMake(0, CGRectGetHeight(bgView.frame)- 50, CGRectGetWidth(bgView.frame), 50);
-    [finishBtn setTitle:@"完成" forState:UIControlStateNormal];
-    [finishBtn setTitleColor:KFontColorA forState:UIControlStateNormal];
-    finishBtn.backgroundColor = KPurpleColor;
-    finishBtn.titleLabel.font = NormalFontWithSize(15);
-    [finishBtn addTarget:self action:@selector(finishBtnOnClick:) forControlEvents:UIControlEventTouchUpInside];
-    [bgView addSubview:finishBtn];
-    
-    mainView.hidden = YES;
-}
-#pragma mark ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑封装筛选班级↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     self.view.backgroundColor = kBackgroundColor;
     
     [headerView loadComponentsWithTitle:@"" withTitleColor:KFontColorA];
     [headerView backButton];
-
+    
     classOneArr = [[NSMutableArray alloc] initWithCapacity:10];
     classTwoArr = [[NSMutableArray alloc] initWithCapacity:10];
     classNum = 0;
-    classTitle = @"";
     recordSection = 0;
     recordRow = 0;
     
     [self createClass];
     [self createScrollView];
     [self createUI];
-
-#warning 待封装
-    [self createSelectClssView];
+        
     [self createEditView];
-
+    
     UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapped:)];
     [self.view addGestureRecognizer:tap];
 }
@@ -320,35 +116,35 @@
     }
 }
 
+
 - (void)dayBtnOnClick:(UIButton*)sender
 {
-    if (sender.tag == 1000)
+    switch (sender.tag)
     {
-        NSLog(@"周一");
-    }
-    else if (sender.tag == 1001)
-    {
-        NSLog(@"周二");
-    }
-    else if (sender.tag == 1002)
-    {
-        NSLog(@"周三");
-    }
-    else if (sender.tag == 1003)
-    {
-        NSLog(@"周四");
-    }
-    else if (sender.tag == 1004)
-    {
-        NSLog(@"周五");
-    }
-    else if (sender.tag == 1005)
-    {
-        NSLog(@"周六");
-    }
-    else if (sender.tag == 1006)
-    {
-        NSLog(@"周日");
+        case 1000:
+            NSLog(@"周一");
+            break;
+        case 1001:
+            NSLog(@"周二");
+            break;
+        case 1002:
+            NSLog(@"周三");
+            break;
+        case 1003:
+            NSLog(@"周四");
+            break;
+        case 1004:
+            NSLog(@"周五");
+            break;
+        case 1005:
+            NSLog(@"周六");
+            break;
+        case 1006:
+            NSLog(@"周日");
+            break;
+      
+        default:
+            break;
     }
 }
 
@@ -455,12 +251,12 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.delegate = self;
     cell.section = indexPath.section;
-
+    
     if (indexPath.section == 0)
     {
         cell.addClassBtn.tag = indexPath.section;
         cell.editClassBtn.tag = indexPath.row;
-
+        
         if (classOneArr.count>0)
         {
             if (indexPath.row<classOneArr.count)
@@ -671,7 +467,7 @@
             editTF.text = @"";
         }
     }
-        
+    
     [infoTablView reloadData];
 }
 

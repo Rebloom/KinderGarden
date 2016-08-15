@@ -148,11 +148,13 @@
 		73DD1AD21CEEEFEA0059ADAC /* whiteBack@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 73DD1AC61CEEEFEA0059ADAC /* whiteBack@3x.png */; };
 		73DD1AD51CEEF8D30059ADAC /* NewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73DD1AD41CEEF8D30059ADAC /* NewsDetailViewController.m */; };
 		73DF6DB21CEC689F00B67BC1 /* AccoutInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73DF6DB11CEC689F00B67BC1 /* AccoutInfoViewController.m */; };
+		73E47B891D61A89C00626AE6 /* SelectClassCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73E47B881D61A89C00626AE6 /* SelectClassCell.m */; };
 		73EC54111D225F510032C754 /* CoursesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73EC54101D225F510032C754 /* CoursesViewController.m */; };
 		73EC54141D225FB30032C754 /* ArticleDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73EC54131D225FB30032C754 /* ArticleDetailViewController.m */; };
 		73EC54191D225FBB0032C754 /* ArticleDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73EC54161D225FBB0032C754 /* ArticleDetailCell.m */; };
 		73EC541A1D225FBB0032C754 /* ArticleDetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73EC54181D225FBB0032C754 /* ArticleDetailHeaderView.m */; };
 		73EC541C1D225FD00032C754 /* topImageView.png in Resources */ = {isa = PBXBuildFile; fileRef = 73EC541B1D225FD00032C754 /* topImageView.png */; };
+		73F3F1AD1D61682D007A8ACD /* SelectClssView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F3F1AC1D61682D007A8ACD /* SelectClssView.m */; };
 		77E0F474297B0413BB4F17DF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BC10A5E3A8DC40DBB06E11D /* libPods.a */; };
 		EF02DC001D60DC480011483A /* banner.png in Resources */ = {isa = PBXBuildFile; fileRef = EF02DBE71D60DC480011483A /* banner.png */; };
 		EF02DC011D60DC480011483A /* 听吧@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF02DBE81D60DC480011483A /* 听吧@2x.png */; };
@@ -494,6 +496,8 @@
 		73DD1AD41CEEF8D30059ADAC /* NewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsDetailViewController.m; sourceTree = "<group>"; };
 		73DF6DB01CEC689F00B67BC1 /* AccoutInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccoutInfoViewController.h; sourceTree = "<group>"; };
 		73DF6DB11CEC689F00B67BC1 /* AccoutInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccoutInfoViewController.m; sourceTree = "<group>"; };
+		73E47B871D61A89C00626AE6 /* SelectClassCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectClassCell.h; sourceTree = "<group>"; };
+		73E47B881D61A89C00626AE6 /* SelectClassCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectClassCell.m; sourceTree = "<group>"; };
 		73EC540F1D225F510032C754 /* CoursesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoursesViewController.h; sourceTree = "<group>"; };
 		73EC54101D225F510032C754 /* CoursesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoursesViewController.m; sourceTree = "<group>"; };
 		73EC54121D225FB30032C754 /* ArticleDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleDetailViewController.h; sourceTree = "<group>"; };
@@ -503,6 +507,8 @@
 		73EC54171D225FBB0032C754 /* ArticleDetailHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleDetailHeaderView.h; sourceTree = "<group>"; };
 		73EC54181D225FBB0032C754 /* ArticleDetailHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleDetailHeaderView.m; sourceTree = "<group>"; };
 		73EC541B1D225FD00032C754 /* topImageView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topImageView.png; sourceTree = "<group>"; };
+		73F3F1AB1D61682D007A8ACD /* SelectClssView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectClssView.h; sourceTree = "<group>"; };
+		73F3F1AC1D61682D007A8ACD /* SelectClssView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectClssView.m; sourceTree = "<group>"; };
 		8778DCFCDBE316D039C62A29 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		EF02DBE71D60DC480011483A /* banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = banner.png; sourceTree = "<group>"; };
 		EF02DBE81D60DC480011483A /* 听吧@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "听吧@2x.png"; sourceTree = "<group>"; };
@@ -1428,6 +1434,10 @@
 		F49ECBA81D290E5300DA6A3A /* Announcement */ = {
 			isa = PBXGroup;
 			children = (
+				73F3F1AB1D61682D007A8ACD /* SelectClssView.h */,
+				73F3F1AC1D61682D007A8ACD /* SelectClssView.m */,
+				73E47B871D61A89C00626AE6 /* SelectClassCell.h */,
+				73E47B881D61A89C00626AE6 /* SelectClassCell.m */,
 				F49ECBA91D290E8200DA6A3A /* CoursesCell.h */,
 				F49ECBAA1D290E8200DA6A3A /* CoursesCell.m */,
 			);
@@ -1838,6 +1848,8 @@
 				7328850E1CED5758006A5CEC /* BuildClassViewController.m in Sources */,
 				7349BF031D1B772F00A57243 /* ParentCell.m in Sources */,
 				EFA3BFCD1CEBE69A00724058 /* NSString+UIColor.m in Sources */,
+				73F3F1AD1D61682D007A8ACD /* SelectClssView.m in Sources */,
+				73E47B891D61A89C00626AE6 /* SelectClassCell.m in Sources */,
 				730C269E1D1CDDA500286B33 /* EditDataCell.m in Sources */,
 				EF65D4921CEAC42F00463441 /* KinderGarden.xcdatamodeld in Sources */,
 				EFA3BFD31CEBE69A00724058 /* UILabel+StringFrame.m in Sources */,

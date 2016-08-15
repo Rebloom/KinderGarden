@@ -8,20 +8,20 @@
 
 #import "BasicViewController.h"
 #import "CoursesCell.h"
+#import "SelectClssView.h"
 
-@interface CoursesViewController : BasicViewController<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate,CourcesDelegate,UIActionSheetDelegate,UITextFieldDelegate>
+@interface CoursesViewController : BasicViewController<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate,CourcesDelegate,UIActionSheetDelegate,UITextFieldDelegate,selectClassDelegate>
 {
     UITableView * infoTablView;
     UIScrollView * SV;
     UIButton * fabuBtn;
     
     NSInteger classNum;//用来记录上午有几节课
-    NSString * classTitle;//用来记录哪个班级
     
     UIView * bgView;
     UIView * mainView;
     UIButton * hideBtn;
-
+    
     UIView * editView;
     UIView * mainTwoView;
     UIButton * hideTwoBtn;
@@ -35,5 +35,7 @@
     
     NSInteger recordSection;
     NSInteger recordRow;
+    
+    SelectClssView * selectView;
 }
 @end
