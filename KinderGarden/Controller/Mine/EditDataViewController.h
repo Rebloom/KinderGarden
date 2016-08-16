@@ -8,8 +8,9 @@
 
 #import "BasicViewController.h"
 #import <Accelerate/Accelerate.h>
+#import "EditView.h"
 
-@interface EditDataViewController : BasicViewController<UITableViewDataSource,UITableViewDelegate,UIActionSheetDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
+@interface EditDataViewController : BasicViewController<UITableViewDataSource,UITableViewDelegate,UIActionSheetDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,editViewDelegate>
 {
     NSString * cityStr;
     
@@ -22,6 +23,9 @@
     UILabel * nameLabel;
     UILabel * phoneLabel;
     UIButton * photoBtn;
+    
+    EditView * edit;
+     NSInteger recordRow;//记录编辑的是哪一行
 }
 
 @end

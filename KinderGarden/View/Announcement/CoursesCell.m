@@ -101,6 +101,7 @@
     [self addSubview:addClassBtn];
 }
 
+//添加课程
 - (void)addClassBtnOnClick:(UIButton*)sender
 {
     if ([self.delegate respondsToSelector:@selector(addClassWithIndex:)])
@@ -109,6 +110,7 @@
     }
 }
 
+//删除课程
 - (void)deleteBtnOnClick:(UIButton*)sender WithSection:(NSInteger)section
 {
     if ([self.delegate respondsToSelector:@selector(deleteWithIndex:WithSection:)])
@@ -117,6 +119,7 @@
     }
 }
 
+//编辑课程
 - (void)editClassBtnOnClick:(UIButton*)sender
 {
     if ([self.delegate respondsToSelector:@selector(editClassWithIndex:WithSection:)])

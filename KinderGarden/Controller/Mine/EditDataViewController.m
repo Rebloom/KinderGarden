@@ -69,7 +69,11 @@
     
     UIView * footView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, 0.2)];
     footView.backgroundColor = KFontColorE;
-    infoTableView.tableFooterView = footView;}
+    infoTableView.tableFooterView = footView;
+
+    edit = [[EditView defaultEditView] init];
+    edit.delegate = self;
+}
 
 -(void)createUI
 {
@@ -156,7 +160,15 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    if (indexPath.row == 2)
+    //记录编辑哪一行
+    recordRow = indexPath.row;
+    [edit showView];
+    
+    if (indexPath.row == 0 ||indexPath.row == 1)
+    {
+        [edit setTitleStr:[rightOneArr objectAtIndex:indexPath.row]];
+    }
+    else if (indexPath.row == 2)
     {
         [self pickerviewbuttonclick:nil];
     }
@@ -164,6 +176,21 @@
     {
         [self selectSex];
     }
+}
+
+//编辑视图代理--隐藏编辑弹窗
+- (void)hideBtnClicked
+{
+    [edit hideView];
+}
+
+//编辑视图代理--确定编辑内容
+- (void)sureClick:(NSString *)title
+{
+    [edit hideView];
+    
+    [rightOneArr replaceObjectAtIndex:recordRow withObject:title];
+    [infoTableView reloadData];
 }
 
 //选择性别
@@ -183,6 +210,7 @@
     [sheet showInView:self.view];
 }
 
+//选择器（性别、照相）
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (actionSheet.tag == 10)

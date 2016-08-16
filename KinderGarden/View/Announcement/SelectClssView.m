@@ -149,7 +149,7 @@
     cell.classLabel.frame = CGRectMake(25, 0, 100, 30);
     cell.selectImageView.frame = CGRectMake(CGRectGetWidth(selectTableView.frame)-37-10, CGRectGetMinY(cell.classLabel.frame)+10, 10.5, 10.5);
     cell.classLabel.text = [classArr objectAtIndex:indexPath.row];
-
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     NSInteger index = [[selectDict objectForKey:@"YES"] integerValue];
     

@@ -83,11 +83,9 @@
     [self createClass];
     [self createScrollView];
     [self createUI];
-        
     [self createEditView];
-    
-    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapped:)];
-    [self.view addGestureRecognizer:tap];
+//    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapped:)];
+//    [self.view addGestureRecognizer:tap];
 }
 
 - (void)createScrollView
@@ -343,130 +341,61 @@
     [infoTablView reloadData];
 }
 
-#pragma mark ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓封装编辑视图↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
-
+//编辑模块
 - (void)createEditView
 {
-    if (!mainTwoView)
-    {
-        mainTwoView = [[UIView alloc] init];
-    }
-    mainTwoView.frame = CGRectMake(0, 0, screenWidth, screenHeight);
-    mainTwoView.backgroundColor = [KFontColorC colorWithAlphaComponent:0.3];
-    [self.view addSubview:mainTwoView];
-    
-    if (!hideTwoBtn)
-    {
-        hideTwoBtn = [[UIButton alloc] init];
-    }
-    hideTwoBtn.frame = CGRectMake(0, 0, screenWidth, screenHeight);
-    hideTwoBtn.backgroundColor = [UIColor clearColor];
-    [hideTwoBtn addTarget:self action:@selector(hideTwoBtnOnClick:) forControlEvents:UIControlEventTouchUpInside];
-    [mainTwoView addSubview:hideTwoBtn];
-    
-    if (!editView)
-    {
-        editView = [[UIView alloc] init];
-    }
-    editView.backgroundColor = KFontColorA;
-    editView.layer.cornerRadius = 8;
-    editView.clipsToBounds = YES;
-    editView.layer.masksToBounds = YES;
-    editView.frame = CGRectMake((screenWidth-270)/2, 200, 270, 150);
-    [mainTwoView addSubview:editView];
-    
-    if (!editTF)
-    {
-        editTF = [[UITextField alloc] init];
-    }
-    editTF.frame = CGRectMake(20, 30, 230, 45);
-    editTF.textColor = KFontColorC;
-    editTF.backgroundColor = KFontColorA;
-    editTF.layer.borderWidth = 0.7f;
-    editTF.layer.borderColor = KFontColorE.CGColor;
-    editTF.delegate = self;
-    editTF.text = @"";
-    editTF.returnKeyType = UIReturnKeyDone;
-    [editView addSubview:editTF];
-    
-    if (!lineTwoLabel)
-    {
-        lineTwoLabel = [[UILabel alloc] init];
-    }
-    lineTwoLabel.backgroundColor = KFontColorE;
-    lineTwoLabel.frame = CGRectMake(0, CGRectGetMaxY(editTF.frame)+30, CGRectGetWidth(editView.frame), 0.5);
-    [editView addSubview:lineTwoLabel];
-    
-    if (!sureBtn)
-    {
-        sureBtn = [[UIButton alloc] init];
-    }
-    sureBtn.titleLabel.font = NormalFontWithSize(15);
-    sureBtn.frame = CGRectMake(0, CGRectGetMaxY(lineTwoLabel.frame), CGRectGetWidth(editView.frame), 44);
-    [sureBtn setTitle:@"确定" forState:UIControlStateNormal];
-    [sureBtn setTitleColor:KFontColorC forState:UIControlStateNormal];
-    [sureBtn setBackgroundImage:[KFontColorA image] forState:UIControlStateNormal];
-    [sureBtn addTarget:self action:@selector(sureBtnOnClick:) forControlEvents:UIControlEventTouchUpInside];
-    [editView addSubview:sureBtn];
-    
-    mainTwoView.hidden = YES;
+    editV = [[EditView defaultEditView] init];
+    editV.delegate  =self;
 }
 
-- (void)hideTwoBtnOnClick:(UIButton*)sender
+- (void)hideBtnClicked
 {
-    mainTwoView.hidden = YES;
-    [editTF resignFirstResponder];
+    [editV hideView];
 }
 
-- (void)sureBtnOnClick:(UIButton*)sender
+- (void)sureClick:(NSString *)title
 {
-    if (recordSection == 0)
+    [editV hideView];
+    NSLog(@"title===%@",title);
+    if (title.length>0)
     {
-        [classOneArr replaceObjectAtIndex:recordRow withObject:editTF.text];
+        if (recordSection == 0)
+        {
+             [classOneArr replaceObjectAtIndex:recordRow withObject:title];
+        }
+        else
+        {
+            [classTwoArr replaceObjectAtIndex:recordRow withObject:title];
+        }
     }
-    else
-    {
-        [classTwoArr replaceObjectAtIndex:recordRow withObject:editTF.text];
-    }
-    
-    mainTwoView.hidden = YES;
-    editTF.text = @"";
-    
     [infoTablView reloadData];
 }
 
-#pragma mark ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑封装编辑视图↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
 
 //编辑课程
 - (void)editClassWithIndex:(UIButton *)sender WithSection:(NSInteger)section
 {
     recordRow = sender.tag;
     recordSection = section;
-    mainTwoView.hidden = NO;
-    [editTF becomeFirstResponder];
-    
+   
+    NSString * title=@"";
     if (section == 0)
     {
         if ([classOneArr objectAtIndex:sender.tag])
         {
-            editTF.text = [classOneArr objectAtIndex:sender.tag];
-        }
-        else
-        {
-            editTF.text = @"";
+            title = [classOneArr objectAtIndex:sender.tag];
         }
     }
     else
     {
         if ([classTwoArr objectAtIndex:sender.tag])
         {
-            editTF.text = [classTwoArr objectAtIndex:sender.tag];
-        }
-        else
-        {
-            editTF.text = @"";
+           title = [classTwoArr objectAtIndex:sender.tag];
         }
     }
+    
+    [editV setTitleStr:title];
+    [editV showView];
     
     [infoTablView reloadData];
 }
@@ -512,13 +441,13 @@
     }
 }
 
-// 点击页面，输入框失去焦点
-- (void)viewTapped:(UITapGestureRecognizer*)ges
-{
-    if([editTF isFirstResponder])
-    {
-        [editTF resignFirstResponder];
-    }
-}
+//// 点击页面，输入框失去焦点
+//- (void)viewTapped:(UITapGestureRecognizer*)ges
+//{
+//    if([editTF isFirstResponder])
+//    {
+//        [editTF resignFirstResponder];
+//    }
+//}
 
 @end

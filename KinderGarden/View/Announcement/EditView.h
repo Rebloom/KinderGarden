@@ -7,6 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+@protocol editViewDelegate <NSObject>
+
+- (void)hideBtnClicked;
+
+- (void)sureClick:(NSString*)title;
+
+@end
 
 @interface EditView : UIView<UITextFieldDelegate>
 {
@@ -18,13 +25,16 @@
     UIButton *sureBtn;
 }
 
-
 @property (nonatomic,strong) UIView * mainView;
 @property (nonatomic,strong) UIButton * hideBtn;
 @property (nonatomic,assign) BOOL isShow;
+@property (nonatomic,weak)id<editViewDelegate>delegate;
 
 + (EditView *)defaultEditView;
-- (void) showView;
-- (void) hideView;
 
+- (void) showView;//显示弹窗
+
+- (void) hideView;//隐藏弹窗
+
+- (void) setTitleStr:(NSString*)title;//传文案到输入框
 @end

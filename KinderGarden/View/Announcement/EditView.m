@@ -34,6 +34,7 @@
 - (void)showView
 {
     isShow = YES;
+    [editTF becomeFirstResponder];
     mainView.hidden = NO;
 }
 
@@ -52,10 +53,15 @@
         [self createEditView];
     }
     
+    self.frame = CGRectMake(0, 0, screenWidth, screenHeight);
+
     return self;
 }
 
-
+- (void)setTitleStr:(NSString*)title
+{
+    editTF.text = title;
+}
 
 - (void)createEditView
 {
@@ -66,6 +72,8 @@
     mainView.frame = CGRectMake(0, 0, screenWidth, screenHeight);
     mainView.backgroundColor = [KFontColorC colorWithAlphaComponent:0.3];
     [self addSubview:mainView];
+    [[UIApplication sharedApplication].keyWindow addSubview:mainView];
+
     
     if (!hideBtn)
     {
@@ -122,28 +130,29 @@
     [editView addSubview:sureBtn];
     
     mainView.hidden = YES;
+    
+    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapped:)];
+    [self addGestureRecognizer:tap];
 }
 
+//隐藏视图
 - (void)hideBtnOnClick:(UIButton*)sender
 {
-    mainView.hidden = YES;
-    [editTF resignFirstResponder];
+    if ([self.delegate respondsToSelector:@selector(hideBtnClicked)])
+    {
+        [editTF resignFirstResponder];
+        [self.delegate hideBtnClicked];
+    }
 }
 
+//编辑视图代理--确定编辑内容
 - (void)sureBtnOnClick:(UIButton*)sender
 {
-//    if (recordSection == 0)
-//    {
-//        [classOneArr replaceObjectAtIndex:recordRow withObject:editTF.text];
-//    }
-//    else
-//    {
-//        [classTwoArr replaceObjectAtIndex:recordRow withObject:editTF.text];
-//    }
-//    
-//    mainView.hidden = YES;
-//    editTF.text = @"";
-    
+    if ([self.delegate respondsToSelector:@selector(sureClick:)])
+    {
+        [editTF resignFirstResponder];
+        [self.delegate sureClick:editTF.text];
+    }
 }
 
 // 清除视图块子视图
@@ -157,4 +166,14 @@
         }
     }
 }
+
+// 点击页面，输入框失去焦点
+- (void)viewTapped:(UITapGestureRecognizer*)ges
+{
+    if([editTF isFirstResponder])
+    {
+        [editTF resignFirstResponder];
+    }
+}
+
 @end

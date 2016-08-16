@@ -9,8 +9,8 @@
 #import "BasicViewController.h"
 #import "CoursesCell.h"
 #import "SelectClssView.h"
-
-@interface CoursesViewController : BasicViewController<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate,CourcesDelegate,UIActionSheetDelegate,UITextFieldDelegate,selectClassDelegate>
+#import "EditView.h"
+@interface CoursesViewController : BasicViewController<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate,CourcesDelegate,UIActionSheetDelegate,UITextFieldDelegate,selectClassDelegate,editViewDelegate>
 {
     UITableView * infoTablView;
     UIScrollView * SV;
@@ -34,8 +34,10 @@
     NSMutableArray * classTwoArr;
     
     NSInteger recordSection;
-    NSInteger recordRow;
+  
     
     SelectClssView * selectView;
+    EditView * editV;
+    NSInteger recordRow;//记录编辑的是哪一行
 }
 @end
