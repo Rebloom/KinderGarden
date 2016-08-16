@@ -162,10 +162,10 @@
     
     //记录编辑哪一行
     recordRow = indexPath.row;
-    [edit showView];
     
     if (indexPath.row == 0 ||indexPath.row == 1)
     {
+        [edit showView];
         [edit setTitleStr:[rightOneArr objectAtIndex:indexPath.row]];
     }
     else if (indexPath.row == 2)

@@ -101,7 +101,8 @@
     }
     else if (sender.tag == 1002)
     {
-       NSLog(@"饮食");
+        CookbookViewController * CKVC = [[CookbookViewController alloc] init];
+        [self pushToViewController:CKVC];
     }
     else if (sender.tag == 1003)
     {

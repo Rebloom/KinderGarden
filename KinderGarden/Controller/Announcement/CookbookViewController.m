@@ -1,18 +1,18 @@
 //
-//  CoursesViewController.m
+//  CookbookViewController.m
 //  KinderGarden
 //
-//  Created by xdcy on 16/6/28.
+//  Created by xdcy on 16/8/16.
 //  Copyright © 2016年 haonanchen. All rights reserved.
 //
 
-#import "CoursesViewController.h"
+#import "CookbookViewController.h"
 
-@interface CoursesViewController ()
+@interface CookbookViewController ()
 
 @end
 
-@implementation CoursesViewController
+@implementation CookbookViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -22,16 +22,13 @@
     [headerView loadComponentsWithTitle:@"" withTitleColor:KFontColorA];
     [headerView backButton];
     
-    classOneArr = [[NSMutableArray alloc] initWithCapacity:10];
-    classTwoArr = [[NSMutableArray alloc] initWithCapacity:10];
+    mealArr = [[NSMutableArray alloc] initWithCapacity:10];
     classNum = 0;
-    recordSection = 0;
     recordRow = 0;
     
     [self createClassBtn];
     [self createScrollView];
     [self createUI];
-    [self createEditView];
 }
 
 - (void)createClassBtn
@@ -67,7 +64,7 @@
 - (void)finishClick:(NSString *)title
 {
     [selectView hideView];
-
+    
     //先清空headerView上的label，在显示新信息
     if (headerView)
     {
@@ -87,12 +84,6 @@
 - (void)hideClicked
 {
     [selectView hideView];
-}
-
-- (void)createEditView
-{
-    editV = [[EditView defaultEditView] init];
-    editV.delegate  =self;
 }
 
 - (void)createScrollView
@@ -147,7 +138,7 @@
         case 1006:
             NSLog(@"周日");
             break;
-      
+            
         default:
             break;
     }
@@ -193,14 +184,7 @@
     firstLabel.frame = CGRectMake(30, 0, 60, 40);
     firstLabel.textAlignment = NSTextAlignmentLeft;
     firstLabel.textColor = KFontColorB;
-    if(section == 0)
-    {
-        firstLabel.text = @"上午";
-    }
-    else if (section == 1)
-    {
-        firstLabel.text = @"下午";
-    }
+    firstLabel.text = @"餐次";
     firstLabel.font = NormalFontWithSize(14);
     [view addSubview:firstLabel];
     
@@ -208,7 +192,7 @@
     secondLabel.frame = CGRectMake(screenWidth/2-40, 0, 60, 40);
     secondLabel.textAlignment = NSTextAlignmentLeft;
     secondLabel.textColor = KFontColorB;
-    secondLabel.text = @"课程";
+    secondLabel.text = @"食物";
     secondLabel.font = NormalFontWithSize(14);
     [view addSubview:secondLabel];
     
@@ -218,212 +202,112 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 40;
+    return 40.f;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 60;
+    return 110.f;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (section == 0)
-    {
-        return classOneArr.count+1;
-    }
-    else
-    {
-        return classTwoArr.count+1;;
-    }
+    return mealArr.count+1;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString * cellID = @"Cources";
+    static NSString * cellID = @"CookbookID";
     
-    CoursesCell * cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    CookbookCell * cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     if (cell == nil)
     {
-        cell = [[CoursesCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+        cell = [[CookbookCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
     }
     
+
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.delegate = self;
-    cell.section = indexPath.section;
+
+    cell.addMealBtn.tag = indexPath.section;
     
-    if (indexPath.section == 0)
+
+    if (mealArr.count>0)
     {
-        cell.addClassBtn.tag = indexPath.section;
-        cell.editClassBtn.tag = indexPath.row;
-        
-        if (classOneArr.count>0)
+        if (indexPath.row<mealArr.count)
         {
-            if (indexPath.row<classOneArr.count)
+            cell.MealTimeLabel.hidden = NO;
+            cell.deleteBtn.hidden = NO;
+            cell.deleteBtn.tag = indexPath.row;
+            cell.containerScrollView.hidden = NO;
+            cell.addMealBtn.hidden = YES;
+
+            NSInteger row = indexPath.row;
+            NSString * dinner =@"";
+            switch (row)
             {
-                cell.numLabel.hidden = NO;
-                cell.classNameLabel.hidden = NO;
-                cell.editClassBtn.hidden = NO;
-                cell.deleteBtn.hidden = NO;
-                cell.deleteBtn.tag = indexPath.row;
-                
-                cell.addClassBtn.hidden = YES;
-                cell.numLabel.text = [NSString stringWithFormat:@"第%ld节课",(long)indexPath.row+1];
-                cell.classNameLabel.text = [NSString stringWithFormat:@"     %@",[classOneArr objectAtIndex:indexPath.row]];
+                case 0:
+                    dinner = @"早餐";
+                    break;
+                case 1:
+                    dinner = @"午餐";
+                    break;
+                case 2:
+                    dinner = @"晚餐";
+                    break;
+                case 3:
+                    dinner = @"夜宵";
+                    break;
+                default:
+                    break;
             }
-            else
-            {
-                cell.numLabel.hidden = YES;
-                cell.classNameLabel.hidden = YES;
-                cell.editClassBtn.hidden = YES;
-                cell.deleteBtn.hidden = YES;
-                cell.addClassBtn.hidden = NO;
-            }
+            
+            cell.MealTimeLabel.text = dinner;
         }
         else
         {
-            cell.numLabel.hidden = YES;
-            cell.classNameLabel.hidden = YES;
-            cell.editClassBtn.hidden = YES;
+            cell.MealTimeLabel.hidden = YES;
             cell.deleteBtn.hidden = YES;
-            cell.addClassBtn.hidden = NO;
+            cell.addMealBtn.hidden = NO;
+            cell.containerScrollView.hidden = YES;
         }
     }
-    else if (indexPath.section == 1)
+    else
     {
-        cell.addClassBtn.tag = indexPath.section;
-        cell.editClassBtn.tag = indexPath.row;
-        if (classTwoArr.count>0)
-        {
-            if (indexPath.row <classTwoArr.count)
-            {
-                cell.numLabel.hidden = NO;
-                cell.classNameLabel.hidden = NO;
-                cell.editClassBtn.hidden = NO;
-                cell.deleteBtn.hidden = NO;
-                cell.addClassBtn.hidden = YES;
-                
-                cell.deleteBtn.tag = indexPath.row;
-                cell.numLabel.text = [NSString stringWithFormat:@"第%ld节课",(long)indexPath.row+classOneArr.count+1];
-                cell.classNameLabel.text = [NSString stringWithFormat:@"     %@",[classTwoArr objectAtIndex:indexPath.row]];
-            }
-            else
-            {
-                cell.numLabel.hidden = YES;
-                cell.classNameLabel.hidden = YES;
-                cell.editClassBtn.hidden = YES;
-                cell.deleteBtn.hidden = YES;
-                cell.addClassBtn.hidden = NO;
-            }
-        }
-        else
-        {
-            cell.numLabel.hidden = YES;
-            cell.classNameLabel.hidden = YES;
-            cell.editClassBtn.hidden = YES;
-            cell.deleteBtn.hidden =YES;
-            cell.addClassBtn.hidden = NO;
-        }
+        cell.MealTimeLabel.hidden = YES;
+        cell.deleteBtn.hidden = YES;
+        cell.addMealBtn.hidden = NO;
+        cell.containerScrollView.hidden = YES;
     }
     
     return cell;
 }
 
-//添加课程
-- (void)addClassWithIndex:(NSInteger)index
+- (void)addMealWithIndex:(NSInteger)index
 {
-    if (index == 0)
-    {
-        [classOneArr addObject:@""];
-    }
-    else if (index == 1)
-    {
-        [classTwoArr addObject:@""];
-    }
+    [mealArr addObject:@""];
+ 
     [infoTablView reloadData];
 }
 
-//删除课程
-- (void)deleteWithIndex:(UIButton *)sender WithSection:(NSInteger)section
+- (void)deleteMealWithIndex:(UIButton *)sender
 {
     recordRow = sender.tag;
-    recordSection = section;
-    
-    if (section == 0)
-    {
-        [classOneArr removeObjectAtIndex:sender.tag];
-    }
-    else
-    {
-        [classTwoArr removeObjectAtIndex:sender.tag];
-    }
+    [mealArr removeObjectAtIndex:recordRow];
     
     [infoTablView reloadData];
 }
 
-//编辑课程
-- (void)editClassWithIndex:(UIButton *)sender WithSection:(NSInteger)section
-{
-    recordRow = sender.tag;
-    recordSection = section;
-   
-    NSString * title=@"";
-    if (section == 0)
-    {
-        if ([classOneArr objectAtIndex:sender.tag])
-        {
-            title = [classOneArr objectAtIndex:sender.tag];
-        }
-    }
-    else
-    {
-        if ([classTwoArr objectAtIndex:sender.tag])
-        {
-           title = [classTwoArr objectAtIndex:sender.tag];
-        }
-    }
-    
-    [editV setTitleStr:title];
-    [editV showView];
-    
-    [infoTablView reloadData];
-}
-
-#pragma mark 编辑弹窗代理方法
-//隐藏弹窗
-- (void)hideBtnClicked
-{
-    [editV hideView];
-}
-
-//确定输入内容
-- (void)sureClick:(NSString *)title
-{
-    [editV hideView];
-    
-    if (title.length>0)
-    {
-        if (recordSection == 0)
-        {
-            [classOneArr replaceObjectAtIndex:recordRow withObject:title];
-        }
-        else
-        {
-            [classTwoArr replaceObjectAtIndex:recordRow withObject:title];
-        }
-    }
-    [infoTablView reloadData];
-}
 
 //重写返回，弹出列表选择是否退出
 - (void)back
 {
-    UIActionSheet * actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"保存草稿",@"退出编辑",nil];
+    UIActionSheet * actionSheet = [[UIActionSheet alloc] initWithTitle:@"是否退出编辑" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"继续编辑",@"退出编辑",nil];
     actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
     [actionSheet showInView:self.view];
 }
@@ -435,7 +319,7 @@
         //保存草稿
     }
     else if (buttonIndex == 1)
-    {    
+    {
         if (self.navigationController && self.navigationController.viewControllers.count>1)
         {
             [self.navigationController popViewControllerAnimated:YES];

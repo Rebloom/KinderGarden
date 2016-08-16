@@ -130,6 +130,8 @@
 		7349BF751D1BBF3300A57243 /* AttentionAndFunsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7349BF741D1BBF3300A57243 /* AttentionAndFunsCell.m */; };
 		7349BF781D1BD0F900A57243 /* LookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7349BF771D1BD0F900A57243 /* LookViewController.m */; };
 		7349BF7B1D1BD19D00A57243 /* LookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7349BF7A1D1BD19D00A57243 /* LookCell.m */; };
+		737805781D62BB71004B7A00 /* CookbookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 737805771D62BB71004B7A00 /* CookbookViewController.m */; };
+		7378057B1D62E7F2004B7A00 /* CookbookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7378057A1D62E7F2004B7A00 /* CookbookCell.m */; };
 		73DD1AB21CEEE25C0059ADAC /* SchoolCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73DD1AB11CEEE25C0059ADAC /* SchoolCell.m */; };
 		73DD1AB51CEEE5110059ADAC /* newsImageView@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 73DD1AB41CEEE5110059ADAC /* newsImageView@2x.png */; };
 		73DD1AB91CEEECA40059ADAC /* share@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 73DD1AB71CEEECA40059ADAC /* share@2x.png */; };
@@ -476,6 +478,10 @@
 		7349BF771D1BD0F900A57243 /* LookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LookViewController.m; sourceTree = "<group>"; };
 		7349BF791D1BD19D00A57243 /* LookCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LookCell.h; sourceTree = "<group>"; };
 		7349BF7A1D1BD19D00A57243 /* LookCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LookCell.m; sourceTree = "<group>"; };
+		737805761D62BB71004B7A00 /* CookbookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CookbookViewController.h; sourceTree = "<group>"; };
+		737805771D62BB71004B7A00 /* CookbookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CookbookViewController.m; sourceTree = "<group>"; };
+		737805791D62E7F2004B7A00 /* CookbookCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CookbookCell.h; sourceTree = "<group>"; };
+		7378057A1D62E7F2004B7A00 /* CookbookCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CookbookCell.m; sourceTree = "<group>"; };
 		73DD1AB01CEEE25C0059ADAC /* SchoolCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchoolCell.h; sourceTree = "<group>"; };
 		73DD1AB11CEEE25C0059ADAC /* SchoolCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchoolCell.m; sourceTree = "<group>"; };
 		73DD1AB41CEEE5110059ADAC /* newsImageView@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "newsImageView@2x.png"; sourceTree = "<group>"; };
@@ -822,6 +828,8 @@
 				EFA2BD7D1D0C038B000D1EF2 /* BabyShowViewController.m */,
 				73EC540F1D225F510032C754 /* CoursesViewController.h */,
 				73EC54101D225F510032C754 /* CoursesViewController.m */,
+				737805761D62BB71004B7A00 /* CookbookViewController.h */,
+				737805771D62BB71004B7A00 /* CookbookViewController.m */,
 			);
 			path = Announcement;
 			sourceTree = "<group>";
@@ -1445,6 +1453,8 @@
 				73E47B8B1D61B0C600626AE6 /* EditView.m */,
 				F49ECBA91D290E8200DA6A3A /* CoursesCell.h */,
 				F49ECBAA1D290E8200DA6A3A /* CoursesCell.m */,
+				737805791D62E7F2004B7A00 /* CookbookCell.h */,
+				7378057A1D62E7F2004B7A00 /* CookbookCell.m */,
 			);
 			path = Announcement;
 			sourceTree = "<group>";
@@ -1810,6 +1820,7 @@
 				EFA3BFD01CEBE69A00724058 /* UIView+TKCategory.m in Sources */,
 				F4CA1AC11CECC2920020BA59 /* ResetPasswordViewController.m in Sources */,
 				EFA2BD541D0BBD85000D1EF2 /* ChildDetailViewController.m in Sources */,
+				7378057B1D62E7F2004B7A00 /* CookbookCell.m in Sources */,
 				73EC54111D225F510032C754 /* CoursesViewController.m in Sources */,
 				7327FC961CEC065300C88F38 /* FifthViewController.m in Sources */,
 				EFA2BDB41D0CE9DE000D1EF2 /* DataManager.m in Sources */,
@@ -1853,6 +1864,7 @@
 				7328850E1CED5758006A5CEC /* BuildClassViewController.m in Sources */,
 				7349BF031D1B772F00A57243 /* ParentCell.m in Sources */,
 				EFA3BFCD1CEBE69A00724058 /* NSString+UIColor.m in Sources */,
+				737805781D62BB71004B7A00 /* CookbookViewController.m in Sources */,
 				73F3F1AD1D61682D007A8ACD /* SelectClssView.m in Sources */,
 				73E47B891D61A89C00626AE6 /* SelectClassCell.m in Sources */,
 				730C269E1D1CDDA500286B33 /* EditDataCell.m in Sources */,

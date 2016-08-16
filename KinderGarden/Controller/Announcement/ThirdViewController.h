@@ -12,6 +12,7 @@
 
 #import "BabyShowViewController.h"
 #import "CoursesViewController.h"
+#import "CookbookViewController.h"
 
 @interface ThirdViewController : BasicViewController <TakePhotoViewDelegate>
 {
