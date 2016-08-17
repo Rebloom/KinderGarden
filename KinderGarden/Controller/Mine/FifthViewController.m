@@ -40,6 +40,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = kBackgroundColor;
+    
     [headerView loadComponentsWithTitle:@"个人中心" withTitleColor:KFontColorA];
     
     [self createEditBtn];
@@ -65,6 +67,7 @@
     infoTableView.delegate = self;
     infoTableView.dataSource = self;
     infoTableView.showsVerticalScrollIndicator = NO;
+    infoTableView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:infoTableView];
     
     if (!headView)
@@ -147,6 +150,8 @@
     {
         cell = [[FifthCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
     }
+    cell.backgroundColor = KFontColorA;
+    
     NSArray * titleArr = @[@"账号信息",@"学校信息",@"父母圈",@"设置",@"家长咨询"];
     
     cell.nameLabel.text = [titleArr objectAtIndex:indexPath.row];

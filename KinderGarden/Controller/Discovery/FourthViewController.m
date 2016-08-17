@@ -20,29 +20,62 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    self.view.backgroundColor = kBackgroundColor;
+    
     [headerView loadComponentsWithTitle:@"发现" withTitleColor:KFontColorA];
     
     [self createTableView];
-    
 }
 
 - (void)createTableView
 {
     infoTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, screenWidth, screenHeight) style:UITableViewStylePlain];
+    infoTableView.backgroundColor = [UIColor clearColor];
     infoTableView.delegate = self;
     infoTableView.dataSource = self;
+    infoTableView.scrollEnabled = NO;
+    infoTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     infoTableView.showsVerticalScrollIndicator = NO;
     [self.view addSubview:infoTableView];
 }
 
+- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView * view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, 10)];
+    view.backgroundColor = kBackgroundColor;
+    
+    return view;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 10.f;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 45.f;
+}
+
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return 3;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    if (section == 0)
+    {
+        return 2;
+    }
+    else if (section==1)
+    {
+        return 1;
+    }
+    else
+    {
+        return 1;
+    }
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -54,65 +87,73 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
     }
     
-//    NSArray * leftArr= @[@"父母圈",@"待定",@"待定"];
-    NSArray * leftArr= @[@"父母圈"];
-
+    NSArray * textOneArr= @[@"父母圈",@"成长日记"];
+    NSArray * imageOneArr= @[@"discovery_fmchat",@"discovery_growup"];
+    
+    UIImageView * leftImageView = [[UIImageView alloc] init];
+    leftImageView.frame = CGRectMake(10, 12, 21, 21);
+    [cell addSubview:leftImageView];
+    
     UILabel * leftLable = [[UILabel alloc] init];
     leftLable.textAlignment = NSTextAlignmentLeft;
-    leftLable.frame = CGRectMake(20, 0, 100, 60);
+    leftLable.frame = CGRectMake(50, 0, 100, 45);
     leftLable.font = NormalFontWithSize(14);
     leftLable.textColor = KFontColorC;
-    leftLable.text = [leftArr objectAtIndex:indexPath.row];
     [cell addSubview:leftLable];
     
     UILabel * lineLabel = [[UILabel alloc] init];
     lineLabel.backgroundColor = KFontColorE;
-    lineLabel.frame = CGRectMake(0, 59.5, screenWidth, 0.5);
     [cell addSubview:lineLabel];
+   
+    if (indexPath.section == 0)
+    {
+        leftImageView.image = [UIImage imageNamed:[imageOneArr objectAtIndex:indexPath.row]];
+        leftLable.text = [textOneArr objectAtIndex:indexPath.row];
+        lineLabel.frame = CGRectMake(10, 44.5, screenWidth, 0.5);
+        
+        if (indexPath.row == textOneArr.count-1)
+        {
+            lineLabel.frame = CGRectZero;
+        }
+    }
+    else if (indexPath.section == 1)
+    {
+        leftImageView.image = [UIImage imageNamed:@"discovery_school"];
+        leftLable.text = @"加入学校";
+    }
+    else
+    {
+        leftImageView.image = [UIImage imageNamed:@"dicovery_zixun"];
+        leftLable.text = @"咨询";
+    }
     
     return cell;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 60;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (indexPath.row == 0)
+  
+    if (indexPath.section == 0)
     {
-        ParentsChatViewController * PCVC = [[ParentsChatViewController alloc] init];
-        [self pushToViewController:PCVC];
+        if (indexPath.row == 0)
+        {
+            ParentsChatViewController * PCVC = [[ParentsChatViewController alloc] init];
+            [self pushToViewController:PCVC];
+        }
+        else if (indexPath.row == 1)
+        {
+            
+        }
     }
-    else if (indexPath.row == 1)
+    else if (indexPath.section == 1)
     {
-#warning 测试用
-//        AttentionAndFunsViewController * AAFVC = [[AttentionAndFunsViewController alloc] init];
-//        [self pushToViewController:AAFVC];
+    
     }
-    else if (indexPath.row == 2)
+    else if (indexPath.section == 2)
     {
-#warning 测试用
-//        LookViewController * LVC = [[LookViewController alloc] init];
-//        [self pushToViewController:LVC];
+
     }
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 
 @end

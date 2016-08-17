@@ -423,7 +423,7 @@
 //重写返回，弹出列表选择是否退出
 - (void)back
 {
-    UIActionSheet * actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"保存草稿",@"退出编辑",nil];
+    UIActionSheet * actionSheet = [[UIActionSheet alloc] initWithTitle:@"是否退出编辑" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"继续编辑",@"退出编辑",nil];
     actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
     [actionSheet showInView:self.view];
 }
@@ -432,7 +432,7 @@
 {
     if (buttonIndex==0)
     {
-        //保存草稿
+        //继续编辑
     }
     else if (buttonIndex == 1)
     {    
