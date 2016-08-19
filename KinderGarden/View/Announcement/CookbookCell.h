@@ -7,31 +7,31 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TakePhotoView.h"
-#import "NXAddPictureView.h"
-
-typedef void (^RefreshBlock)(BOOL refresh);
 
 @protocol CookbookDelegate <NSObject>
 
 - (void)deleteMealWithIndex:(UIButton*)sender;
+
 - (void)addMealWithIndex:(NSInteger)index;
+
+- (void)picBtnWithIndex:(NSInteger)index;
+
+- (void)imageViewClickedAtIndex;
 
 @end
 
-@interface CookbookCell : UITableViewCell<UITextFieldDelegate,UITextViewDelegate,NXAddPictureViewDelegate,TakePhotoViewDelegate,UIGestureRecognizerDelegate>
+@interface CookbookCell : UITableViewCell<UITextFieldDelegate,UIGestureRecognizerDelegate>
 {
-    TakePhotoView * takePhoto;
     UIView * line;
+    UIButton * picBtn;
+    UIView * editView;
 }
 @property(nonatomic,strong) UILabel * MealTimeLabel;
 @property(nonatomic,strong) UIButton * deleteBtn;
-@property(nonatomic,strong) UIScrollView * containerScrollView;
 @property(nonatomic,strong) UIButton * addMealBtn;
 @property(nonatomic,strong) UIImageView * deleteImageView;
-@property(nonatomic,strong) NXAddPictureView * addPicView;
-@property(nonatomic, copy) NSString * shopID;
-@property(nonatomic, copy) RefreshBlock refreshBlock;
+@property(nonatomic,strong) UIButton * picBtn;
+@property(nonatomic,strong) UIView * editView;
 
 @property(nonatomic,assign) id<CookbookDelegate>delegate;
 

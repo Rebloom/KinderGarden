@@ -22,6 +22,8 @@
     [headerView loadComponentsWithTitle:@"" withTitleColor:KFontColorA];
     [headerView backButton];
     
+    picArr = [[NSMutableArray alloc] initWithCapacity:10];
+    
     mealArr = [[NSMutableArray alloc] initWithCapacity:10];
     classNum = 0;
     recordRow = 0;
@@ -167,6 +169,15 @@
     fabuBtn.titleLabel.font = NormalFontWithSize(15);
     [fabuBtn addTarget:self action:@selector(fabuBtnOnClick:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:fabuBtn];
+    
+    takePhoto = [[TakePhotoView alloc] initWithFrame:CGRectMake(0, 64, screenWidth, screenHeight)];
+    takePhoto.delegate = self;
+    [self.view addSubview:takePhoto];
+}
+
+- (void)didSelectMaxNum
+{
+    [self showAlertWithMessage:@"最多添加15张图片"];
 }
 
 //发布
@@ -230,23 +241,22 @@
         cell = [[CookbookCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
     }
     
-
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.delegate = self;
-
     cell.addMealBtn.tag = indexPath.section;
     
-
     if (mealArr.count>0)
     {
         if (indexPath.row<mealArr.count)
         {
             cell.MealTimeLabel.hidden = NO;
             cell.deleteBtn.hidden = NO;
-            cell.deleteBtn.tag = indexPath.row;
-            cell.containerScrollView.hidden = NO;
             cell.addMealBtn.hidden = YES;
-
+            cell.editView.hidden = NO;
+            
+            cell.deleteBtn.tag = indexPath.row;
+            cell.picBtn.tag = indexPath.row;
+            
             NSInteger row = indexPath.row;
             NSString * dinner =@"";
             switch (row)
@@ -268,21 +278,42 @@
             }
             
             cell.MealTimeLabel.text = dinner;
+            
+            if (picArr.count>0)
+            {
+                for (int i =0; i<picArr.count; i++)
+                {
+                    UIImageView *picImageView = [[UIImageView alloc] init];
+                    picImageView.frame = CGRectMake(i*55, 5, 50, 50);
+
+                    NSObject * object = [picArr objectAtIndex:i];
+                    if ([object isKindOfClass:[UIImage class]])
+                    {
+                        picImageView.image = [picArr objectAtIndex:i];
+                    }
+                    [cell.editView addSubview:picImageView];
+                }
+            }
         }
         else
         {
             cell.MealTimeLabel.hidden = YES;
             cell.deleteBtn.hidden = YES;
             cell.addMealBtn.hidden = NO;
-            cell.containerScrollView.hidden = YES;
+            cell.editView.hidden = YES;
         }
     }
     else
     {
         cell.MealTimeLabel.hidden = YES;
         cell.deleteBtn.hidden = YES;
+        cell.editView.hidden = YES;
         cell.addMealBtn.hidden = NO;
-        cell.containerScrollView.hidden = YES;
+    }
+    
+    if (indexPath.row==4)
+    {
+        cell.addMealBtn.hidden = YES;
     }
     
     return cell;
@@ -291,7 +322,7 @@
 - (void)addMealWithIndex:(NSInteger)index
 {
     [mealArr addObject:@""];
- 
+    
     [infoTablView reloadData];
 }
 
@@ -301,6 +332,48 @@
     [mealArr removeObjectAtIndex:recordRow];
     
     [infoTablView reloadData];
+}
+
+- (void)picBtnWithIndex:(NSInteger)index
+{
+//    [takePhoto show];
+}
+
+#pragma TakePhotoViewDelegate
+- (void)didSelectImage:(UIImage *)image
+{
+    [picArr insertObject:image atIndex:picArr.count];
+    [infoTablView reloadData];
+}
+
+- (void)didSelectImages:(NSArray *)assetImageArr
+{
+    NSMutableArray * tempArr = [NSMutableArray array];
+    tempArr = [picArr mutableCopy];
+    
+    for (UIImage * image in assetImageArr)
+    {
+        [tempArr insertObject:image atIndex:picArr.count];
+    }
+    picArr = [tempArr mutableCopy];
+    
+    [infoTablView reloadData];
+
+    [takePhoto hide];
+}
+
+#pragma ImageViewDelegate
+- (void)imageViewClickedAtIndex
+{
+    if (picArr.count >= 4)
+    {
+        [self showAlertWithMessage:@"最多添加4张图片"];
+    }
+    else
+    {
+        [takePhoto show];
+        takePhoto.maxNumsOfSelect = 4-picArr.count;
+    }
 }
 
 

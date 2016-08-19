@@ -6,17 +6,21 @@
 //  Copyright © 2016年 haonanchen. All rights reserved.
 //
 
+#define kTagImageViewGap            4
+#define kTagImageViewBeginTag       1024
+
 #import "CookbookCell.h"
 #import "NXMacro.h"
 #import "NSString+UIColor.h"
 
 @implementation CookbookCell
-@synthesize containerScrollView;
+
 @synthesize deleteBtn;
 @synthesize MealTimeLabel;
 @synthesize deleteImageView;
 @synthesize addMealBtn;
-@synthesize addPicView;
+@synthesize picBtn;
+@synthesize editView;
 
 - (void)awakeFromNib {
     // Initialization code
@@ -47,52 +51,11 @@
     MealTimeLabel.font = NormalFontWithSize(14);
     [self addSubview:MealTimeLabel];
     
-    if (!containerScrollView)
-    {
-        containerScrollView = [[UIScrollView alloc] init];
-    }
-    containerScrollView .frame = CGRectMake(90, 20, screenWidth-90-45, 90);
-    containerScrollView.backgroundColor = KFontColorA;
-    containerScrollView.showsVerticalScrollIndicator = NO;
-    containerScrollView.scrollEnabled = NO;
-    containerScrollView.showsHorizontalScrollIndicator = NO;
-    CGFloat addtionalHeight = 200;
-    containerScrollView.contentSize = CGSizeMake(screenWidth, screenHeight+addtionalHeight);
-    [self addSubview:containerScrollView];
-    
-    if (!addPicView) {
-        addPicView = [[NXAddPictureView alloc] init];
-    }
-    addPicView.frame = CGRectMake(0,0, CGRectGetWidth(containerScrollView.frame), 30);
-    addPicView.delegate = self;
-    [addPicView.imageArray removeAllObjects];
-    [addPicView.imageArray addObject:[UIImage imageNamed:@"icon_takePicture"]];
-    [addPicView reloadPictureViewWithImages];
-    [containerScrollView addSubview:addPicView];
-    
-    if (!line)
-    {
-        line = [[UIView alloc] init];
-    }
-    line.frame = CGRectMake(0, CGRectGetMaxY(addPicView.frame), screenWidth, .5);
-    line.backgroundColor = [UIColor lightGrayColor];
-    [containerScrollView addSubview:line];
-    
-    if (!takePhoto)
-    {
-        takePhoto = [[TakePhotoView alloc] init];
-    }
-    takePhoto.frame = CGRectMake(0, 0, screenWidth, screenHeight);
-    takePhoto.delegate = self;
-    [self addSubview:takePhoto];
-    [[UIApplication sharedApplication].keyWindow addSubview:takePhoto];
-
-    
     if (!deleteBtn)
     {
         deleteBtn = [[UIButton alloc] init];
     }
-    deleteBtn.frame = CGRectMake(screenWidth-45, CGRectGetMinY(containerScrollView.frame), 40, 35);
+    deleteBtn.frame = CGRectMake(screenWidth-45, CGRectGetMinY(MealTimeLabel.frame), 40, 35);
     [deleteBtn addTarget:self action:@selector(deleteMealBtnOnClick:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:deleteBtn];
     
@@ -116,9 +79,47 @@
     [addMealBtn addTarget:self action:@selector(addMealBtnOnClick:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:addMealBtn];
 
+    if (!editView)
+    {
+        editView = [[UIView alloc] init];
+    }
+    editView.frame = CGRectMake(90, 20, screenWidth-90-65, 100);
+    editView.backgroundColor = KFontColorA;
+    [self addSubview:editView];
+    
+    if (!picBtn)
+    {
+        picBtn = [[UIButton alloc] init];
+    }
+    picBtn.frame = CGRectMake(0, 0, CGRectGetWidth(editView.frame), 60);
+    picBtn.backgroundColor = [UIColor clearColor];
+    [picBtn addTarget:self action:@selector(picBtnOnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [editView addSubview:picBtn];
+    
+    if (!line)
+    {
+        line = [[UIView alloc] init];
+    }
+    line.frame = CGRectMake(0, CGRectGetMaxY(picBtn.frame),CGRectGetWidth(editView.frame), .5);
+    line.backgroundColor = KFontColorE;
+    [editView addSubview:line];
+
+    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gestureRecognizerHandler:)];
+    tap.cancelsTouchesInView = NO;
+    tap.delegate = self;
+    [editView addGestureRecognizer:tap];
 }
 
-//添加课程
+//选择图片
+- (void)picBtnOnClick:(UIButton*)sender
+{
+    if ([self.delegate respondsToSelector:@selector(picBtnWithIndex:)])
+    {
+        [self.delegate picBtnWithIndex:sender.tag];
+    }
+}
+
+//添加食谱
 - (void)addMealBtnOnClick:(UIButton*)sender
 {
     if ([self.delegate respondsToSelector:@selector(addMealWithIndex:)])
@@ -127,7 +128,7 @@
     }
 }
 
-//删除课程
+//删除食谱
 - (void)deleteMealBtnOnClick:(UIButton*)sender
 {
     if ([self.delegate respondsToSelector:@selector(deleteMealWithIndex:)])
@@ -136,92 +137,18 @@
     }
 }
 
-
--(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+- (void)gestureRecognizerHandler:(UIGestureRecognizer *)gesture
 {
-    NSString * touchObject = NSStringFromClass([touch.view class]);
-    
-    // 点击的是Button控件
-    if([touchObject isEqualToString:@"UIButton"])
+    UIView * recognizerView = gesture.view;
+    if ([gesture isKindOfClass:[UITapGestureRecognizer class]])
     {
-        return NO;
-    }
-    return YES;
-}
-
-#pragma BrowseDelegate
-- (void)deleteImageAtIndex:(NSInteger)index
-{
-    if (index < addPicView.imageArray.count-1)
-    {
-        [addPicView.imageArray removeObjectAtIndex:index];
-        [addPicView reloadPictureViewWithImages];
-    }
-}
-
-- (NSInteger)currentNumberOfPictures
-{
-    return addPicView.imageArray.count-1;
-}
-
-#pragma TakePhotoViewDelegate
-- (void)didSelectImage:(UIImage *)image
-{
-    [addPicView.imageArray insertObject:image atIndex:addPicView.imageArray.count-1];
-    [addPicView reloadPictureViewWithImages];
-    
-    //    submitBtn.frame = CGRectMake(80, CGRectGetMaxY(addPicView.frame)+20, screenWidth-160, 45);
-}
-
-- (void)didSelectImages:(NSArray *)assetImageArr
-{
-    for (UIImage * image in assetImageArr)
-    {
-        [addPicView.imageArray insertObject:image atIndex:addPicView.imageArray.count-1];
-    }
-    [addPicView reloadPictureViewWithImages];
-    //    submitBtn.frame = CGRectMake(80, CGRectGetMaxY(addPicView.frame)+20, screenWidth-160, 45);
-    
-    [takePhoto hide];
-}
-
-- (void)didSelectMaxNum
-{
-//    [self showAlertWithMessage:@"最多添加4张图片"];
-}
-
-#pragma ImageViewDelegate
-- (void)imageViewClickedAtIndex:(NSInteger)index
-{
-    if (index == addPicView.imageArray.count-1)
-    {
-        if (addPicView.imageArray.count == 16)
+        // 点击了图片
+        if (self.delegate && [self.delegate respondsToSelector:@selector(imageViewClickedAtIndex)])
         {
-//            [self showAlertWithMessage:@"最多添加4张图片"];
+            [self.delegate imageViewClickedAtIndex];
         }
-        else
-        {
-            // resignFirstResponder
-//            [self viewTapped:nil];
-            [takePhoto show];
-            takePhoto.maxNumsOfSelect = 16-addPicView.imageArray.count;
-        }
+        [self bringSubviewToFront:recognizerView];
     }
-}
-
-- (void)imageViewDeleteAtIndex:(NSInteger)index
-{
-    if (index < addPicView.imageArray.count-1)
-    {
-        [addPicView.imageArray removeObjectAtIndex:index];
-        [addPicView reloadPictureViewWithImages];
-    }
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 @end

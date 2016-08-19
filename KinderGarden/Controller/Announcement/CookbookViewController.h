@@ -10,8 +10,9 @@
 #import "SelectClssView.h"
 #import "EditView.h"
 #import "CookbookCell.h"
+#import "TakePhotoView.h"
 
-@interface CookbookViewController : BasicViewController<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate,UIActionSheetDelegate,UITextFieldDelegate,selectClassDelegate,editViewDelegate,CookbookDelegate>
+@interface CookbookViewController : BasicViewController<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate,UIActionSheetDelegate,UITextFieldDelegate,selectClassDelegate,editViewDelegate,CookbookDelegate,TakePhotoViewDelegate>
 {
     UITableView * infoTablView;
     UIScrollView * SV;
@@ -21,10 +22,13 @@
     NSInteger recordSection;
     
     NSMutableArray * mealArr;
+    NSMutableArray * picArr;
     
     SelectClssView * selectView;
     EditView * editV;
     NSInteger recordRow;//记录编辑的是哪一行
+    
+    TakePhotoView * takePhoto;
 }
 
 @end
