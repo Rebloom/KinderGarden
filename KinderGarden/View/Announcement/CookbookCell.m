@@ -26,7 +26,8 @@
 @synthesize thirdImageView;
 @synthesize fourthImageView;
 @synthesize line;
-
+@synthesize cookbookBtn;
+@synthesize classNameLabel;
 - (void)awakeFromNib {
     // Initialization code
 }
@@ -103,6 +104,30 @@
     [picBtn addTarget:self action:@selector(picBtnOnClick:) forControlEvents:UIControlEventTouchUpInside];
     [editView addSubview:picBtn];
     
+    if (!cookbookBtn)
+    {
+        cookbookBtn = [[UIButton alloc] init];
+    }
+    cookbookBtn.titleLabel.font = NormalFontWithSize(14);
+    cookbookBtn.backgroundColor = KFontColorA;
+    [cookbookBtn setTitle:@"输入菜谱" forState:UIControlStateNormal];
+    [cookbookBtn setTitleColor:KFontColorB forState:UIControlStateNormal];
+    cookbookBtn.frame = CGRectMake(CGRectGetMinX(picBtn.frame), CGRectGetMaxY(picBtn.frame), CGRectGetWidth(picBtn.frame), 40);
+    [cookbookBtn addTarget:self action:@selector(cookbookBtnOnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [editView addSubview:cookbookBtn];
+    
+    
+    if (!classNameLabel)
+    {
+        classNameLabel = [[UILabel alloc] init];
+    }
+    classNameLabel.frame = CGRectMake(0, 0, CGRectGetWidth(cookbookBtn.frame), CGRectGetHeight(cookbookBtn.frame));
+    classNameLabel.textAlignment = NSTextAlignmentLeft;
+    classNameLabel.textColor = KFontColorC;
+    classNameLabel.backgroundColor = [UIColor clearColor];
+    classNameLabel.font = NormalFontWithSize(14);
+    [cookbookBtn addSubview:classNameLabel];
+    
     if (!firstImageView)
     {
         firstImageView = [[UIImageView alloc] init];
@@ -133,7 +158,7 @@
 
     if (!line)
     {
-        line = [[UIView alloc] init];
+        line = [[UILabel alloc] init];
     }
     line.frame = CGRectMake(0, CGRectGetMaxY(picBtn.frame),CGRectGetWidth(editView.frame), .5);
     line.backgroundColor = KFontColorE;
@@ -166,5 +191,15 @@
         [self.delegate deleteMealWithIndex:sender];
     }
 }
+
+//编辑菜谱
+- (void)cookbookBtnOnClick:(UIButton*)sender
+{
+    if ([self.delegate respondsToSelector:@selector(cookbookWithIndex:)])
+    {
+        [self.delegate cookbookWithIndex:sender.tag];
+    }
+}
+
 
 @end

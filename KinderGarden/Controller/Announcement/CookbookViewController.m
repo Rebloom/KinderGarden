@@ -35,6 +35,14 @@
     [self createClassBtn];
     [self createScrollView];
     [self createUI];
+    [self createEditView];
+}
+
+//编辑弹窗视图（默认隐藏）
+- (void)createEditView
+{
+    editV = [[EditView defaultEditView] init];
+    editV.delegate  =self;
 }
 
 - (void)createClassBtn
@@ -258,13 +266,15 @@
             
             cell.deleteBtn.tag = indexPath.row;
             cell.picBtn.tag = indexPath.row;
-            
+            cell.cookbookBtn.tag = indexPath.row;
+
             cell.firstImageView.image = [UIImage imageNamed:@""];
             cell.secondImageView.image = [UIImage imageNamed:@""];
             cell.thirdImageView.image = [UIImage imageNamed:@""];
             cell.fourthImageView.image = [UIImage imageNamed:@""];
             [cell.picBtn setTitle:@"点此添加图片" forState:UIControlStateNormal];
-            
+            [cell.cookbookBtn setTitle:@"输入食谱" forState:UIControlStateNormal];
+
             NSInteger row = indexPath.row;
             NSString * dinner =@"";
             switch (row)
@@ -284,35 +294,46 @@
                 default:
                     break;
             }
-            
             cell.MealTimeLabel.text = dinner;
             
-            picArr = [[infoArr objectAtIndex:indexPath.row] objectForKey:@"pic"];
-            if (picArr.count>0)
+            NSDictionary * dict = [infoArr objectAtIndex:indexPath.row];
+            
+            if (dict.allKeys>0)
             {
-                [cell.picBtn setTitle:@"" forState:UIControlStateNormal];
-                
-                for (int i =0; i<picArr.count; i++)
+                NSString * cookbookStr = [[dict objectForKey:@"cookbook"] description];
+                cell.classNameLabel.text = [NSString stringWithFormat:@"  %@",cookbookStr];
+                if (cookbookStr.length>0)
                 {
-                    NSObject * object = [picArr objectAtIndex:i];
+                    [cell.cookbookBtn setTitle:@"" forState:UIControlStateNormal];
+                }
+                
+                picArr = [dict objectForKey:@"pic"];
+                if (picArr.count>0)
+                {
+                    [cell.picBtn setTitle:@"" forState:UIControlStateNormal];
                     
-                    if ([object isKindOfClass:[UIImage class]])
+                    for (int i =0; i<picArr.count; i++)
                     {
-                        if (i==0)
+                        NSObject * object = [picArr objectAtIndex:i];
+                        
+                        if ([object isKindOfClass:[UIImage class]])
                         {
-                            cell.firstImageView.image = [picArr objectAtIndex:0];
-                        }
-                        else if (i == 1)
-                        {
-                            cell.secondImageView.image = [picArr objectAtIndex:1];
-                        }
-                        else if (i==2)
-                        {
-                            cell.thirdImageView.image = [picArr objectAtIndex:2];
-                        }
-                        else if (i==3)
-                        {
-                            cell.fourthImageView.image = [picArr objectAtIndex:3];
+                            if (i==0)
+                            {
+                                cell.firstImageView.image = [picArr objectAtIndex:0];
+                            }
+                            else if (i == 1)
+                            {
+                                cell.secondImageView.image = [picArr objectAtIndex:1];
+                            }
+                            else if (i==2)
+                            {
+                                cell.thirdImageView.image = [picArr objectAtIndex:2];
+                            }
+                            else if (i==3)
+                            {
+                                cell.fourthImageView.image = [picArr objectAtIndex:3];
+                            }
                         }
                     }
                 }
@@ -322,8 +343,8 @@
         {
             cell.MealTimeLabel.hidden = YES;
             cell.deleteBtn.hidden = YES;
-            cell.addMealBtn.hidden = NO;
             cell.editView.hidden = YES;
+            cell.addMealBtn.hidden = NO;
         }
     }
     else
@@ -342,15 +363,15 @@
     return cell;
 }
 
+#pragma mark CookbookCellDelegate
 //添加食谱
 - (void)addMealWithIndex:(NSInteger)index
 {
     NSArray * tempArr = [NSArray array];
     NSMutableDictionary * tempDict = [NSMutableDictionary dictionary];
-    [tempDict setObject:tempArr forKey:@"pic"];
+    [tempDict setObject:tempArr forKey:@"pic"];//图片的数组
+    [tempDict setObject:@"" forKey:@"cookbook"];//菜谱
     [infoArr addObject:tempDict];
-    
-    NSLog(@"infoArr==%@",infoArr);
     
     [infoTablView reloadData];
 }
@@ -361,14 +382,6 @@
     recordRow = sender.tag;
     [infoArr removeObjectAtIndex:recordRow];
     
-//    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:infoArr.count inSection:0];
-//
-//    CookbookCell * cell = (CookbookCell*)[infoTablView cellForRowAtIndexPath:indexPath];
-//    if (indexPath.row == recordRow)
-//    {
-//        [cell.editView removeAllSubviews];
-//    }
-    
     [infoTablView reloadData];
 }
 
@@ -376,7 +389,7 @@
 {
     recordRow = index;
     picArr = [[infoArr objectAtIndex:recordRow] objectForKey:@"pic"];
-
+    
     if (picArr.count >= 4)
     {
         [self showAlertWithMessage:@"最多添加4张图片"];
@@ -386,6 +399,40 @@
         [takePhoto show];
         takePhoto.maxNumsOfSelect = 4-picArr.count;
     }
+}
+
+//编辑食谱
+- (void)cookbookWithIndex:(NSInteger)index
+{
+    recordRow = index;
+    
+    NSString * title = [[infoArr objectAtIndex:index] objectForKey:@"cookbook"];
+    
+    [editV setTitleStr:title];
+    [editV showView];
+    
+    [infoTablView reloadData];
+}
+
+#pragma mark 编辑弹窗代理方法
+//隐藏弹窗
+- (void)hideBtnClicked
+{
+    [editV hideView];
+}
+
+//确定输入内容
+- (void)sureClick:(NSString *)title
+{
+    [editV hideView];
+    
+    if (title.length>0)
+    {
+        NSMutableDictionary * tempDict = [infoArr objectAtIndex:recordRow];
+        [tempDict setObject:title forKey:@"cookbook"];
+        [infoArr replaceObjectAtIndex:recordRow withObject:tempDict];
+    }
+    [infoTablView reloadData];
 }
 
 #pragma TakePhotoViewDelegate
@@ -399,8 +446,6 @@
 
 - (void)didSelectImages:(NSArray *)assetImageArr
 {
-    NSLog(@"recordRow===%ld",(long)recordRow);
-    
     picArr = [[infoArr objectAtIndex:recordRow] objectForKey:@"pic"];
     
     NSMutableArray * tempArr = [NSMutableArray array];

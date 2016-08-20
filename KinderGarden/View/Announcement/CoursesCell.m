@@ -55,7 +55,7 @@
     {
         editClassBtn = [[UIButton alloc] init];
     }
-    editClassBtn.backgroundColor = [UIColor redColor];
+    editClassBtn.backgroundColor = [UIColor clearColor];
     editClassBtn.frame = CGRectMake(CGRectGetMaxX(numLabel.frame)+20, 25, 210, 35);
     [editClassBtn addTarget:self action:@selector(editClassBtnOnClick:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:editClassBtn];

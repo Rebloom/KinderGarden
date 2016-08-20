@@ -10,8 +10,10 @@
 
 @protocol CourcesDelegate <NSObject>
 
-- (void)deleteWithIndex:(UIButton*)sender WithSection:(NSInteger)section;
 - (void)addClassWithIndex:(NSInteger)index;
+
+- (void)deleteWithIndex:(UIButton*)sender WithSection:(NSInteger)section;
+
 - (void)editClassWithIndex:(UIButton*)sender WithSection:(NSInteger)section ;
 @end
 
