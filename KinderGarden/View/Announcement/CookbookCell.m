@@ -116,7 +116,6 @@
     [cookbookBtn addTarget:self action:@selector(cookbookBtnOnClick:) forControlEvents:UIControlEventTouchUpInside];
     [editView addSubview:cookbookBtn];
     
-    
     if (!classNameLabel)
     {
         classNameLabel = [[UILabel alloc] init];
@@ -132,30 +131,50 @@
     {
         firstImageView = [[UIImageView alloc] init];
     }
-    firstImageView.frame = CGRectMake(0, 5, 50, 50);
     [editView addSubview:firstImageView];
     
     if (!secondImageView)
     {
         secondImageView = [[UIImageView alloc] init];
     }
-    secondImageView.frame = CGRectMake(55, 5, 50, 50);
     [editView addSubview:secondImageView];
     
     if (!thirdImageView)
     {
         thirdImageView = [[UIImageView alloc] init];
     }
-    thirdImageView.frame = CGRectMake(110, 5, 50, 50);
     [editView addSubview:thirdImageView];
     
     if (!fourthImageView)
     {
         fourthImageView = [[UIImageView alloc] init];
     }
-    fourthImageView.frame = CGRectMake(165, 5, 50, 50);
     [editView addSubview:fourthImageView];
 
+    if (iPhone6Plus)
+    {
+        firstImageView.frame = CGRectMake(5, 5, 50, 50);
+        secondImageView.frame = CGRectMake(70, 5, 50, 50);
+        thirdImageView.frame = CGRectMake(135, 5, 50, 50);
+        fourthImageView.frame = CGRectMake(200, 5, 50, 50);
+    }
+    else
+    {
+        firstImageView.frame = CGRectMake(0, 5, 50, 50);
+        secondImageView.frame = CGRectMake(55, 5, 50, 50);
+        thirdImageView.frame = CGRectMake(110, 5, 50, 50);
+        fourthImageView.frame = CGRectMake(165, 5, 50, 50);
+    }
+    
+    if (iPhone5||iPhone4s)
+    {
+        fourthImageView.hidden = YES;
+    }
+    else
+    {
+        fourthImageView.hidden = NO;
+    }
+    
     if (!line)
     {
         line = [[UILabel alloc] init];
