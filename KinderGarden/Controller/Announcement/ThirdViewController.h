@@ -8,13 +8,7 @@
 
 #import "BasicViewController.h"
 
-#import "ChildListViewController.h"
-
-#import "BabyShowViewController.h"
-#import "CoursesViewController.h"
-#import "CookbookViewController.h"
-
-@interface ThirdViewController : BasicViewController <TakePhotoViewDelegate>
+@interface ThirdViewController : BasicViewController
 {
     UIImageView  * mainView;
     

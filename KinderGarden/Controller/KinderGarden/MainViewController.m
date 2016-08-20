@@ -9,6 +9,10 @@
 #import "MainViewController.h"
 
 #import "FirstViewController.h"
+#import "CookbookViewController.h"
+#import "CoursesViewController.h"
+#import "ParentsChatViewController.h"
+#import "ChildListViewController.h"
 
 @implementation MainViewController
 
@@ -69,12 +73,12 @@
         cellButton.tag = indexPath.row*4+i;
         [cell addSubview:cellButton];
         
-        UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(15, 10, screenWidth/4-30, screenWidth/4-30)];
+        UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake((screenWidth/4-48)/2, 10, 48, 48)];
         imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@",[_infoArray objectAtIndex:i+indexPath.row*4]]];
         imageView.userInteractionEnabled = NO;
         [cellButton addSubview:imageView];
         
-        UILabel * nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, CGRectGetMaxY(imageView.frame)+5, screenWidth/4-30, 15)];
+        UILabel * nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(imageView.frame)+5, screenWidth/4, 15)];
         nameLabel.textAlignment = NSTextAlignmentCenter;
         nameLabel.backgroundColor = [UIColor clearColor];
         nameLabel.font = NormalFontWithSize(12);
@@ -93,6 +97,30 @@
         // 视频公开课
         FirstViewController * FVC = [[FirstViewController alloc] init];
         [self pushToViewController:FVC];
+    }
+    else if (btn.tag == 1)
+    {
+        
+    }
+    else if (btn.tag == 2)
+    {
+        CookbookViewController * CVC = [[CookbookViewController alloc] init];
+        [self pushToViewController:CVC];
+    }
+    else if (btn.tag == 3)
+    {
+        CoursesViewController * CVC = [[CoursesViewController alloc] init];
+        [self pushToViewController:CVC];
+    }
+    else if (btn.tag == 4)
+    {
+        ParentsChatViewController * PCVC = [[ParentsChatViewController alloc] init];
+        [self pushToViewController:PCVC];
+    }
+    else if (btn.tag == 5)
+    {
+        ChildListViewController * CLVC = [[ChildListViewController alloc] init];
+        [self pushToViewController:CLVC];
     }
 }
 
