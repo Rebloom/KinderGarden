@@ -21,8 +21,12 @@
     NSInteger classNum;//用来记录上午有几节课
     NSInteger recordSection;
     
-    NSMutableArray * mealArr;
-    NSMutableArray * picArr;
+    NSMutableDictionary * mealDict;
+    NSMutableDictionary * picDict;
+    
+    NSMutableArray * mealArr;//用来装餐次
+    NSMutableArray * picArr;//用来装图片
+    NSMutableArray * infoArr;//用来装所有数据
     
     SelectClssView * selectView;
     EditView * editV;

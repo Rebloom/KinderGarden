@@ -23,8 +23,12 @@
     [headerView backButton];
     
     picArr = [[NSMutableArray alloc] initWithCapacity:10];
-    
+    infoArr = [[NSMutableArray alloc] initWithCapacity:10];
     mealArr = [[NSMutableArray alloc] initWithCapacity:10];
+    
+    mealDict = [[NSMutableDictionary alloc] initWithCapacity:10];
+    picDict = [[NSMutableDictionary alloc] initWithCapacity:10];
+    
     classNum = 0;
     recordRow = 0;
     
@@ -155,7 +159,6 @@
     infoTablView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:infoTablView];
     
-    
     UILabel * lineLabel = [[UILabel alloc] init];
     lineLabel.backgroundColor = KFontColorE;
     lineLabel.frame = CGRectMake(0, screenHeight- 60.5, screenWidth, 0.5);
@@ -207,7 +210,6 @@
     secondLabel.font = NormalFontWithSize(14);
     [view addSubview:secondLabel];
     
-    
     return view;
 }
 
@@ -228,7 +230,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return mealArr.count+1;
+    return infoArr.count+1;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -245,9 +247,9 @@
     cell.delegate = self;
     cell.addMealBtn.tag = indexPath.section;
     
-    if (mealArr.count>0)
+    if (infoArr.count>0)
     {
-        if (indexPath.row<mealArr.count)
+        if (indexPath.row<infoArr.count)
         {
             cell.MealTimeLabel.hidden = NO;
             cell.deleteBtn.hidden = NO;
@@ -256,6 +258,12 @@
             
             cell.deleteBtn.tag = indexPath.row;
             cell.picBtn.tag = indexPath.row;
+            
+            cell.firstImageView.image = [UIImage imageNamed:@""];
+            cell.secondImageView.image = [UIImage imageNamed:@""];
+            cell.thirdImageView.image = [UIImage imageNamed:@""];
+            cell.fourthImageView.image = [UIImage imageNamed:@""];
+            [cell.picBtn setTitle:@"点此添加图片" forState:UIControlStateNormal];
             
             NSInteger row = indexPath.row;
             NSString * dinner =@"";
@@ -279,19 +287,34 @@
             
             cell.MealTimeLabel.text = dinner;
             
+            picArr = [[infoArr objectAtIndex:indexPath.row] objectForKey:@"pic"];
             if (picArr.count>0)
             {
+                [cell.picBtn setTitle:@"" forState:UIControlStateNormal];
+                
                 for (int i =0; i<picArr.count; i++)
                 {
-                    UIImageView *picImageView = [[UIImageView alloc] init];
-                    picImageView.frame = CGRectMake(i*55, 5, 50, 50);
-
                     NSObject * object = [picArr objectAtIndex:i];
+                    
                     if ([object isKindOfClass:[UIImage class]])
                     {
-                        picImageView.image = [picArr objectAtIndex:i];
+                        if (i==0)
+                        {
+                            cell.firstImageView.image = [picArr objectAtIndex:0];
+                        }
+                        else if (i == 1)
+                        {
+                            cell.secondImageView.image = [picArr objectAtIndex:1];
+                        }
+                        else if (i==2)
+                        {
+                            cell.thirdImageView.image = [picArr objectAtIndex:2];
+                        }
+                        else if (i==3)
+                        {
+                            cell.fourthImageView.image = [picArr objectAtIndex:3];
+                        }
                     }
-                    [cell.editView addSubview:picImageView];
                 }
             }
         }
@@ -319,52 +342,41 @@
     return cell;
 }
 
+//添加食谱
 - (void)addMealWithIndex:(NSInteger)index
 {
-    [mealArr addObject:@""];
+    NSArray * tempArr = [NSArray array];
+    NSMutableDictionary * tempDict = [NSMutableDictionary dictionary];
+    [tempDict setObject:tempArr forKey:@"pic"];
+    [infoArr addObject:tempDict];
+    
+    NSLog(@"infoArr==%@",infoArr);
     
     [infoTablView reloadData];
 }
 
+//删除食谱
 - (void)deleteMealWithIndex:(UIButton *)sender
 {
     recordRow = sender.tag;
-    [mealArr removeObjectAtIndex:recordRow];
+    [infoArr removeObjectAtIndex:recordRow];
+    
+//    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:infoArr.count inSection:0];
+//
+//    CookbookCell * cell = (CookbookCell*)[infoTablView cellForRowAtIndexPath:indexPath];
+//    if (indexPath.row == recordRow)
+//    {
+//        [cell.editView removeAllSubviews];
+//    }
     
     [infoTablView reloadData];
 }
 
 - (void)picBtnWithIndex:(NSInteger)index
 {
-//    [takePhoto show];
-}
+    recordRow = index;
+    picArr = [[infoArr objectAtIndex:recordRow] objectForKey:@"pic"];
 
-#pragma TakePhotoViewDelegate
-- (void)didSelectImage:(UIImage *)image
-{
-    [picArr insertObject:image atIndex:picArr.count];
-    [infoTablView reloadData];
-}
-
-- (void)didSelectImages:(NSArray *)assetImageArr
-{
-    NSMutableArray * tempArr = [NSMutableArray array];
-    tempArr = [picArr mutableCopy];
-    
-    for (UIImage * image in assetImageArr)
-    {
-        [tempArr insertObject:image atIndex:picArr.count];
-    }
-    picArr = [tempArr mutableCopy];
-    
-    [infoTablView reloadData];
-
-    [takePhoto hide];
-}
-
-#pragma ImageViewDelegate
-- (void)imageViewClickedAtIndex
-{
     if (picArr.count >= 4)
     {
         [self showAlertWithMessage:@"最多添加4张图片"];
@@ -376,6 +388,36 @@
     }
 }
 
+#pragma TakePhotoViewDelegate
+- (void)didSelectImage:(UIImage *)image
+{
+    picArr = [[infoArr objectAtIndex:recordRow] objectForKey:@"pic"];
+
+    [picArr insertObject:image atIndex:picArr.count];
+    [infoTablView reloadData];
+}
+
+- (void)didSelectImages:(NSArray *)assetImageArr
+{
+    NSLog(@"recordRow===%ld",(long)recordRow);
+    
+    picArr = [[infoArr objectAtIndex:recordRow] objectForKey:@"pic"];
+    
+    NSMutableArray * tempArr = [NSMutableArray array];
+    tempArr = [picArr mutableCopy];
+    
+    for (UIImage * image in assetImageArr)
+    {
+        [tempArr insertObject:image atIndex:picArr.count];
+    }
+    picArr = [tempArr mutableCopy];
+    
+    [[infoArr objectAtIndex:recordRow] setObject:picArr forKey:@"pic"];
+    
+    [infoTablView reloadData];
+
+    [takePhoto hide];
+}
 
 //重写返回，弹出列表选择是否退出
 - (void)back

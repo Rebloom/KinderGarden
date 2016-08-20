@@ -21,6 +21,11 @@
 @synthesize addMealBtn;
 @synthesize picBtn;
 @synthesize editView;
+@synthesize firstImageView;
+@synthesize secondImageView;
+@synthesize thirdImageView;
+@synthesize fourthImageView;
+@synthesize line;
 
 - (void)awakeFromNib {
     // Initialization code
@@ -93,9 +98,39 @@
     }
     picBtn.frame = CGRectMake(0, 0, CGRectGetWidth(editView.frame), 60);
     picBtn.backgroundColor = [UIColor clearColor];
+    [picBtn setTitle:@"点此添加图片" forState:UIControlStateNormal];
+    [picBtn setTitleColor:KFontColorB forState:UIControlStateNormal];
     [picBtn addTarget:self action:@selector(picBtnOnClick:) forControlEvents:UIControlEventTouchUpInside];
     [editView addSubview:picBtn];
     
+    if (!firstImageView)
+    {
+        firstImageView = [[UIImageView alloc] init];
+    }
+    firstImageView.frame = CGRectMake(0, 5, 50, 50);
+    [editView addSubview:firstImageView];
+    
+    if (!secondImageView)
+    {
+        secondImageView = [[UIImageView alloc] init];
+    }
+    secondImageView.frame = CGRectMake(55, 5, 50, 50);
+    [editView addSubview:secondImageView];
+    
+    if (!thirdImageView)
+    {
+        thirdImageView = [[UIImageView alloc] init];
+    }
+    thirdImageView.frame = CGRectMake(110, 5, 50, 50);
+    [editView addSubview:thirdImageView];
+    
+    if (!fourthImageView)
+    {
+        fourthImageView = [[UIImageView alloc] init];
+    }
+    fourthImageView.frame = CGRectMake(165, 5, 50, 50);
+    [editView addSubview:fourthImageView];
+
     if (!line)
     {
         line = [[UIView alloc] init];
@@ -103,11 +138,6 @@
     line.frame = CGRectMake(0, CGRectGetMaxY(picBtn.frame),CGRectGetWidth(editView.frame), .5);
     line.backgroundColor = KFontColorE;
     [editView addSubview:line];
-
-    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gestureRecognizerHandler:)];
-    tap.cancelsTouchesInView = NO;
-    tap.delegate = self;
-    [editView addGestureRecognizer:tap];
 }
 
 //选择图片
@@ -134,20 +164,6 @@
     if ([self.delegate respondsToSelector:@selector(deleteMealWithIndex:)])
     {
         [self.delegate deleteMealWithIndex:sender];
-    }
-}
-
-- (void)gestureRecognizerHandler:(UIGestureRecognizer *)gesture
-{
-    UIView * recognizerView = gesture.view;
-    if ([gesture isKindOfClass:[UITapGestureRecognizer class]])
-    {
-        // 点击了图片
-        if (self.delegate && [self.delegate respondsToSelector:@selector(imageViewClickedAtIndex)])
-        {
-            [self.delegate imageViewClickedAtIndex];
-        }
-        [self bringSubviewToFront:recognizerView];
     }
 }
 

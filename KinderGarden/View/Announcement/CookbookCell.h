@@ -16,23 +16,21 @@
 
 - (void)picBtnWithIndex:(NSInteger)index;
 
-- (void)imageViewClickedAtIndex;
-
 @end
 
 @interface CookbookCell : UITableViewCell<UITextFieldDelegate,UIGestureRecognizerDelegate>
-{
-    UIView * line;
-    UIButton * picBtn;
-    UIView * editView;
-}
+
 @property(nonatomic,strong) UILabel * MealTimeLabel;
 @property(nonatomic,strong) UIButton * deleteBtn;
 @property(nonatomic,strong) UIButton * addMealBtn;
 @property(nonatomic,strong) UIImageView * deleteImageView;
 @property(nonatomic,strong) UIButton * picBtn;
 @property(nonatomic,strong) UIView * editView;
-
+@property(nonatomic,strong) UIImageView * firstImageView;
+@property(nonatomic,strong) UIImageView * secondImageView;
+@property(nonatomic,strong) UIImageView * thirdImageView;
+@property(nonatomic,strong) UIImageView * fourthImageView;
+@property(nonatomic,strong) UIView * line;
 @property(nonatomic,assign) id<CookbookDelegate>delegate;
 
 @end
