@@ -29,9 +29,10 @@
     
     headerView.frame = CGRectMake(0, 0, screenWidth, screenWidth/3*2);
     
-    UIImageView * bannerImage = [[UIImageView alloc] initWithFrame:headerView.frame];
-    bannerImage.image = [UIImage imageNamed:@"banner"];
-    [headerView addSubview:bannerImage];
+    NSArray * bannerImageArray = @[@"banner",@"banner",@"banner",@"banner"];
+    SDCycleScrollView * cycleScroll = [SDCycleScrollView cycleScrollViewWithFrame:headerView.frame imageURLStringsGroup:bannerImageArray];
+    cycleScroll.delegate = self;
+    [self.view addSubview:cycleScroll];
 
     _infoTable = [[UITableView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(headerView.frame), screenWidth, screenHeight-CGRectGetMaxY(headerView.frame)-56)];
     _infoTable.delegate = self;
@@ -41,6 +42,11 @@
     _infoTable.showsHorizontalScrollIndicator = NO;
     _infoTable.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:_infoTable];
+}
+
+- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index
+{
+    [[TKAlertCenter defaultCenter] postAlertWithMessage:[NSString stringWithFormat:@"%ld+1",index]];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

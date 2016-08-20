@@ -12,7 +12,6 @@
 
 #import "NXAddPictureView.h"
 
-
 typedef void (^RefreshBlock)(BOOL refresh);
 
 @interface BabyShowViewController : BasicViewController  <UITextFieldDelegate,UITextViewDelegate,NXAddPictureViewDelegate,TakePhotoViewDelegate,UIGestureRecognizerDelegate>

@@ -39,12 +39,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods.xcscheme</key>
+		<key>Pods-KinderGarden.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Qiniu.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SDCycleScrollView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -62,7 +67,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>3BC999ABB7C29E77FAD5DF6E10E783A0</key>
+		<key>450EA2ACE3404FC114EFCB0DAEA3BB06</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -72,17 +77,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6010320E4855964DCE7772A270F3DD50</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>70BC44266C6FFE30D2C57129458E070B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8A5AD2491A82F6FCA9DCCEAF057835E4</key>
+		<key>78BD613882AF90535DC57743729C2D2E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>856043718EA25867FD9A29D2F23CEE58</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -92,12 +97,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>96D8F0371F5CD5D40392BB8B2A9AF436</key>
+		<key>A9DD0511E7BEB30672D6697BC3398ABB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A9DD0511E7BEB30672D6697BC3398ABB</key>
+		<key>BBA6923F4647CE1E0A034EC273D7EB33</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C0960F5B4C28135DE6733B0ED36A2F45</key>
 		<dict>
 			<key>primary</key>
 			<true/>

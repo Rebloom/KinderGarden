@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2482A98BF148859116D3B8D8 /* libPods-KinderGarden.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53FFA1852853C42B65ED567A /* libPods-KinderGarden.a */; };
 		730C269B1D1CD3A200286B33 /* EditDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 730C269A1D1CD3A200286B33 /* EditDataViewController.m */; };
 		730C269E1D1CDDA500286B33 /* EditDataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 730C269D1D1CDDA500286B33 /* EditDataCell.m */; };
 		730C26A01D1D122500286B33 /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = 730C269F1D1D122500286B33 /* area.plist */; };
@@ -170,7 +171,6 @@
 		73EC541A1D225FBB0032C754 /* ArticleDetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73EC54181D225FBB0032C754 /* ArticleDetailHeaderView.m */; };
 		73EC541C1D225FD00032C754 /* topImageView.png in Resources */ = {isa = PBXBuildFile; fileRef = 73EC541B1D225FD00032C754 /* topImageView.png */; };
 		73F3F1AD1D61682D007A8ACD /* SelectClssView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F3F1AC1D61682D007A8ACD /* SelectClssView.m */; };
-		77E0F474297B0413BB4F17DF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BC10A5E3A8DC40DBB06E11D /* libPods.a */; };
 		EF02DC001D60DC480011483A /* banner.png in Resources */ = {isa = PBXBuildFile; fileRef = EF02DBE71D60DC480011483A /* banner.png */; };
 		EF02DC011D60DC480011483A /* 听吧@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF02DBE81D60DC480011483A /* 听吧@2x.png */; };
 		EF02DC021D60DC480011483A /* 听吧@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF02DBE91D60DC480011483A /* 听吧@3x.png */; };
@@ -281,6 +281,7 @@
 		EFA3BFE71CEBE8D800724058 /* NSString+Encryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA3BFDF1CEBE8D800724058 /* NSString+Encryptor.m */; };
 		EFA3BFE81CEBE8D800724058 /* NSString+Reverse.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA3BFE11CEBE8D800724058 /* NSString+Reverse.m */; };
 		EFA3BFE91CEBE8D800724058 /* Secret.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA3BFE31CEBE8D800724058 /* Secret.m */; };
+		EFBFBCD01D68334900FF6D5A /* PublishPublicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFBFBCCF1D68334900FF6D5A /* PublishPublicViewController.m */; };
 		EFF9817F1D55BBFC005043BC /* LoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EFF9817E1D55BBFC005043BC /* LoginRequest.m */; };
 		F47D4B1C1D603965003E38B2 /* diet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F47D4B1A1D603965003E38B2 /* diet@2x.png */; };
 		F47D4B1D1D603965003E38B2 /* diet@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F47D4B1B1D603965003E38B2 /* diet@3x.png */; };
@@ -327,8 +328,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0BC10A5E3A8DC40DBB06E11D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		615FA94E6B284ABB03BFE0EC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		35E6EFD104259ABE83EB39B4 /* Pods-KinderGarden.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KinderGarden.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KinderGarden/Pods-KinderGarden.debug.xcconfig"; sourceTree = "<group>"; };
+		53FFA1852853C42B65ED567A /* libPods-KinderGarden.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KinderGarden.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		730C26991D1CD3A200286B33 /* EditDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditDataViewController.h; sourceTree = "<group>"; };
 		730C269A1D1CD3A200286B33 /* EditDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditDataViewController.m; sourceTree = "<group>"; };
 		730C269C1D1CDDA500286B33 /* EditDataCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditDataCell.h; sourceTree = "<group>"; };
@@ -542,7 +543,7 @@
 		73EC541B1D225FD00032C754 /* topImageView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topImageView.png; sourceTree = "<group>"; };
 		73F3F1AB1D61682D007A8ACD /* SelectClssView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectClssView.h; sourceTree = "<group>"; };
 		73F3F1AC1D61682D007A8ACD /* SelectClssView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectClssView.m; sourceTree = "<group>"; };
-		8778DCFCDBE316D039C62A29 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		A4355AD3EE899C109830DF51 /* Pods-KinderGarden.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KinderGarden.release.xcconfig"; path = "Pods/Target Support Files/Pods-KinderGarden/Pods-KinderGarden.release.xcconfig"; sourceTree = "<group>"; };
 		EF02DBE71D60DC480011483A /* banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = banner.png; sourceTree = "<group>"; };
 		EF02DBE81D60DC480011483A /* 听吧@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "听吧@2x.png"; sourceTree = "<group>"; };
 		EF02DBE91D60DC480011483A /* 听吧@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "听吧@3x.png"; sourceTree = "<group>"; };
@@ -699,6 +700,8 @@
 		EFA3BFE21CEBE8D800724058 /* Secret.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Secret.h; sourceTree = "<group>"; };
 		EFA3BFE31CEBE8D800724058 /* Secret.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Secret.m; sourceTree = "<group>"; };
 		EFA3BFEA1CEBEA9A00724058 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		EFBFBCCE1D68334900FF6D5A /* PublishPublicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublishPublicViewController.h; sourceTree = "<group>"; };
+		EFBFBCCF1D68334900FF6D5A /* PublishPublicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublishPublicViewController.m; sourceTree = "<group>"; };
 		EFF9817D1D55BBFC005043BC /* LoginRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginRequest.h; sourceTree = "<group>"; };
 		EFF9817E1D55BBFC005043BC /* LoginRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginRequest.m; sourceTree = "<group>"; };
 		F47D4B1A1D603965003E38B2 /* diet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "diet@2x.png"; sourceTree = "<group>"; };
@@ -758,20 +761,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77E0F474297B0413BB4F17DF /* libPods.a in Frameworks */,
+				2482A98BF148859116D3B8D8 /* libPods-KinderGarden.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5A1A877E8C16852FA237DF87 /* Pods */ = {
+		4337C02D2E47FDC5EC591BD5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				615FA94E6B284ABB03BFE0EC /* Pods.debug.xcconfig */,
-				8778DCFCDBE316D039C62A29 /* Pods.release.xcconfig */,
+				53FFA1852853C42B65ED567A /* libPods-KinderGarden.a */,
 			);
-			name = Pods;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		730C26A11D1D126400286B33 /* YWBCityPickerView */ = {
@@ -854,6 +856,8 @@
 				73EC54101D225F510032C754 /* CoursesViewController.m */,
 				737805761D62BB71004B7A00 /* CookbookViewController.h */,
 				737805771D62BB71004B7A00 /* CookbookViewController.m */,
+				EFBFBCCE1D68334900FF6D5A /* PublishPublicViewController.h */,
+				EFBFBCCF1D68334900FF6D5A /* PublishPublicViewController.m */,
 			);
 			path = Announcement;
 			sourceTree = "<group>";
@@ -1183,12 +1187,13 @@
 			path = Dynamic;
 			sourceTree = "<group>";
 		};
-		8C11C13C3A966EB987F7843C /* Frameworks */ = {
+		D5BF3ADFF1319931ABC73B20 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0BC10A5E3A8DC40DBB06E11D /* libPods.a */,
+				35E6EFD104259ABE83EB39B4 /* Pods-KinderGarden.debug.xcconfig */,
+				A4355AD3EE899C109830DF51 /* Pods-KinderGarden.release.xcconfig */,
 			);
-			name = Frameworks;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		EF02DBE61D60DC480011483A /* MainChannel */ = {
@@ -1228,8 +1233,8 @@
 			children = (
 				EF65D4831CEAC42F00463441 /* KinderGarden */,
 				EF65D4821CEAC42F00463441 /* Products */,
-				5A1A877E8C16852FA237DF87 /* Pods */,
-				8C11C13C3A966EB987F7843C /* Frameworks */,
+				D5BF3ADFF1319931ABC73B20 /* Pods */,
+				4337C02D2E47FDC5EC591BD5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1530,12 +1535,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EF65D49B1CEAC42F00463441 /* Build configuration list for PBXNativeTarget "KinderGarden" */;
 			buildPhases = (
-				E9FE206C32900CAEEDE4A115 /* Check Pods Manifest.lock */,
+				BB144A521708EFE7AAA216A7 /* [CP] Check Pods Manifest.lock */,
 				EF65D47D1CEAC42F00463441 /* Sources */,
 				EF65D47E1CEAC42F00463441 /* Frameworks */,
 				EF65D47F1CEAC42F00463441 /* Resources */,
-				4D642BBEB51D472220646E70 /* Embed Pods Frameworks */,
-				A1A577230E3C70D64EAC6F86 /* Copy Pods Resources */,
+				6A9CA7519367B35183930B84 /* [CP] Embed Pods Frameworks */,
+				15A70B43C5022C8061BD789C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1804,44 +1809,44 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4D642BBEB51D472220646E70 /* Embed Pods Frameworks */ = {
+		15A70B43C5022C8061BD789C /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KinderGarden/Pods-KinderGarden-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A1A577230E3C70D64EAC6F86 /* Copy Pods Resources */ = {
+		6A9CA7519367B35183930B84 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KinderGarden/Pods-KinderGarden-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E9FE206C32900CAEEDE4A115 /* Check Pods Manifest.lock */ = {
+		BB144A521708EFE7AAA216A7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1900,6 +1905,7 @@
 				7349BF721D1BBCEB00A57243 /* AttentionAndFunsViewController.m in Sources */,
 				F4CA1AAD1CECAC8A0020BA59 /* AccoutSafeViewController.m in Sources */,
 				EF451CE41D5F96DD0038DFFD /* NSObject+AssertNilValue.m in Sources */,
+				EFBFBCD01D68334900FF6D5A /* PublishPublicViewController.m in Sources */,
 				7327FC901CEC063E00C88F38 /* ThirdViewController.m in Sources */,
 				EFA3BFE41CEBE8D800724058 /* GFBase64.m in Sources */,
 				730C26AA1D1D22A400286B33 /* MineHostCell.m in Sources */,
@@ -2069,34 +2075,36 @@
 		};
 		EF65D49C1CEAC42F00463441 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 615FA94E6B284ABB03BFE0EC /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 35E6EFD104259ABE83EB39B4 /* Pods-KinderGarden.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Shenli Luan (75B2MMWUR7)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Shenli Luan (75B2MMWUR7)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: zhu hua (62B9C8XKWN)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zhu hua (62B9C8XKWN)";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = KinderGarden/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.xdcy.gf;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dbn.nx.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "85544f37-41f9-4ef8-af42-95d40b0fb5da";
+				PROVISIONING_PROFILE = "13cdddc3-da28-4979-b425-7b637f1761f9";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		EF65D49D1CEAC42F00463441 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8778DCFCDBE316D039C62A29 /* Pods.release.xcconfig */;
+			baseConfigurationReference = A4355AD3EE899C109830DF51 /* Pods-KinderGarden.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Shenli Luan (75B2MMWUR7)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Shenli Luan (75B2MMWUR7)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: zhu hua (62B9C8XKWN)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zhu hua (62B9C8XKWN)";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = KinderGarden/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.xdcy.gf;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dbn.nx.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "85544f37-41f9-4ef8-af42-95d40b0fb5da";
+				PROVISIONING_PROFILE = "13cdddc3-da28-4979-b425-7b637f1761f9";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

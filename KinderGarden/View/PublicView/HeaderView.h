@@ -28,4 +28,6 @@
 - (void)backButton;
 - (void)setStatusBarColor:(UIColor *)color;
 
+- (void)publishButton;
+
 @end

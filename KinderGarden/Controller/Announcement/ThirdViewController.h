@@ -14,6 +14,8 @@
 #import "CoursesViewController.h"
 #import "CookbookViewController.h"
 
+#import "PublishPublicViewController.h"
+
 @interface ThirdViewController : BasicViewController <TakePhotoViewDelegate>
 {
     UIImageView  * mainView;

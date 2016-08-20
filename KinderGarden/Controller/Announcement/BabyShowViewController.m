@@ -8,7 +8,7 @@
 
 #import "BabyShowViewController.h"
 
-static NSString * defaultGoodsDescString = @"描述一下您的照片，让大家更感兴趣";
+static NSString * defaultGoodsDescString = @"描述一下照片，让大家更感兴趣";
 #define MyOrangeColor       MY_COLOR(252,79,30,1)
 
 @implementation BabyShowViewController
@@ -135,13 +135,8 @@ static NSString * defaultGoodsDescString = @"描述一下您的照片，让大�
 {
     if (goodsDescTextView.text.length < 5)
     {
-        [self showAlertWithMessage:@"商品描述不得少于五个字"];
+        [self showAlertWithMessage:@"描述不得少于五个字"];
         return;
-    }
-    
-    if (addPicView.imageArray.count < 2)
-    {
-        [self showAlertWithMessage:@"请上传商品图片"];
     }
     else
     {

@@ -97,7 +97,8 @@
     }
     else if (sender.tag == 1001)
     {
-        NSLog(@"发布通知");
+        PublishPublicViewController * PPVC = [[PublishPublicViewController alloc] init];
+        [self pushToViewController:PPVC];
     }
     else if (sender.tag == 1002)
     {

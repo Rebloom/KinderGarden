@@ -8,7 +8,9 @@
 
 #import "BasicViewController.h"
 
-@interface MainViewController : BasicViewController <UITableViewDelegate, UITableViewDataSource>
+#import "SDCycleScrollView.h"
+
+@interface MainViewController : BasicViewController <UITableViewDelegate, UITableViewDataSource,SDCycleScrollViewDelegate>
 
 @property (nonatomic, retain) NSMutableArray * infoArray;
 
