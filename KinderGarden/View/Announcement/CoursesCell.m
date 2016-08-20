@@ -56,7 +56,7 @@
         editClassBtn = [[UIButton alloc] init];
     }
     editClassBtn.backgroundColor = [UIColor clearColor];
-    editClassBtn.frame = CGRectMake(CGRectGetMaxX(numLabel.frame)+20, 25, 210, 35);
+    editClassBtn.frame = CGRectMake(CGRectGetMaxX(numLabel.frame)+20, 25, screenWidth-90-65, 35);
     [editClassBtn addTarget:self action:@selector(editClassBtnOnClick:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:editClassBtn];
 
@@ -65,7 +65,7 @@
     {
         classNameLabel = [[UILabel alloc] init];
     }
-    classNameLabel.frame = CGRectMake(0, 0, 210, 35);
+    classNameLabel.frame = CGRectMake(0, 0, CGRectGetWidth(editClassBtn.frame), CGRectGetHeight(editClassBtn.frame));
     classNameLabel.textAlignment = NSTextAlignmentLeft;
     classNameLabel.textColor = KFontColorC;
     classNameLabel.backgroundColor = KFontColorA;
@@ -76,7 +76,7 @@
     {
         deleteBtn = [[UIButton alloc] init];
     }
-    deleteBtn.frame = CGRectMake(CGRectGetMaxX(editClassBtn.frame)+20, CGRectGetMinY(editClassBtn.frame), 40, 35);
+    deleteBtn.frame = CGRectMake(screenWidth-45, CGRectGetMinY(editClassBtn.frame), 40, 35);
     [deleteBtn addTarget:self action:@selector(deleteBtnOnClick:WithSection:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:deleteBtn];
    

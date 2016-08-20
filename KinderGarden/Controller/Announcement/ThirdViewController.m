@@ -7,6 +7,13 @@
 //
 
 #import "ThirdViewController.h"
+
+#import "ChildListViewController.h"
+#import "ParentsChatViewController.h"
+#import "BabyShowViewController.h"
+#import "CoursesViewController.h"
+#import "CookbookViewController.h"
+
 #import <Accelerate/Accelerate.h>
 
 @interface ThirdViewController ()
@@ -112,7 +119,8 @@
     }
     else if (sender.tag == 1004)
     {
-        NSLog(@"父母圈");
+        ParentsChatViewController * PCVC = [[ParentsChatViewController alloc] init];
+        [self pushToViewController:PCVC];
     }
     else if (sender.tag == 1005)
     {

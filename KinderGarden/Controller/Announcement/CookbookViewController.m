@@ -22,12 +22,7 @@
     [headerView loadComponentsWithTitle:@"" withTitleColor:KFontColorA];
     [headerView backButton];
     
-    picArr = [[NSMutableArray alloc] initWithCapacity:10];
     infoArr = [[NSMutableArray alloc] initWithCapacity:10];
-    mealArr = [[NSMutableArray alloc] initWithCapacity:10];
-    
-    mealDict = [[NSMutableDictionary alloc] initWithCapacity:10];
-    picDict = [[NSMutableDictionary alloc] initWithCapacity:10];
     
     classNum = 0;
     recordRow = 0;
@@ -307,7 +302,7 @@
                     [cell.cookbookBtn setTitle:@"" forState:UIControlStateNormal];
                 }
                 
-                picArr = [dict objectForKey:@"pic"];
+                NSArray * picArr = [dict objectForKey:@"pic"];
                 if (picArr.count>0)
                 {
                     [cell.picBtn setTitle:@"" forState:UIControlStateNormal];
@@ -388,16 +383,32 @@
 - (void)picBtnWithIndex:(NSInteger)index
 {
     recordRow = index;
-    picArr = [[infoArr objectAtIndex:recordRow] objectForKey:@"pic"];
+    NSArray * picArr = [[infoArr objectAtIndex:recordRow] objectForKey:@"pic"];
     
-    if (picArr.count >= 4)
+    if (iPhone4s||iPhone5)
     {
-        [self showAlertWithMessage:@"最多添加4张图片"];
+        if (picArr.count >= 3)
+        {
+            [self showAlertWithMessage:@"最多添加3张图片"];
+        }
+        else
+        {
+            [takePhoto show];
+            takePhoto.maxNumsOfSelect = 3-picArr.count;
+        }
     }
     else
     {
-        [takePhoto show];
-        takePhoto.maxNumsOfSelect = 4-picArr.count;
+        
+        if (picArr.count >= 4)
+        {
+            [self showAlertWithMessage:@"最多添加4张图片"];
+        }
+        else
+        {
+            [takePhoto show];
+            takePhoto.maxNumsOfSelect = 4-picArr.count;
+        }
     }
 }
 
@@ -438,7 +449,7 @@
 #pragma TakePhotoViewDelegate
 - (void)didSelectImage:(UIImage *)image
 {
-    picArr = [[infoArr objectAtIndex:recordRow] objectForKey:@"pic"];
+    NSMutableArray *  picArr = [[[infoArr objectAtIndex:recordRow] objectForKey:@"pic"] mutableCopy];
 
     [picArr insertObject:image atIndex:picArr.count];
     [infoTablView reloadData];
@@ -446,7 +457,7 @@
 
 - (void)didSelectImages:(NSArray *)assetImageArr
 {
-    picArr = [[infoArr objectAtIndex:recordRow] objectForKey:@"pic"];
+    NSMutableArray * picArr = [[[infoArr objectAtIndex:recordRow] objectForKey:@"pic"] mutableCopy];
     
     NSMutableArray * tempArr = [NSMutableArray array];
     tempArr = [picArr mutableCopy];

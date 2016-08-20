@@ -8,6 +8,7 @@
 
 #import "BasicViewController.h"
 
+<<<<<<< HEAD
 #import "ChildListViewController.h"
 
 #import "BabyShowViewController.h"
@@ -17,6 +18,9 @@
 #import "PublishPublicViewController.h"
 
 @interface ThirdViewController : BasicViewController <TakePhotoViewDelegate>
+=======
+@interface ThirdViewController : BasicViewController
+>>>>>>> origin/master
 {
     UIImageView  * mainView;
     
