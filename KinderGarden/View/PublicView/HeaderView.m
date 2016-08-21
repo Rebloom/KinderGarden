@@ -70,6 +70,16 @@
     [backButton release];
 }
 
+- (void)publishButton
+{
+    UIButton * publishBtn = [[UIButton alloc] initWithFrame:CGRectMake(screenWidth-60,20, 60, 40)];
+    publishBtn.tag = 2;
+    [publishBtn setTitle:@"发布" forState:UIControlStateNormal];
+    [publishBtn addTarget:self action:@selector(headerButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:publishBtn];
+    [publishBtn release];
+}
+
 - (void)headerButtonClicked:(id)sender
 {
     UIButton * btn = (UIButton *)sender;

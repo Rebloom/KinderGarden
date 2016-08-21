@@ -196,6 +196,7 @@
 		EF02DC161D60DC480011483A /* 轮播dot_激活@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF02DBFD1D60DC480011483A /* 轮播dot_激活@3x.png */; };
 		EF02DC171D60DC480011483A /* 饮食@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF02DBFE1D60DC480011483A /* 饮食@2x.png */; };
 		EF02DC181D60DC480011483A /* 饮食@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF02DBFF1D60DC480011483A /* 饮食@3x.png */; };
+		EF02DC1B1D696DEA0011483A /* PublishPublicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF02DC1A1D696DEA0011483A /* PublishPublicViewController.m */; };
 		EF2FC6821D56D77200E31139 /* UserRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EF2FC6811D56D77200E31139 /* UserRequest.m */; };
 		EF2FC6851D56E25B00E31139 /* UserCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = EF2FC6841D56E25B00E31139 /* UserCenter.m */; };
 		EF2FC6881D56EEED00E31139 /* ClassRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EF2FC6871D56EEED00E31139 /* ClassRequest.m */; };
@@ -568,6 +569,8 @@
 		EF02DBFD1D60DC480011483A /* 轮播dot_激活@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "轮播dot_激活@3x.png"; sourceTree = "<group>"; };
 		EF02DBFE1D60DC480011483A /* 饮食@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "饮食@2x.png"; sourceTree = "<group>"; };
 		EF02DBFF1D60DC480011483A /* 饮食@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "饮食@3x.png"; sourceTree = "<group>"; };
+		EF02DC191D696DEA0011483A /* PublishPublicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublishPublicViewController.h; sourceTree = "<group>"; };
+		EF02DC1A1D696DEA0011483A /* PublishPublicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublishPublicViewController.m; sourceTree = "<group>"; };
 		EF2FC6801D56D77200E31139 /* UserRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserRequest.h; sourceTree = "<group>"; };
 		EF2FC6811D56D77200E31139 /* UserRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserRequest.m; sourceTree = "<group>"; };
 		EF2FC6831D56E25B00E31139 /* UserCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserCenter.h; path = KinderGarden/Requests/UserCenter.h; sourceTree = SOURCE_ROOT; };
@@ -842,6 +845,8 @@
 		7327FC831CEC060000C88F38 /* Announcement */ = {
 			isa = PBXGroup;
 			children = (
+				EF02DC191D696DEA0011483A /* PublishPublicViewController.h */,
+				EF02DC1A1D696DEA0011483A /* PublishPublicViewController.m */,
 				7327FC8E1CEC063E00C88F38 /* ThirdViewController.h */,
 				7327FC8F1CEC063E00C88F38 /* ThirdViewController.m */,
 				EFA2BD4B1D0BAD47000D1EF2 /* ChildListViewController.h */,
@@ -1900,6 +1905,7 @@
 				7349BF721D1BBCEB00A57243 /* AttentionAndFunsViewController.m in Sources */,
 				F4CA1AAD1CECAC8A0020BA59 /* AccoutSafeViewController.m in Sources */,
 				EF451CE41D5F96DD0038DFFD /* NSObject+AssertNilValue.m in Sources */,
+				EF02DC1B1D696DEA0011483A /* PublishPublicViewController.m in Sources */,
 				7327FC901CEC063E00C88F38 /* ThirdViewController.m in Sources */,
 				EFA3BFE41CEBE8D800724058 /* GFBase64.m in Sources */,
 				730C26AA1D1D22A400286B33 /* MineHostCell.m in Sources */,
