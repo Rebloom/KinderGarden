@@ -10,6 +10,10 @@ pod 'CTAssetsPickerController', '~> 2.9.5'
 pod 'MJRefresh', '~> 3.1.1'
 pod 'SDCycleScrollView','~> 1.64'
 pod 'Qiniu', '~> 7.1.0.1'
+<<<<<<< HEAD
 pod 'HyphenateFullSDK', :git => 'https://github.com/easemob/hyphenate-full-cocoapods.git'
 
 end
+=======
+pod 'HyphenateFullSDK', :git => 'https://github.com/easemob/hyphenate-full-cocoapods.git'
+>>>>>>> origin/master

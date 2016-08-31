@@ -14,7 +14,11 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
+<<<<<<< HEAD
                BlueprintIdentifier = 'D54AB3ECEB9A8FBA15D4F73CBE326692'
+=======
+               BlueprintIdentifier = '073D5E9AF8EDA205B4F53052'
+>>>>>>> origin/master
                BlueprintName = 'MagicalRecord'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libMagicalRecord.a'>

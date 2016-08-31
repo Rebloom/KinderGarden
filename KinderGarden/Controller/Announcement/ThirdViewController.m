@@ -14,6 +14,8 @@
 #import "CoursesViewController.h"
 #import "CookbookViewController.h"
 
+#import "PublishPublicViewController.h"
+
 #import <Accelerate/Accelerate.h>
 
 @interface ThirdViewController ()

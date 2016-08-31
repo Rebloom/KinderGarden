@@ -14,8 +14,13 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
+<<<<<<< HEAD:Pods/Pods.xcodeproj/xcuserdata/Rebloom.xcuserdatad/xcschemes/Pods-KinderGarden.xcscheme
                BlueprintIdentifier = 'BBA6923F4647CE1E0A034EC273D7EB33'
                BlueprintName = 'Pods-KinderGarden'
+=======
+               BlueprintIdentifier = '53052238A423E02205545E19'
+               BlueprintName = 'Pods'
+>>>>>>> origin/master:Pods/Pods.xcodeproj/xcuserdata/Rebloom.xcuserdatad/xcschemes/Pods.xcscheme
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libPods-KinderGarden.a'>
             </BuildableReference>
