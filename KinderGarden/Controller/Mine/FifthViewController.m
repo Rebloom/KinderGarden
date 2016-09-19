@@ -59,8 +59,6 @@
 - (void)nxRequestFinished:(NXBaseRequest *)request
 {
     NSLog(@"request back is %@",request.attributeDic);
-    nameLabel.text = [[request.attributeDic objectForKey:@"role"] objectForKey:@"name"];
-    phoneLabel.text = [[request.attributeDic objectForKey:@"role"] objectForKey:@"phone"];
 }
 
 - (void)createTableView
@@ -118,7 +116,7 @@
     nameLabel.textAlignment = NSTextAlignmentLeft;
     nameLabel.frame = CGRectMake(CGRectGetMaxX(iconView.frame)+6, CGRectGetMinY(iconView.frame)+15, 180, 25);
     nameLabel.textColor = KFontColorA;
-    nameLabel.text = @"填写昵称（如娇娇老师）";
+    nameLabel.text = @"娇娇老师";
     [headView addSubview:nameLabel];
     
     if (!phoneLabel)
@@ -129,7 +127,7 @@
     phoneLabel.textAlignment = NSTextAlignmentLeft;
     phoneLabel.frame = CGRectMake(CGRectGetMaxX(iconView.frame)+6, CGRectGetMaxY(nameLabel.frame), 180, 20);
     phoneLabel.textColor = KFontColorA;
-    phoneLabel.text = @"手机号：";
+    phoneLabel.text = @"手机号：15143537236";
     [headView addSubview:phoneLabel];
 }
 

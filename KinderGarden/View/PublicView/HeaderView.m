@@ -70,6 +70,28 @@
     [backButton release];
 }
 
+- (void)contactBtn
+{
+    UIButton * contactBtn = [[UIButton alloc] initWithFrame:CGRectMake(screenWidth-60,20, 60, 40)];
+    contactBtn.tag = 2;
+    [contactBtn setTitle:@"通讯录" forState:UIControlStateNormal];
+    contactBtn.titleLabel.font = NormalFontWithSize(15);
+    [contactBtn addTarget:self action:@selector(headerButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:contactBtn];
+    [contactBtn release];
+}
+
+- (void)addRightBtnWithBtnName:(NSString *)name
+{
+    UIButton * rightBtn = [[UIButton alloc] initWithFrame:CGRectMake(screenWidth-60,20, 60, 40)];
+    rightBtn.tag = 2;
+    [rightBtn setTitle:name forState:UIControlStateNormal];
+    rightBtn.titleLabel.font = NormalFontWithSize(15);
+    [rightBtn addTarget:self action:@selector(headerButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:rightBtn];
+    [rightBtn release];
+}
+
 - (void)publishButton
 {
     UIButton * publishBtn = [[UIButton alloc] initWithFrame:CGRectMake(screenWidth-60,20, 60, 40)];

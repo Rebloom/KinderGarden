@@ -26,9 +26,10 @@
 - (void)loadComponentsWithTitle:(NSString *)title;
 - (void)loadComponentsWithTitle:(NSString *)title withTitleColor:(UIColor*)titleColor;
 - (void)backButton;
+- (void)contactBtn;
 - (void)publishButton;
 - (void)setStatusBarColor:(UIColor *)color;
 
-- (void)publishButton;
+- (void)addRightBtnWithBtnName:(NSString *)name;
 
 @end

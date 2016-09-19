@@ -12,6 +12,9 @@
 #import "HomeViewController.h"
 #import "NXGlobalUtil.h"
 
+#import "EMSDK.h"
+#import "EaseUI.h"
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;

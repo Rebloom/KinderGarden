@@ -129,10 +129,14 @@
         ChildListViewController * CLVC = [[ChildListViewController alloc] init];
         [self pushToViewController:CLVC];
     }
-
     else if (sender.tag == 1006)
     {
-        NSLog(@"聊天");
+        EMError *error = [[EMClient sharedClient] loginWithUsername:@"15810697038" password:@"111111"];
+        if (!error) {
+            ConversationListController * ECLVC = [[ConversationListController alloc] init];
+            [self.navigationController pushViewController:ECLVC animated:YES];
+        }
+
     }
 }
 
