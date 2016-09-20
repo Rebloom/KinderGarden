@@ -1,5 +1,4 @@
 platform:ios, '7.0'
-pod 'AFNetworking', '~> 3.1.0'
 pod 'SDWebImage', '~> 3.7.5'
 pod 'MagicalRecord', '~> 2.3.2'
 pod 'YYKit', '~> 1.0.5'

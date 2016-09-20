@@ -13,6 +13,8 @@
 #import "ParentsChatViewController.h"
 #import "ChildListViewController.h"
 
+#import "EZCameraTableViewController.h"
+
 @implementation MainViewController
 
 
@@ -94,7 +96,13 @@
     if (btn.tag == 0)
     {
         // 视频公开课
-        
+        //获取EZMain的stroyboard文件
+        UIStoryboard *ezMainStoryboard = [UIStoryboard storyboardWithName:@"EZMain" bundle:nil];
+        //获取EZMain.storyboard的实例ViewController--获取摄像头列表
+        UIViewController *instanceVC = [ezMainStoryboard instantiateViewControllerWithIdentifier:@"EZCameraList"];
+        //push摄像头列表的viewController
+        [self.navigationController pushViewController:instanceVC animated:YES];
+
     }
     else if (btn.tag == 1)
     {

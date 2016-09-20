@@ -9,6 +9,12 @@
 #import "AppDelegate.h"
 #import "RootViewController.h"
 
+#import "EZOpenSDK.h"
+
+#define EzvizAppKey @"8ff0d3e7aab5485195fd7ddcb0a33934"
+
+#define EZPushAppSecret @"6741c50a996dd8a185a2ceaf06f28be2"
+
 @interface AppDelegate ()
 
 @end
@@ -39,8 +45,55 @@
     options.apnsCertName = @"teacher_release";
     [[EMClient sharedClient] initializeSDKWithOptions:options];
     
+    [self registerAPNS];
+    
+    [EZOpenSDK initLibWithAppKey:EzvizAppKey];
+    
+    NSLog(@"EZOpenSDK Version = %@", [EZOpenSDK getVersion]);
+    
     return YES;
 }
+
+- (void)registerAPNS
+{
+    NSLog(@"Registering for push notifications...");
+    
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+    {
+        [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge|UIUserNotificationTypeSound|UIUserNotificationTypeAlert categories:nil]];
+        [[UIApplication sharedApplication] registerForRemoteNotifications];
+    }
+    else
+    {
+        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert)];
+    }
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    NSLog(@"注册APNS TOKEN成功：%@,%lu",deviceToken,(unsigned long)deviceToken.length);
+    
+    NSString *newToken = [NSString stringWithFormat:@"%@",deviceToken];
+    NSLog(@"newToken = %@",newToken);
+}
+
+//获取远程通知消息
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    UIApplicationState state = [application applicationState];
+    if (state == UIApplicationStateActive)  //在应用内时收到推送
+    {
+        //应用内收到的APNS推送交给pushSdk处理，会统一在messageRecieved：方法中返回原消息。
+        //        [[EZPushService sharedService] handlePushNotificaion:userInfo];
+    }
+    else if(state == UIApplicationStateInactive)    //从应用外 滑动推送信息 进入APP
+    {
+        //滑动消息切回APP（app原先是后台状态）情况下，自行处理该apns消息
+        //注意：滑动消息启动APP（app原先是未启动状态）的话，是走didFinishLaunchingWithOptions方法的，不走这里。
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"你需自行处理滑动进入的推送消息" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil] ;
+        [alert show];
+    }
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -50,6 +103,12 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
     [[EMClient sharedClient] applicationDidEnterBackground:application];
+    __block UIBackgroundTaskIdentifier bgTask = [application beginBackgroundTaskWithExpirationHandler:^{
+        // Clean up any unfinished task business by marking where you
+        // stopped or ending the task outright.
+        [application endBackgroundTask:bgTask];
+        bgTask = UIBackgroundTaskInvalid;
+    }];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application

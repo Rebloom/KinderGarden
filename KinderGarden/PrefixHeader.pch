@@ -27,6 +27,8 @@
 #import "EaseConvertToCommonEmoticonsHelper.h"
 #import "EaseEmoji.h"
 
+#import "Masonry.h"
+
 #endif
 
 // Include any system framework and library headers here that should be included in all compilation units.
