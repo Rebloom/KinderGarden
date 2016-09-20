@@ -9,13 +9,13 @@
 #import "NXBaseRequest.h"
 
 // 添加一个班级
-#define kTagAddOneClassRequest              @"/classinfo/save?"
+#define kTagAddOneClassRequest              @"classinfo/save?"
 
 // 修改班级信息
-#define kTagModifyClassInfoRequest          @"/classTeacher/updateClassinfoList?"
+#define kTagModifyClassInfoRequest          @"classTeacher/updateClassinfoList?"
 
 // 查询班级信息
-#define kTagSearchClassListRequest          @"/classinfo/getClassList?"
+#define kTagSearchClassListRequest          @"classinfo/getClassList?"
 
 
 @interface ClassRequest : NXBaseRequest

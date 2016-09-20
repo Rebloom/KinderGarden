@@ -13,9 +13,9 @@
 #import "TKAlertCenter.h"
 
 // 请求教师详情
-#define kTagRequestTeacherInfo              @"/teacherinfo/getTeacherinfo?"
+#define kTagRequestTeacherInfo              @"teacherinfo/getTeacherinfo?"
 // 修改教师权限
-#define kTagModifyTeacherInfo               @"/schoolTeacher/schoolTeacherUpdate?"
+#define kTagModifyTeacherInfo               @"schoolTeacher/schoolTeacherUpdate?"
 
 @interface UserRequest : NXBaseRequest
 

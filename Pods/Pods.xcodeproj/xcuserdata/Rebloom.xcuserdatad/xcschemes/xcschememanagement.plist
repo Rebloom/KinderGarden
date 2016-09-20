@@ -29,7 +29,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods.xcscheme</key>
+		<key>Pods-KinderGarden.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -57,12 +57,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>06191069EBF592B545EBB8B82919FB70</key>
+		<key>038EA7A4A0BC795AF727748B79439BA6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>14B24566A3A8DF61655E4684DC09AAAC</key>
+		<key>21A5289C4BA2DD416A8DFDA56BC19054</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -72,22 +72,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>874C00FFFAA1E1A65829787B0D770DEF</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>928353533005A4198EBDA5B700D37B64</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A9DD0511E7BEB30672D6697BC3398ABB</key>
+		<key>A1A3D3FE4981E445FB03EA34162672F1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B47CC69AB5E87F8428986EF74F8E41C9</key>
+		<key>A692B28079519C39B94B97DF3452FCE2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A9DD0511E7BEB30672D6697BC3398ABB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -102,7 +102,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E47FABEDECC50F60F19D417ED789C747</key>
+		<key>F57C233C3399E5FBC2C43AF2F7468783</key>
 		<dict>
 			<key>primary</key>
 			<true/>

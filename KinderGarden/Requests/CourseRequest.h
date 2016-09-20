@@ -9,7 +9,7 @@
 #import "NXBaseRequest.h"
 
 // 添加一门课程
-#define kTagAddOneCourseRequest                 @"/coursetime/save?"
+#define kTagAddOneCourseRequest                 @"coursetime/save?"
 
 // 
 

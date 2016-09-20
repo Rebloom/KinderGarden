@@ -124,6 +124,8 @@ static NSString * serverOutTime     = @"请求超时,请稍后重试";
         }
     }
     mainUrlString = [mainUrlString stringByAppendingString:bodyString];
+    
+    mainUrlString = [mainUrlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     // 基于NSMutableUrlRequest
     NSMutableURLRequest * mRequest = [[NSMutableURLRequest alloc] init];
     // 填写主地址，从子类带过来
@@ -218,6 +220,10 @@ static NSString * serverOutTime     = @"请求超时,请稍后重试";
                 {
                     // 正常请求拿到数据放回request准备好的容器
                     request.attributeDic = [back objectForKey:@"obj"];
+                    if (request.attributeDic == nil)
+                    {
+                        request.attributeDic = back;
+                    }
                     request.domainDic = [[back objectForKey:@"d"] objectForKey:@"domains"];
                     if (request.delegate && [request.delegate respondsToSelector:@selector(nxRequestFinished:)]) {
                         [request.delegate nxRequestFinished:request];

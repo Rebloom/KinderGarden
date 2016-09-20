@@ -14,4 +14,6 @@
     UITextField * confirmTf;
 }
 
+@property (nonatomic, copy) NSString * passPhone;
+
 @end

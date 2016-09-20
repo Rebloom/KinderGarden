@@ -58,7 +58,7 @@
 
 - (void)nxRequestFinished:(NXBaseRequest *)request
 {
-    NSLog(@"request back is %@",request.attributeDic);
+    [[TKAlertCenter defaultCenter] postAlertWithMessage:[request.attributeDic objectForKey:@"msg"]];
 }
 
 - (void)createTableView

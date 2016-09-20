@@ -8,6 +8,10 @@
 
 #import "SetPasswordViewController.h"
 
+#import "LoginRequest.h"
+
+#import "LoginViewController.h"
+
 @interface SetPasswordViewController ()
 
 @end
@@ -107,13 +111,48 @@
 
 - (void)nxRequestFinished:(NXBaseRequest *)request
 {
-    
+    if ([request.vrCodeString isEqualToString:kTagResetPasswordRequest])
+    {
+        if ([[request.attributeDic objectForKey:@"success"] integerValue])
+        {
+            [[TKAlertCenter defaultCenter] postAlertWithMessage:@"密码修改成功"];
+            [self performSelector:@selector(delayToLogin) withObject:nil afterDelay:1.5];
+        }
+    }
+}
+
+- (void)delayToLogin
+{
+    for (UIViewController * vc in self.navigationController.viewControllers)
+    {
+        if ([vc isKindOfClass:[LoginViewController class]])
+        {
+            [self.navigationController popToViewController:vc animated:YES];
+            return;
+        }
+    }
+    LoginViewController * LVC = [[LoginViewController alloc] init];
+    [self pushToViewController:LVC];
 }
 
 //下一步
 - (void)nextBtnOnClick:(UIButton*)sender
 {
-    NSLog(@"下一步");
+    if (pwdTf.text.length > 6 || pwdTf.text.length <= 16)
+    {
+        if ([pwdTf.text isEqualToString:confirmTf.text])
+        {
+            [LoginRequest resetPasswordWithPhone:self.passPhone password:pwdTf.text delegate:self];
+        }
+        else
+        {
+            [[TKAlertCenter defaultCenter] postAlertWithMessage:@"两次密码填写不一致"];
+        }
+    }
+    else
+    {
+        [[TKAlertCenter defaultCenter] postAlertWithMessage:@"密码长度应为6-16位"];
+    }
 }
 
 // 点击页面，输入框失去焦点

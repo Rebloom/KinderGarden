@@ -9,28 +9,28 @@
 #import "NXBaseRequest.h"
 
 // 发布一条公告信息
-#define kTagPublishPublicRequest        @"/announcement/save?"
+#define kTagPublishPublicRequest        @"announcement/save?"
 
 // 查询公告列表
-#define kTagGetPublicListRequest        @"/announcement/announcementList?"
+#define kTagGetPublicListRequest        @"announcement/announcementList?"
 
 // 保存公告的评论
-#define kTagCommentPublicRequest        @"/announcementComment/save?"
+#define kTagCommentPublicRequest        @"announcementComment/save?"
 
 // 所有公共文章转发
-#define kTagShareArticleRequest         @"/commonZfLog/save?"
+#define kTagShareArticleRequest         @"commonZfLog/save?"
 
 // 所有点赞公共接口
-#define kTagPraiseRequest               @"/commonDzLog/save?"
+#define kTagPraiseRequest               @"commonDzLog/save?"
 
 // 发布一条食谱
-#define kTagAddOneFoodRequest           @"/food/save?"
+#define kTagAddOneFoodRequest           @"food/save?"
 
 // 父母圈发帖
-#define kTagParrentPublishRequest       @"/parentTopic/save?"
+#define kTagParrentPublishRequest       @"parentTopic/save?"
 
 // 请求七牛token
-#define kTagRequestQNToken              @"/jgkj/getQiniuToken?"
+#define kTagRequestQNToken              @"jgkj/getQiniuToken?"
 
 @interface PublicRequest : NXBaseRequest
 

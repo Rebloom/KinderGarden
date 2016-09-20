@@ -158,25 +158,45 @@ static NSString * defaultGoodsDescString = @"公告内容";
     else
     {
         submitBtn.enabled = NO;
-        NSMutableArray * temp = [addPicView.imageArray mutableCopy];
-        [temp removeLastObject];
-        NSMutableArray * uploadImageArr = [NSMutableArray array];
-        for (NSObject * object in temp)
-        {
-            if ([object isKindOfClass:[UIImage class]])
-            {
-                [uploadImageArr addObject:object];
-            }
-        }
-        [PublicRequest getQiniuTokenWithImageName:@"test" delegate:self];
+        [PublicRequest getQiniuTokenWithImageName:@"testjg" delegate:self];
     }
 }
 
 - (void)nxRequestFinished:(NXBaseRequest *)request
 {
-//    [[QNUploadManager init] putData:(NSData *) key:(NSString *) token:(NSString *) complete:^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
-//        <#code#>
-//    } option:(QNUploadOption *)];
+    if ([request.vrCodeString isEqualToString:kTagRequestQNToken])
+    {
+        NSString * uploadToken = [request.attributeDic objectForKey:@"token"];
+        dispatch_group_t group = dispatch_group_create();
+        NSMutableArray * temp = [addPicView.imageArray mutableCopy];
+        [temp removeLastObject];
+        for (NSObject * object in temp)
+        {
+            dispatch_group_enter(group);
+            if ([object isKindOfClass:[UIImage class]])
+            {
+                UIImage * image = (UIImage *)object;
+                QNUploadManager *upManager = [[QNUploadManager alloc] init];
+                NSData *data = UIImagePNGRepresentation(image);
+                [upManager putData:data key:@"ddd" token:uploadToken
+                          complete: ^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
+                              NSLog(@"%@", info);
+                              NSLog(@"%@", resp);
+                          } option:nil];
+            }
+        }
+        NSMutableArray * imageArray = [NSMutableArray array];
+        [imageArray addObject:@""];
+        [PublicRequest publishPublicInfoWithTitle:@"测试" bannerImage:@"" content:@"测试内容ddd" range:@"P" images:imageArray videoUrl:@"" operatePersonID:[GFStaticData getObjectForKey:kTagUserKeyID] delegate:self];
+    }
+    if ([request.vrCodeString isEqualToString:kTagPublishPublicRequest])
+    {
+        if ([[request.attributeDic objectForKey:@"success"] integerValue])
+        {
+            [[TKAlertCenter defaultCenter] postAlertWithMessage:@"发布成功"];
+            [self performSelector:@selector(back) withObject:nil afterDelay:1.5];
+        }
+    }
 }
 
 #pragma BrowseDelegate

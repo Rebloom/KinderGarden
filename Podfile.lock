@@ -19,7 +19,7 @@ PODS:
   - MagicalRecord (2.3.2):
     - MagicalRecord/Core (= 2.3.2)
   - MagicalRecord/Core (2.3.2)
-  - Qiniu (7.1.0.1):
+  - Qiniu (7.1.1):
     - AFNetworking (~> 3)
     - HappyDNS (~> 0.3)
   - SDCycleScrollView (1.65):
@@ -34,7 +34,7 @@ PODS:
 DEPENDENCIES:
   - CTAssetsPickerController (~> 2.9.5)
   - MagicalRecord (~> 2.3.2)
-  - Qiniu (~> 7.1.0.1)
+  - Qiniu (~> 7.1.0)
   - SDCycleScrollView (~> 1.64)
   - SDWebImage (~> 3.7.5)
   - YYKit (~> 1.0.5)
@@ -44,9 +44,11 @@ SPEC CHECKSUMS:
   CTAssetsPickerController: b413fece2194ae3dbf22fbc544cf6f2a6d516a4d
   HappyDNS: 06a9fed2796663fd87626dbf02552933265bf059
   MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
-  Qiniu: 0e92ff0d1b9afbc55275306671284e4ebeb08d03
+  Qiniu: 5e5d7d759d22393bb4b87cdfacf8fab951260f3e
   SDCycleScrollView: f72904c77698a7f93a41bcbbc2d78b073bf7326c
   SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 621988f45d9e1faecdec24c059c4bb940f2bd97a
+
+COCOAPODS: 1.0.1

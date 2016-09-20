@@ -9,6 +9,8 @@
 #import "FindPasswordViewController.h"
 #import "SetPasswordViewController.h"
 
+#import "LoginRequest.h"
+
 @interface FindPasswordViewController ()
 
 @end
@@ -148,19 +150,39 @@
     }
     if (codeTf.text.length == 0)
     {
-        [[TKAlertCenter defaultCenter] postAlertWithMessage:@"请填写手机号"];
+        [[TKAlertCenter defaultCenter] postAlertWithMessage:@"请填写验证码"];
         return;
     }
-//    NSLog(@"下一步");
-//#warning 验证成功跳转重置密码页面
-//    SetPasswordViewController * SPVC = [[SetPasswordViewController alloc] init];
-//    [self pushToViewController:SPVC];
+    
+    [LoginRequest resetPasswordWithPhone:userNameTf.text checkCode:codeTf.text delegate:self];
 }
 
 //获取验证码
 - (void)codeBtnOnClick:(UIButton*)sender
 {
     [self Countdown];
+    
+    [LoginRequest getRegisterCheckCodeWithPhoneNumber:userNameTf.text delegate:self];
+}
+
+- (void)nxRequestFinished:(NXBaseRequest *)request
+{
+    if ([request.vrCodeString isEqualToString:kTagRegisterGetCodeRequest])
+    {
+        if ([[request.attributeDic objectForKey:@"success"] integerValue])
+        {
+            [[TKAlertCenter defaultCenter] postAlertWithMessage:@"验证码已发送"];
+        }
+    }
+    else if ([request.vrCodeString isEqualToString:kTagResetPasswordCheckCode])
+    {
+        if ([[request.attributeDic objectForKey:@"success"] integerValue])
+        {
+            SetPasswordViewController * SPVC = [[SetPasswordViewController alloc] init];
+            SPVC.passPhone = userNameTf.text;
+            [self pushToViewController:SPVC];
+        }
+    }
 }
 
 // 倒计时

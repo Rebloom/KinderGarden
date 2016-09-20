@@ -39,8 +39,8 @@ static QNDnsManager *initDns(QNConfigurationBuilder *builder) {
     QNDnsManager *d = builder.dns;
     if (d == nil) {
         id<QNResolverDelegate> r1 = [QNResolver systemResolver];
-        id<QNResolverDelegate> r2 = [[QNResolver alloc] initWithAddres:@"119.29.29.29"];
-        id<QNResolverDelegate> r3 = [[QNResolver alloc] initWithAddres:@"114.114.115.115"];
+        id<QNResolverDelegate> r2 = [[QNResolver alloc] initWithAddress:@"119.29.29.29"];
+        id<QNResolverDelegate> r3 = [[QNResolver alloc] initWithAddress:@"114.114.115.115"];
         d = [[QNDnsManager alloc] init:[NSArray arrayWithObjects:r1, r2, r3, nil] networkInfo:[QNNetworkInfo normal]];
     }
     return d;
@@ -88,7 +88,7 @@ static QNDnsManager *initDns(QNConfigurationBuilder *builder) {
 
 - (instancetype)init {
     if (self = [super init]) {
-        _zone = [QNZone zone0];
+        _zone = [QNZone zone1];
         _chunkSize = 256 * 1024;
         _putThreshold = 512 * 1024;
         _retryMax = 2;
@@ -148,7 +148,7 @@ static QNDnsManager *initDns(QNConfigurationBuilder *builder) {
     static QNZone *z0 = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        z0 = [QNZone createWithHost:@"upload.qiniu.com" backupHost:@"up.qiniu.com" ip1:@"183.136.139.10" ip2:@"115.231.182.136"];
+        z0 = [QNZone createWithHost:@"upload-z1.qiniu.com" backupHost:@"up-z1.qiniu.com" ip1:@"106.38.227.28" ip2:@"106.38.227.27"];
     });
     return z0;
 }
