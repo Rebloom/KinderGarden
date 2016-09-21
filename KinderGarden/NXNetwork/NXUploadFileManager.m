@@ -107,6 +107,7 @@
                           }
                       } option:nil];
         }
+    }
     
     dispatch_group_notify(group, dispatch_get_main_queue(), ^{
         NSLog(@"批量上传图片完成");
