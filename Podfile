@@ -5,5 +5,4 @@ target :'KinderGarden' do
     pod 'YYKit', '~> 1.0.5'
     pod 'CTAssetsPickerController', '~> 2.9.5'
     pod 'SDCycleScrollView','~> 1.64'
-    pod 'Qiniu', '~> 7.1.0'
 end

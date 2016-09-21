@@ -20,6 +20,8 @@
 #define kTagUserPhone                   @"kTagUserPhone"
 // 用户id
 #define kTagUserKeyID                   @"kTagUserKeyID"
+// 七牛上传token
+#define kTagQiniuSDKToken               @"kTagQiniuSDKToken"
 
 @interface GFStaticData : NSObject
 

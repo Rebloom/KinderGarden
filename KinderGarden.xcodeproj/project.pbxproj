@@ -468,6 +468,68 @@
 		EF93EF6D1D915D11001499D3 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EF681D915D11001499D3 /* AFHTTPRequestOperation.m */; };
 		EF93EF6E1D915D11001499D3 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EF6A1D915D11001499D3 /* AFHTTPRequestOperationManager.m */; };
 		EF93EF6F1D915D11001499D3 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EF6C1D915D11001499D3 /* AFURLConnectionOperation.m */; };
+		EF93EFFE1D928A27001499D3 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EF741D928A27001499D3 /* AFHTTPSessionManager.m */; };
+		EF93EFFF1D928A27001499D3 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EF771D928A27001499D3 /* AFNetworkReachabilityManager.m */; };
+		EF93F0001D928A27001499D3 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EF791D928A27001499D3 /* AFSecurityPolicy.m */; };
+		EF93F0011D928A27001499D3 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EF7B1D928A27001499D3 /* AFURLRequestSerialization.m */; };
+		EF93F0021D928A27001499D3 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EF7D1D928A27001499D3 /* AFURLResponseSerialization.m */; };
+		EF93F0031D928A27001499D3 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EF7F1D928A27001499D3 /* AFURLSessionManager.m */; };
+		EF93F0041D928A27001499D3 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = EF93EF801D928A27001499D3 /* LICENSE */; };
+		EF93F0051D928A27001499D3 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = EF93EF811D928A27001499D3 /* README.md */; };
+		EF93F0061D928A27001499D3 /* AFAutoPurgingImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EF841D928A27001499D3 /* AFAutoPurgingImageCache.m */; };
+		EF93F0071D928A27001499D3 /* AFImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EF861D928A27001499D3 /* AFImageDownloader.m */; };
+		EF93F0081D928A27001499D3 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EF881D928A27001499D3 /* AFNetworkActivityIndicatorManager.m */; };
+		EF93F0091D928A27001499D3 /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EF8A1D928A27001499D3 /* UIActivityIndicatorView+AFNetworking.m */; };
+		EF93F00A1D928A27001499D3 /* UIButton+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EF8C1D928A27001499D3 /* UIButton+AFNetworking.m */; };
+		EF93F00B1D928A27001499D3 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EF8F1D928A27001499D3 /* UIImageView+AFNetworking.m */; };
+		EF93F00C1D928A27001499D3 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EF921D928A27001499D3 /* UIProgressView+AFNetworking.m */; };
+		EF93F00D1D928A27001499D3 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EF941D928A27001499D3 /* UIRefreshControl+AFNetworking.m */; };
+		EF93F00E1D928A27001499D3 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EF961D928A27001499D3 /* UIWebView+AFNetworking.m */; };
+		EF93F00F1D928A27001499D3 /* QNAssessment.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EF9B1D928A27001499D3 /* QNAssessment.m */; };
+		EF93F0101D928A27001499D3 /* QNIpModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EF9D1D928A27001499D3 /* QNIpModel.m */; };
+		EF93F0111D928A27001499D3 /* QNDnsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EFA01D928A27001499D3 /* QNDnsManager.m */; };
+		EF93F0121D928A27001499D3 /* QNDomain.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EFA21D928A27001499D3 /* QNDomain.m */; };
+		EF93F0131D928A27001499D3 /* QNLruCache.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EFA41D928A27001499D3 /* QNLruCache.m */; };
+		EF93F0141D928A27001499D3 /* QNNetworkInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EFA61D928A27001499D3 /* QNNetworkInfo.m */; };
+		EF93F0151D928A27001499D3 /* QNRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EFA81D928A27001499D3 /* QNRecord.m */; };
+		EF93F0161D928A27001499D3 /* QNDnspodEnterprise.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EFAD1D928A27001499D3 /* QNDnspodEnterprise.m */; };
+		EF93F0171D928A27001499D3 /* QNDnspodFree.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EFAF1D928A27001499D3 /* QNDnspodFree.m */; };
+		EF93F0181D928A27001499D3 /* QNHijackingDetectWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EFB21D928A27001499D3 /* QNHijackingDetectWrapper.m */; };
+		EF93F0191D928A27001499D3 /* QNHosts.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EFB41D928A27001499D3 /* QNHosts.m */; };
+		EF93F01A1D928A27001499D3 /* QNResolver.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EFB61D928A27001499D3 /* QNResolver.m */; };
+		EF93F01B1D928A27001499D3 /* QNResolvUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EFB81D928A27001499D3 /* QNResolvUtil.m */; };
+		EF93F01C1D928A27001499D3 /* QNTxtResolver.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EFBA1D928A27001499D3 /* QNTxtResolver.m */; };
+		EF93F01D1D928A27001499D3 /* QNRefresher.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EFBC1D928A27001499D3 /* QNRefresher.m */; };
+		EF93F01E1D928A27001499D3 /* QNDes.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EFBF1D928A27001499D3 /* QNDes.m */; };
+		EF93F01F1D928A27001499D3 /* QNGetAddrInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EFC11D928A27001499D3 /* QNGetAddrInfo.m */; };
+		EF93F0201D928A27001499D3 /* QNHex.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EFC31D928A27001499D3 /* QNHex.m */; };
+		EF93F0211D928A27001499D3 /* QNIP.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EFC51D928A27001499D3 /* QNIP.m */; };
+		EF93F0221D928A27001499D3 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = EF93EFC61D928A27001499D3 /* LICENSE */; };
+		EF93F0231D928A27001499D3 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = EF93EFC71D928A27001499D3 /* README.md */; };
+		EF93F0241D928A27001499D3 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = EF93EFC91D928A27001499D3 /* LICENSE */; };
+		EF93F0251D928A27001499D3 /* QN_GTM_Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EFCD1D928A27001499D3 /* QN_GTM_Base64.m */; };
+		EF93F0261D928A27001499D3 /* QNALAssetFile.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EFCF1D928A27001499D3 /* QNALAssetFile.m */; };
+		EF93F0271D928A27001499D3 /* QNAsyncRun.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EFD11D928A27001499D3 /* QNAsyncRun.m */; };
+		EF93F0281D928A27001499D3 /* QNCrc32.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EFD31D928A27001499D3 /* QNCrc32.m */; };
+		EF93F0291D928A27001499D3 /* QNEtag.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EFD51D928A27001499D3 /* QNEtag.m */; };
+		EF93F02A1D928A27001499D3 /* QNFile.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EFD71D928A27001499D3 /* QNFile.m */; };
+		EF93F02B1D928A27001499D3 /* QNPHAssetFile.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EFDA1D928A27001499D3 /* QNPHAssetFile.m */; };
+		EF93F02C1D928A27001499D3 /* QNPHAssetResource.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EFDC1D928A27001499D3 /* QNPHAssetResource.m */; };
+		EF93F02D1D928A27001499D3 /* QNSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EFDE1D928A27001499D3 /* QNSystem.m */; };
+		EF93F02E1D928A27001499D3 /* QNUrlSafeBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EFE01D928A27001499D3 /* QNUrlSafeBase64.m */; };
+		EF93F02F1D928A27001499D3 /* QNResponseInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EFE51D928A27001499D3 /* QNResponseInfo.m */; };
+		EF93F0301D928A27001499D3 /* QNSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EFE71D928A27001499D3 /* QNSessionManager.m */; };
+		EF93F0311D928A27001499D3 /* QNUserAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EFE91D928A27001499D3 /* QNUserAgent.m */; };
+		EF93F0321D928A27001499D3 /* QNFileRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EFED1D928A27001499D3 /* QNFileRecorder.m */; };
+		EF93F0331D928A27001499D3 /* QNConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EFF11D928A27001499D3 /* QNConfiguration.m */; };
+		EF93F0341D928A27001499D3 /* QNFormUpload.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EFF31D928A27001499D3 /* QNFormUpload.m */; };
+		EF93F0351D928A27001499D3 /* QNResumeUpload.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EFF51D928A27001499D3 /* QNResumeUpload.m */; };
+		EF93F0361D928A27001499D3 /* QNUploadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EFF71D928A27001499D3 /* QNUploadManager.m */; };
+		EF93F0371D928A27001499D3 /* QNUploadOption.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EFFA1D928A27001499D3 /* QNUploadOption.m */; };
+		EF93F0381D928A27001499D3 /* QNUpToken.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EFFC1D928A27001499D3 /* QNUpToken.m */; };
+		EF93F0391D928A27001499D3 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = EF93EFFD1D928A27001499D3 /* README.md */; };
+		EF93F03B1D928C4E001499D3 /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EF93F03A1D928C4E001499D3 /* libresolv.9.tbd */; };
+		EF93F03E1D928FE4001499D3 /* NXUploadFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93F03D1D928FE4001499D3 /* NXUploadFileManager.m */; };
 		EFA2BD4D1D0BAD47000D1EF2 /* ChildListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA2BD4C1D0BAD47000D1EF2 /* ChildListViewController.m */; };
 		EFA2BD501D0BBCB7000D1EF2 /* icon_child@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EFA2BD4E1D0BBCB7000D1EF2 /* icon_child@2x.png */; };
 		EFA2BD511D0BBCB7000D1EF2 /* icon_child@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EFA2BD4F1D0BBCB7000D1EF2 /* icon_child@3x.png */; };
@@ -1494,6 +1556,134 @@
 		EF93EF6A1D915D11001499D3 /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
 		EF93EF6B1D915D11001499D3 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
 		EF93EF6C1D915D11001499D3 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		EF93EF731D928A27001499D3 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		EF93EF741D928A27001499D3 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		EF93EF751D928A27001499D3 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		EF93EF761D928A27001499D3 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		EF93EF771D928A27001499D3 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		EF93EF781D928A27001499D3 /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSecurityPolicy.h; sourceTree = "<group>"; };
+		EF93EF791D928A27001499D3 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
+		EF93EF7A1D928A27001499D3 /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		EF93EF7B1D928A27001499D3 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		EF93EF7C1D928A27001499D3 /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		EF93EF7D1D928A27001499D3 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		EF93EF7E1D928A27001499D3 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
+		EF93EF7F1D928A27001499D3 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		EF93EF801D928A27001499D3 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		EF93EF811D928A27001499D3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		EF93EF831D928A27001499D3 /* AFAutoPurgingImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFAutoPurgingImageCache.h; sourceTree = "<group>"; };
+		EF93EF841D928A27001499D3 /* AFAutoPurgingImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFAutoPurgingImageCache.m; sourceTree = "<group>"; };
+		EF93EF851D928A27001499D3 /* AFImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFImageDownloader.h; sourceTree = "<group>"; };
+		EF93EF861D928A27001499D3 /* AFImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFImageDownloader.m; sourceTree = "<group>"; };
+		EF93EF871D928A27001499D3 /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
+		EF93EF881D928A27001499D3 /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkActivityIndicatorManager.m; sourceTree = "<group>"; };
+		EF93EF891D928A27001499D3 /* UIActivityIndicatorView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActivityIndicatorView+AFNetworking.h"; sourceTree = "<group>"; };
+		EF93EF8A1D928A27001499D3 /* UIActivityIndicatorView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActivityIndicatorView+AFNetworking.m"; sourceTree = "<group>"; };
+		EF93EF8B1D928A27001499D3 /* UIButton+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+AFNetworking.h"; sourceTree = "<group>"; };
+		EF93EF8C1D928A27001499D3 /* UIButton+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+AFNetworking.m"; sourceTree = "<group>"; };
+		EF93EF8D1D928A27001499D3 /* UIImage+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+AFNetworking.h"; sourceTree = "<group>"; };
+		EF93EF8E1D928A27001499D3 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
+		EF93EF8F1D928A27001499D3 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		EF93EF901D928A27001499D3 /* UIKit+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIKit+AFNetworking.h"; sourceTree = "<group>"; };
+		EF93EF911D928A27001499D3 /* UIProgressView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIProgressView+AFNetworking.h"; sourceTree = "<group>"; };
+		EF93EF921D928A27001499D3 /* UIProgressView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIProgressView+AFNetworking.m"; sourceTree = "<group>"; };
+		EF93EF931D928A27001499D3 /* UIRefreshControl+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIRefreshControl+AFNetworking.h"; sourceTree = "<group>"; };
+		EF93EF941D928A27001499D3 /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
+		EF93EF951D928A27001499D3 /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
+		EF93EF961D928A27001499D3 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
+		EF93EF9A1D928A27001499D3 /* QNAssessment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNAssessment.h; sourceTree = "<group>"; };
+		EF93EF9B1D928A27001499D3 /* QNAssessment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNAssessment.m; sourceTree = "<group>"; };
+		EF93EF9C1D928A27001499D3 /* QNIpModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNIpModel.h; sourceTree = "<group>"; };
+		EF93EF9D1D928A27001499D3 /* QNIpModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNIpModel.m; sourceTree = "<group>"; };
+		EF93EF9F1D928A27001499D3 /* QNDnsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNDnsManager.h; sourceTree = "<group>"; };
+		EF93EFA01D928A27001499D3 /* QNDnsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNDnsManager.m; sourceTree = "<group>"; };
+		EF93EFA11D928A27001499D3 /* QNDomain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNDomain.h; sourceTree = "<group>"; };
+		EF93EFA21D928A27001499D3 /* QNDomain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNDomain.m; sourceTree = "<group>"; };
+		EF93EFA31D928A27001499D3 /* QNLruCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNLruCache.h; sourceTree = "<group>"; };
+		EF93EFA41D928A27001499D3 /* QNLruCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNLruCache.m; sourceTree = "<group>"; };
+		EF93EFA51D928A27001499D3 /* QNNetworkInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNNetworkInfo.h; sourceTree = "<group>"; };
+		EF93EFA61D928A27001499D3 /* QNNetworkInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNNetworkInfo.m; sourceTree = "<group>"; };
+		EF93EFA71D928A27001499D3 /* QNRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNRecord.h; sourceTree = "<group>"; };
+		EF93EFA81D928A27001499D3 /* QNRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNRecord.m; sourceTree = "<group>"; };
+		EF93EFA91D928A27001499D3 /* QNResolverDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNResolverDelegate.h; sourceTree = "<group>"; };
+		EF93EFAA1D928A27001499D3 /* HappyDNS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HappyDNS.h; sourceTree = "<group>"; };
+		EF93EFAC1D928A27001499D3 /* QNDnspodEnterprise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNDnspodEnterprise.h; sourceTree = "<group>"; };
+		EF93EFAD1D928A27001499D3 /* QNDnspodEnterprise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNDnspodEnterprise.m; sourceTree = "<group>"; };
+		EF93EFAE1D928A27001499D3 /* QNDnspodFree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNDnspodFree.h; sourceTree = "<group>"; };
+		EF93EFAF1D928A27001499D3 /* QNDnspodFree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNDnspodFree.m; sourceTree = "<group>"; };
+		EF93EFB11D928A27001499D3 /* QNHijackingDetectWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNHijackingDetectWrapper.h; sourceTree = "<group>"; };
+		EF93EFB21D928A27001499D3 /* QNHijackingDetectWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNHijackingDetectWrapper.m; sourceTree = "<group>"; };
+		EF93EFB31D928A27001499D3 /* QNHosts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNHosts.h; sourceTree = "<group>"; };
+		EF93EFB41D928A27001499D3 /* QNHosts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNHosts.m; sourceTree = "<group>"; };
+		EF93EFB51D928A27001499D3 /* QNResolver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNResolver.h; sourceTree = "<group>"; };
+		EF93EFB61D928A27001499D3 /* QNResolver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNResolver.m; sourceTree = "<group>"; };
+		EF93EFB71D928A27001499D3 /* QNResolvUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNResolvUtil.h; sourceTree = "<group>"; };
+		EF93EFB81D928A27001499D3 /* QNResolvUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNResolvUtil.m; sourceTree = "<group>"; };
+		EF93EFB91D928A27001499D3 /* QNTxtResolver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNTxtResolver.h; sourceTree = "<group>"; };
+		EF93EFBA1D928A27001499D3 /* QNTxtResolver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNTxtResolver.m; sourceTree = "<group>"; };
+		EF93EFBB1D928A27001499D3 /* QNRefresher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNRefresher.h; sourceTree = "<group>"; };
+		EF93EFBC1D928A27001499D3 /* QNRefresher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNRefresher.m; sourceTree = "<group>"; };
+		EF93EFBE1D928A27001499D3 /* QNDes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNDes.h; sourceTree = "<group>"; };
+		EF93EFBF1D928A27001499D3 /* QNDes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNDes.m; sourceTree = "<group>"; };
+		EF93EFC01D928A27001499D3 /* QNGetAddrInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNGetAddrInfo.h; sourceTree = "<group>"; };
+		EF93EFC11D928A27001499D3 /* QNGetAddrInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNGetAddrInfo.m; sourceTree = "<group>"; };
+		EF93EFC21D928A27001499D3 /* QNHex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNHex.h; sourceTree = "<group>"; };
+		EF93EFC31D928A27001499D3 /* QNHex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNHex.m; sourceTree = "<group>"; };
+		EF93EFC41D928A27001499D3 /* QNIP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNIP.h; sourceTree = "<group>"; };
+		EF93EFC51D928A27001499D3 /* QNIP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNIP.m; sourceTree = "<group>"; };
+		EF93EFC61D928A27001499D3 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		EF93EFC71D928A27001499D3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		EF93EFC91D928A27001499D3 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		EF93EFCC1D928A27001499D3 /* QN_GTM_Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QN_GTM_Base64.h; sourceTree = "<group>"; };
+		EF93EFCD1D928A27001499D3 /* QN_GTM_Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QN_GTM_Base64.m; sourceTree = "<group>"; };
+		EF93EFCE1D928A27001499D3 /* QNALAssetFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNALAssetFile.h; sourceTree = "<group>"; };
+		EF93EFCF1D928A27001499D3 /* QNALAssetFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNALAssetFile.m; sourceTree = "<group>"; };
+		EF93EFD01D928A27001499D3 /* QNAsyncRun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNAsyncRun.h; sourceTree = "<group>"; };
+		EF93EFD11D928A27001499D3 /* QNAsyncRun.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNAsyncRun.m; sourceTree = "<group>"; };
+		EF93EFD21D928A27001499D3 /* QNCrc32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNCrc32.h; sourceTree = "<group>"; };
+		EF93EFD31D928A27001499D3 /* QNCrc32.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNCrc32.m; sourceTree = "<group>"; };
+		EF93EFD41D928A27001499D3 /* QNEtag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNEtag.h; sourceTree = "<group>"; };
+		EF93EFD51D928A27001499D3 /* QNEtag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNEtag.m; sourceTree = "<group>"; };
+		EF93EFD61D928A27001499D3 /* QNFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNFile.h; sourceTree = "<group>"; };
+		EF93EFD71D928A27001499D3 /* QNFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNFile.m; sourceTree = "<group>"; };
+		EF93EFD81D928A27001499D3 /* QNFileDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNFileDelegate.h; sourceTree = "<group>"; };
+		EF93EFD91D928A27001499D3 /* QNPHAssetFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNPHAssetFile.h; sourceTree = "<group>"; };
+		EF93EFDA1D928A27001499D3 /* QNPHAssetFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNPHAssetFile.m; sourceTree = "<group>"; };
+		EF93EFDB1D928A27001499D3 /* QNPHAssetResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNPHAssetResource.h; sourceTree = "<group>"; };
+		EF93EFDC1D928A27001499D3 /* QNPHAssetResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNPHAssetResource.m; sourceTree = "<group>"; };
+		EF93EFDD1D928A27001499D3 /* QNSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNSystem.h; sourceTree = "<group>"; };
+		EF93EFDE1D928A27001499D3 /* QNSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNSystem.m; sourceTree = "<group>"; };
+		EF93EFDF1D928A27001499D3 /* QNUrlSafeBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNUrlSafeBase64.h; sourceTree = "<group>"; };
+		EF93EFE01D928A27001499D3 /* QNUrlSafeBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNUrlSafeBase64.m; sourceTree = "<group>"; };
+		EF93EFE11D928A27001499D3 /* QNVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNVersion.h; sourceTree = "<group>"; };
+		EF93EFE31D928A27001499D3 /* QNHttpDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNHttpDelegate.h; sourceTree = "<group>"; };
+		EF93EFE41D928A27001499D3 /* QNResponseInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNResponseInfo.h; sourceTree = "<group>"; };
+		EF93EFE51D928A27001499D3 /* QNResponseInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNResponseInfo.m; sourceTree = "<group>"; };
+		EF93EFE61D928A27001499D3 /* QNSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNSessionManager.h; sourceTree = "<group>"; };
+		EF93EFE71D928A27001499D3 /* QNSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNSessionManager.m; sourceTree = "<group>"; };
+		EF93EFE81D928A27001499D3 /* QNUserAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNUserAgent.h; sourceTree = "<group>"; };
+		EF93EFE91D928A27001499D3 /* QNUserAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNUserAgent.m; sourceTree = "<group>"; };
+		EF93EFEA1D928A27001499D3 /* QiniuSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QiniuSDK.h; sourceTree = "<group>"; };
+		EF93EFEC1D928A27001499D3 /* QNFileRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNFileRecorder.h; sourceTree = "<group>"; };
+		EF93EFED1D928A27001499D3 /* QNFileRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNFileRecorder.m; sourceTree = "<group>"; };
+		EF93EFEE1D928A27001499D3 /* QNRecorderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNRecorderDelegate.h; sourceTree = "<group>"; };
+		EF93EFF01D928A27001499D3 /* QNConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNConfiguration.h; sourceTree = "<group>"; };
+		EF93EFF11D928A27001499D3 /* QNConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNConfiguration.m; sourceTree = "<group>"; };
+		EF93EFF21D928A27001499D3 /* QNFormUpload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNFormUpload.h; sourceTree = "<group>"; };
+		EF93EFF31D928A27001499D3 /* QNFormUpload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNFormUpload.m; sourceTree = "<group>"; };
+		EF93EFF41D928A27001499D3 /* QNResumeUpload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNResumeUpload.h; sourceTree = "<group>"; };
+		EF93EFF51D928A27001499D3 /* QNResumeUpload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNResumeUpload.m; sourceTree = "<group>"; };
+		EF93EFF61D928A27001499D3 /* QNUploadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNUploadManager.h; sourceTree = "<group>"; };
+		EF93EFF71D928A27001499D3 /* QNUploadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNUploadManager.m; sourceTree = "<group>"; };
+		EF93EFF81D928A27001499D3 /* QNUploadOption+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "QNUploadOption+Private.h"; sourceTree = "<group>"; };
+		EF93EFF91D928A27001499D3 /* QNUploadOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNUploadOption.h; sourceTree = "<group>"; };
+		EF93EFFA1D928A27001499D3 /* QNUploadOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNUploadOption.m; sourceTree = "<group>"; };
+		EF93EFFB1D928A27001499D3 /* QNUpToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNUpToken.h; sourceTree = "<group>"; };
+		EF93EFFC1D928A27001499D3 /* QNUpToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNUpToken.m; sourceTree = "<group>"; };
+		EF93EFFD1D928A27001499D3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		EF93F03A1D928C4E001499D3 /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
+		EF93F03C1D928FE4001499D3 /* NXUploadFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXUploadFileManager.h; sourceTree = "<group>"; };
+		EF93F03D1D928FE4001499D3 /* NXUploadFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXUploadFileManager.m; sourceTree = "<group>"; };
 		EFA2BD4B1D0BAD47000D1EF2 /* ChildListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildListViewController.h; sourceTree = "<group>"; };
 		EFA2BD4C1D0BAD47000D1EF2 /* ChildListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildListViewController.m; sourceTree = "<group>"; };
 		EFA2BD4E1D0BBCB7000D1EF2 /* icon_child@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_child@2x.png"; sourceTree = "<group>"; };
@@ -1628,6 +1818,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF93F03B1D928C4E001499D3 /* libresolv.9.tbd in Frameworks */,
 				EFCDB6ED1D907DEA00589559 /* libc++.tbd in Frameworks */,
 				EFCDB6EB1D907D9E00589559 /* VideoToolbox.framework in Frameworks */,
 				EFCDB6E91D907D8F00589559 /* GLKit.framework in Frameworks */,
@@ -1666,6 +1857,7 @@
 		2BFD0308F59444631B9A94B8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EF93F03A1D928C4E001499D3 /* libresolv.9.tbd */,
 				EFCDB6EC1D907DEA00589559 /* libc++.tbd */,
 				EFCDB6EA1D907D9E00589559 /* VideoToolbox.framework */,
 				EFCDB6E81D907D8F00589559 /* GLKit.framework */,
@@ -2563,6 +2755,7 @@
 		EF0B38A71D90769E00EAD7E2 /* ThirdParts */ = {
 			isa = PBXGroup;
 			children = (
+				EF93EF701D928A27001499D3 /* Qiniu */,
 				EF93EF661D915D11001499D3 /* AFNetworking */,
 				EF0A52221D910A5D00A07E53 /* YSSDK */,
 				EF0B38A81D90769E00EAD7E2 /* HXSDK */,
@@ -3552,6 +3745,266 @@
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
+		EF93EF701D928A27001499D3 /* Qiniu */ = {
+			isa = PBXGroup;
+			children = (
+				EF93EF711D928A27001499D3 /* AFNetworking */,
+				EF93EF971D928A27001499D3 /* HappyDNS */,
+				EF93EFC81D928A27001499D3 /* Qiniu */,
+			);
+			path = Qiniu;
+			sourceTree = "<group>";
+		};
+		EF93EF711D928A27001499D3 /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				EF93EF721D928A27001499D3 /* AFNetworking */,
+				EF93EF801D928A27001499D3 /* LICENSE */,
+				EF93EF811D928A27001499D3 /* README.md */,
+				EF93EF821D928A27001499D3 /* UIKit+AFNetworking */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		EF93EF721D928A27001499D3 /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				EF93EF731D928A27001499D3 /* AFHTTPSessionManager.h */,
+				EF93EF741D928A27001499D3 /* AFHTTPSessionManager.m */,
+				EF93EF751D928A27001499D3 /* AFNetworking.h */,
+				EF93EF761D928A27001499D3 /* AFNetworkReachabilityManager.h */,
+				EF93EF771D928A27001499D3 /* AFNetworkReachabilityManager.m */,
+				EF93EF781D928A27001499D3 /* AFSecurityPolicy.h */,
+				EF93EF791D928A27001499D3 /* AFSecurityPolicy.m */,
+				EF93EF7A1D928A27001499D3 /* AFURLRequestSerialization.h */,
+				EF93EF7B1D928A27001499D3 /* AFURLRequestSerialization.m */,
+				EF93EF7C1D928A27001499D3 /* AFURLResponseSerialization.h */,
+				EF93EF7D1D928A27001499D3 /* AFURLResponseSerialization.m */,
+				EF93EF7E1D928A27001499D3 /* AFURLSessionManager.h */,
+				EF93EF7F1D928A27001499D3 /* AFURLSessionManager.m */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		EF93EF821D928A27001499D3 /* UIKit+AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				EF93EF831D928A27001499D3 /* AFAutoPurgingImageCache.h */,
+				EF93EF841D928A27001499D3 /* AFAutoPurgingImageCache.m */,
+				EF93EF851D928A27001499D3 /* AFImageDownloader.h */,
+				EF93EF861D928A27001499D3 /* AFImageDownloader.m */,
+				EF93EF871D928A27001499D3 /* AFNetworkActivityIndicatorManager.h */,
+				EF93EF881D928A27001499D3 /* AFNetworkActivityIndicatorManager.m */,
+				EF93EF891D928A27001499D3 /* UIActivityIndicatorView+AFNetworking.h */,
+				EF93EF8A1D928A27001499D3 /* UIActivityIndicatorView+AFNetworking.m */,
+				EF93EF8B1D928A27001499D3 /* UIButton+AFNetworking.h */,
+				EF93EF8C1D928A27001499D3 /* UIButton+AFNetworking.m */,
+				EF93EF8D1D928A27001499D3 /* UIImage+AFNetworking.h */,
+				EF93EF8E1D928A27001499D3 /* UIImageView+AFNetworking.h */,
+				EF93EF8F1D928A27001499D3 /* UIImageView+AFNetworking.m */,
+				EF93EF901D928A27001499D3 /* UIKit+AFNetworking.h */,
+				EF93EF911D928A27001499D3 /* UIProgressView+AFNetworking.h */,
+				EF93EF921D928A27001499D3 /* UIProgressView+AFNetworking.m */,
+				EF93EF931D928A27001499D3 /* UIRefreshControl+AFNetworking.h */,
+				EF93EF941D928A27001499D3 /* UIRefreshControl+AFNetworking.m */,
+				EF93EF951D928A27001499D3 /* UIWebView+AFNetworking.h */,
+				EF93EF961D928A27001499D3 /* UIWebView+AFNetworking.m */,
+			);
+			path = "UIKit+AFNetworking";
+			sourceTree = "<group>";
+		};
+		EF93EF971D928A27001499D3 /* HappyDNS */ = {
+			isa = PBXGroup;
+			children = (
+				EF93EF981D928A27001499D3 /* HappyDNS */,
+				EF93EFC61D928A27001499D3 /* LICENSE */,
+				EF93EFC71D928A27001499D3 /* README.md */,
+			);
+			path = HappyDNS;
+			sourceTree = "<group>";
+		};
+		EF93EF981D928A27001499D3 /* HappyDNS */ = {
+			isa = PBXGroup;
+			children = (
+				EF93EF991D928A27001499D3 /* Assessment */,
+				EF93EF9E1D928A27001499D3 /* Common */,
+				EF93EFAA1D928A27001499D3 /* HappyDNS.h */,
+				EF93EFAB1D928A27001499D3 /* Http */,
+				EF93EFB01D928A27001499D3 /* Local */,
+				EF93EFBB1D928A27001499D3 /* QNRefresher.h */,
+				EF93EFBC1D928A27001499D3 /* QNRefresher.m */,
+				EF93EFBD1D928A27001499D3 /* Util */,
+			);
+			path = HappyDNS;
+			sourceTree = "<group>";
+		};
+		EF93EF991D928A27001499D3 /* Assessment */ = {
+			isa = PBXGroup;
+			children = (
+				EF93EF9A1D928A27001499D3 /* QNAssessment.h */,
+				EF93EF9B1D928A27001499D3 /* QNAssessment.m */,
+				EF93EF9C1D928A27001499D3 /* QNIpModel.h */,
+				EF93EF9D1D928A27001499D3 /* QNIpModel.m */,
+			);
+			path = Assessment;
+			sourceTree = "<group>";
+		};
+		EF93EF9E1D928A27001499D3 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				EF93EF9F1D928A27001499D3 /* QNDnsManager.h */,
+				EF93EFA01D928A27001499D3 /* QNDnsManager.m */,
+				EF93EFA11D928A27001499D3 /* QNDomain.h */,
+				EF93EFA21D928A27001499D3 /* QNDomain.m */,
+				EF93EFA31D928A27001499D3 /* QNLruCache.h */,
+				EF93EFA41D928A27001499D3 /* QNLruCache.m */,
+				EF93EFA51D928A27001499D3 /* QNNetworkInfo.h */,
+				EF93EFA61D928A27001499D3 /* QNNetworkInfo.m */,
+				EF93EFA71D928A27001499D3 /* QNRecord.h */,
+				EF93EFA81D928A27001499D3 /* QNRecord.m */,
+				EF93EFA91D928A27001499D3 /* QNResolverDelegate.h */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		EF93EFAB1D928A27001499D3 /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				EF93EFAC1D928A27001499D3 /* QNDnspodEnterprise.h */,
+				EF93EFAD1D928A27001499D3 /* QNDnspodEnterprise.m */,
+				EF93EFAE1D928A27001499D3 /* QNDnspodFree.h */,
+				EF93EFAF1D928A27001499D3 /* QNDnspodFree.m */,
+			);
+			path = Http;
+			sourceTree = "<group>";
+		};
+		EF93EFB01D928A27001499D3 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				EF93EFB11D928A27001499D3 /* QNHijackingDetectWrapper.h */,
+				EF93EFB21D928A27001499D3 /* QNHijackingDetectWrapper.m */,
+				EF93EFB31D928A27001499D3 /* QNHosts.h */,
+				EF93EFB41D928A27001499D3 /* QNHosts.m */,
+				EF93EFB51D928A27001499D3 /* QNResolver.h */,
+				EF93EFB61D928A27001499D3 /* QNResolver.m */,
+				EF93EFB71D928A27001499D3 /* QNResolvUtil.h */,
+				EF93EFB81D928A27001499D3 /* QNResolvUtil.m */,
+				EF93EFB91D928A27001499D3 /* QNTxtResolver.h */,
+				EF93EFBA1D928A27001499D3 /* QNTxtResolver.m */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		EF93EFBD1D928A27001499D3 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				EF93EFBE1D928A27001499D3 /* QNDes.h */,
+				EF93EFBF1D928A27001499D3 /* QNDes.m */,
+				EF93EFC01D928A27001499D3 /* QNGetAddrInfo.h */,
+				EF93EFC11D928A27001499D3 /* QNGetAddrInfo.m */,
+				EF93EFC21D928A27001499D3 /* QNHex.h */,
+				EF93EFC31D928A27001499D3 /* QNHex.m */,
+				EF93EFC41D928A27001499D3 /* QNIP.h */,
+				EF93EFC51D928A27001499D3 /* QNIP.m */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		EF93EFC81D928A27001499D3 /* Qiniu */ = {
+			isa = PBXGroup;
+			children = (
+				EF93EFC91D928A27001499D3 /* LICENSE */,
+				EF93EFCA1D928A27001499D3 /* QiniuSDK */,
+				EF93EFFD1D928A27001499D3 /* README.md */,
+			);
+			path = Qiniu;
+			sourceTree = "<group>";
+		};
+		EF93EFCA1D928A27001499D3 /* QiniuSDK */ = {
+			isa = PBXGroup;
+			children = (
+				EF93EFCB1D928A27001499D3 /* Common */,
+				EF93EFE21D928A27001499D3 /* Http */,
+				EF93EFEA1D928A27001499D3 /* QiniuSDK.h */,
+				EF93EFEB1D928A27001499D3 /* Recorder */,
+				EF93EFEF1D928A27001499D3 /* Storage */,
+			);
+			path = QiniuSDK;
+			sourceTree = "<group>";
+		};
+		EF93EFCB1D928A27001499D3 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				EF93EFCC1D928A27001499D3 /* QN_GTM_Base64.h */,
+				EF93EFCD1D928A27001499D3 /* QN_GTM_Base64.m */,
+				EF93EFCE1D928A27001499D3 /* QNALAssetFile.h */,
+				EF93EFCF1D928A27001499D3 /* QNALAssetFile.m */,
+				EF93EFD01D928A27001499D3 /* QNAsyncRun.h */,
+				EF93EFD11D928A27001499D3 /* QNAsyncRun.m */,
+				EF93EFD21D928A27001499D3 /* QNCrc32.h */,
+				EF93EFD31D928A27001499D3 /* QNCrc32.m */,
+				EF93EFD41D928A27001499D3 /* QNEtag.h */,
+				EF93EFD51D928A27001499D3 /* QNEtag.m */,
+				EF93EFD61D928A27001499D3 /* QNFile.h */,
+				EF93EFD71D928A27001499D3 /* QNFile.m */,
+				EF93EFD81D928A27001499D3 /* QNFileDelegate.h */,
+				EF93EFD91D928A27001499D3 /* QNPHAssetFile.h */,
+				EF93EFDA1D928A27001499D3 /* QNPHAssetFile.m */,
+				EF93EFDB1D928A27001499D3 /* QNPHAssetResource.h */,
+				EF93EFDC1D928A27001499D3 /* QNPHAssetResource.m */,
+				EF93EFDD1D928A27001499D3 /* QNSystem.h */,
+				EF93EFDE1D928A27001499D3 /* QNSystem.m */,
+				EF93EFDF1D928A27001499D3 /* QNUrlSafeBase64.h */,
+				EF93EFE01D928A27001499D3 /* QNUrlSafeBase64.m */,
+				EF93EFE11D928A27001499D3 /* QNVersion.h */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		EF93EFE21D928A27001499D3 /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				EF93EFE31D928A27001499D3 /* QNHttpDelegate.h */,
+				EF93EFE41D928A27001499D3 /* QNResponseInfo.h */,
+				EF93EFE51D928A27001499D3 /* QNResponseInfo.m */,
+				EF93EFE61D928A27001499D3 /* QNSessionManager.h */,
+				EF93EFE71D928A27001499D3 /* QNSessionManager.m */,
+				EF93EFE81D928A27001499D3 /* QNUserAgent.h */,
+				EF93EFE91D928A27001499D3 /* QNUserAgent.m */,
+			);
+			path = Http;
+			sourceTree = "<group>";
+		};
+		EF93EFEB1D928A27001499D3 /* Recorder */ = {
+			isa = PBXGroup;
+			children = (
+				EF93EFEC1D928A27001499D3 /* QNFileRecorder.h */,
+				EF93EFED1D928A27001499D3 /* QNFileRecorder.m */,
+				EF93EFEE1D928A27001499D3 /* QNRecorderDelegate.h */,
+			);
+			path = Recorder;
+			sourceTree = "<group>";
+		};
+		EF93EFEF1D928A27001499D3 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				EF93EFF01D928A27001499D3 /* QNConfiguration.h */,
+				EF93EFF11D928A27001499D3 /* QNConfiguration.m */,
+				EF93EFF21D928A27001499D3 /* QNFormUpload.h */,
+				EF93EFF31D928A27001499D3 /* QNFormUpload.m */,
+				EF93EFF41D928A27001499D3 /* QNResumeUpload.h */,
+				EF93EFF51D928A27001499D3 /* QNResumeUpload.m */,
+				EF93EFF61D928A27001499D3 /* QNUploadManager.h */,
+				EF93EFF71D928A27001499D3 /* QNUploadManager.m */,
+				EF93EFF81D928A27001499D3 /* QNUploadOption+Private.h */,
+				EF93EFF91D928A27001499D3 /* QNUploadOption.h */,
+				EF93EFFA1D928A27001499D3 /* QNUploadOption.m */,
+				EF93EFFB1D928A27001499D3 /* QNUpToken.h */,
+				EF93EFFC1D928A27001499D3 /* QNUpToken.m */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
 		EFA3BFAE1CEBE69A00724058 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -3585,6 +4038,8 @@
 		EFA3BFB01CEBE69A00724058 /* NXNetwork */ = {
 			isa = PBXGroup;
 			children = (
+				EF93F03C1D928FE4001499D3 /* NXUploadFileManager.h */,
+				EF93F03D1D928FE4001499D3 /* NXUploadFileManager.m */,
 				EFA3BFB11CEBE69A00724058 /* NXBaseRequest.h */,
 				EFA3BFB21CEBE69A00724058 /* NXBaseRequest.m */,
 				EFA3BFB31CEBE69A00724058 /* NXNetworkConfig.h */,
@@ -3820,6 +4275,7 @@
 				7349BF651D1BB5F700A57243 /* 背景图片@3x.png in Resources */,
 				EFA2BD741D0BEA71000D1EF2 /* icon_leave@3x.png in Resources */,
 				7327FCF31CEC38DF00C88F38 /* user@3x.png in Resources */,
+				EF93F0241D928A27001499D3 /* LICENSE in Resources */,
 				F4CA1ABA1CECB7A60020BA59 /* whiteBack@2x.png in Resources */,
 				7349BF101D1B77B600A57243 /* beauty3.jpg in Resources */,
 				7349BF0D1D1B77B600A57243 /* beauty0.jpg in Resources */,
@@ -3845,6 +4301,7 @@
 				73734D251D64370B00BCD3B5 /* discovery_growup@3x.png in Resources */,
 				730ED0531D1A5F7500EA93C3 /* teatcherChat@2x.png in Resources */,
 				7349BF6F1D1BB5F700A57243 /* 返回@3x.png in Resources */,
+				EF93F0221D928A27001499D3 /* LICENSE in Resources */,
 				EF02DC181D60DC480011483A /* 饮食@3x.png in Resources */,
 				7327FCF51CEC38DF00C88F38 /* WX@3x.png in Resources */,
 				EFA2BD8A1D0C1374000D1EF2 /* icon_takePicture@2x.png in Resources */,
@@ -3902,6 +4359,7 @@
 				73DD1ABA1CEEECA40059ADAC /* share@3x.png in Resources */,
 				EFA2BD8B1D0C1374000D1EF2 /* icon_takePicture@3x.png in Resources */,
 				F4DCFBC61CF0476700FCB8DF /* mine@2x.png in Resources */,
+				EF93F0041D928A27001499D3 /* LICENSE in Resources */,
 				7349BF5F1D1BB5F700A57243 /* 点赞@3x.png in Resources */,
 				EFA2BD6C1D0BEA71000D1EF2 /* icon_baby_chat@3x.png in Resources */,
 				EFA2BD6D1D0BEA71000D1EF2 /* icon_browsed@2x.png in Resources */,
@@ -4073,6 +4531,7 @@
 				EF0B3BC11D90769E00EAD7E2 /* EMAudioPlayerUtil.m in Sources */,
 				EF0B3BE61D90769F00EAD7E2 /* MWPhotoBrowser.m in Sources */,
 				EF0B3C061D90769F00EAD7E2 /* PSTGridLayoutRow.m in Sources */,
+				EF93F02B1D928A27001499D3 /* QNPHAssetFile.m in Sources */,
 				EF0B3C021D90769F00EAD7E2 /* PSTCollectionViewLayout.m in Sources */,
 				EF0B3BA91D90769E00EAD7E2 /* ContactListSelectViewController.m in Sources */,
 				EF0B3BB11D90769E00EAD7E2 /* UserProfileManager.m in Sources */,
@@ -4085,10 +4544,13 @@
 				7349BF7B1D1BD19D00A57243 /* LookCell.m in Sources */,
 				EFA3BFD01CEBE69A00724058 /* UIView+TKCategory.m in Sources */,
 				EF0B3BD81D90769E00EAD7E2 /* MJRefreshBackNormalFooter.m in Sources */,
+				EF93F0231D928A27001499D3 /* README.md in Sources */,
 				EF0B3C2C1D90769F00EAD7E2 /* EaseBubbleView.m in Sources */,
 				F4CA1AC11CECC2920020BA59 /* ResetPasswordViewController.m in Sources */,
 				EF0B3BA21D90769E00EAD7E2 /* PublicGroupDetailViewController.m in Sources */,
 				EFA2BD541D0BBD85000D1EF2 /* ChildDetailViewController.m in Sources */,
+				EF93F03E1D928FE4001499D3 /* NXUploadFileManager.m in Sources */,
+				EF93F02F1D928A27001499D3 /* QNResponseInfo.m in Sources */,
 				EF0B3BBE1D90769E00EAD7E2 /* EMNavigationController.m in Sources */,
 				EF0A53481D910A5D00A07E53 /* EZDeviceRestartTipsViewController.m in Sources */,
 				EF0B3B951D90769E00EAD7E2 /* UIResponder+Router.m in Sources */,
@@ -4106,10 +4568,13 @@
 				7327FC6E1CEC036300C88F38 /* BasicViewController.m in Sources */,
 				EF2FC6851D56E25B00E31139 /* UserCenter.m in Sources */,
 				EF0B3BDA1D90769E00EAD7E2 /* MJRefreshGifHeader.m in Sources */,
+				EF93F0031D928A27001499D3 /* AFURLSessionManager.m in Sources */,
 				EF0B3C331D90769F00EAD7E2 /* EaseChatBarMoreView.m in Sources */,
+				EF93F0071D928A27001499D3 /* AFImageDownloader.m in Sources */,
 				EF0B3C161D90769F00EAD7E2 /* EaseEmojiEmoticons.m in Sources */,
 				EF0B3BCA1D90769E00EAD7E2 /* EMVoiceConverter.mm in Sources */,
 				EFA3BFCC1CEBE69A00724058 /* NXRequestManager.m in Sources */,
+				EF93F01B1D928A27001499D3 /* QNResolvUtil.m in Sources */,
 				EF0B3BA71D90769E00EAD7E2 /* ChatroomListViewController.m in Sources */,
 				730ED0451D1A5F5B00EA93C3 /* AddTeatcherViewController.m in Sources */,
 				7327FC711CEC036300C88F38 /* WelcomeViewController.m in Sources */,
@@ -4117,10 +4582,12 @@
 				7327FC701CEC036300C88F38 /* RootViewController.m in Sources */,
 				EF0B3BB01D90769E00EAD7E2 /* InvitationManager.m in Sources */,
 				EF0A53641D910A5D00A07E53 /* UISegmentedControl+DDKit.m in Sources */,
+				EF93F0271D928A27001499D3 /* QNAsyncRun.m in Sources */,
 				EF0B3C111D90769F00EAD7E2 /* UIViewController+HUD.m in Sources */,
 				EF0B3BF71D90769F00EAD7E2 /* UIImage+EMWebP.m in Sources */,
 				EF2FC6881D56EEED00E31139 /* ClassRequest.m in Sources */,
 				EF0B3C2E1D90769F00EAD7E2 /* EaseChatToolbarItem.m in Sources */,
+				EF93F02D1D928A27001499D3 /* QNSystem.m in Sources */,
 				EF0B3B991D90769E00EAD7E2 /* ChatViewController.m in Sources */,
 				EF0B3BD21D90769E00EAD7E2 /* MJRefreshFooter.m in Sources */,
 				EF0B3C051D90769F00EAD7E2 /* PSTGridLayoutItem.m in Sources */,
@@ -4130,9 +4597,11 @@
 				EF0B3BAD1D90769E00EAD7E2 /* ApplyFriendCell.m in Sources */,
 				EF0A53361D910A5D00A07E53 /* EZQRView.m in Sources */,
 				EF0B3BEF1D90769F00EAD7E2 /* EMSDWebImageDownloaderOperation.m in Sources */,
+				EF93F0331D928A27001499D3 /* QNConfiguration.m in Sources */,
 				EFA3BFCB1CEBE69A00724058 /* NXNetworkConfig.m in Sources */,
 				EF0B3BCD1D90769E00EAD7E2 /* MBProgressHUD+Add.m in Sources */,
 				7327FC8D1CEC063300C88F38 /* SecondViewController.m in Sources */,
+				EF93F0191D928A27001499D3 /* QNHosts.m in Sources */,
 				EF2FC68B1D56F45A00E31139 /* PublicRequest.m in Sources */,
 				F4CA1AA51CECA3B30020BA59 /* FifthCell.m in Sources */,
 				EF0B3C031D90769F00EAD7E2 /* PSTCollectionViewUpdateItem.m in Sources */,
@@ -4150,10 +4619,13 @@
 				EF0B3B9A1D90769E00EAD7E2 /* ChatGroupDetailViewController.m in Sources */,
 				EFA2BD7E1D0C038B000D1EF2 /* BabyShowViewController.m in Sources */,
 				EFA3BFD11CEBE69A00724058 /* UIImage+UIColor.m in Sources */,
+				EF93F0011D928A27001499D3 /* AFURLRequestSerialization.m in Sources */,
 				EF65D48C1CEAC42F00463441 /* ViewController.m in Sources */,
 				EF0B3BDC1D90769E00EAD7E2 /* MJRefreshStateHeader.m in Sources */,
 				EF0B3C1F1D90769F00EAD7E2 /* EaseViewController.m in Sources */,
+				EF93F0141D928A27001499D3 /* QNNetworkInfo.m in Sources */,
 				7327FD051CEC4C0F00C88F38 /* FindPasswordViewController.m in Sources */,
+				EF93EFFE1D928A27001499D3 /* AFHTTPSessionManager.m in Sources */,
 				7349BF751D1BBF3300A57243 /* AttentionAndFunsCell.m in Sources */,
 				EF0A53681D910A5D00A07E53 /* MASCompositeConstraint.m in Sources */,
 				730ED0471D1A5F5B00EA93C3 /* TeatcherInfoViewController.m in Sources */,
@@ -4171,25 +4643,32 @@
 				EF0B3BB81D90769E00EAD7E2 /* BaseTableViewCell.m in Sources */,
 				EF0A53461D910A5D00A07E53 /* EZCalendarViewController.m in Sources */,
 				EF0A53671D910A5D00A07E53 /* DDCollectionViewFlowLayout.m in Sources */,
+				EF93F01A1D928A27001499D3 /* QNResolver.m in Sources */,
 				EF0B3C001D90769F00EAD7E2 /* PSTCollectionViewFlowLayout.m in Sources */,
 				EF0B3BAE1D90769E00EAD7E2 /* ApplyViewController.m in Sources */,
 				EF0B3C0C1D90769F00EAD7E2 /* EaseUserModel.m in Sources */,
 				EF0B3BE51D90769F00EAD7E2 /* MWPhoto.m in Sources */,
 				EF0A53431D910A5D00A07E53 /* CameraListCell.m in Sources */,
+				EF93F01C1D928A27001499D3 /* QNTxtResolver.m in Sources */,
 				EF0B3C191D90769F00EAD7E2 /* FixFopen.c in Sources */,
 				EF0B3C041D90769F00EAD7E2 /* PSTGridLayoutInfo.m in Sources */,
 				EF451CE41D5F96DD0038DFFD /* NSObject+AssertNilValue.m in Sources */,
+				EF93F0351D928A27001499D3 /* QNResumeUpload.m in Sources */,
 				EF0B3C3E1D90769F00EAD7E2 /* SRSlimeView.m in Sources */,
 				EF0B3BE21D90769F00EAD7E2 /* MWCaptionView.m in Sources */,
+				EF93F0161D928A27001499D3 /* QNDnspodEnterprise.m in Sources */,
 				EF0A53661D910A5D00A07E53 /* UIViewController+DDKit.m in Sources */,
 				EF02DC1B1D696DEA0011483A /* PublishPublicViewController.m in Sources */,
 				EF0B3C261D90769F00EAD7E2 /* EaseBubbleView+Gif.m in Sources */,
 				EF0A536E1D910A5D00A07E53 /* NSArray+MASAdditions.m in Sources */,
+				EF93F0201D928A27001499D3 /* QNHex.m in Sources */,
 				EF0B3BC51D90769E00EAD7E2 /* EMCDDeviceManager+ProximitySensor.m in Sources */,
 				EF0B3B971D90769E00EAD7E2 /* ChatDemoHelper.m in Sources */,
 				EF0B3BF61D90769F00EAD7E2 /* UIImage+EMMultiFormat.m in Sources */,
 				EF0B3BF51D90769F00EAD7E2 /* UIImage+EMGIF.m in Sources */,
 				7327FC901CEC063E00C88F38 /* ThirdViewController.m in Sources */,
+				EF93F0381D928A27001499D3 /* QNUpToken.m in Sources */,
+				EF93F0361D928A27001499D3 /* QNUploadManager.m in Sources */,
 				EFA3BFE41CEBE8D800724058 /* GFBase64.m in Sources */,
 				EF0B3BA81D90769E00EAD7E2 /* MyChatroomListViewController.m in Sources */,
 				EF0B3BCE1D90769E00EAD7E2 /* MBProgressHUD.m in Sources */,
@@ -4203,8 +4682,10 @@
 				EF0B3BB71D90769E00EAD7E2 /* RobotManager.m in Sources */,
 				EF0B3BD91D90769E00EAD7E2 /* MJRefreshBackStateFooter.m in Sources */,
 				EF0A53531D910A5D00A07E53 /* EZWifiConfigViewController.m in Sources */,
+				EF93F0391D928A27001499D3 /* README.md in Sources */,
 				EFA3BFE71CEBE8D800724058 /* NSString+Encryptor.m in Sources */,
 				EF0A536F1D910A5D00A07E53 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				EF93F0321D928A27001499D3 /* QNFileRecorder.m in Sources */,
 				EF0B3C291D90769F00EAD7E2 /* EaseBubbleView+Text.m in Sources */,
 				EF0B3BB61D90769E00EAD7E2 /* RobotListViewController.m in Sources */,
 				EF0B3BAC1D90769E00EAD7E2 /* AddFriendViewController.m in Sources */,
@@ -4221,18 +4702,23 @@
 				EF0B3C341D90769F00EAD7E2 /* EaseRecordView.m in Sources */,
 				EF0B3C1B1D90769F00EAD7E2 /* EaseLocationViewController.m in Sources */,
 				EF0B3BC01D90769E00EAD7E2 /* XHMessageTextView.m in Sources */,
+				EF93F0081D928A27001499D3 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				EF0A535F1D910A5D00A07E53 /* UIButton+DDKit.m in Sources */,
 				EF0A53521D910A5D00A07E53 /* EZSettingViewController.m in Sources */,
+				EF93F0151D928A27001499D3 /* QNRecord.m in Sources */,
 				EF0B3C0D1D90769F00EAD7E2 /* NSDate+Category.m in Sources */,
 				EF0A53611D910A5D00A07E53 /* UIImage+DDKit.m in Sources */,
 				EF0B3B9B1D90769E00EAD7E2 /* ContactSelectionViewController.m in Sources */,
 				EF0B3C2A1D90769F00EAD7E2 /* EaseBubbleView+Video.m in Sources */,
 				EF0A533A1D910A5D00A07E53 /* HIKLoadViewItem+configPath.m in Sources */,
+				EF93F0281D928A27001499D3 /* QNCrc32.m in Sources */,
 				EF0A53761D910A5E00A07E53 /* UITableView+FDTemplateLayoutCell.m in Sources */,
 				EF0B3C351D90769F00EAD7E2 /* EaseConversationCell.m in Sources */,
 				EF0A53371D910A5D00A07E53 /* EZRecordCell.m in Sources */,
 				737805781D62BB71004B7A00 /* CookbookViewController.m in Sources */,
 				EF0A53441D910A5D00A07E53 /* MessageListCell.m in Sources */,
+				EF93F02E1D928A27001499D3 /* QNUrlSafeBase64.m in Sources */,
+				EF93F0261D928A27001499D3 /* QNALAssetFile.m in Sources */,
 				73F3F1AD1D61682D007A8ACD /* SelectClssView.m in Sources */,
 				73E47B891D61A89C00626AE6 /* SelectClassCell.m in Sources */,
 				EF0A53551D910A5D00A07E53 /* EZWifiTipsViewController.m in Sources */,
@@ -4242,6 +4728,7 @@
 				EF65D4921CEAC42F00463441 /* KinderGarden.xcdatamodeld in Sources */,
 				EFA3BFD31CEBE69A00724058 /* UILabel+StringFrame.m in Sources */,
 				EF0B3BE81D90769F00EAD7E2 /* MWTapDetectingView.m in Sources */,
+				EF93EFFF1D928A27001499D3 /* AFNetworkReachabilityManager.m in Sources */,
 				EF0A536A1D910A5D00A07E53 /* MASConstraintMaker.m in Sources */,
 				EF0B3BF01D90769F00EAD7E2 /* EMSDWebImageManager.m in Sources */,
 				7349BF061D1B777200A57243 /* ParentHeaderView.m in Sources */,
@@ -4253,12 +4740,16 @@
 				EF0B3C1C1D90769F00EAD7E2 /* EaseMessageViewController.m in Sources */,
 				730C269B1D1CD3A200286B33 /* EditDataViewController.m in Sources */,
 				EF0A534B1D910A5D00A07E53 /* EZEditViewController.m in Sources */,
+				EF93F00E1D928A27001499D3 /* UIWebView+AFNetworking.m in Sources */,
 				EF0A53751D910A5E00A07E53 /* UITableView+FDKeyedHeightCache.m in Sources */,
 				EF0B3C2B1D90769F00EAD7E2 /* EaseBubbleView+Voice.m in Sources */,
 				EF0B3C311D90769F00EAD7E2 /* EaseFaceView.m in Sources */,
 				EF0B3BEB1D90769F00EAD7E2 /* EMSDImageCache.m in Sources */,
+				EF93F0021D928A27001499D3 /* AFURLResponseSerialization.m in Sources */,
 				EF0B3BB21D90769E00EAD7E2 /* UserProfileViewController.m in Sources */,
+				EF93F0371D928A27001499D3 /* QNUploadOption.m in Sources */,
 				EF0B3BF81D90769F00EAD7E2 /* UIImageView+EMHighlightedWebCache.m in Sources */,
+				EF93F01E1D928A27001499D3 /* QNDes.m in Sources */,
 				EF0B3C011D90769F00EAD7E2 /* PSTCollectionViewItemKey.m in Sources */,
 				EF0A53561D910A5D00A07E53 /* UINavigationController+EZOpenSDK.m in Sources */,
 				EF0A535E1D910A5D00A07E53 /* NSString+DDKit.m in Sources */,
@@ -4268,20 +4759,28 @@
 				EF0B3BC91D90769E00EAD7E2 /* wav.mm in Sources */,
 				EF0B3BE71D90769F00EAD7E2 /* MWTapDetectingImageView.m in Sources */,
 				EF2FC6821D56D77200E31139 /* UserRequest.m in Sources */,
+				EF93F0051D928A27001499D3 /* README.md in Sources */,
 				7327FC631CEBFF6700C88F38 /* Ivan_UITabBar.m in Sources */,
 				EF0B3C241D90769F00EAD7E2 /* EaseMessageTimeCell.m in Sources */,
 				EF0B3BF11D90769F00EAD7E2 /* EMSDWebImagePrefetcher.m in Sources */,
 				EF0B3C3F1D90769F00EAD7E2 /* TTGlobalUICommon.m in Sources */,
 				EF0B3BA61D90769E00EAD7E2 /* ChatroomDetailViewController.m in Sources */,
+				EF93F00C1D928A27001499D3 /* UIProgressView+AFNetworking.m in Sources */,
+				EF93F0121D928A27001499D3 /* QNDomain.m in Sources */,
+				EF93F0171D928A27001499D3 /* QNDnspodFree.m in Sources */,
+				EF93F0301D928A27001499D3 /* QNSessionManager.m in Sources */,
 				EFF9817F1D55BBFC005043BC /* LoginRequest.m in Sources */,
 				EF0B3C211D90769F00EAD7E2 /* EaseBaseMessageCell.m in Sources */,
+				EF93F00F1D928A27001499D3 /* QNAssessment.m in Sources */,
 				EF0B3BB91D90769E00EAD7E2 /* EMSearchBar.m in Sources */,
 				EF0A535B1D910A5D00A07E53 /* Aspects.m in Sources */,
+				EF93F0211D928A27001499D3 /* QNIP.m in Sources */,
 				EF0B3BED1D90769F00EAD7E2 /* EMSDWebImageDecoder.m in Sources */,
 				EF0B3BFE1D90769F00EAD7E2 /* PSTCollectionViewController.m in Sources */,
 				EF0B3C181D90769F00EAD7E2 /* EaseEmotionManager.m in Sources */,
 				EF0B3BFB1D90769F00EAD7E2 /* NSIndexPath+PSTCollectionViewAdditions.m in Sources */,
 				EF4A24771D60AD33009AD380 /* MainViewController.m in Sources */,
+				EF93F02C1D928A27001499D3 /* QNPHAssetResource.m in Sources */,
 				EF0B3C231D90769F00EAD7E2 /* EaseMessageCell.m in Sources */,
 				EF0B3C101D90769F00EAD7E2 /* UIViewController+DismissKeyboard.m in Sources */,
 				EF0B3BB41D90769E00EAD7E2 /* EMRotbotChatViewCell.m in Sources */,
@@ -4289,6 +4788,8 @@
 				F49ECBAB1D290E8200DA6A3A /* CoursesCell.m in Sources */,
 				730ED05E1D1A603B00EA93C3 /* ParentsChatViewController.m in Sources */,
 				730C26A41D1D126400286B33 /* YWBCityPickerView.m in Sources */,
+				EF93F00B1D928A27001499D3 /* UIImageView+AFNetworking.m in Sources */,
+				EF93F00A1D928A27001499D3 /* UIButton+AFNetworking.m in Sources */,
 				EF0B3BAB1D90769E00EAD7E2 /* AddFriendCell.m in Sources */,
 				730C26AD1D1D22BA00286B33 /* MineHostHeaderView.m in Sources */,
 				EFA3BFE61CEBE8D800724058 /* NSData+AES.m in Sources */,
@@ -4297,6 +4798,7 @@
 				EF0B3BD11D90769E00EAD7E2 /* MJRefreshComponent.m in Sources */,
 				EF0B3BD51D90769E00EAD7E2 /* MJRefreshAutoNormalFooter.m in Sources */,
 				EF0B3BA51D90769E00EAD7E2 /* SearchMessageViewController.m in Sources */,
+				EF93F0181D928A27001499D3 /* QNHijackingDetectWrapper.m in Sources */,
 				EF0B3BC21D90769E00EAD7E2 /* EMAudioRecorderUtil.m in Sources */,
 				EF0A53701D910A5D00A07E53 /* View+MASAdditions.m in Sources */,
 				EF0A53771D910A5E00A07E53 /* UITableView+FDTemplateLayoutCellDebug.m in Sources */,
@@ -4313,13 +4815,18 @@
 				EFA3BFE51CEBE8D800724058 /* GTMBase64.m in Sources */,
 				EF0B3BA11D90769E00EAD7E2 /* GroupSubjectChangingViewController.m in Sources */,
 				EF93EF6E1D915D11001499D3 /* AFHTTPRequestOperationManager.m in Sources */,
+				EF93F02A1D928A27001499D3 /* QNFile.m in Sources */,
 				EF0B3BEC1D90769F00EAD7E2 /* EMSDWebImageCompat.m in Sources */,
 				EF0B3C2F1D90769F00EAD7E2 /* EaseImageView.m in Sources */,
 				F4CA1AB31CECB63D0020BA59 /* ChangePhoneViewController.m in Sources */,
+				EF93F00D1D928A27001499D3 /* UIRefreshControl+AFNetworking.m in Sources */,
+				EF93F0341D928A27001499D3 /* QNFormUpload.m in Sources */,
 				EF0A53511D910A5D00A07E53 /* EZPlaybackViewController.m in Sources */,
 				730ED0461D1A5F5B00EA93C3 /* ClassManageViewController.m in Sources */,
+				EF93F0251D928A27001499D3 /* QN_GTM_Base64.m in Sources */,
 				EF0A53621D910A5D00A07E53 /* UIImageView+DDKit.m in Sources */,
 				EF0B3BE11D90769F00EAD7E2 /* UIView+MJExtension.m in Sources */,
+				EF93F0311D928A27001499D3 /* QNUserAgent.m in Sources */,
 				EF0B3B9D1D90769E00EAD7E2 /* CreateGroupViewController.m in Sources */,
 				EF0A534A1D910A5D00A07E53 /* EZDeviceUpgradeViewController.m in Sources */,
 				EF0B3C371D90769F00EAD7E2 /* EMAlertView.m in Sources */,
@@ -4328,11 +4835,14 @@
 				7327FC771CEC039E00C88F38 /* HeaderView.m in Sources */,
 				EF0B3B9E1D90769E00EAD7E2 /* GroupBansViewController.m in Sources */,
 				EF0B3C221D90769F00EAD7E2 /* EaseCustomMessageCell.m in Sources */,
+				EF93F0061D928A27001499D3 /* AFAutoPurgingImageCache.m in Sources */,
 				73DD1AB21CEEE25C0059ADAC /* SchoolCell.m in Sources */,
 				7327FC651CEBFF6700C88F38 /* UINavBar.m in Sources */,
 				EF0A53631D910A5D00A07E53 /* UILabel+DDKit.m in Sources */,
 				EF93EF6D1D915D11001499D3 /* AFHTTPRequestOperation.m in Sources */,
+				EF93F0131D928A27001499D3 /* QNLruCache.m in Sources */,
 				F4CA1ABE1CECC1EC0020BA59 /* SetPasswordViewController.m in Sources */,
+				EF93F0101D928A27001499D3 /* QNIpModel.m in Sources */,
 				EF0B3B961D90769E00EAD7E2 /* UIViewController+HUD.m in Sources */,
 				EF0B3BAF1D90769E00EAD7E2 /* RealtimeSearchUtil.m in Sources */,
 				EF0B3B941D90769E00EAD7E2 /* UIImageView+HeadImage.m in Sources */,
@@ -4343,6 +4853,7 @@
 				EF0B3C201D90769F00EAD7E2 /* EaseUserCell.m in Sources */,
 				EF0A536C1D910A5D00A07E53 /* MASViewAttribute.m in Sources */,
 				EF0B3BE91D90769F00EAD7E2 /* MWZoomingScrollView.m in Sources */,
+				EF93F0111D928A27001499D3 /* QNDnsManager.m in Sources */,
 				EF0B3C071D90769F00EAD7E2 /* PSTGridLayoutSection.m in Sources */,
 				EF0B3BC61D90769E00EAD7E2 /* EMCDDeviceManager+Remind.m in Sources */,
 				EF0A533C1D910A5D00A07E53 /* NSDate-Utilities.m in Sources */,
@@ -4357,6 +4868,7 @@
 				EF0B3BF31D90769F00EAD7E2 /* NSData+EMImageContentType.m in Sources */,
 				EF0B3C141D90769F00EAD7E2 /* EaseMessageReadManager.m in Sources */,
 				EF0B3BDE1D90769F00EAD7E2 /* MJRefreshConst.m in Sources */,
+				EF93F0001D928A27001499D3 /* AFSecurityPolicy.m in Sources */,
 				EF0A53451D910A5D00A07E53 /* EZAddByQRCodeViewController.m in Sources */,
 				EFA3BFCA1CEBE69A00724058 /* NXBaseRequest.m in Sources */,
 				EF0B3C0E1D90769F00EAD7E2 /* NSDateFormatter+Category.m in Sources */,
@@ -4365,13 +4877,17 @@
 				EF0B3BB51D90769E00EAD7E2 /* RobotChatViewController.m in Sources */,
 				F4CA1AC41CECCA330020BA59 /* SchoolInfoViewController.m in Sources */,
 				730ED0571D1A600800EA93C3 /* AddTeatcherCell.m in Sources */,
+				EF93F0091D928A27001499D3 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				EF93F0291D928A27001499D3 /* QNEtag.m in Sources */,
 				EF0B3BD31D90769E00EAD7E2 /* MJRefreshHeader.m in Sources */,
+				EF93F01F1D928A27001499D3 /* QNGetAddrInfo.m in Sources */,
 				EF0A534F1D910A5D00A07E53 /* EZMessagePhotoViewController.m in Sources */,
 				EF0B3BE41D90769F00EAD7E2 /* MWGridViewController.m in Sources */,
 				EF0A53401D910A5D00A07E53 /* EZPlayDemoViewController.m in Sources */,
 				EF0B3C091D90769F00EAD7E2 /* EaseSDKHelper.m in Sources */,
 				7327FC6F1CEC036300C88F38 /* HomeViewController.m in Sources */,
 				EF0B3BA31D90769E00EAD7E2 /* PublicGroupListViewController.m in Sources */,
+				EF93F01D1D928A27001499D3 /* QNRefresher.m in Sources */,
 				7327FD0B1CEC551C00C88F38 /* NSTimer+Addition.m in Sources */,
 				EF0B3BDB1D90769E00EAD7E2 /* MJRefreshNormalHeader.m in Sources */,
 				EF0A536D1D910A5D00A07E53 /* MASViewConstraint.m in Sources */,

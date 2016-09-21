@@ -8,6 +8,8 @@
 
 #import "PublishPublicViewController.h"
 
+#import "NXUploadFileManager.h"
+
 static NSString * defaultGoodsDescString = @"公告内容";
 #define MyOrangeColor       MY_COLOR(252,79,30,1)
 
@@ -158,7 +160,17 @@ static NSString * defaultGoodsDescString = @"公告内容";
     else
     {
         submitBtn.enabled = NO;
-        [PublicRequest getQiniuTokenWithImageName:@"testjg" delegate:self];
+        
+        if ([GFStaticData getObjectForKey:kTagQiniuSDKToken])
+        {
+            NSMutableArray * temp = [addPicView.imageArray mutableCopy];
+            [temp removeLastObject];
+            [[NXUploadFileManager sharedManager] uploadImages:temp delegate:self];
+        }
+        else
+        {
+            [PublicRequest getQiniuTokenWithImageName:@"testjg" delegate:self];
+        }
     }
 }
 
@@ -167,27 +179,10 @@ static NSString * defaultGoodsDescString = @"公告内容";
     if ([request.vrCodeString isEqualToString:kTagRequestQNToken])
     {
         NSString * uploadToken = [request.attributeDic objectForKey:@"token"];
-        dispatch_group_t group = dispatch_group_create();
+        [GFStaticData saveObject:uploadToken forKey:kTagQiniuSDKToken];
         NSMutableArray * temp = [addPicView.imageArray mutableCopy];
         [temp removeLastObject];
-        for (NSObject * object in temp)
-        {
-            dispatch_group_enter(group);
-            if ([object isKindOfClass:[UIImage class]])
-            {
-                UIImage * image = (UIImage *)object;
-                QNUploadManager *upManager = [[QNUploadManager alloc] init];
-                NSData *data = UIImagePNGRepresentation(image);
-                [upManager putData:data key:@"ddd" token:uploadToken
-                          complete: ^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
-                              NSLog(@"%@", info);
-                              NSLog(@"%@", resp);
-                          } option:nil];
-            }
-        }
-        NSMutableArray * imageArray = [NSMutableArray array];
-        [imageArray addObject:@""];
-        [PublicRequest publishPublicInfoWithTitle:@"测试" bannerImage:@"" content:@"测试内容ddd" range:@"P" images:imageArray videoUrl:@"" operatePersonID:[GFStaticData getObjectForKey:kTagUserKeyID] delegate:self];
+        [[NXUploadFileManager sharedManager] uploadImages:temp delegate:self];
     }
     if ([request.vrCodeString isEqualToString:kTagPublishPublicRequest])
     {
@@ -197,6 +192,11 @@ static NSString * defaultGoodsDescString = @"公告内容";
             [self performSelector:@selector(back) withObject:nil afterDelay:1.5];
         }
     }
+}
+
+- (void)uploadFileSuccess:(NSDictionary *)back
+{
+    
 }
 
 #pragma BrowseDelegate

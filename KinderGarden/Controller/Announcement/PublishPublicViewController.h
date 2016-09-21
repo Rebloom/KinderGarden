@@ -16,9 +16,11 @@
 
 #import "PublicRequest.h"
 
+#import "NXUploadFileManager.h"
+
 typedef void (^RefreshBlock)(BOOL refresh);
 
-@interface PublishPublicViewController : BasicViewController  <UITextFieldDelegate,UITextViewDelegate,NXAddPictureViewDelegate,TakePhotoViewDelegate,UIGestureRecognizerDelegate>
+@interface PublishPublicViewController : BasicViewController  <UITextFieldDelegate,UITextViewDelegate,NXAddPictureViewDelegate,TakePhotoViewDelegate,UIGestureRecognizerDelegate,UploadFileDelegate>
 {
     UIScrollView * containerScrollView;
     
