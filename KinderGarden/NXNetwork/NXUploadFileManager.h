@@ -11,6 +11,8 @@
 
 #import "QiniuSDK.h"
 
+#define QiniuBucketSpaceName            @"oalp3wrah.bkt.clouddn.com"
+
 
 @protocol UploadFileDelegate <NSObject>
 

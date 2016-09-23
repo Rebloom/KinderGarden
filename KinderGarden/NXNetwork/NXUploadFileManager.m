@@ -76,6 +76,7 @@
     dispatch_group_t group = dispatch_group_create();
     for (int i = 0; i < imageArray.count; i++)
     {
+        dispatch_group_enter(group);
         NSObject * object = [imageArray objectAtIndex:i];
         if ([object isKindOfClass:[UIImage class]])
         {
@@ -100,7 +101,7 @@
                               @synchronized (result) {
                                   if ([resp objectForKey:@"key"])
                                   {
-                                      result[i] = [NSString stringWithFormat:@"%@_%@",@"",[resp objectForKey:@"key"]];
+                                      result[i] = [NSString stringWithFormat:@"%@/%@",QiniuBucketSpaceName,[resp objectForKey:@"key"]];
                                   }
                               }
                               dispatch_group_leave(group);
@@ -118,7 +119,9 @@
                 [self.delegate uploadFileFailed:nil];
                 return;
             }
-            [self.delegate uploadFileSuccess:nil];
+            NSMutableDictionary * back = [NSMutableDictionary dictionary];
+            [back setObject:[result componentsJoinedByString:@","] forKey:@"imageUrls"];
+            [self.delegate uploadFileSuccess:back];
         }
     });
 }

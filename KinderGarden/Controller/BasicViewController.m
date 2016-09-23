@@ -131,6 +131,18 @@
     [[TKAlertCenter defaultCenter] postAlertWithMessage:msg];
 }
 
+- (void)showLoadingViewWithMessage:(NSString *)msg
+{
+    MBProgressHUD * hud = [[MBProgressHUD alloc] init];
+    hud.labelText = msg;
+    [hud show:YES];
+}
+
+- (void)hideAllLoadingView
+{
+    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+}
+
 - (void)buttonClicked:(id)sender
 {
     UIButton * btn = (UIButton *)sender;

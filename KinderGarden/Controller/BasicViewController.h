@@ -36,6 +36,10 @@
 
 - (void)showAlertWithMessage:(NSString *)msg;
 
+- (void)showLoadingViewWithMessage:(NSString *)msg;
+
+- (void)hideAllLoadingView;
+
 - (void)back;
 
 @end

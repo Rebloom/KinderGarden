@@ -160,17 +160,22 @@ static NSString * defaultGoodsDescString = @"公告内容";
     else
     {
         submitBtn.enabled = NO;
-        
-        if ([GFStaticData getObjectForKey:kTagQiniuSDKToken])
-        {
-            NSMutableArray * temp = [addPicView.imageArray mutableCopy];
-            [temp removeLastObject];
-            [[NXUploadFileManager sharedManager] uploadImages:temp delegate:self];
-        }
-        else
-        {
-            [PublicRequest getQiniuTokenWithImageName:@"testjg" delegate:self];
-        }
+        [PublicRequest getQiniuTokenWithImageName:@"testjg" delegate:self];
+    }
+}
+
+- (void)uploadImageArray
+{
+    NSMutableArray * temp = [addPicView.imageArray mutableCopy];
+    [temp removeLastObject];
+    if (temp.count)
+    {
+        [self showLoadingViewWithMessage:@"图片上传中"];
+        [[NXUploadFileManager sharedManager] uploadImages:temp delegate:self];
+    }
+    else
+    {
+        [PublicRequest publishPublicInfoWithTitle:@"测试" bannerImage:@"" content:@"测试内容ddd" range:@"P" images:@"" videoUrl:@"" operatePersonID:[GFStaticData getObjectForKey:kTagUserKeyID] delegate:self];
     }
 }
 
@@ -180,9 +185,7 @@ static NSString * defaultGoodsDescString = @"公告内容";
     {
         NSString * uploadToken = [request.attributeDic objectForKey:@"token"];
         [GFStaticData saveObject:uploadToken forKey:kTagQiniuSDKToken];
-        NSMutableArray * temp = [addPicView.imageArray mutableCopy];
-        [temp removeLastObject];
-        [[NXUploadFileManager sharedManager] uploadImages:temp delegate:self];
+        [self uploadImageArray];
     }
     if ([request.vrCodeString isEqualToString:kTagPublishPublicRequest])
     {
@@ -196,7 +199,15 @@ static NSString * defaultGoodsDescString = @"公告内容";
 
 - (void)uploadFileSuccess:(NSDictionary *)back
 {
-    
+    [self hideAllLoadingView];
+    NSString * imageJoinedString = [back objectForKey:@"imageUrls"];
+    [PublicRequest publishPublicInfoWithTitle:@"测试" bannerImage:@"" content:@"测试内容ddd" range:@"P" images:imageJoinedString videoUrl:@"" operatePersonID:[GFStaticData getObjectForKey:kTagUserKeyID] delegate:self];
+}
+
+- (void)uploadFileFailed:(NSError *)error
+{
+    [self hideAllLoadingView];
+    [self showAlertWithMessage:@"图片上传失败"];
 }
 
 #pragma BrowseDelegate

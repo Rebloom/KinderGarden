@@ -34,7 +34,7 @@
 
 @interface PublicRequest : NXBaseRequest
 
-+ (void)publishPublicInfoWithTitle:(NSString *)title bannerImage:(NSString *)bannerImage content:(NSString *)announcement range:(NSString *)selectrange images:(NSMutableArray *)images videoUrl:(NSString *)videoUrl operatePersonID:(NSString *)personID delegate:(id)_delegate;
++ (void)publishPublicInfoWithTitle:(NSString *)title bannerImage:(NSString *)bannerImage content:(NSString *)announcement range:(NSString *)selectrange images:(NSString *)imageUrl videoUrl:(NSString *)videoUrl operatePersonID:(NSString *)personID delegate:(id)_delegate;
 
 + (void)getPublicListWithPage:(NSString *)page numbers:(NSString *)rows delegate:(id)_delegate;
 

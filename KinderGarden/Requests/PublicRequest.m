@@ -10,24 +10,17 @@
 
 @implementation PublicRequest
 
-+ (void)publishPublicInfoWithTitle:(NSString *)title bannerImage:(NSString *)bannerImage content:(NSString *)announcement range:(NSString *)selectrange images:(NSMutableArray *)images videoUrl:(NSString *)videoUrl operatePersonID:(NSString *)personID delegate:(id)_delegate
++ (void)publishPublicInfoWithTitle:(NSString *)title bannerImage:(NSString *)bannerImage content:(NSString *)announcement range:(NSString *)selectrange images:(NSString *)imageUrl videoUrl:(NSString *)videoUrl operatePersonID:(NSString *)personID delegate:(id)_delegate
 {
     PublicRequest * request = [[PublicRequest alloc] init];
     request.vrCodeString = kTagPublishPublicRequest;
     request.delegate = _delegate;
     
-    NSString * imageString = @"";
-    for (NSString * str in images)
-    {
-        imageString = [imageString stringByAppendingString:[NSString stringWithFormat:@"%@,",str]];
-    }
-    imageString = [imageString substringToIndex:imageString.length-1];
-    
     [request.params setObject:title forKey:@"title"];
     [request.params setObject:bannerImage forKey:@"bannerimg"];
     [request.params setObject:announcement forKey:@"announcement"];
     [request.params setObject:selectrange forKey:@"selectrange"];
-    [request.params setObject:imageString forKey:@"imags"];
+    [request.params setObject:imageUrl forKey:@"imags"];
     [request.params setObject:videoUrl forKey:@"voidurls"];
     [request.params setObject:personID forKey:@"ospersion"];
     
