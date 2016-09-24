@@ -133,9 +133,7 @@
 
 - (void)showLoadingViewWithMessage:(NSString *)msg
 {
-    MBProgressHUD * hud = [[MBProgressHUD alloc] init];
-    hud.labelText = msg;
-    [hud show:YES];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
 }
 
 - (void)hideAllLoadingView

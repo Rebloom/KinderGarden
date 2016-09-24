@@ -22,5 +22,7 @@
     UIButton * schoolBtn;
     UIButton * classBtn;
     UIButton * tipBtn;
+    
+    NSMutableArray * infoArray;
 }
 @end

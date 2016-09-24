@@ -35,4 +35,7 @@
 - (CGFloat)calculateLabelHeightWithText:(NSString *)text;
 
 + (NSDictionary *)dictionaryFromStringValue:(NSString *)string;
+
++ (NSString *)checkNullData:(NSDictionary *)checkData key:(NSString *)key;
+
 @end

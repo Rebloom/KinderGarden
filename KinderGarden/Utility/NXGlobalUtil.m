@@ -75,4 +75,14 @@ static NXGlobalUtil * shareUtil = nil;
     return nil;
 }
 
++ (NSString *)checkNullData:(NSDictionary *)checkData key:(NSString *)key
+{
+    if ([checkData objectForKey:key] == nil ||[[checkData objectForKey:key] isEqual:[NSNull null]] ||
+        [[[checkData objectForKey:key] description] isEqualToString:@"<null>"])
+    {
+        return @"";
+    }
+    return [[checkData objectForKey:key] description];
+}
+
 @end

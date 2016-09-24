@@ -196,6 +196,7 @@
 		EF02DC171D60DC480011483A /* 饮食@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF02DBFE1D60DC480011483A /* 饮食@2x.png */; };
 		EF02DC181D60DC480011483A /* 饮食@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF02DBFF1D60DC480011483A /* 饮食@3x.png */; };
 		EF02DC1B1D696DEA0011483A /* PublishPublicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF02DC1A1D696DEA0011483A /* PublishPublicViewController.m */; };
+		EF0583631D9653F100A92DB8 /* AddClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF0583621D9653F100A92DB8 /* AddClassViewController.m */; };
 		EF0A53361D910A5D00A07E53 /* EZQRView.m in Sources */ = {isa = PBXBuildFile; fileRef = EF0A52251D910A5D00A07E53 /* EZQRView.m */; };
 		EF0A53371D910A5D00A07E53 /* EZRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF0A52271D910A5D00A07E53 /* EZRecordCell.m */; };
 		EF0A53381D910A5D00A07E53 /* HIKLoadPercentView.m in Sources */ = {isa = PBXBuildFile; fileRef = EF0A52291D910A5D00A07E53 /* HIKLoadPercentView.m */; };
@@ -867,6 +868,8 @@
 		EF02DBFF1D60DC480011483A /* 饮食@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "饮食@3x.png"; sourceTree = "<group>"; };
 		EF02DC191D696DEA0011483A /* PublishPublicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublishPublicViewController.h; sourceTree = "<group>"; };
 		EF02DC1A1D696DEA0011483A /* PublishPublicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublishPublicViewController.m; sourceTree = "<group>"; };
+		EF0583611D9653F100A92DB8 /* AddClassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddClassViewController.h; sourceTree = "<group>"; };
+		EF0583621D9653F100A92DB8 /* AddClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddClassViewController.m; sourceTree = "<group>"; };
 		EF0A52241D910A5D00A07E53 /* EZQRView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZQRView.h; sourceTree = "<group>"; };
 		EF0A52251D910A5D00A07E53 /* EZQRView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZQRView.m; sourceTree = "<group>"; };
 		EF0A52261D910A5D00A07E53 /* EZRecordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZRecordCell.h; sourceTree = "<group>"; };
@@ -1984,6 +1987,8 @@
 				7349BF771D1BD0F900A57243 /* LookViewController.m */,
 				73EC54121D225FB30032C754 /* ArticleDetailViewController.h */,
 				73EC54131D225FB30032C754 /* ArticleDetailViewController.m */,
+				EF0583611D9653F100A92DB8 /* AddClassViewController.h */,
+				EF0583621D9653F100A92DB8 /* AddClassViewController.m */,
 			);
 			path = Discovery;
 			sourceTree = "<group>";
@@ -4687,6 +4692,7 @@
 				EF0A536F1D910A5D00A07E53 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				EF93F0321D928A27001499D3 /* QNFileRecorder.m in Sources */,
 				EF0B3C291D90769F00EAD7E2 /* EaseBubbleView+Text.m in Sources */,
+				EF0583631D9653F100A92DB8 /* AddClassViewController.m in Sources */,
 				EF0B3BB61D90769E00EAD7E2 /* RobotListViewController.m in Sources */,
 				EF0B3BAC1D90769E00EAD7E2 /* AddFriendViewController.m in Sources */,
 				7328850E1CED5758006A5CEC /* BuildClassViewController.m in Sources */,

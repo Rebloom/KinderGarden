@@ -219,19 +219,21 @@ static NSString * serverOutTime     = @"请求超时,请稍后重试";
                 else
                 {
                     // 正常请求拿到数据放回request准备好的容器
-                    request.attributeDic = [back objectForKey:@"obj"];
-                    if (request.attributeDic == nil)
+                    request.attributeDic = back;
+                    if ([[request.attributeDic objectForKey:@"success"] integerValue])
                     {
-                        request.attributeDic = back;
+                        if (request.delegate && [request.delegate respondsToSelector:@selector(nxRequestFinished:)]) {
+                            [request.delegate nxRequestFinished:request];
+                        }
+                        if (request.successCompletionBlock) {
+                            request.successCompletionBlock(request);
+                        }
                     }
-                    request.domainDic = [[back objectForKey:@"d"] objectForKey:@"domains"];
-                    if (request.delegate && [request.delegate respondsToSelector:@selector(nxRequestFinished:)]) {
-                        [request.delegate nxRequestFinished:request];
+                    else
+                    {
+                        [[TKAlertCenter defaultCenter] postAlertWithMessage:[request.attributeDic objectForKey:@"msg"]];
+                        NSLog(@"error!!!!__%@",[request.attributeDic objectForKey:@"msg"]);
                     }
-                    if (request.successCompletionBlock) {
-                        request.successCompletionBlock(request);
-                    }
-                    
                 }
             }
             // 请求超时返回200的情况

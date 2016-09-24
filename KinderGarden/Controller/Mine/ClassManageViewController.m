@@ -9,6 +9,8 @@
 #import "ClassManageViewController.h"
 #import "AddTeatcherCell.h"
 
+#import "ClassRequest.h"
+
 @interface ClassManageViewController ()
 
 @end
@@ -40,9 +42,6 @@
     infoArr = [[NSMutableArray alloc] initWithCapacity:10];
     selectDict = [[NSMutableDictionary alloc] initWithCapacity:10];
     
-    NSArray * tempArr= @[@"小A",@"豆豆",@"妞妞",@"贝贝娜",@"萌萌",@"妞妞",@"赵子轩",@"豆豆",@"妞妞",@"老师"];
-    infoArr = [tempArr mutableCopy];
-    
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
     [dic setValue:@"NO" forKey:@"0"];
     [selectedSection addObject:dic];
@@ -53,6 +52,24 @@
 
     [self createSaveBtn];
     [self createUI];
+    
+    [self getClassInfo];
+}
+
+- (void)getClassInfo
+{
+    [ClassRequest getClassListWithSchoolID:@"1" chiefTeacher:@"" delegate:self];
+}
+
+- (void)nxRequestFinished:(NXBaseRequest *)request
+{
+    infoArr = [request.attributeDic objectForKey:@"obj"];
+    [infoTableView reloadData];
+}
+
+- (void)nxRequestFailed:(NXBaseRequest *)request
+{
+    
 }
 
 - (void)createUI
@@ -68,8 +85,7 @@
 
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    NSArray * tempArr = @[@"柠檬班",@"草莓班"];
-
+    NSDictionary * backInfo = [infoArr objectAtIndex:section];
     
     UIView * bgView = [[UIView alloc] init];
     bgView.backgroundColor = KFontColorA;
@@ -79,7 +95,7 @@
     nameLabel.textColor = KFontColorC;
     nameLabel.font = NormalFontWithSize(15);
     nameLabel.textAlignment = NSTextAlignmentLeft;
-    nameLabel.text = [tempArr objectAtIndex:section];
+    nameLabel.text = [backInfo objectForKey:@"classname"];
     nameLabel.frame = CGRectMake(20, 0, 200, 45);
     [bgView addSubview:nameLabel];
     
@@ -120,7 +136,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return infoArr.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -201,31 +217,31 @@
 // 根据时间段请求，点击即取消当前页其它请求
 - (void)timeBtnOnClick:(UIButton *)sender
 {
-    selectedIndex = sender.tag;
-    
-    BOOL needAdd = YES;
-    for (NSMutableDictionary * dic in selectedSection)
-    {
-        if ([dic objectForKey:[NSString stringWithFormat:@"%d", (int)selectedIndex]])
-        {
-            needAdd = NO;
-            if ([[dic objectForKey:[NSString stringWithFormat:@"%d", (int)selectedIndex]] isEqualToString:@"YES"])
-            {
-                [dic setObject:@"NO" forKey:[NSString stringWithFormat:@"%d", (int)selectedIndex]];
-            }
-            else
-            {
-                [dic setObject:@"YES" forKey:[NSString stringWithFormat:@"%d", (int)selectedIndex]];
-            }
-        }
-    }
-    
-    if (needAdd)
-    {
-        NSMutableDictionary * addDic = [NSMutableDictionary dictionary];
-        [addDic setObject:@"YES" forKey:[NSString stringWithFormat:@"%d", (int)selectedIndex]];
-        [selectedSection addObject:addDic];
-    }
+//    selectedIndex = sender.tag;
+//    
+//    BOOL needAdd = YES;
+//    for (NSMutableDictionary * dic in selectedSection)
+//    {
+//        if ([dic objectForKey:[NSString stringWithFormat:@"%d", (int)selectedIndex]])
+//        {
+//            needAdd = NO;
+//            if ([[dic objectForKey:[NSString stringWithFormat:@"%d", (int)selectedIndex]] isEqualToString:@"YES"])
+//            {
+//                [dic setObject:@"NO" forKey:[NSString stringWithFormat:@"%d", (int)selectedIndex]];
+//            }
+//            else
+//            {
+//                [dic setObject:@"YES" forKey:[NSString stringWithFormat:@"%d", (int)selectedIndex]];
+//            }
+//        }
+//    }
+//    
+//    if (needAdd)
+//    {
+//        NSMutableDictionary * addDic = [NSMutableDictionary dictionary];
+//        [addDic setObject:@"YES" forKey:[NSString stringWithFormat:@"%d", (int)selectedIndex]];
+//        [selectedSection addObject:addDic];
+//    }
     [infoTableView reloadData];
 }
 

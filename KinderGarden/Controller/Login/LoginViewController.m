@@ -198,7 +198,7 @@
     if ([request.vrCodeString isEqualToString:kTagLoginRequest])
     {
         // 保存用户信息
-        NSDictionary * roleDic = [request.attributeDic objectForKey:@"role"];
+        NSDictionary * roleDic = [[request.attributeDic objectForKey:@"obj"] objectForKey:@"role"];
         [GFStaticData saveObject:[roleDic objectForKey:@"id"] forKey:kTagUserKeyID];
         [GFStaticData saveObject:[roleDic objectForKey:@"phone"] forKey:kTagUserPhone];
         

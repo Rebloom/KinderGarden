@@ -113,11 +113,8 @@
 {
     if ([request.vrCodeString isEqualToString:kTagResetPasswordRequest])
     {
-        if ([[request.attributeDic objectForKey:@"success"] integerValue])
-        {
-            [[TKAlertCenter defaultCenter] postAlertWithMessage:@"密码修改成功"];
-            [self performSelector:@selector(delayToLogin) withObject:nil afterDelay:1.5];
-        }
+        [[TKAlertCenter defaultCenter] postAlertWithMessage:@"密码修改成功"];
+        [self performSelector:@selector(delayToLogin) withObject:nil afterDelay:1.5];
     }
 }
 

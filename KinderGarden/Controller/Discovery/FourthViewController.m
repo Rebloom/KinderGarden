@@ -12,6 +12,8 @@
 #import "AttentionAndFunsViewController.h"
 #import "LookViewController.h"
 
+#import "AddClassViewController.h"
+
 @interface FourthViewController ()
 
 @end
@@ -148,7 +150,8 @@
     }
     else if (indexPath.section == 1)
     {
-    
+        AddClassViewController * ACVC = [[AddClassViewController alloc] init];
+        [self pushToViewController:ACVC];
     }
     else if (indexPath.section == 2)
     {

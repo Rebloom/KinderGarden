@@ -65,8 +65,6 @@
     navFourth.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"发现" image:[UIImage imageNamed:@"discovery"] tag:4];
     navFifth.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"我" image:[UIImage imageNamed:@"mine"] tag:5];
 
-    
-    
     tabBarController = [[Ivan_UITabBar alloc] init];
         tabBarController.imageArr = [NSArray arrayWithObjects:@"main",@"select_dynamic",@"select_announce",@"select_discovery",@"select_mine",nil];
     

@@ -183,17 +183,14 @@ static NSString * defaultGoodsDescString = @"公告内容";
 {
     if ([request.vrCodeString isEqualToString:kTagRequestQNToken])
     {
-        NSString * uploadToken = [request.attributeDic objectForKey:@"token"];
+        NSString * uploadToken = [[request.attributeDic objectForKey:@"obj"] objectForKey:@"token"];
         [GFStaticData saveObject:uploadToken forKey:kTagQiniuSDKToken];
         [self uploadImageArray];
     }
     if ([request.vrCodeString isEqualToString:kTagPublishPublicRequest])
     {
-        if ([[request.attributeDic objectForKey:@"success"] integerValue])
-        {
-            [[TKAlertCenter defaultCenter] postAlertWithMessage:@"发布成功"];
-            [self performSelector:@selector(back) withObject:nil afterDelay:1.5];
-        }
+        [[TKAlertCenter defaultCenter] postAlertWithMessage:@"发布成功"];
+        [self performSelector:@selector(back) withObject:nil afterDelay:1.5];
     }
 }
 
@@ -201,7 +198,8 @@ static NSString * defaultGoodsDescString = @"公告内容";
 {
     [self hideAllLoadingView];
     NSString * imageJoinedString = [back objectForKey:@"imageUrls"];
-    [PublicRequest publishPublicInfoWithTitle:@"测试" bannerImage:@"" content:@"测试内容ddd" range:@"P" images:imageJoinedString videoUrl:@"" operatePersonID:[GFStaticData getObjectForKey:kTagUserKeyID] delegate:self];
+    NSLog(@"bannerImage is %@",[[imageJoinedString componentsSeparatedByString:@","] firstObject]);
+    [PublicRequest publishPublicInfoWithTitle:@"测试" bannerImage:[[imageJoinedString componentsSeparatedByString:@","] firstObject] content:@"测试内容ddd" range:@"P" images:imageJoinedString videoUrl:@"" operatePersonID:[GFStaticData getObjectForKey:kTagUserKeyID] delegate:self];
 }
 
 - (void)uploadFileFailed:(NSError *)error

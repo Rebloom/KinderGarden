@@ -244,7 +244,6 @@
 {
     if ([request.vrCodeString isEqualToString:kTagRegisterGetCodeRequest])
     {
-        //
         [[TKAlertCenter defaultCenter] postAlertWithMessage:@"发送成功"];
     }
     else if ([request.vrCodeString isEqualToString:kTagRegisterRequest])

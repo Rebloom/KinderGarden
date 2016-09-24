@@ -9,6 +9,8 @@
 #import "SecondViewController.h"
 #import "NewsDetailViewController.h"
 
+#import "PublicRequest.h"
+
 #define Announce    @"Announce"
 #define BabyShow    @"babyshow"
 #define School      @"school"
@@ -80,12 +82,27 @@
 
     [headerView setBackgroundColor:KPurpleColor];
     
+    infoArray = [NSMutableArray arrayWithCapacity:10];
+    
+    [self getPublicInfo];
+    
     statusFlag = Announce;
     announceFlag = School;
     
     [self createTopView];
     [self createBanner];
     [self createTableView];
+}
+
+- (void)getPublicInfo
+{
+    [PublicRequest getPublicListWithPage:@"2" numbers:@"20" delegate:self];
+}
+
+- (void)nxRequestFinished:(NXBaseRequest *)request
+{
+    infoArray = [request.attributeDic objectForKey:@"obj"];
+    [infoTableView reloadData];
 }
 
 - (void)createBanner
@@ -238,7 +255,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return infoArray.count;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -258,22 +275,29 @@
     cell.lookBtn.tag = indexPath.row;
     cell.commentBtn.tag = indexPath.row;
     
+    NSDictionary * dic = [infoArray objectAtIndex:indexPath.row];
     //头像
-    cell.photoImageView.image = [UIImage imageNamed:@"newsImageView"];
+    [cell.photoImageView sd_setImageWithURL:[NSURL URLWithString:[dic objectForKey:@"bannerimg"]] placeholderImage:[UIImage imageNamed:@"newsImageView"]];
     //新闻图
-    cell.newsImageView.image = [UIImage imageNamed:@"newsImageView"];
+    [[SDWebImageDownloader sharedDownloader] setValue:@"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8" forHTTPHeaderField:@"Accept"];
+    [[SDWebImageDownloader sharedDownloader] downloadImageWithURL:[NSURL URLWithString:[dic objectForKey:@"bannerimg"]] options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+        //
+    } completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
+        //
+        cell.newsImageView.image = image;
+    }];
     //新闻标题
-    cell.titleLabel.text = @"21世纪全美脑科学革命全脑教养成就从容父母";
+    cell.titleLabel.text = [NXGlobalUtil checkNullData:dic key:@"title"];
     //新闻内容
-    cell.contentLabel.text = @"加拿大著名儿童心理学家 Hannah Sun-Reid 孙寒老师应伊顿家长大学之邀，于 2015年12月20日星期天作客北京常春藤国际学校，将为广大家长带来一场有关脑科学的育儿讲座。";
+    cell.contentLabel.text = [NXGlobalUtil checkNullData:dic key:@"announcement"];
     //名称
-    cell.nameLabel.text = @"艾米丽";
+    cell.nameLabel.text = [NXGlobalUtil checkNullData:dic key:@"ospersion"];
     //时间
-    cell.timeLabel.text = @"2小时前";
+    cell.timeLabel.text = [NXGlobalUtil checkNullData:dic key:@"createtime"];
     //已阅读数
-    cell.lookLabel.text = @"123123";
+    cell.lookLabel.text = [NXGlobalUtil checkNullData:dic key:@"dznum"];
     //评论数
-    cell.commentLabel.text = @"1321";
+    cell.commentLabel.text = [NXGlobalUtil checkNullData:dic key:@"plnum"];
     
     
     //调整新闻内容行间距
@@ -289,11 +313,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    NSLog(@"-+++++++++-%ld-++++++++++++--",(long)indexPath.row);
+    NSDictionary * dic = [infoArray objectAtIndex:indexPath.row];
 
     NewsDetailViewController * NDVC = [[NewsDetailViewController alloc] init];
-#warning 接入数据后传页面标题
-    NDVC.title = [NSString stringWithFormat:@"%ld",indexPath.row];
+    NDVC.title = [NXGlobalUtil checkNullData:dic key:@"title"].length?[NXGlobalUtil checkNullData:dic key:@"title"]:@"公告详情";
     [self pushToViewController:NDVC];
 }
 

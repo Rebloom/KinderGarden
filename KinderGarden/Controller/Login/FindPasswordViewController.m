@@ -169,19 +169,13 @@
 {
     if ([request.vrCodeString isEqualToString:kTagRegisterGetCodeRequest])
     {
-        if ([[request.attributeDic objectForKey:@"success"] integerValue])
-        {
-            [[TKAlertCenter defaultCenter] postAlertWithMessage:@"验证码已发送"];
-        }
+        [[TKAlertCenter defaultCenter] postAlertWithMessage:@"验证码已发送"];
     }
     else if ([request.vrCodeString isEqualToString:kTagResetPasswordCheckCode])
     {
-        if ([[request.attributeDic objectForKey:@"success"] integerValue])
-        {
-            SetPasswordViewController * SPVC = [[SetPasswordViewController alloc] init];
-            SPVC.passPhone = userNameTf.text;
-            [self pushToViewController:SPVC];
-        }
+        SetPasswordViewController * SPVC = [[SetPasswordViewController alloc] init];
+        SPVC.passPhone = userNameTf.text;
+        [self pushToViewController:SPVC];
     }
 }
 

@@ -83,7 +83,7 @@
             UIImage * image = (UIImage *)object;
             QNUploadManager *upManager = [[QNUploadManager alloc] init];
             NSData *data = UIImagePNGRepresentation(image);
-            NSString * fileName = [NSString stringWithFormat:@"%lf_%@",[[NSDate date ] timeIntervalSince1970],[[GFStaticData getObjectForKey:kTagUserKeyID] description].md5String];
+            NSString * fileName = [NSString stringWithFormat:@"%lf_%@.png",[[NSDate date ] timeIntervalSince1970],[[GFStaticData getObjectForKey:kTagUserKeyID] description].md5String];
             [upManager putData:data key:fileName token:[GFStaticData getObjectForKey:kTagQiniuSDKToken]
                       complete: ^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
                           NSLog(@"%@", info);
@@ -121,6 +121,7 @@
             }
             NSMutableDictionary * back = [NSMutableDictionary dictionary];
             [back setObject:[result componentsJoinedByString:@","] forKey:@"imageUrls"];
+            NSLog(@"imageUrls is %@",[result componentsJoinedByString:@","]);
             [self.delegate uploadFileSuccess:back];
         }
     });
