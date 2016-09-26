@@ -10,7 +10,6 @@
 
 #import "NXUploadFileManager.h"
 
-static NSString * defaultGoodsDescString = @"公告内容";
 #define MyOrangeColor       MY_COLOR(252,79,30,1)
 
 @interface PublishPublicViewController ()
@@ -23,7 +22,15 @@ static NSString * defaultGoodsDescString = @"公告内容";
     [super viewDidLoad];
     
     [headerView backButton];
-    [headerView loadComponentsWithTitle:@"发布公告"];
+    if (_publishType == PublishTypePublic)
+    {
+        [headerView loadComponentsWithTitle:@"发布公告"];
+    }
+    else if (_publishType == PublishTypeParentCircle)
+    {
+        [headerView loadComponentsWithTitle:@"发布父母圈"];
+    }
+   
     [headerView publishButton];
     self.view.backgroundColor = NXDefaultGrayBGColor;
     
@@ -83,16 +90,23 @@ static NSString * defaultGoodsDescString = @"公告内容";
     topContainerView.backgroundColor = [UIColor whiteColor];
     [containerScrollView addSubview:topContainerView];
     
+    titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 75, 45)];
+    titleLabel.backgroundColor = [UIColor clearColor];
+    titleLabel.textColor = [UIColor lightGrayColor];
+    titleLabel.font = NormalFontWithSize(15);
+    titleLabel.text = @"发布标题";
+    [topContainerView addSubview:titleLabel];
+    
+    titleText = [[UITextField alloc] initWithFrame:CGRectMake(CGRectGetMaxX(titleLabel.frame)+4, 0, screenWidth-100, 45)];
+    titleText.delegate = self;
+    titleText.returnKeyType = UIReturnKeyDone;
+    titleText.placeholder = @"输入标题";
+    [titleText becomeFirstResponder];
+    [topContainerView addSubview:titleText];
+    
     UIView * line1 = [[UIView alloc] initWithFrame:CGRectMake(0, 45, screenWidth, .5)];
     line1.backgroundColor = [UIColor lightGrayColor];
     [topContainerView addSubview:line1];
-    
-    goodsDescLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(line1.frame)+15, 75, 15)];
-    goodsDescLabel.backgroundColor = [UIColor clearColor];
-    goodsDescLabel.textColor = [UIColor lightGrayColor];
-    goodsDescLabel.font = NormalFontWithSize(15);
-    goodsDescLabel.text = @"公告内容";
-    [topContainerView addSubview:goodsDescLabel];
     
     goodsDescTextView = [[UITextView alloc] initWithFrame:CGRectMake(CGRectGetMaxX(goodsDescLabel.frame)-4, CGRectGetMaxY(line1.frame)+6, screenWidth-100, 115)];
     goodsDescTextView.delegate = self;
@@ -110,7 +124,7 @@ static NSString * defaultGoodsDescString = @"公告内容";
     placeHolderLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(goodsDescLabel.frame), CGRectGetMaxY(line1.frame)+15, screenWidth-100, 50)];
     placeHolderLabel.numberOfLines = 2;
     placeHolderLabel.backgroundColor = [UIColor clearColor];
-    placeHolderLabel.text = defaultGoodsDescString;
+    placeHolderLabel.text = @"请填写发布内容";
     placeHolderLabel.font = NormalFontWithSize(15);
     placeHolderLabel.textColor = MY_COLOR(200, 200, 200, 1);
     [placeHolderLabel sizeToFit];
@@ -175,7 +189,14 @@ static NSString * defaultGoodsDescString = @"公告内容";
     }
     else
     {
-        [PublicRequest publishPublicInfoWithTitle:@"测试" bannerImage:@"" content:@"测试内容ddd" range:@"P" images:@"" videoUrl:@"" operatePersonID:[GFStaticData getObjectForKey:kTagUserKeyID] delegate:self];
+        if (_publishType == PublishTypePublic)
+        {
+            [PublicRequest publishPublicInfoWithTitle:@"测试" bannerImage:@"" content:@"测试内容ddd" range:@"p" images:@"" videoUrl:@"" operatePersonID:[GFStaticData getObjectForKey:kTagUserKeyID] delegate:self];
+        }
+        else if (_publishType == PublishTypeParentCircle)
+        {
+            [PublicRequest addParentPublishWithSchoolID:@"1" address:@"北京市" topic:@"测试标题" content:@"测试内容" topicImage:@"" type:@"p" delegate:self];
+        }
     }
 }
 
@@ -187,9 +208,14 @@ static NSString * defaultGoodsDescString = @"公告内容";
         [GFStaticData saveObject:uploadToken forKey:kTagQiniuSDKToken];
         [self uploadImageArray];
     }
-    if ([request.vrCodeString isEqualToString:kTagPublishPublicRequest])
+    else if ([request.vrCodeString isEqualToString:kTagPublishPublicRequest])
     {
         [[TKAlertCenter defaultCenter] postAlertWithMessage:@"发布成功"];
+        [self performSelector:@selector(back) withObject:nil afterDelay:1.5];
+    }
+    else if ([request.vrCodeString isEqualToString:kTagParrentPublishRequest])
+    {
+        [[TKAlertCenter defaultCenter] postAlertWithMessage:@"发布父母圈成功"];
         [self performSelector:@selector(back) withObject:nil afterDelay:1.5];
     }
 }
@@ -199,7 +225,15 @@ static NSString * defaultGoodsDescString = @"公告内容";
     [self hideAllLoadingView];
     NSString * imageJoinedString = [back objectForKey:@"imageUrls"];
     NSLog(@"bannerImage is %@",[[imageJoinedString componentsSeparatedByString:@","] firstObject]);
-    [PublicRequest publishPublicInfoWithTitle:@"测试" bannerImage:[[imageJoinedString componentsSeparatedByString:@","] firstObject] content:@"测试内容ddd" range:@"P" images:imageJoinedString videoUrl:@"" operatePersonID:[GFStaticData getObjectForKey:kTagUserKeyID] delegate:self];
+    if (_publishType == PublishTypePublic)
+    {
+        [PublicRequest publishPublicInfoWithTitle:@"测试" bannerImage:[[imageJoinedString componentsSeparatedByString:@","] firstObject] content:@"测试内容ddd" range:@"P" images:imageJoinedString videoUrl:@"" operatePersonID:[GFStaticData getObjectForKey:kTagUserKeyID] delegate:self];
+    }
+    else if (_publishType == PublishTypeParentCircle)
+    {
+        [PublicRequest addParentPublishWithSchoolID:@"1" address:@"北京市" topic:titleText.text content:goodsDescTextView.text topicImage:[[imageJoinedString componentsSeparatedByString:@","] firstObject] type:@"p" delegate:self];
+    }
+
 }
 
 - (void)uploadFileFailed:(NSError *)error
@@ -286,7 +320,7 @@ static NSString * defaultGoodsDescString = @"公告内容";
     }
     else
     {
-        placeHolderLabel.text = defaultGoodsDescString;
+        placeHolderLabel.text = @"请填写发布内容";
     }
     
     if (textView.text.length > 1000)

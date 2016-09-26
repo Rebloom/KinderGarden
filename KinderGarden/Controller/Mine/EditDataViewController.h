@@ -25,7 +25,9 @@
     UIButton * photoBtn;
     
     EditView * edit;
-     NSInteger recordRow;//记录编辑的是哪一行
+    NSInteger recordRow;//记录编辑的是哪一行
+    
+    NSMutableArray * infoArray;
 }
 
 @end

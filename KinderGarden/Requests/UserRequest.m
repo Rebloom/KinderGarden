@@ -42,5 +42,30 @@
     [request start];
 }
 
++ (void)updateTeacherInfoWithSchoolID:(NSString *)schoolID headerImage:(NSString *)headerImageUrl nickName:(NSString *)nickName teacherName:(NSString *)teacherName sex:(NSString *)sex nationality:(NSString *)nationality birthday:(NSString *)birthdate phone:(NSString *)phone kbwx:(NSString *)kbwx kbqq:(NSString *)kbqq classid:(NSString *)classid onthejob:(NSString *)onthejob permissions:(NSString *)permissions analysis:(NSString *)analysis schoolname:(NSString *)schoolname delegate:(id)_delegate
+{
+    UserRequest * request = [[UserRequest alloc] init];
+    request.vrCodeString = kTagUpdateTeacherInfo;
+    request.delegate = _delegate;
+    
+    [request.params setObject:schoolID forKey:@"schoolid"];
+    [request.params setObject:headerImageUrl forKey:@"headportrait"];
+    [request.params setObject:nickName forKey:@"nickname"];
+    [request.params setObject:teacherName forKey:@"teachername"];
+    [request.params setObject:sex forKey:@"sex"];
+    [request.params setObject:nationality forKey:@"nationality"];
+    [request.params setObject:birthdate forKey:@"birthdate"];
+    [request.params setObject:phone forKey:@"phone"];
+    [request.params setObject:kbwx forKey:@"kbwx"];
+    [request.params setObject:kbqq forKey:@"kbqq"];
+    [request.params setObject:classid forKey:@"classid"];
+    [request.params setObject:onthejob forKey:@"onthejob"];
+    [request.params setObject:permissions forKey:@"permissions"];
+    [request.params setObject:analysis forKey:@"analysis"];
+    [request.params setObject:schoolname forKey:@"schoolname"];
+    
+    [request start];
+}
+
 
 @end

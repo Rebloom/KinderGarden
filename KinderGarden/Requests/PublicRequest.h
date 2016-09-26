@@ -48,4 +48,6 @@
 
 + (void)addFoodRequestWithWeekNumber:(NSString *)weekNumber meal:(NSString *)meal foodImages:(NSMutableArray *)foodImages foodDesc:(NSString *)fooddesc classID:(NSString *)classID schoolID:(NSString *)schoolID operateID:(NSString *)personID delegate:(id)_delegate;
 
++ (void)addParentPublishWithSchoolID:(NSString *)schoolID address:(NSString *)address topic:(NSString *)topic content:(NSString *)content topicImage:(NSString *)topicImage type:(NSString *)type delegate:(id)_delegate;
+
 @end

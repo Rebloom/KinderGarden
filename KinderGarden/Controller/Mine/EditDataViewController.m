@@ -40,8 +40,20 @@
     _isShow = NO;
     
     rightOneArr = [[NSMutableArray alloc] initWithCapacity:10];
-    NSArray * onerightOneArr = @[@"半杯咖啡@jing",@"123347@qq.com",@"",@"女"];
-    rightOneArr = [onerightOneArr mutableCopy];
+    
+    infoArray = [NSMutableArray array];
+    [infoArray addObject:@"昵称"];
+    [infoArray addObject:@"姓名"];
+    [infoArray addObject:@"性别"];
+    [infoArray addObject:@"民族"];
+    [infoArray addObject:@"出生日期"];
+    [infoArray addObject:@"班级"];
+    [infoArray addObject:@"是否在职"];
+    
+    for (NSString * str in infoArray)
+    {
+        [rightOneArr addObject:@""];
+    }
     
     [self createTableView];
     [self createUI];
@@ -104,7 +116,7 @@
     nameLabel.textAlignment = NSTextAlignmentLeft;
     nameLabel.frame = CGRectMake(CGRectGetMaxX(iconView.frame)+6, CGRectGetMinY(iconView.frame)+15, 180, 25);
     nameLabel.textColor = KFontColorA;
-    nameLabel.text = @"娇娇老师";
+    nameLabel.text = @"点击左侧上传头像";
     [headView addSubview:nameLabel];
     
     if (!phoneLabel)
@@ -115,7 +127,7 @@
     phoneLabel.textAlignment = NSTextAlignmentLeft;
     phoneLabel.frame = CGRectMake(CGRectGetMaxX(iconView.frame)+6, CGRectGetMaxY(nameLabel.frame), 180, 20);
     phoneLabel.textColor = KFontColorA;
-    phoneLabel.text = @"手机号：15112345678";
+    phoneLabel.text = [NSString stringWithFormat:@"手机号：%@",[GFStaticData getObjectForKey:kTagUserPhone]];
     [headView addSubview:phoneLabel];
 }
 
@@ -131,7 +143,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 4;
+    return infoArray.count;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -142,11 +154,9 @@
     {
         cell = [[EditDataCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
     }
-    NSArray * oneTitleArr = @[@"昵称",@"账号",@"地区",@"性别"];
 
-    cell.nameLabel.text = [oneTitleArr objectAtIndex:indexPath.row];
+    cell.nameLabel.text = [infoArray objectAtIndex:indexPath.row];
     cell.rightLabel.text = [rightOneArr objectAtIndex:indexPath.row];
-
     
     return cell;
 }
@@ -163,18 +173,18 @@
     //记录编辑哪一行
     recordRow = indexPath.row;
     
-    if (indexPath.row == 0 ||indexPath.row == 1)
+    if (indexPath.row == 0 ||indexPath.row == 1 || indexPath.row == 3 || indexPath.row == 4 || indexPath.row == 5)
     {
         [edit showView];
         [edit setTitleStr:[rightOneArr objectAtIndex:indexPath.row]];
     }
     else if (indexPath.row == 2)
     {
-        [self pickerviewbuttonclick:nil];
-    }
-    else if (indexPath.row == 3)
-    {
         [self selectSex];
+    }
+    else if (indexPath.row == 6)
+    {
+        [self selectIsOnTheJob];
     }
 }
 
@@ -193,12 +203,20 @@
     [infoTableView reloadData];
 }
 
+
+- (void)selectIsOnTheJob
+{
+    UIActionSheet * sheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"是",@"否", nil];
+    sheet.tag = 9;
+    sheet.actionSheetStyle = UIActionSheetStyleBlackOpaque;
+    [sheet showInView:self.view];
+}
 //选择性别
 - (void)selectSex
 {
     UIActionSheet * sheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"男",@"女", nil];
     sheet.tag = 10;
-    sheet.actionSheetStyle =   UIActionSheetStyleBlackOpaque;
+    sheet.actionSheetStyle = UIActionSheetStyleBlackOpaque;
     [sheet showInView:self.view];
 }
 
@@ -213,19 +231,35 @@
 //选择器（性别、照相）
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
+    if (actionSheet.tag == 9)
+    {
+        if (buttonIndex == 0)
+        {
+            [rightOneArr replaceObjectAtIndex:6 withObject:@"是"];
+        }
+        else if (buttonIndex == 1)
+        {
+            [rightOneArr replaceObjectAtIndex:6 withObject:@"否"];
+        }
+        else if (buttonIndex == 2)
+        {
+            [rightOneArr replaceObjectAtIndex:6 withObject:@""];
+        }
+        [infoTableView reloadData];
+    }
     if (actionSheet.tag == 10)
     {
         if (buttonIndex == 0)
         {
-            [rightOneArr replaceObjectAtIndex:3 withObject:@"男"];
+            [rightOneArr replaceObjectAtIndex:2 withObject:@"男"];
         }
         else if (buttonIndex == 1)
         {
-            [rightOneArr replaceObjectAtIndex:3 withObject:@"女"];
+            [rightOneArr replaceObjectAtIndex:2 withObject:@"女"];
         }
         else if (buttonIndex == 2)
         {
-            [rightOneArr replaceObjectAtIndex:3 withObject:@""];
+            [rightOneArr replaceObjectAtIndex:2 withObject:@""];
         }
         [infoTableView reloadData];
     }

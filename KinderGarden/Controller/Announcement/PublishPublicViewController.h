@@ -6,6 +6,7 @@
 //  Copyright © 2016年 haonanchen. All rights reserved.
 //
 
+
 #import "BasicViewController.h"
 
 #import "TakePhotoView.h"
@@ -18,11 +19,21 @@
 
 #import "NXUploadFileManager.h"
 
+typedef enum _PublishType
+{
+    PublishTypePublic = 0,
+    PublishTypeParentCircle
+}PublishType;
+
 typedef void (^RefreshBlock)(BOOL refresh);
 
 @interface PublishPublicViewController : BasicViewController  <UITextFieldDelegate,UITextViewDelegate,NXAddPictureViewDelegate,TakePhotoViewDelegate,UIGestureRecognizerDelegate,UploadFileDelegate>
 {
     UIScrollView * containerScrollView;
+    
+    UILabel * titleLabel;
+    
+    UITextField * titleText;
     
     UILabel * goodsDescLabel;
     
@@ -40,5 +51,7 @@ typedef void (^RefreshBlock)(BOOL refresh);
 @property (nonatomic, copy) NSString * shopID;
 
 @property (nonatomic, copy) RefreshBlock refreshBlock;
+
+@property (nonatomic, assign) PublishType publishType;
 
 @end

@@ -121,8 +121,9 @@
     }
     else if (sender.tag == 1004)
     {
-        ParentsChatViewController * PCVC = [[ParentsChatViewController alloc] init];
-        [self pushToViewController:PCVC];
+        PublishPublicViewController * PPVC = [[PublishPublicViewController alloc] init];
+        PPVC.publishType = PublishTypeParentCircle;
+        [self pushToViewController:PPVC];
     }
     else if (sender.tag == 1005)
     {
