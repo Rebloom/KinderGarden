@@ -25,5 +25,7 @@
     SelectClssView * selectView;
     EditView * editV;
     NSInteger recordRow;//记录编辑的是哪一行
+    
+    NSString * selectedWeek;
 }
 @end

@@ -46,4 +46,6 @@
 
 + (void)getQiniuTokenWithImageName:(NSString *)name delegate:(id)_delegate;
 
++ (void)addFoodRequestWithWeekNumber:(NSString *)weekNumber meal:(NSString *)meal foodImages:(NSMutableArray *)foodImages foodDesc:(NSString *)fooddesc classID:(NSString *)classID schoolID:(NSString *)schoolID operateID:(NSString *)personID delegate:(id)_delegate;
+
 @end

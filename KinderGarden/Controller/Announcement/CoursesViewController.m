@@ -8,6 +8,8 @@
 
 #import "CoursesViewController.h"
 
+#import "CourseRequest.h"
+
 @interface CoursesViewController ()
 
 @end
@@ -115,7 +117,7 @@
         dayBtn.frame = CGRectMake(12+i*55, 5, 43, 20);
         [dayBtn setTitle:[dayArr objectAtIndex:i] forState:UIControlStateNormal];
         [dayBtn setTitleColor:KFontColorA forState:UIControlStateNormal];
-        [dayBtn setBackgroundImage:[KPurpleColor image] forState:UIControlStateNormal];
+        [dayBtn setBackgroundImage:[[UIColor lightGrayColor] image] forState:UIControlStateNormal];
         [dayBtn addTarget:self action:@selector(dayBtnOnClick:) forControlEvents:UIControlEventTouchUpInside];
         [SV addSubview:dayBtn];
     }
@@ -124,28 +126,37 @@
 //选择星期
 - (void)dayBtnOnClick:(UIButton*)sender
 {
+    for (UIView * view in SV.subviews)
+    {
+        if ([view isKindOfClass:[UIButton class]])
+        {
+            UIButton * btn = (UIButton *)view;
+            [btn setBackgroundImage:[[UIColor lightGrayColor] image] forState:UIControlStateNormal];
+        }
+    }
+    [sender setBackgroundImage:[KPurpleColor image] forState:UIControlStateNormal];
     switch (sender.tag)
     {
         case 1000:
-            NSLog(@"周一");
+            selectedWeek = @"周一";
             break;
         case 1001:
-            NSLog(@"周二");
+            selectedWeek = @"周二";
             break;
         case 1002:
-            NSLog(@"周三");
+            selectedWeek = @"周三";
             break;
         case 1003:
-            NSLog(@"周四");
+            selectedWeek = @"周四";
             break;
         case 1004:
-            NSLog(@"周五");
+            selectedWeek = @"周五";
             break;
         case 1005:
-            NSLog(@"周六");
+            selectedWeek = @"周六";
             break;
         case 1006:
-            NSLog(@"周日");
+            selectedWeek = @"周日";
             break;
       
         default:
@@ -181,7 +192,16 @@
 //发布
 - (void)fabuBtnOnClick:(UIButton*)sender
 {
-    NSLog(@"发布");
+    NSMutableArray * classIDs = [NSMutableArray array];
+    [classIDs addObject:@"1"];
+    [classIDs addObject:@"2"];
+    [CourseRequest addOneCourseWithWeekNumber:selectedWeek.length?selectedWeek:@"周一" courseTime:@"1,2,3" course:@"语文,英语,数学" classIDs:classIDs operateID:[GFStaticData getObjectForKey:kTagUserKeyID] delegate:self];
+}
+
+- (void)nxRequestFinished:(NXBaseRequest *)request
+{
+    NSLog(@"request.back is %@",request.attributeDic);
+    [[TKAlertCenter defaultCenter] postAlertWithMessage:@"测试发布成功"];
 }
 
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section

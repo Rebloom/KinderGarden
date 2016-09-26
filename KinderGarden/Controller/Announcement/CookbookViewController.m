@@ -8,6 +8,8 @@
 
 #import "CookbookViewController.h"
 
+#import "PublicRequest.h"
+
 @interface CookbookViewController ()
 
 @end
@@ -190,6 +192,17 @@
 - (void)fabuBtnOnClick:(UIButton*)sender
 {
     NSLog(@"发布");
+    NSMutableArray * imageArray = [NSMutableArray array];
+    [imageArray addObject:@"http://site.meishij.net/r/41/203/113291/s113291_59060.jpg"];
+    [imageArray addObject:@"http://c.hiphotos.baidu.com/baike.jpg"];
+    [PublicRequest addFoodRequestWithWeekNumber:@"周一" meal:@"早餐晚餐加餐" foodImages:imageArray foodDesc:@"dadasdasd" classID:@"1" schoolID:@"1" operateID:[GFStaticData getObjectForKey:kTagUserKeyID] delegate:self];
+    
+//    [CourseRequest addOneCourseWithWeekNumber:selectedWeek.length?selectedWeek:@"周一" courseTime:@"1,2,3" course:@"语文,英语,数学" classIDs:classIDs operateID:[GFStaticData getObjectForKey:kTagUserKeyID] delegate:self];
+}
+
+- (void)nxRequestFinished:(NXBaseRequest *)request
+{
+    [[TKAlertCenter defaultCenter] postAlertWithMessage:@"发布食谱成功"];
 }
 
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
