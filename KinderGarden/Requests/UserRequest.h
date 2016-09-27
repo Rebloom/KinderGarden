@@ -17,7 +17,7 @@
 // 修改教师权限
 #define kTagModifyTeacherInfo               @"schoolTeacher/schoolTeacherUpdate?"
 // 更新教师信息
-#define kTagUpdateTeacherInfo               @"jgkj/teacherinfoSave"
+#define kTagUpdateTeacherInfo               @"jgkj/teacherinfoSave?"
 
 @interface UserRequest : NXBaseRequest
 

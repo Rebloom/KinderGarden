@@ -125,6 +125,8 @@ static NSString * serverOutTime     = @"请求超时,请稍后重试";
     }
     mainUrlString = [mainUrlString stringByAppendingString:bodyString];
     
+    NSLog(@"\n\nrequest.url is %@\n\n",mainUrlString);
+    
     mainUrlString = [mainUrlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     // 基于NSMutableUrlRequest
     NSMutableURLRequest * mRequest = [[NSMutableURLRequest alloc] init];

@@ -10,6 +10,8 @@
 #import "EditDataCell.h"
 #import "YWBcityPickerView.h"
 
+#import "UserRequest.h"
+
 @interface EditDataViewController ()
 {
     BOOL         _isShow;
@@ -50,14 +52,37 @@
     [infoArray addObject:@"班级"];
     [infoArray addObject:@"是否在职"];
     
-    for (NSString * str in infoArray)
+    for (int i = 0; i < infoArray.count; i++)
     {
         [rightOneArr addObject:@""];
     }
-    
     [self createTableView];
     [self createUI];
     [self createPickerView];
+    
+    [self createSaveBtn];
+}
+
+- (void)createSaveBtn
+{
+    UIButton * saveBtn = [[UIButton alloc] init];
+    [saveBtn setTitle:@"提交" forState:UIControlStateNormal];
+    saveBtn.titleLabel.font = NormalFontWithSize(15);
+    [saveBtn setBackgroundImage:[KPurpleColor image] forState:UIControlStateNormal];
+    [saveBtn setTitleColor:KFontColorC forState:UIControlStateNormal];
+    [saveBtn setFrame:CGRectMake(0, screenHeight-45, screenWidth, 45)];
+    [saveBtn addTarget:self action:@selector(saveBtnOnClick) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:saveBtn];
+}
+
+- (void)saveBtnOnClick
+{
+    [UserRequest updateTeacherInfoWithSchoolID:@"1" headerImage:@"http://imgsrc.baidu.com/forum/w%3D580/sign=150d09311b4c510faec4e21250582528/2c5614ce36d3d5392449d83a3b87e950342ab014.jpg" nickName:@"娇娇" teacherName:@"王娇娇" sex:@"0" nationality:@"汉" birthday:@"1990-01-01" phone:[GFStaticData getObjectForKey:kTagUserPhone] kbwx:@"0" kbqq:@"0" classid:@"1" onthejob:@"1" permissions:@"2" analysis:@"1" schoolname:@"北京市幼儿园" delegate:self];
+}
+
+- (void)nxRequestFinished:(NXBaseRequest *)request
+{
+    [[TKAlertCenter defaultCenter] postAlertWithMessage:@"保存成功"];
 }
 
 - (void)createTableView

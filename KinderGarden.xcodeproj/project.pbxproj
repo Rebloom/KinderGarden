@@ -581,6 +581,7 @@
 		EFCDB6E91D907D8F00589559 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFCDB6E81D907D8F00589559 /* GLKit.framework */; };
 		EFCDB6EB1D907D9E00589559 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFCDB6EA1D907D9E00589559 /* VideoToolbox.framework */; };
 		EFCDB6ED1D907DEA00589559 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EFCDB6EC1D907DEA00589559 /* libc++.tbd */; };
+		EFD63AB11D9A1775003062CD /* BabyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EFD63AB01D9A1775003062CD /* BabyRequest.m */; };
 		EFF9817F1D55BBFC005043BC /* LoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EFF9817E1D55BBFC005043BC /* LoginRequest.m */; };
 		F47D4B1C1D603965003E38B2 /* diet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F47D4B1A1D603965003E38B2 /* diet@2x.png */; };
 		F47D4B1D1D603965003E38B2 /* diet@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F47D4B1B1D603965003E38B2 /* diet@3x.png */; };
@@ -1762,6 +1763,8 @@
 		EFCDB6E81D907D8F00589559 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		EFCDB6EA1D907D9E00589559 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
 		EFCDB6EC1D907DEA00589559 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		EFD63AAF1D9A1775003062CD /* BabyRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabyRequest.h; sourceTree = "<group>"; };
+		EFD63AB01D9A1775003062CD /* BabyRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BabyRequest.m; sourceTree = "<group>"; };
 		EFF9817D1D55BBFC005043BC /* LoginRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginRequest.h; sourceTree = "<group>"; };
 		EFF9817E1D55BBFC005043BC /* LoginRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginRequest.m; sourceTree = "<group>"; };
 		F47D4B1A1D603965003E38B2 /* diet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "diet@2x.png"; sourceTree = "<group>"; };
@@ -4145,6 +4148,8 @@
 				EF2FC68A1D56F45A00E31139 /* PublicRequest.m */,
 				EF451CD31D5758080038DFFD /* CourseRequest.h */,
 				EF451CD41D5758080038DFFD /* CourseRequest.m */,
+				EFD63AAF1D9A1775003062CD /* BabyRequest.h */,
+				EFD63AB01D9A1775003062CD /* BabyRequest.m */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -4741,6 +4746,7 @@
 				EF0B3BA41D90769E00EAD7E2 /* SearchChatViewController.m in Sources */,
 				EF0B3BC41D90769E00EAD7E2 /* EMCDDeviceManager+Microphone.m in Sources */,
 				EFA3BFD41CEBE69A00724058 /* UIView+Snapshot.m in Sources */,
+				EFD63AB11D9A1775003062CD /* BabyRequest.m in Sources */,
 				EF0B3C3D1D90769F00EAD7E2 /* SRRefreshView.m in Sources */,
 				EF0B3BEA1D90769F00EAD7E2 /* DACircularProgressView.m in Sources */,
 				EF0B3C1C1D90769F00EAD7E2 /* EaseMessageViewController.m in Sources */,

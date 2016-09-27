@@ -8,6 +8,8 @@
 
 #import "ChildListViewController.h"
 
+#import "BabyRequest.h"
+
 @interface ChildListViewController ()
 
 @end
@@ -28,13 +30,19 @@
     [self.view addSubview:infoTable];
     
     selectedIndex = -1;
-    
-    NSArray * testArray = @[@"贝贝",@"晶晶",@"欢欢",@"莹莹",@"妮妮"];
-    for (NSString * name in testArray)
-    {
-        [childArray addObject:name];
-    }
+
+    [self getChildList];
     // Do any additional setup after loading the view.
+}
+
+- (void)getChildList
+{
+    [BabyRequest requestBabyListWithPage:0 rows:20 delegate:self];
+}
+
+- (void)nxRequestFinished:(NXBaseRequest *)request
+{
+    NSLog(@"request.back is %@",request.attributeDic);
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -66,8 +74,10 @@
     UITableViewCell * cell = [[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 60)];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
+    NSDictionary * dic = [childArray objectAtIndex:indexPath.row];
+    
     UIImageView * childIcon = [[UIImageView alloc] initWithFrame:CGRectMake(15, 7.5, 45, 45)];
-    [childIcon sd_setImageWithURL:[NSURL URLWithString:@""] placeholderImage:[UIImage imageNamed:@"icon_child"]];
+    [childIcon sd_setImageWithURL:[NSURL URLWithString:[NXGlobalUtil checkNullData:dic key:@"iocurl"]] placeholderImage:[UIImage imageNamed:@"icon_child"]];
     [cell addSubview:childIcon];
     
     UILabel * nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(childIcon.frame)+5, 0, SCREEN_WIDTH-10, 60)];

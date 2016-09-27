@@ -52,7 +52,7 @@
     [request.params setObject:headerImageUrl forKey:@"headportrait"];
     [request.params setObject:nickName forKey:@"nickname"];
     [request.params setObject:teacherName forKey:@"teachername"];
-    [request.params setObject:sex forKey:@"sex"];
+    [request.params setObject:sex forKey:@"teachersex"];
     [request.params setObject:nationality forKey:@"nationality"];
     [request.params setObject:birthdate forKey:@"birthdate"];
     [request.params setObject:phone forKey:@"phone"];
@@ -63,6 +63,8 @@
     [request.params setObject:permissions forKey:@"permissions"];
     [request.params setObject:analysis forKey:@"analysis"];
     [request.params setObject:schoolname forKey:@"schoolname"];
+    
+    [request.params setObject:[GFStaticData getObjectForKey:kTagUserKeyID] forKey:@"tmpinfoid"];
     
     [request start];
 }
