@@ -43,6 +43,15 @@
 - (void)nxRequestFinished:(NXBaseRequest *)request
 {
     NSLog(@"request.back is %@",request.attributeDic);
+    if ([request.vrCodeString isEqualToString:kRequestTagGetBabyList])
+    {
+        childArray = [request.attributeDic objectForKey:@"obj"];
+        [infoTable reloadData];
+    }
+    else if ([request.vrCodeString isEqualToString:kRequestTagBabyRequestLeave])
+    {
+        [[TKAlertCenter defaultCenter] postAlertWithMessage:@"宝宝请假成功"];
+    }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -84,7 +93,7 @@
     nameLabel.backgroundColor = [UIColor clearColor];
     nameLabel.font = NormalFontWithSize(15);
     nameLabel.textColor = [UIColor blackColor];
-    nameLabel.text = [childArray objectAtIndex:indexPath.row];
+    nameLabel.text = [NXGlobalUtil checkNullData:dic key:@"username"];
     [cell addSubview:nameLabel];
     
     UIImageView * rightImageView = [[UIImageView alloc] init];
@@ -98,7 +107,7 @@
     
     if (selectedIndex == indexPath.row)
     {
-        NSArray * nameArray = @[@"聊天",@"成长档案",@"宝宝详情",@"请假"];
+        NSArray * nameArray = @[@"签到",@"成长档案",@"宝宝详情",@"请假"];
         NSArray * iconArray = @[@"icon_baby_chat",@"icon_baby_archive",@"icon_child",@"icon_leave"];
         
         for (int i = 0; i < nameArray.count; i++)
@@ -144,13 +153,27 @@
     UIButton * btn = (UIButton *)sender;
     if (selectedIndex != -1)
     {
-        if (btn.tag == 2)
+        NSDictionary * dic = [childArray objectAtIndex:selectedIndex];
+        if (btn.tag == 0)
+        {
+            [BabyRequest requestLeaveWithBabyID:[NXGlobalUtil checkNullData:dic key:@"babyid"] asktype:@"0" askday:1 asktext:@"宝宝生病" delegate:self];
+        }
+        else if (btn.tag == 1)
+        {
+            PublishPublicViewController * PPVC = [[PublishPublicViewController alloc] init];
+            PPVC.babyInfo = dic;
+            PPVC.publishType = PublishTypeBabyGrouth;
+            [self pushToViewController:PPVC];
+        }
+        else if (btn.tag == 2)
         {
             ChildDetailViewController * CDVC = [[ChildDetailViewController alloc] init];
             [self pushToViewController:CDVC];
         }
-        NSString * alertMsg = [NSString stringWithFormat:@"点击了第%ld行的%ld个菜单",selectedIndex+1,btn.tag+1];
-        [[TKAlertCenter defaultCenter] postAlertWithMessage:alertMsg];
+        else if (btn.tag == 3)
+        {
+            [BabyRequest requestLeaveWithBabyID:[NXGlobalUtil checkNullData:dic key:@"babyid"] asktype:@"0" askday:1 asktext:@"宝宝生病" delegate:self];
+        }
     }
 }
 

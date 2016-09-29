@@ -169,6 +169,10 @@ static NSString * serverOutTime     = @"请求超时,请稍后重试";
         blockRequest.responseString = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
         blockRequest.responseData = responseObject;
         blockRequest.responseStatusCode = error?error.code:200;
+        if (error)
+        {
+            NSLog(@"error occured!!!!%@",request.responseString);
+        }
         [self handleRequestResult:blockRequest];
     }];
     [task resume];

@@ -117,6 +117,7 @@
     else if (sender.tag == 1003)
     {
         CoursesViewController * CVC = [[CoursesViewController alloc] init];
+        CVC.canEdit = YES;
         [self pushToViewController:CVC];
     }
     else if (sender.tag == 1004)

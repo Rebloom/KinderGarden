@@ -30,6 +30,10 @@
     {
         [headerView loadComponentsWithTitle:@"发布父母圈"];
     }
+    else if (_publishType == PublishTypeBabyGrouth)
+    {
+        [headerView loadComponentsWithTitle:[NSString stringWithFormat:@"发布%@的成长",[self.babyInfo objectForKey:@"nickname"]]];
+    }
    
     [headerView publishButton];
     self.view.backgroundColor = NXDefaultGrayBGColor;
@@ -197,6 +201,10 @@
         {
             [PublicRequest addParentPublishWithSchoolID:@"1" address:@"北京市" topic:@"测试标题" content:@"测试内容" topicImage:@"" type:@"p" delegate:self];
         }
+        else if (_publishType == PublishTypeBabyGrouth)
+        {
+            [BabyRequest publicBabyGrouthWithBabyID:[self.babyInfo objectForKey:@"babyId"] publisherName:@"测试" content:@"测试发布" imageUrl:@"" delegate:self];
+        }
     }
 }
 
@@ -218,6 +226,11 @@
         [[TKAlertCenter defaultCenter] postAlertWithMessage:@"发布父母圈成功"];
         [self performSelector:@selector(back) withObject:nil afterDelay:1.5];
     }
+    else if ([request.vrCodeString isEqualToString:kRequestTagSaveBabyGrouth])
+    {
+        [[TKAlertCenter defaultCenter] postAlertWithMessage:@"发布宝宝成长成功"];
+        [self performSelector:@selector(back) withObject:nil afterDelay:1.5];
+    }
 }
 
 - (void)uploadFileSuccess:(NSDictionary *)back
@@ -232,6 +245,10 @@
     else if (_publishType == PublishTypeParentCircle)
     {
         [PublicRequest addParentPublishWithSchoolID:@"1" address:@"北京市" topic:titleText.text content:goodsDescTextView.text topicImage:[[imageJoinedString componentsSeparatedByString:@","] firstObject] type:@"p" delegate:self];
+    }
+    else if (_publishType == PublishTypeBabyGrouth)
+    {
+        [BabyRequest publicBabyGrouthWithBabyID:[self.babyInfo objectForKey:@"babyid"] publisherName:@"测试" content:@"测试发布" imageUrl:[[imageJoinedString componentsSeparatedByString:@","] firstObject] delegate:self];
     }
 
 }

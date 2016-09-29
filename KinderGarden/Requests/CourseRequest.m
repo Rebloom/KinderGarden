@@ -32,4 +32,21 @@
     [request start];
 }
 
++ (void)requestCourseListWithRows:(NSInteger)rows page:(NSInteger)page weeknum:(NSString *)weeknum festivals:(NSString *)festivals course:(NSString *)course clssids:(NSString *)clssids delegate:(id)_delegate
+{
+    CourseRequest * request = [[CourseRequest alloc] init];
+    request.vrCodeString = kRequestTagGetCourseList;
+    request.delegate = _delegate;
+    
+    [request.params setObject:[NSString stringWithFormat:@"%@",@(rows)] forKey:@"rows"];
+    [request.params setObject:[NSString stringWithFormat:@"%@",@(page)] forKey:@"page"];
+    [request.params setObject:weeknum forKey:@"weeknum"];
+    [request.params setObject:festivals forKey:@"festivals"];
+    [request.params setObject:course forKey:@"course"];
+    [request.params setObject:clssids forKey:@"clssids"];
+    //[request.params setObject:[GFStaticData getObjectForKey:kTagUserKeyID] forKey:@"osperion"];
+    
+    [request start];
+}
+
 @end

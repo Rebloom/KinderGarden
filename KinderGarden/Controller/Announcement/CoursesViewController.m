@@ -34,6 +34,11 @@
     [self createScrollView];
     [self createUI];
     [self createEditView];
+    
+    if (self.canEdit == NO)
+    {
+        [CourseRequest requestCourseListWithRows:20 page:1 weeknum:@"" festivals:@"" course:@"" clssids:@"" delegate:self];
+    }
 }
 
 - (void)createClassBtn
@@ -173,20 +178,23 @@
     infoTablView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:infoTablView];
     
-    
-    UILabel * lineLabel = [[UILabel alloc] init];
-    lineLabel.backgroundColor = KFontColorE;
-    lineLabel.frame = CGRectMake(0, screenHeight- 60.5, screenWidth, 0.5);
-    [self.view addSubview:lineLabel];
-    
-    fabuBtn = [[UIButton alloc] init];
-    fabuBtn.frame = CGRectMake(0, screenHeight- 60, screenWidth, 60);
-    [fabuBtn setTitle:@"发布" forState:UIControlStateNormal];
-    [fabuBtn setTitleColor:KFontColorC forState:UIControlStateNormal];
-    fabuBtn.backgroundColor = KFontColorA;
-    fabuBtn.titleLabel.font = NormalFontWithSize(15);
-    [fabuBtn addTarget:self action:@selector(fabuBtnOnClick:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:fabuBtn];
+    if (self.canEdit)
+    {
+        
+        UILabel * lineLabel = [[UILabel alloc] init];
+        lineLabel.backgroundColor = KFontColorE;
+        lineLabel.frame = CGRectMake(0, screenHeight- 60.5, screenWidth, 0.5);
+        [self.view addSubview:lineLabel];
+        
+        fabuBtn = [[UIButton alloc] init];
+        fabuBtn.frame = CGRectMake(0, screenHeight- 60, screenWidth, 60);
+        [fabuBtn setTitle:@"发布" forState:UIControlStateNormal];
+        [fabuBtn setTitleColor:KFontColorC forState:UIControlStateNormal];
+        fabuBtn.backgroundColor = KFontColorA;
+        fabuBtn.titleLabel.font = NormalFontWithSize(15);
+        [fabuBtn addTarget:self action:@selector(fabuBtnOnClick:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:fabuBtn];
+    }
 }
 
 //发布
@@ -201,7 +209,14 @@
 - (void)nxRequestFinished:(NXBaseRequest *)request
 {
     NSLog(@"request.back is %@",request.attributeDic);
-    [[TKAlertCenter defaultCenter] postAlertWithMessage:@"测试发布成功"];
+    if (self.canEdit && [request.vrCodeString isEqualToString:kTagAddOneCourseRequest])
+    {
+        [[TKAlertCenter defaultCenter] postAlertWithMessage:@"发布课程成功"];
+    }
+    else if ([request.vrCodeString isEqualToString:kRequestTagGetCourseList])
+    {
+        
+    }
 }
 
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -277,24 +292,35 @@
     cell.delegate = self;
     cell.section = indexPath.section;
     
-    if (indexPath.section == 0)
+    if (self.canEdit)
     {
-        cell.addClassBtn.tag = indexPath.section;
-        cell.editClassBtn.tag = indexPath.row;
-        
-        if (classOneArr.count>0)
+        if (indexPath.section == 0)
         {
-            if (indexPath.row<classOneArr.count)
+            cell.addClassBtn.tag = indexPath.section;
+            cell.editClassBtn.tag = indexPath.row;
+            
+            if (classOneArr.count>0)
             {
-                cell.numLabel.hidden = NO;
-                cell.classNameLabel.hidden = NO;
-                cell.editClassBtn.hidden = NO;
-                cell.deleteBtn.hidden = NO;
-                cell.deleteBtn.tag = indexPath.row;
-                
-                cell.addClassBtn.hidden = YES;
-                cell.numLabel.text = [NSString stringWithFormat:@"第%ld节课",(long)indexPath.row+1];
-                cell.classNameLabel.text = [NSString stringWithFormat:@"     %@",[classOneArr objectAtIndex:indexPath.row]];
+                if (indexPath.row<classOneArr.count)
+                {
+                    cell.numLabel.hidden = NO;
+                    cell.classNameLabel.hidden = NO;
+                    cell.editClassBtn.hidden = NO;
+                    cell.deleteBtn.hidden = NO;
+                    cell.deleteBtn.tag = indexPath.row;
+                    
+                    cell.addClassBtn.hidden = YES;
+                    cell.numLabel.text = [NSString stringWithFormat:@"第%ld节课",(long)indexPath.row+1];
+                    cell.classNameLabel.text = [NSString stringWithFormat:@"     %@",[classOneArr objectAtIndex:indexPath.row]];
+                }
+                else
+                {
+                    cell.numLabel.hidden = YES;
+                    cell.classNameLabel.hidden = YES;
+                    cell.editClassBtn.hidden = YES;
+                    cell.deleteBtn.hidden = YES;
+                    cell.addClassBtn.hidden = NO;
+                }
             }
             else
             {
@@ -305,50 +331,46 @@
                 cell.addClassBtn.hidden = NO;
             }
         }
-        else
+        else if (indexPath.section == 1)
         {
-            cell.numLabel.hidden = YES;
-            cell.classNameLabel.hidden = YES;
-            cell.editClassBtn.hidden = YES;
-            cell.deleteBtn.hidden = YES;
-            cell.addClassBtn.hidden = NO;
+            cell.addClassBtn.tag = indexPath.section;
+            cell.editClassBtn.tag = indexPath.row;
+            if (classTwoArr.count>0)
+            {
+                if (indexPath.row <classTwoArr.count)
+                {
+                    cell.numLabel.hidden = NO;
+                    cell.classNameLabel.hidden = NO;
+                    cell.editClassBtn.hidden = NO;
+                    cell.deleteBtn.hidden = NO;
+                    cell.addClassBtn.hidden = YES;
+                    
+                    cell.deleteBtn.tag = indexPath.row;
+                    cell.numLabel.text = [NSString stringWithFormat:@"第%ld节课",(long)indexPath.row+classOneArr.count+1];
+                    cell.classNameLabel.text = [NSString stringWithFormat:@"     %@",[classTwoArr objectAtIndex:indexPath.row]];
+                }
+                else
+                {
+                    cell.numLabel.hidden = YES;
+                    cell.classNameLabel.hidden = YES;
+                    cell.editClassBtn.hidden = YES;
+                    cell.deleteBtn.hidden = YES;
+                    cell.addClassBtn.hidden = NO;
+                }
+            }
+            else
+            {
+                cell.numLabel.hidden = YES;
+                cell.classNameLabel.hidden = YES;
+                cell.editClassBtn.hidden = YES;
+                cell.deleteBtn.hidden =YES;
+                cell.addClassBtn.hidden = NO;
+            }
         }
     }
-    else if (indexPath.section == 1)
+    else
     {
-        cell.addClassBtn.tag = indexPath.section;
-        cell.editClassBtn.tag = indexPath.row;
-        if (classTwoArr.count>0)
-        {
-            if (indexPath.row <classTwoArr.count)
-            {
-                cell.numLabel.hidden = NO;
-                cell.classNameLabel.hidden = NO;
-                cell.editClassBtn.hidden = NO;
-                cell.deleteBtn.hidden = NO;
-                cell.addClassBtn.hidden = YES;
-                
-                cell.deleteBtn.tag = indexPath.row;
-                cell.numLabel.text = [NSString stringWithFormat:@"第%ld节课",(long)indexPath.row+classOneArr.count+1];
-                cell.classNameLabel.text = [NSString stringWithFormat:@"     %@",[classTwoArr objectAtIndex:indexPath.row]];
-            }
-            else
-            {
-                cell.numLabel.hidden = YES;
-                cell.classNameLabel.hidden = YES;
-                cell.editClassBtn.hidden = YES;
-                cell.deleteBtn.hidden = YES;
-                cell.addClassBtn.hidden = NO;
-            }
-        }
-        else
-        {
-            cell.numLabel.hidden = YES;
-            cell.classNameLabel.hidden = YES;
-            cell.editClassBtn.hidden = YES;
-            cell.deleteBtn.hidden =YES;
-            cell.addClassBtn.hidden = NO;
-        }
+        
     }
     
     return cell;
@@ -443,9 +465,16 @@
 //重写返回，弹出列表选择是否退出
 - (void)back
 {
-    UIActionSheet * actionSheet = [[UIActionSheet alloc] initWithTitle:@"是否退出编辑" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"继续编辑",@"退出编辑",nil];
-    actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
-    [actionSheet showInView:self.view];
+    if (self.canEdit)
+    {
+        UIActionSheet * actionSheet = [[UIActionSheet alloc] initWithTitle:@"是否退出编辑" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"继续编辑",@"退出编辑",nil];
+        actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
+        [actionSheet showInView:self.view];
+    }
+    else
+    {
+        [super back];
+    }
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -456,14 +485,7 @@
     }
     else if (buttonIndex == 1)
     {    
-        if (self.navigationController && self.navigationController.viewControllers.count>1)
-        {
-            [self.navigationController popViewControllerAnimated:YES];
-        }
-        else
-        {
-            [self dismissViewControllerAnimated:YES completion:nil];
-        }
+        [super back];
     }
 }
 

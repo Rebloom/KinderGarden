@@ -28,4 +28,6 @@
     
     NSString * selectedWeek;
 }
+
+@property (nonatomic, assign) BOOL canEdit;
 @end

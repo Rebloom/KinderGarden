@@ -17,12 +17,15 @@
 
 #import "PublicRequest.h"
 
+#import "BabyRequest.h"
+
 #import "NXUploadFileManager.h"
 
 typedef enum _PublishType
 {
     PublishTypePublic = 0,
-    PublishTypeParentCircle
+    PublishTypeParentCircle,
+    PublishTypeBabyGrouth
 }PublishType;
 
 typedef void (^RefreshBlock)(BOOL refresh);
@@ -48,7 +51,7 @@ typedef void (^RefreshBlock)(BOOL refresh);
     UIButton * submitBtn;
 }
 
-@property (nonatomic, copy) NSString * shopID;
+@property (nonatomic, copy) NSDictionary * babyInfo;
 
 @property (nonatomic, copy) RefreshBlock refreshBlock;
 

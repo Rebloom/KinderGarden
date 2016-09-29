@@ -8,6 +8,8 @@
 
 #import "ChildDetailViewController.h"
 
+#import "BabyRequest.h"
+
 @interface ChildDetailViewController ()
 
 @end
@@ -27,7 +29,7 @@
     infoTable.dataSource = self;
     [self.view addSubview:infoTable];
     
-    descString = @"昵称,性别,出生日期,年龄,入校时间;爸爸,爸爸手机号,妈妈,妈妈手机号;所在班级";
+    descString = @"姓名,昵称,性别,出生日期,年龄;入校时间,是否在校";
     // Do any additional setup after loading the view.
 }
 
@@ -63,21 +65,29 @@
     
     if (section == 0)
     {
-        UIImageView * bgImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, 180)];
-        [bgImage sd_setImageWithURL:[NSURL URLWithString:@"http://pic1.win4000.com/wallpaper/9/542a4a04d2ab3.jpg"]];
+        if (bgImageView == nil)
+        {
+            bgImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, 180)];
+            [bgImageView sd_setImageWithURL:[NSURL URLWithString:@"http://pic1.win4000.com/wallpaper/9/542a4a04d2ab3.jpg"]];
+        }
         
         UIImageView * headerIcon = [[UIImageView alloc] initWithFrame:CGRectMake((screenWidth-60)/2, 40, 60, 60)];
         [headerIcon sd_setImageWithURL:[NSURL URLWithString:@""] placeholderImage:[UIImage imageNamed:@"icon_child"]];
-        [bgImage addSubview:headerIcon];
+        [bgImageView addSubview:headerIcon];
         
         UILabel * nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(headerIcon.frame)+10, screenWidth, 20)];
         nameLabel.backgroundColor = [UIColor clearColor];
+        nameLabel.textAlignment = NSTextAlignmentCenter;
         nameLabel.font = NormalFontWithSize(16);
         nameLabel.textColor = [UIColor whiteColor];
-        nameLabel.text = @"李明泽";
-        [bgImage addSubview:nameLabel];
+        nameLabel.text = @"点击上传宝宝艺术照";
+        [bgImageView addSubview:nameLabel];
         
-        return bgImage;
+        UIButton * btn = [[UIButton alloc] initWithFrame:bgImageView.frame];
+        [btn addTarget:self action:@selector(sectionHeaderClicked:) forControlEvents:UIControlEventTouchUpInside];
+        [bgImageView addSubview:btn];
+        
+        return bgImageView;
     }
     else
     {
@@ -89,14 +99,20 @@
         {
             sectionLabel.text = @"家庭关系";
         }
-        else if (section == 2)
-        {
-            sectionLabel.text = @"入校时间";
-        }
         [view addSubview:sectionLabel];
     }
     
     return view;
+}
+
+- (void)sectionHeaderClicked:(id)sender
+{
+    [takePhoto show];
+}
+
+- (void)didSelectImage:(UIImage *)image
+{
+    bgImageView.image = image;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -119,6 +135,17 @@
     [cell addSubview:rightImageView];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [BabyRequest insertBabyInfoWithAge:4 bgUrl:@"32" birthday:@"2012-12-12" iconUrl:@"32" schoolTime:@"2016-11-11 00:00:00" inSchool:@"1" nickName:@"明明" sex:@"1" username:@"baobao" delegate:self];
+}
+
+- (void)nxRequestFinished:(NXBaseRequest *)request
+{
+    NSLog(@"request.attric is %@",request.attributeDic);
+    
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView

@@ -10,6 +10,8 @@
 
 #import "ChildDetailViewController.h"
 
+#import "PublishPublicViewController.h"
+
 @interface ChildListViewController : BasicViewController <UITableViewDelegate, UITableViewDataSource>
 {
     NSMutableArray * childArray;

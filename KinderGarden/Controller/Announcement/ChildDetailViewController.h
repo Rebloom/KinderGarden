@@ -8,13 +8,19 @@
 
 #import "BasicViewController.h"
 
-@interface ChildDetailViewController : BasicViewController <UITableViewDelegate, UITableViewDataSource>
+#import "TakePhotoView.h"
+
+@interface ChildDetailViewController : BasicViewController <UITableViewDelegate, UITableViewDataSource,TakePhotoViewDelegate>
 {
     NSMutableArray * infoArray;
 
     UITableView * infoTable;
     
     NSString * descString;
+    
+    TakePhotoView * takePhoto;
+    
+    UIImageView * bgImageView;
 }
 
 @end
