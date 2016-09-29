@@ -33,6 +33,11 @@
     [self createScrollView];
     [self createUI];
     [self createEditView];
+    
+    if (self.canEdit == NO)
+    {
+        [PublicRequest requestFoodListWithSchoolID:@"1" classID:@"1" weekNum:@"周一" delegate:self];
+    }
 }
 
 //编辑弹窗视图（默认隐藏）
@@ -157,30 +162,33 @@
 
 - (void)createUI
 {
-    infoTablView = [[UITableView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(SV.frame)+10, screenWidth, screenHeight-64-60) style:UITableViewStylePlain];
-    infoTablView.delegate = self;
-    infoTablView.dataSource = self;
-    infoTablView.backgroundColor = kBackgroundColor;
-    infoTablView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [self.view addSubview:infoTablView];
+    infoTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(SV.frame)+10, screenWidth, screenHeight-64-60) style:UITableViewStylePlain];
+    infoTableView.delegate = self;
+    infoTableView.dataSource = self;
+    infoTableView.backgroundColor = kBackgroundColor;
+    infoTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [self.view addSubview:infoTableView];
     
-    UILabel * lineLabel = [[UILabel alloc] init];
-    lineLabel.backgroundColor = KFontColorE;
-    lineLabel.frame = CGRectMake(0, screenHeight- 60.5, screenWidth, 0.5);
-    [self.view addSubview:lineLabel];
-    
-    fabuBtn = [[UIButton alloc] init];
-    fabuBtn.frame = CGRectMake(0, screenHeight- 60, screenWidth, 60);
-    [fabuBtn setTitle:@"发布" forState:UIControlStateNormal];
-    [fabuBtn setTitleColor:KFontColorC forState:UIControlStateNormal];
-    fabuBtn.backgroundColor = KFontColorA;
-    fabuBtn.titleLabel.font = NormalFontWithSize(15);
-    [fabuBtn addTarget:self action:@selector(fabuBtnOnClick:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:fabuBtn];
-    
-    takePhoto = [[TakePhotoView alloc] initWithFrame:CGRectMake(0, 64, screenWidth, screenHeight)];
-    takePhoto.delegate = self;
-    [self.view addSubview:takePhoto];
+    if(self.canEdit)
+    {
+        UILabel * lineLabel = [[UILabel alloc] init];
+        lineLabel.backgroundColor = KFontColorE;
+        lineLabel.frame = CGRectMake(0, screenHeight- 60.5, screenWidth, 0.5);
+        [self.view addSubview:lineLabel];
+        
+        fabuBtn = [[UIButton alloc] init];
+        fabuBtn.frame = CGRectMake(0, screenHeight- 60, screenWidth, 60);
+        [fabuBtn setTitle:@"发布" forState:UIControlStateNormal];
+        [fabuBtn setTitleColor:KFontColorC forState:UIControlStateNormal];
+        fabuBtn.backgroundColor = KFontColorA;
+        fabuBtn.titleLabel.font = NormalFontWithSize(15);
+        [fabuBtn addTarget:self action:@selector(fabuBtnOnClick:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:fabuBtn];
+        
+        takePhoto = [[TakePhotoView alloc] initWithFrame:CGRectMake(0, 64, screenWidth, screenHeight)];
+        takePhoto.delegate = self;
+        [self.view addSubview:takePhoto];
+    }
 }
 
 - (void)didSelectMaxNum
@@ -196,13 +204,19 @@
     [imageArray addObject:@"http://site.meishij.net/r/41/203/113291/s113291_59060.jpg"];
     [imageArray addObject:@"http://c.hiphotos.baidu.com/baike.jpg"];
     [PublicRequest addFoodRequestWithWeekNumber:@"周一" meal:@"早餐晚餐加餐" foodImages:imageArray foodDesc:@"dadasdasd" classID:@"1" schoolID:@"1" operateID:[GFStaticData getObjectForKey:kTagUserKeyID] delegate:self];
-    
-//    [CourseRequest addOneCourseWithWeekNumber:selectedWeek.length?selectedWeek:@"周一" courseTime:@"1,2,3" course:@"语文,英语,数学" classIDs:classIDs operateID:[GFStaticData getObjectForKey:kTagUserKeyID] delegate:self];
 }
 
 - (void)nxRequestFinished:(NXBaseRequest *)request
 {
-    [[TKAlertCenter defaultCenter] postAlertWithMessage:@"发布食谱成功"];
+    if ([request.vrCodeString isEqualToString:kTagAddOneFoodRequest])
+    {
+        [[TKAlertCenter defaultCenter] postAlertWithMessage:@"发布食谱成功"];
+    }
+    else if ([request.vrCodeString isEqualToString:kRequestTagGetFoodList])
+    {
+        infoArr = [NSMutableArray arrayWithArray:[request.attributeDic objectForKey:@"obj"]];
+        [infoTableView reloadData];
+    }
 }
 
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -246,7 +260,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return infoArr.count+1;
+    if (self.canEdit)
+        return infoArr.count+1;
+    return infoArr.count;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -263,88 +279,98 @@
     cell.delegate = self;
     cell.addMealBtn.tag = indexPath.section;
     
-    if (infoArr.count>0)
+    if (self.canEdit)
     {
-        if (indexPath.row<infoArr.count)
+        if (infoArr.count>0)
         {
-            cell.MealTimeLabel.hidden = NO;
-            cell.deleteBtn.hidden = NO;
-            cell.addMealBtn.hidden = YES;
-            cell.editView.hidden = NO;
-            
-            cell.deleteBtn.tag = indexPath.row;
-            cell.picBtn.tag = indexPath.row;
-            cell.cookbookBtn.tag = indexPath.row;
-
-            cell.firstImageView.image = [UIImage imageNamed:@""];
-            cell.secondImageView.image = [UIImage imageNamed:@""];
-            cell.thirdImageView.image = [UIImage imageNamed:@""];
-            cell.fourthImageView.image = [UIImage imageNamed:@""];
-            [cell.picBtn setTitle:@"点此添加图片" forState:UIControlStateNormal];
-            [cell.cookbookBtn setTitle:@"输入食谱" forState:UIControlStateNormal];
-
-            NSInteger row = indexPath.row;
-            NSString * dinner =@"";
-            switch (row)
+            if (indexPath.row<infoArr.count)
             {
-                case 0:
-                    dinner = @"早餐";
-                    break;
-                case 1:
-                    dinner = @"午餐";
-                    break;
-                case 2:
-                    dinner = @"晚餐";
-                    break;
-                case 3:
-                    dinner = @"夜宵";
-                    break;
-                default:
-                    break;
-            }
-            cell.MealTimeLabel.text = dinner;
-            
-            NSDictionary * dict = [infoArr objectAtIndex:indexPath.row];
-            
-            if (dict.allKeys>0)
-            {
-                NSString * cookbookStr = [[dict objectForKey:@"cookbook"] description];
-                cell.classNameLabel.text = [NSString stringWithFormat:@"  %@",cookbookStr];
-                if (cookbookStr.length>0)
-                {
-                    [cell.cookbookBtn setTitle:@"" forState:UIControlStateNormal];
-                }
+                cell.MealTimeLabel.hidden = NO;
+                cell.deleteBtn.hidden = NO;
+                cell.addMealBtn.hidden = YES;
+                cell.editView.hidden = NO;
                 
-                NSArray * picArr = [dict objectForKey:@"pic"];
-                if (picArr.count>0)
+                cell.deleteBtn.tag = indexPath.row;
+                cell.picBtn.tag = indexPath.row;
+                cell.cookbookBtn.tag = indexPath.row;
+                
+                cell.firstImageView.image = [UIImage imageNamed:@""];
+                cell.secondImageView.image = [UIImage imageNamed:@""];
+                cell.thirdImageView.image = [UIImage imageNamed:@""];
+                cell.fourthImageView.image = [UIImage imageNamed:@""];
+                [cell.picBtn setTitle:@"点此添加图片" forState:UIControlStateNormal];
+                [cell.cookbookBtn setTitle:@"输入食谱" forState:UIControlStateNormal];
+                
+                NSInteger row = indexPath.row;
+                NSString * dinner =@"";
+                switch (row)
                 {
-                    [cell.picBtn setTitle:@"" forState:UIControlStateNormal];
-                    
-                    for (int i =0; i<picArr.count; i++)
+                    case 0:
+                        dinner = @"早餐";
+                        break;
+                    case 1:
+                        dinner = @"午餐";
+                        break;
+                    case 2:
+                        dinner = @"晚餐";
+                        break;
+                    case 3:
+                        dinner = @"夜宵";
+                        break;
+                    default:
+                        break;
+                }
+                cell.MealTimeLabel.text = dinner;
+                
+                NSDictionary * dict = [infoArr objectAtIndex:indexPath.row];
+                
+                if (dict.allKeys>0)
+                {
+                    NSString * cookbookStr = [[dict objectForKey:@"cookbook"] description];
+                    cell.classNameLabel.text = [NSString stringWithFormat:@"  %@",cookbookStr];
+                    if (cookbookStr.length>0)
                     {
-                        NSObject * object = [picArr objectAtIndex:i];
+                        [cell.cookbookBtn setTitle:@"" forState:UIControlStateNormal];
+                    }
+                    
+                    NSArray * picArr = [dict objectForKey:@"pic"];
+                    if (picArr.count>0)
+                    {
+                        [cell.picBtn setTitle:@"" forState:UIControlStateNormal];
                         
-                        if ([object isKindOfClass:[UIImage class]])
+                        for (int i =0; i<picArr.count; i++)
                         {
-                            if (i==0)
+                            NSObject * object = [picArr objectAtIndex:i];
+                            
+                            if ([object isKindOfClass:[UIImage class]])
                             {
-                                cell.firstImageView.image = [picArr objectAtIndex:0];
-                            }
-                            else if (i == 1)
-                            {
-                                cell.secondImageView.image = [picArr objectAtIndex:1];
-                            }
-                            else if (i==2)
-                            {
-                                cell.thirdImageView.image = [picArr objectAtIndex:2];
-                            }
-                            else if (i==3)
-                            {
-                                cell.fourthImageView.image = [picArr objectAtIndex:3];
+                                if (i==0)
+                                {
+                                    cell.firstImageView.image = [picArr objectAtIndex:0];
+                                }
+                                else if (i == 1)
+                                {
+                                    cell.secondImageView.image = [picArr objectAtIndex:1];
+                                }
+                                else if (i==2)
+                                {
+                                    cell.thirdImageView.image = [picArr objectAtIndex:2];
+                                }
+                                else if (i==3)
+                                {
+                                    cell.fourthImageView.image = [picArr objectAtIndex:3];
+                                }
                             }
                         }
                     }
                 }
+            }
+            else
+            {
+                cell.MealTimeLabel.hidden = YES;
+                cell.deleteBtn.hidden = YES;
+                cell.editView.hidden = YES;
+                cell.addMealBtn.hidden = NO;
             }
         }
         else
@@ -354,18 +380,43 @@
             cell.editView.hidden = YES;
             cell.addMealBtn.hidden = NO;
         }
+        
+        if (indexPath.row==4)
+        {
+            cell.addMealBtn.hidden = YES;
+        }
     }
     else
     {
-        cell.MealTimeLabel.hidden = YES;
-        cell.deleteBtn.hidden = YES;
-        cell.editView.hidden = YES;
-        cell.addMealBtn.hidden = NO;
-    }
-    
-    if (indexPath.row==4)
-    {
+        NSDictionary * dic = [infoArr objectAtIndex:indexPath.row];
+        cell.MealTimeLabel.text = [NXGlobalUtil checkNullData:dic key:@"meal"];
+        cell.editView.hidden = NO;
         cell.addMealBtn.hidden = YES;
+        cell.deleteBtn.hidden = YES;
+        cell.picBtn.hidden = YES;
+        NSArray * foodImageArray = [[NXGlobalUtil checkNullData:dic key:@"foodimgs"] componentsSeparatedByString:@","];
+        for (int i = 0; i < foodImageArray.count; i++)
+        {
+            NSString * foodImage = [foodImageArray objectAtIndex:i];
+            if (i == 0)
+            {
+                [cell.firstImageView sd_setImageWithURL:[NSURL URLWithString:foodImage]];
+            }
+            else if (i == 1)
+            {
+                [cell.secondImageView sd_setImageWithURL:[NSURL URLWithString:foodImage]];
+            }
+            else if (i == 2)
+            {
+                [cell.thirdImageView sd_setImageWithURL:[NSURL URLWithString:foodImage]];
+            }
+            else if (i == 3)
+            {
+                [cell.fourthImageView sd_setImageWithURL:[NSURL URLWithString:foodImage]];
+            }
+        }
+        [cell.cookbookBtn setTitle:[NXGlobalUtil checkNullData:dic key:@"fooddescription"] forState:UIControlStateNormal];
+        cell.cookbookBtn.userInteractionEnabled = NO;
     }
     
     return cell;
@@ -381,7 +432,7 @@
     [tempDict setObject:@"" forKey:@"cookbook"];//菜谱
     [infoArr addObject:tempDict];
     
-    [infoTablView reloadData];
+    [infoTableView reloadData];
 }
 
 //删除食谱
@@ -390,7 +441,7 @@
     recordRow = sender.tag;
     [infoArr removeObjectAtIndex:recordRow];
     
-    [infoTablView reloadData];
+    [infoTableView reloadData];
 }
 
 - (void)picBtnWithIndex:(NSInteger)index
@@ -435,7 +486,7 @@
     [editV setTitleStr:title];
     [editV showView];
     
-    [infoTablView reloadData];
+    [infoTableView reloadData];
 }
 
 #pragma mark 编辑弹窗代理方法
@@ -456,7 +507,7 @@
         [tempDict setObject:title forKey:@"cookbook"];
         [infoArr replaceObjectAtIndex:recordRow withObject:tempDict];
     }
-    [infoTablView reloadData];
+    [infoTableView reloadData];
 }
 
 #pragma TakePhotoViewDelegate
@@ -465,7 +516,7 @@
     NSMutableArray *  picArr = [[[infoArr objectAtIndex:recordRow] objectForKey:@"pic"] mutableCopy];
 
     [picArr insertObject:image atIndex:picArr.count];
-    [infoTablView reloadData];
+    [infoTableView reloadData];
 }
 
 - (void)didSelectImages:(NSArray *)assetImageArr
@@ -483,7 +534,7 @@
     
     [[infoArr objectAtIndex:recordRow] setObject:picArr forKey:@"pic"];
     
-    [infoTablView reloadData];
+    [infoTableView reloadData];
 
     [takePhoto hide];
 }
@@ -491,9 +542,16 @@
 //重写返回，弹出列表选择是否退出
 - (void)back
 {
-    UIActionSheet * actionSheet = [[UIActionSheet alloc] initWithTitle:@"是否退出编辑" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"继续编辑",@"退出编辑",nil];
-    actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
-    [actionSheet showInView:self.view];
+    if (self.canEdit)
+    {
+        UIActionSheet * actionSheet = [[UIActionSheet alloc] initWithTitle:@"是否退出编辑" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"继续编辑",@"退出编辑",nil];
+        actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
+        [actionSheet showInView:self.view];
+    }
+    else
+    {
+        [super back];
+    }
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -504,14 +562,7 @@
     }
     else if (buttonIndex == 1)
     {
-        if (self.navigationController && self.navigationController.viewControllers.count>1)
-        {
-            [self.navigationController popViewControllerAnimated:YES];
-        }
-        else
-        {
-            [self dismissViewControllerAnimated:YES completion:nil];
-        }
+        [super back];
     }
 }
 

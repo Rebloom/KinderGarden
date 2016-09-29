@@ -112,6 +112,7 @@
     else if (sender.tag == 1002)
     {
         CookbookViewController * CKVC = [[CookbookViewController alloc] init];
+        CKVC.canEdit = YES;
         [self pushToViewController:CKVC];
     }
     else if (sender.tag == 1003)

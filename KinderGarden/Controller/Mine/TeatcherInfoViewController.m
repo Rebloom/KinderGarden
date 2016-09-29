@@ -20,7 +20,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = KFontColorA;
     
-    [headerView loadComponentsWithTitle:@"李老师" withTitleColor:KFontColorA];
+    [headerView loadComponentsWithTitle:[self.teacherInfo objectForKey:@"teachername"] withTitleColor:KFontColorA];
     [headerView backButton];
     
     authStr = @"普通老师";
@@ -50,6 +50,34 @@
     UIView * footView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, 0.5)];
     footView.backgroundColor = KFontColorE;
     infoTableView.tableFooterView = footView;
+    
+    NSString * position = [[self.teacherInfo objectForKey:@"analysis"] integerValue]?@"班主任":@"普通老师";
+    NSInteger permission = [[self.teacherInfo objectForKey:@"permissions"] integerValue];
+    NSString * permissionString = @"";
+    if (permission == 1)
+    {
+        permissionString = @"管理员";
+    }
+    else if (permission == 2)
+    {
+        permissionString = @"普通老师";
+    }
+    else if (permission == 3)
+    {
+        permissionString = @"网站管理员";
+    }
+    else if (permission == 4)
+    {
+        permissionString = @"保育员老师";
+    }
+    NSString * nickName = [self.teacherInfo objectForKey:@"nickname"];
+    NSString * teacherName = [self.teacherInfo objectForKey:@"teachername"];
+    NSString * sex = [[self.teacherInfo objectForKey:@"teachersex"] integerValue]?@"男":@"女";
+    NSString * nation = [self.teacherInfo objectForKey:@"nationality"];
+    NSString * birthday = [self.teacherInfo objectForKey:@"birthdate"];
+    NSString * phone = [self.teacherInfo objectForKey:@"phone"];
+    leftArray = @[@"职务",@"权限",@"昵称",@"姓名",@"性别",@"民族",@"出生日期",@"手机号",@"负责班级",@"班级建立",@"管理老师",@"班级管理",@"离开幼儿园"];
+    rightArray = @[position,permissionString,nickName,teacherName,sex,nation,birthday,phone,@"",@"",@"",@"",@""];
 }
 
 -(void)createUI
@@ -72,7 +100,7 @@
     nameLabel.textAlignment = NSTextAlignmentLeft;
     nameLabel.frame = CGRectMake(CGRectGetMaxX(iconView.frame)+6, CGRectGetMinY(iconView.frame)+15, 180, 25);
     nameLabel.textColor = KFontColorA;
-    nameLabel.text = @"娇娇老师";
+    nameLabel.text = [self.teacherInfo objectForKey:@"teachername"];
     [headView addSubview:nameLabel];
     
     if (!phoneLabel)
@@ -83,23 +111,20 @@
     phoneLabel.textAlignment = NSTextAlignmentLeft;
     phoneLabel.frame = CGRectMake(CGRectGetMaxX(iconView.frame)+6, CGRectGetMaxY(nameLabel.frame), 180, 20);
     phoneLabel.textColor = KFontColorA;
-    phoneLabel.text = @"手机号：15112345678";
+    phoneLabel.text = [NSString stringWithFormat:@"手机号：%@",[self.teacherInfo objectForKey:@"phone"]];
     [headView addSubview:phoneLabel];
 }
 
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    UIView * view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, 40)];
-    
-    NSArray * titleArr = @[@"职务",@"权限",@"昵称",@"姓名",@"性别",@"民族",@"出生日期",@"手机号",@"负责班级",@"班级建立",@"管理老师",@"班级管理",@"离开幼儿园"];
-    NSArray * rightArr = @[@"班主任",authStr,@"娇娇老师",@"娇娇",@"女",@"汉",@"1982-5-08",@"15151234509",@"",@"",@"",@"",@""];
+    UIView * view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, 40)];\
 
     UILabel * leftLabel = [[UILabel alloc] init];
     leftLabel.font = NormalFontWithSize(14);
     leftLabel.frame = CGRectMake(20, 0, 100, 45);
     leftLabel.textAlignment = NSTextAlignmentLeft;
     leftLabel.textColor = KFontColorC;
-    leftLabel.text = [titleArr objectAtIndex:section];
+    leftLabel.text = [leftArray objectAtIndex:section];
     [view addSubview:leftLabel];
     
     UILabel * lineLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 44.5, screenWidth-20, 0.5)];
@@ -111,7 +136,7 @@
     rightLabel.frame = CGRectMake(0, 0, screenWidth-15, 45);
     rightLabel.textAlignment = NSTextAlignmentRight;
     rightLabel.textColor = KFontColorB;
-    rightLabel.text = [rightArr objectAtIndex:section];
+    rightLabel.text = [rightArray objectAtIndex:section];
     [view addSubview:rightLabel];
     
     UIButton * sectionBtn = [[UIButton alloc] init];

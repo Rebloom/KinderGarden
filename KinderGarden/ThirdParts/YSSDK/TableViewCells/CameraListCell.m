@@ -49,20 +49,20 @@
     [self.parentViewController performSelector:@selector(go2Play:) withObject:_cameraInfo];
 }
 
-- (IBAction)go2Record:(id)sender
-{
-    [self.parentViewController performSelector:@selector(go2Record:) withObject:_cameraInfo];
-}
-
-- (IBAction)go2Setting:(id)sender
-{
-    [self.parentViewController performSelector:@selector(go2Setting:) withObject:_cameraInfo];
-}
-
-- (IBAction)go2Message:(id)sender
-{
-    [self.parentViewController performSelector:@selector(go2Message:) withObject:_cameraInfo];
-}
+//- (IBAction)go2Record:(id)sender
+//{
+//    [self.parentViewController performSelector:@selector(go2Record:) withObject:_cameraInfo];
+//}
+//
+//- (IBAction)go2Setting:(id)sender
+//{
+//    [self.parentViewController performSelector:@selector(go2Setting:) withObject:_cameraInfo];
+//}
+//
+//- (IBAction)go2Message:(id)sender
+//{
+//    [self.parentViewController performSelector:@selector(go2Message:) withObject:_cameraInfo];
+//}
 
 //- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
 //    NSLog(@"touches = %@, event = %@", touches, event);

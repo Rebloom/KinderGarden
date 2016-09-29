@@ -17,8 +17,13 @@
     UILabel * phoneLabel;
     
     NSString * authStr;
+    
+    NSArray * leftArray;
+    NSArray * rightArray;
 }
 
+
+@property (nonatomic, strong) NSDictionary * teacherInfo;
 
 
 @end

@@ -10,6 +10,8 @@
 #import "AddTeatcherCell.h"
 #import "TeatcherInfoViewController.h"
 
+#import "UserRequest.h"
+
 @interface TeatcherManageViewController ()
 
 @end
@@ -28,6 +30,19 @@
     [headerView setBackgroundColor:KFontColorA];
 
     [self createUI];
+    
+    [UserRequest requestTeacherListWithSchoolID:@"1" classID:@"1" delegate:self];
+}
+
+- (void)nxRequestFinished:(NXBaseRequest *)request
+{
+    if ([request.vrCodeString isEqualToString:kRequestTagGetTeacherList])
+    {
+        [[TKAlertCenter defaultCenter] postAlertWithMessage:@"查询教师列表成功"];
+        infoArray = [NSMutableArray arrayWithArray:[request.attributeDic objectForKey:@"obj"]];
+        
+        [infoTableView reloadData];
+    }
 }
 
 - (void)createUI
@@ -45,7 +60,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return infoArray.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -62,10 +77,8 @@
         cell = [[AddTeatcherCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:addCellID];
     }
     
-    
-    NSArray * tempArr= @[@"小A",@"豆豆",@"妞妞",@"贝贝娜",@"萌萌",@"妞妞",@"赵子轩",@"豆豆",@"妞妞",@"老师"];
-    
-    cell.nameLabel.text = [tempArr objectAtIndex:indexPath.row];
+    NSDictionary * dic = [infoArray objectAtIndex:indexPath.row];
+    cell.nameLabel.text = [NXGlobalUtil checkNullData:dic key:@"teachername"];
     cell.selectImageView.image = [UIImage imageNamed:@"teatcherChat"];
     cell.selectImageView.frame = CGRectMake(screenWidth-20-12, 21, 20, 19);
     
@@ -77,6 +90,8 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     TeatcherInfoViewController * TIVC = [[TeatcherInfoViewController alloc] init];
+    NSDictionary * dic = [infoArray objectAtIndex:indexPath.row];
+    TIVC.teacherInfo = dic;
     [self pushToViewController:TIVC];
 }
 

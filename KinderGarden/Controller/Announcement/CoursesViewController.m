@@ -171,12 +171,12 @@
 
 - (void)createUI
 {
-    infoTablView = [[UITableView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(SV.frame)+10, screenWidth, screenHeight-64-60) style:UITableViewStylePlain];
-    infoTablView.delegate = self;
-    infoTablView.dataSource = self;
-    infoTablView.backgroundColor = kBackgroundColor;
-    infoTablView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [self.view addSubview:infoTablView];
+    infoTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(SV.frame)+10, screenWidth, screenHeight-64-60) style:UITableViewStylePlain];
+    infoTableView.delegate = self;
+    infoTableView.dataSource = self;
+    infoTableView.backgroundColor = kBackgroundColor;
+    infoTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [self.view addSubview:infoTableView];
     
     if (self.canEdit)
     {
@@ -215,7 +215,8 @@
     }
     else if ([request.vrCodeString isEqualToString:kRequestTagGetCourseList])
     {
-        
+        infoArray = [NSMutableArray arrayWithArray:[request.attributeDic objectForKey:@"obj"]];
+        [infoTableView reloadData];
     }
 }
 
@@ -238,6 +239,10 @@
     }
     firstLabel.font = NormalFontWithSize(14);
     [view addSubview:firstLabel];
+    if (self.canEdit == NO)
+    {
+        firstLabel.text = @"";
+    }
     
     UILabel * secondLabel = [[UILabel alloc] init];
     secondLabel.frame = CGRectMake(screenWidth/2-40, 0, 60, 40);
@@ -247,7 +252,10 @@
     secondLabel.font = NormalFontWithSize(14);
     [view addSubview:secondLabel];
     
-    
+    if (self.canEdit == NO)
+    {
+        secondLabel.text = @"课程列表";
+    }
     return view;
 }
 
@@ -263,19 +271,25 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    if (self.canEdit)
+        return 2;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (section == 0)
+    if (self.canEdit)
     {
-        return classOneArr.count+1;
+        if (section == 0)
+        {
+            return classOneArr.count+1;
+        }
+        else
+        {
+            return classTwoArr.count+1;;
+        }
     }
-    else
-    {
-        return classTwoArr.count+1;;
-    }
+    return infoArray.count;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -363,14 +377,20 @@
                 cell.numLabel.hidden = YES;
                 cell.classNameLabel.hidden = YES;
                 cell.editClassBtn.hidden = YES;
-                cell.deleteBtn.hidden =YES;
+                cell.deleteBtn.hidden = YES;
                 cell.addClassBtn.hidden = NO;
             }
         }
     }
     else
     {
-        
+        NSDictionary * courseInfo = [infoArray objectAtIndex:indexPath.row];
+        cell.numLabel.hidden = YES;
+        cell.classNameLabel.hidden = NO;
+        cell.classNameLabel.text = [NXGlobalUtil checkNullData:courseInfo key:@"course"];
+        cell.editClassBtn.hidden = NO;
+        cell.deleteBtn.hidden = YES;
+        cell.addClassBtn.hidden = YES;
     }
     
     return cell;
@@ -387,7 +407,7 @@
     {
         [classTwoArr addObject:@""];
     }
-    [infoTablView reloadData];
+    [infoTableView reloadData];
 }
 
 //删除课程
@@ -405,35 +425,38 @@
         [classTwoArr removeObjectAtIndex:sender.tag];
     }
     
-    [infoTablView reloadData];
+    [infoTableView reloadData];
 }
 
 //编辑课程
 - (void)editClassWithIndex:(UIButton *)sender WithSection:(NSInteger)section
 {
-    recordRow = sender.tag;
-    recordSection = section;
-   
-    NSString * title=@"";
-    if (section == 0)
+    if (self.canEdit)
     {
-        if ([classOneArr objectAtIndex:sender.tag])
+        recordRow = sender.tag;
+        recordSection = section;
+        
+        NSString * title=@"";
+        if (section == 0)
         {
-            title = [classOneArr objectAtIndex:sender.tag];
+            if ([classOneArr objectAtIndex:sender.tag])
+            {
+                title = [classOneArr objectAtIndex:sender.tag];
+            }
         }
-    }
-    else
-    {
-        if ([classTwoArr objectAtIndex:sender.tag])
+        else
         {
-           title = [classTwoArr objectAtIndex:sender.tag];
+            if ([classTwoArr objectAtIndex:sender.tag])
+            {
+                title = [classTwoArr objectAtIndex:sender.tag];
+            }
         }
+        
+        [editV setTitleStr:title];
+        [editV showView];
     }
-    
-    [editV setTitleStr:title];
-    [editV showView];
-    
-    [infoTablView reloadData];
+
+    [infoTableView reloadData];
 }
 
 #pragma mark 编辑弹窗代理方法
@@ -459,7 +482,7 @@
             [classTwoArr replaceObjectAtIndex:recordRow withObject:title];
         }
     }
-    [infoTablView reloadData];
+    [infoTableView reloadData];
 }
 
 //重写返回，弹出列表选择是否退出

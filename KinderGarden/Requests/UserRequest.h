@@ -18,6 +18,8 @@
 #define kTagModifyTeacherInfo               @"schoolTeacher/schoolTeacherUpdate?"
 // 更新教师信息
 #define kTagUpdateTeacherInfo               @"jgkj/teacherinfoSave?"
+// 获取教师列表
+#define kRequestTagGetTeacherList           @"teacherinfo/getTeacherinfoList?"
 
 @interface UserRequest : NXBaseRequest
 
@@ -26,5 +28,7 @@
 + (void)modifyTeacherInfoWithTeacherID:(NSString *)teacherid operateID:(NSString *)ostmpinfoid permission:(NSString *)permissions position:(NSString *)analysis delegate:(id)_delegate;
 
 + (void)updateTeacherInfoWithSchoolID:(NSString *)schoolID headerImage:(NSString *)headerImageUrl nickName:(NSString *)nickName teacherName:(NSString *)teacherName sex:(NSString *)sex nationality:(NSString *)nationality birthday:(NSString *)birthdate phone:(NSString *)phone kbwx:(NSString *)kbwx kbqq:(NSString *)kbqq classid:(NSString *)classid onthejob:(NSString *)onthejob permissions:(NSString *)permissions analysis:(NSString *)analysis schoolname:(NSString *)schoolname delegate:(id)_delegate;
+
++ (void)requestTeacherListWithSchoolID:(NSString *)schollID classID:(NSString *)classID delegate:(id)_delegate;
 
 @end

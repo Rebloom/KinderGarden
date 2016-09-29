@@ -12,6 +12,8 @@
 {
     UITableView * infoTableView;
     NSMutableDictionary * selectDict;
+    
+    NSMutableArray * infoArray;
 }
 
 

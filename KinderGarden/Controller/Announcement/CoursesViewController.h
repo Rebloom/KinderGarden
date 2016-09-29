@@ -12,7 +12,7 @@
 #import "EditView.h"
 @interface CoursesViewController : BasicViewController<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate,CourcesDelegate,UIActionSheetDelegate,UITextFieldDelegate,selectClassDelegate,editViewDelegate>
 {
-    UITableView * infoTablView;
+    UITableView * infoTableView;
     UIScrollView * SV;
     UIButton * fabuBtn;
     
@@ -27,6 +27,8 @@
     NSInteger recordRow;//记录编辑的是哪一行
     
     NSString * selectedWeek;
+    
+    NSMutableArray * infoArray;
 }
 
 @property (nonatomic, assign) BOOL canEdit;

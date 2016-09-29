@@ -51,7 +51,7 @@ typedef void (^RefreshBlock)(BOOL refresh);
     UIButton * submitBtn;
 }
 
-@property (nonatomic, copy) NSDictionary * babyInfo;
+@property (nonatomic, strong) NSDictionary * babyInfo;
 
 @property (nonatomic, copy) RefreshBlock refreshBlock;
 

@@ -40,11 +40,24 @@
     
     [request.params setObject:[NSString stringWithFormat:@"%@",@(rows)] forKey:@"rows"];
     [request.params setObject:[NSString stringWithFormat:@"%@",@(page)] forKey:@"page"];
-    [request.params setObject:weeknum forKey:@"weeknum"];
-    [request.params setObject:festivals forKey:@"festivals"];
-    [request.params setObject:course forKey:@"course"];
-    [request.params setObject:clssids forKey:@"clssids"];
-    //[request.params setObject:[GFStaticData getObjectForKey:kTagUserKeyID] forKey:@"osperion"];
+    if (weeknum.length)
+    {
+        [request.params setObject:weeknum forKey:@"weeknum"];
+    }
+    if (festivals.length)
+    {
+        [request.params setObject:festivals forKey:@"festivals"];
+    }
+    if (course.length)
+    {
+        [request.params setObject:course forKey:@"course"];
+    }
+    if (clssids.length)
+    {
+        [request.params setObject:clssids forKey:@"clssids"];
+    }
+    
+    [request.params setObject:[GFStaticData getObjectForKey:kTagUserKeyID] forKey:@"osperion"];
     
     [request start];
 }

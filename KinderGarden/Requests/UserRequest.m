@@ -69,5 +69,17 @@
     [request start];
 }
 
++ (void)requestTeacherListWithSchoolID:(NSString *)schollID classID:(NSString *)classID delegate:(id)_delegate
+{
+    UserRequest * request = [[UserRequest alloc] init];
+    request.vrCodeString = kRequestTagGetTeacherList;
+    request.delegate = _delegate;
+    
+    [request.params setObject:schollID forKey:@"schoolid"];
+    [request.params setObject:classID forKey:@"classid"];
+    [request.params setObject:@"1" forKey:@"onthejob"];
+    
+    [request start];
+}
 
 @end

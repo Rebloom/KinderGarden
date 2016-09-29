@@ -107,6 +107,19 @@
     [request start];
 }
 
++ (void)requestFoodListWithSchoolID:(NSString *)schollID classID:(NSString *)classID weekNum:(NSString *)weekNum delegate:(id)_delegate
+{
+    PublicRequest * request = [[PublicRequest alloc] init];
+    request.vrCodeString = kRequestTagGetFoodList;
+    request.delegate = _delegate;
+    
+    [request.params setObject:schollID forKey:@"schoolid"];
+    [request.params setObject:classID forKey:@"classid"];
+    [request.params setObject:weekNum forKey:@"weeknum"];
+    
+    [request start];
+}
+
 + (void)addParentPublishWithSchoolID:(NSString *)schoolID address:(NSString *)address topic:(NSString *)topic content:(NSString *)content topicImage:(NSString *)topicImage type:(NSString *)type delegate:(id)_delegate
 {
     PublicRequest * request = [[PublicRequest alloc] init];

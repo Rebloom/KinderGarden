@@ -101,8 +101,8 @@
         //获取EZMain.storyboard的实例ViewController--获取摄像头列表
         UIViewController *instanceVC = [ezMainStoryboard instantiateViewControllerWithIdentifier:@"EZCameraList"];
         //push摄像头列表的viewController
-        [self.navigationController pushViewController:instanceVC animated:YES];
-
+        [self.navigationController presentViewController:instanceVC animated:YES completion:^{
+        }];
     }
     else if (btn.tag == 1)
     {

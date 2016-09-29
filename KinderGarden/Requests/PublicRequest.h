@@ -26,6 +26,9 @@
 // 发布一条食谱
 #define kTagAddOneFoodRequest           @"food/save?"
 
+// 获取食谱列表
+#define kRequestTagGetFoodList          @"food/foodList?"
+
 // 父母圈发帖
 #define kTagParrentPublishRequest       @"parentTopic/save?"
 
@@ -47,6 +50,8 @@
 + (void)getQiniuTokenWithImageName:(NSString *)name delegate:(id)_delegate;
 
 + (void)addFoodRequestWithWeekNumber:(NSString *)weekNumber meal:(NSString *)meal foodImages:(NSMutableArray *)foodImages foodDesc:(NSString *)fooddesc classID:(NSString *)classID schoolID:(NSString *)schoolID operateID:(NSString *)personID delegate:(id)_delegate;
+
++ (void)requestFoodListWithSchoolID:(NSString *)schollID classID:(NSString *)classID weekNum:(NSString *)weekNum delegate:(id)_delegate;
 
 + (void)addParentPublishWithSchoolID:(NSString *)schoolID address:(NSString *)address topic:(NSString *)topic content:(NSString *)content topicImage:(NSString *)topicImage type:(NSString *)type delegate:(id)_delegate;
 

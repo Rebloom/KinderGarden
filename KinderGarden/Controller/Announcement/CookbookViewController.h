@@ -14,7 +14,7 @@
 
 @interface CookbookViewController : BasicViewController<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate,UIActionSheetDelegate,UITextFieldDelegate,selectClassDelegate,editViewDelegate,CookbookDelegate,TakePhotoViewDelegate>
 {
-    UITableView * infoTablView;
+    UITableView * infoTableView;
     UIScrollView * SV;
     UIButton * fabuBtn;
     
@@ -29,5 +29,7 @@
     
     TakePhotoView * takePhoto;
 }
+
+@property (nonatomic, assign) BOOL canEdit;
 
 @end
