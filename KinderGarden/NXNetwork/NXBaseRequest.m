@@ -64,16 +64,16 @@
     return 10;
 }
 
+- (NXRequestMethod)requestMethod {
+    return NXRequestMethodPost;
+}
+
 - (id)requestArgument {
     return nil;
 }
 
 - (id)cacheFileNameFilterForRequestArgument:(id)argument {
     return argument;
-}
-
-- (NXRequestMethod)requestMethod {
-    return NXRequestMethodPost;
 }
 
 - (NXRequestSerialiazerType)requestSerializerType {
@@ -120,6 +120,11 @@
 /// append self to request queue
 - (void)start {
     [[NXRequestManager shareManager] addNXPostRequest:self];
+}
+
+- (void)startThird
+{
+    [[NXRequestManager shareManager] addOtherRequest:self];
 }
 
 /// remove self from request queue

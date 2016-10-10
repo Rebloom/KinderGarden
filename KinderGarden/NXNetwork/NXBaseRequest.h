@@ -69,6 +69,9 @@ typedef void (^NXRequestEndBlock) (__kindof NXBaseRequest *request);
 // tag
 @property (nonatomic, assign) NSInteger tag;
 
+// 其他接口主地址
+@property (nonatomic, copy) NSString * requestMainUrl;
+
 // 接口版本号跟接口序列号
 @property (nonatomic, copy) NSString * vrCodeString;
 
@@ -78,6 +81,7 @@ typedef void (^NXRequestEndBlock) (__kindof NXBaseRequest *request);
 // 提交的参数信息
 @property (nonatomic, strong) NSMutableDictionary * params;
 @property (nonatomic, strong) NSMutableDictionary * domainParams;
+
 
 @property (nonatomic, strong) NSDictionary * attributeDic;
 @property (nonatomic, strong) NSDictionary * domainDic;
@@ -111,6 +115,8 @@ typedef void (^NXRequestEndBlock) (__kindof NXBaseRequest *request);
 // block回调
 
 - (void)start;
+
+- (void)startThird;
 
 - (void)stop;
 

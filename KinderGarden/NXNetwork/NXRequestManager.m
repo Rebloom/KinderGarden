@@ -105,6 +105,84 @@ static NSString * serverOutTime     = @"请求超时,请稍后重试";
     return result;
 }
 
+- (void)addOtherRequest:(NXBaseRequest *)request
+{
+    NSString * mainUrlString = request.requestMainUrl;
+    
+    NSString * bodyString = @"";
+    for (NSString * key in request.params)
+    {
+        if ([request.params.allKeys indexOfObject:key] == 0)
+        {
+            bodyString = [bodyString stringByAppendingString:[NSString stringWithFormat:@"%@=%@",key,[request.params objectForKey:key]]];
+        }
+        else
+        {
+            bodyString = [bodyString stringByAppendingString:[NSString stringWithFormat:@"&%@=%@",key,[request.params objectForKey:key]]];
+        }
+    }
+    mainUrlString = [mainUrlString stringByAppendingString:bodyString];
+    
+    NSLog(@"\n\nrequest.url is %@\n\n",mainUrlString);
+    
+    mainUrlString = [mainUrlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    // 基于NSMutableUrlRequest
+    NSMutableURLRequest * mRequest = [[NSMutableURLRequest alloc] init];
+    // 填写主地址，从子类带过来
+    [mRequest setURL:[NSURL URLWithString:mainUrlString]];
+    // 设置请求方式
+    if (request.requestMethod == NXRequestMethodGet)
+    {
+        [mRequest setHTTPMethod:@"GET"];
+    }
+    else if (request.requestMethod == NXRequestMethodPost)
+    {
+        [mRequest setHTTPMethod:@"POST"];
+    }
+    // 设置报头格式
+    [mRequest setValue:@"text/xml" forHTTPHeaderField:@"Content-Type"];
+    // 设定Manager
+    self.sessionManager.operationQueue.maxConcurrentOperationCount = 1;
+    self.sessionManager.securityPolicy = [AFSecurityPolicy defaultPolicy];
+    
+    self.sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/json",@"text/javascript",@"text/html",@"text/plain" ,nil];
+    self.sessionManager.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
+    // 判断提交的请求格式
+    if (request.isJsonRequest)
+    {
+        self.sessionManager.requestSerializer = [AFJSONRequestSerializer serializer];
+    }
+    else
+    {
+        self.sessionManager.requestSerializer = [AFHTTPRequestSerializer serializer];
+    }
+    self.sessionManager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    
+    self.sessionManager.requestSerializer.timeoutInterval = request.requestTimeoutInterval;
+    
+    // 判断是否是http的请求
+    if (request.isHttp)
+    {
+        [mainUrlString stringByReplacingOccurrencesOfString:@"https" withString:@"http"];
+    }
+    
+    __block NXBaseRequest * blockRequest = request;
+    NSURLSessionTask * task = [[NSURLSessionTask alloc] init];
+    request.requestTask = task;
+    task = [self.sessionManager dataTaskWithRequest:mRequest completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+        //
+        blockRequest.responseString = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        blockRequest.responseData = responseObject;
+        blockRequest.responseStatusCode = error?error.code:200;
+        if (error)
+        {
+            NSLog(@"error occured!!!!%@",request.responseString);
+        }
+        [self handleRequestResult:blockRequest];
+    }];
+    [task resume];
+}
+
 - (void)addNXPostRequest:(NXBaseRequest *)request
 {
     NSString * mainUrlString = @"http://123.206.43.102:8080/support/";
@@ -169,11 +247,18 @@ static NSString * serverOutTime     = @"请求超时,请稍后重试";
         blockRequest.responseString = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
         blockRequest.responseData = responseObject;
         blockRequest.responseStatusCode = error?error.code:200;
+        blockRequest.attributeDic  = [request.responseString jsonValueDecoded];
         if (error)
         {
             NSLog(@"error occured!!!!%@",request.responseString);
         }
-        [self handleRequestResult:blockRequest];
+        else
+        {
+            if (request.delegate && [request.delegate respondsToSelector:@selector(nxRequestFinished:)])
+            {
+                [request.delegate nxRequestFinished:request];
+            }
+        }
     }];
     [task resume];
 }

@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EZCameraTableViewController : UITableViewController
+#import "HeaderView.h"
+
+@interface EZCameraTableViewController : UIViewController <HeaderViewDelegate>
 
 @property (nonatomic) BOOL needRefresh;
+
+@property (nonatomic, strong) UITableView * tableView;
 
 @end

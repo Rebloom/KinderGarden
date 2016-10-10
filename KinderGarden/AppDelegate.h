@@ -15,7 +15,9 @@
 #import "EMSDK.h"
 #import "EaseUI.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+#import "ThirdPartRequest.h"
+
+@interface AppDelegate : UIResponder <UIApplicationDelegate,NXRequestDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

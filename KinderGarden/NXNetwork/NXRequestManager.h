@@ -42,4 +42,6 @@
 // 根据request和networkConfig构建url
 - (NSString *)buildRequestUrl:(NXBaseRequest *)request;
 
+- (void)addOtherRequest:(NXBaseRequest *)request;
+
 @end

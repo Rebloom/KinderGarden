@@ -30,6 +30,8 @@
 
 @implementation EZCameraTableViewController
 
+@synthesize tableView;
+
 - (void)dealloc
 {
 }
@@ -37,13 +39,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"我的摄像头";
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    HeaderView * headerView = [[HeaderView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, 64)];
+    headerView.delegate = self;
+    [headerView loadComponentsWithTitle:@"在线摄像头列表"];
+    [headerView backButton];
+    [self.view addSubview:headerView];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(headerView.frame), screenWidth, screenHeight-CGRectGetHeight(headerView.frame))];
+    self.tableView.showsVerticalScrollIndicator = NO;
+    self.tableView.showsHorizontalScrollIndicator = NO;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    [self.view addSubview:self.tableView];
     
     if(!_cameraList)
         _cameraList = [NSMutableArray new];
@@ -68,6 +75,18 @@
     }
     
 //    self.tableView.delaysContentTouches = NO;
+}
+
+- (void)buttonClicked:(id)sender
+{
+    if (self.navigationController && self.navigationController.viewControllers.count>1)
+    {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    else
+    {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated

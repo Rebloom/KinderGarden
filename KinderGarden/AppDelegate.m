@@ -11,10 +11,6 @@
 
 #import "EZOpenSDK.h"
 
-#define EzvizAppKey @"8ff0d3e7aab5485195fd7ddcb0a33934"
-
-#define EZPushAppSecret @"6741c50a996dd8a185a2ceaf06f28be2"
-
 @interface AppDelegate ()
 
 @end
@@ -47,11 +43,26 @@
     
     [self registerAPNS];
     
-    [EZOpenSDK initLibWithAppKey:EzvizAppKey];
+    [EZOpenSDK initLibWithAppKey:YSAppKey];
     
     NSLog(@"EZOpenSDK Version = %@", [EZOpenSDK getVersion]);
     
+    [ThirdPartRequest requestYingShiAccessTokenWithDelegate:self];
+    
     return YES;
+}
+
+- (void)nxRequestFinished:(NXBaseRequest *)request
+{
+    if ([[request.attributeDic objectForKey:@"data"] objectForKey:@"accessToken"])
+    {
+        [EZOpenSDK setAccessToken:[[request.attributeDic objectForKey:@"data"] objectForKey:@"accessToken"]];
+    }
+}
+
+- (void)nxRequestFailed:(NXBaseRequest *)request
+{
+    
 }
 
 - (void)registerAPNS

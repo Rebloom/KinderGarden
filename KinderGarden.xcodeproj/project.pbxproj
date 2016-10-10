@@ -466,6 +466,7 @@
 		EF65D4921CEAC42F00463441 /* KinderGarden.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EF65D4901CEAC42F00463441 /* KinderGarden.xcdatamodeld */; };
 		EF65D4941CEAC42F00463441 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF65D4931CEAC42F00463441 /* Assets.xcassets */; };
 		EF65D4971CEAC42F00463441 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF65D4951CEAC42F00463441 /* LaunchScreen.storyboard */; };
+		EF9354201DAB655F005D9085 /* ThirdPartRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93541F1DAB655F005D9085 /* ThirdPartRequest.m */; };
 		EF93EF6D1D915D11001499D3 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EF681D915D11001499D3 /* AFHTTPRequestOperation.m */; };
 		EF93EF6E1D915D11001499D3 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EF6A1D915D11001499D3 /* AFHTTPRequestOperationManager.m */; };
 		EF93EF6F1D915D11001499D3 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93EF6C1D915D11001499D3 /* AFURLConnectionOperation.m */; };
@@ -1554,6 +1555,8 @@
 		EF65D4931CEAC42F00463441 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF65D4961CEAC42F00463441 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF65D4981CEAC42F00463441 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF93541E1DAB655F005D9085 /* ThirdPartRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdPartRequest.h; sourceTree = "<group>"; };
+		EF93541F1DAB655F005D9085 /* ThirdPartRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdPartRequest.m; sourceTree = "<group>"; };
 		EF93EF671D915D11001499D3 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		EF93EF681D915D11001499D3 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		EF93EF691D915D11001499D3 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -4150,6 +4153,8 @@
 				EF451CD41D5758080038DFFD /* CourseRequest.m */,
 				EFD63AAF1D9A1775003062CD /* BabyRequest.h */,
 				EFD63AB01D9A1775003062CD /* BabyRequest.m */,
+				EF93541E1DAB655F005D9085 /* ThirdPartRequest.h */,
+				EF93541F1DAB655F005D9085 /* ThirdPartRequest.m */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -4891,6 +4896,7 @@
 				730ED0571D1A600800EA93C3 /* AddTeatcherCell.m in Sources */,
 				EF93F0091D928A27001499D3 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				EF93F0291D928A27001499D3 /* QNEtag.m in Sources */,
+				EF9354201DAB655F005D9085 /* ThirdPartRequest.m in Sources */,
 				EF0B3BD31D90769E00EAD7E2 /* MJRefreshHeader.m in Sources */,
 				EF93F01F1D928A27001499D3 /* QNGetAddrInfo.m in Sources */,
 				EF0A534F1D910A5D00A07E53 /* EZMessagePhotoViewController.m in Sources */,

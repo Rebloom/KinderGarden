@@ -71,5 +71,13 @@
 #define CHATVIEWBACKGROUNDCOLOR [UIColor colorWithRed:0.936 green:0.932 blue:0.907 alpha:1]
 
 
+// 第三方的appid与appkey
+
+// 萤石的key跟secret
+#define YSAppKey                @"8ff0d3e7aab5485195fd7ddcb0a33934"
+
+#define YSAppSecret             @"6741c50a996dd8a185a2ceaf06f28be2"
+
+
 #endif /* NXMacro_h */
 
