@@ -42,6 +42,7 @@
     _isShow = NO;
     
     rightOneArr = [[NSMutableArray alloc] initWithCapacity:10];
+    chargeClassArray = [NSMutableArray array];
     
     infoArray = [NSMutableArray array];
     [infoArray addObject:@"昵称"];
@@ -49,7 +50,7 @@
     [infoArray addObject:@"性别"];
     [infoArray addObject:@"民族"];
     [infoArray addObject:@"出生日期"];
-    [infoArray addObject:@"班级"];
+    [infoArray addObject:@"负责班级"];
     [infoArray addObject:@"是否在职"];
     
     for (int i = 0; i < infoArray.count; i++)
@@ -163,32 +164,92 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return infoArray.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return infoArray.count;
+    if (section == 5)
+    {
+        return 1+chargeClassArray.count;
+    }
+    return 0;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView * view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, 60)];
+    
+    EditDataCell * cell = [[EditDataCell alloc] initWithFrame:view.frame];
+    cell.nameLabel.text = [infoArray objectAtIndex:section];
+    cell.rightLabel.text = [rightOneArr objectAtIndex:section];
+    
+    [view addSubview:cell];
+    
+    UIButton * btn = [[UIButton alloc] initWithFrame:view.frame];
+    btn.tag = section;
+    [btn addTarget:self action:@selector(didSelectSection:) forControlEvents:UIControlEventTouchUpInside];
+    [view addSubview:btn];
+    
+    return view;
+}
+
+- (void)didSelectSection:(id)sender
+{
+    UIButton *btn = (UIButton *)sender;
+    NSInteger index = btn.tag;
+    if (index == 0 ||index == 1 || index == 3 || index == 4)
+    {
+        [edit showView];
+        [edit setTitleStr:[rightOneArr objectAtIndex:index]];
+    }
+    else if (index == 2)
+    {
+        [self selectSex];
+    }
+    else if (index == 5)
+    {
+        UIActionSheet * sheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"柠檬班",@"草莓班",@"大一班",@"中二班", nil];
+        sheet.tag = 12;
+        [sheet showInView:self.view];
+    }
+    else if (index == 6)
+    {
+        [self selectIsOnTheJob];
+    }
+
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString * cellID = @"cellID";
-    EditDataCell * cell = [tableView dequeueReusableCellWithIdentifier:cellID];
-    if (cell == nil)
-    {
-        cell = [[EditDataCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
-    }
-
-    cell.nameLabel.text = [infoArray objectAtIndex:indexPath.row];
-    cell.rightLabel.text = [rightOneArr objectAtIndex:indexPath.row];
+    UITableViewCell * cell = [[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, screenWidth, 45)];
     
+    UILabel * titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 0, screenWidth-30, 45)];
+    titleLabel.backgroundColor = [UIColor clearColor];
+    titleLabel.font = NormalFontWithSize(14);
+    titleLabel.textColor = [UIColor darkGrayColor];
+    
+    [cell addSubview:titleLabel];
+    
+    if (indexPath.row == chargeClassArray.count)
+    {
+        titleLabel.text = @"添加班级";
+    }
+    else
+    {
+        titleLabel.text = [chargeClassArray objectAtIndex:indexPath.row];
+    }
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 60;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 60.f;
+    return 45;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -196,20 +257,11 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     //记录编辑哪一行
-    recordRow = indexPath.row;
-    
-    if (indexPath.row == 0 ||indexPath.row == 1 || indexPath.row == 3 || indexPath.row == 4 || indexPath.row == 5)
+    if (indexPath.row == chargeClassArray.count && indexPath.section == 5)
     {
-        [edit showView];
-        [edit setTitleStr:[rightOneArr objectAtIndex:indexPath.row]];
-    }
-    else if (indexPath.row == 2)
-    {
-        [self selectSex];
-    }
-    else if (indexPath.row == 6)
-    {
-        [self selectIsOnTheJob];
+        UIActionSheet * sheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"柠檬班",@"草莓班",@"大一班",@"中二班", nil];
+        sheet.tag = 12;
+        [sheet showInView:self.view];
     }
 }
 
@@ -333,6 +385,17 @@
         imagePicker.allowsEditing = YES;
         imagePicker.sourceType = sourceType;
         [self presentViewController:imagePicker animated:YES completion:^{}];
+    }
+    else if (actionSheet.tag == 12)
+    {
+        if (buttonIndex == 4)
+        {
+            NSLog(@"取消");
+            return;
+        }
+        NSArray * nameArray = @[@"柠檬班",@"草莓班",@"大一班",@"中二班"];
+        [chargeClassArray addObject:[nameArray objectAtIndex:buttonIndex]];
+        [infoTableView reloadData];
     }
 }
 

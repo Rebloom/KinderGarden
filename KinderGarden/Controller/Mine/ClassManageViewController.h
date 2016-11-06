@@ -17,7 +17,6 @@
     NSMutableArray * selectedSection;
     NSMutableArray * infoArr;
     NSInteger selectedIndex;
-
 }
 
 

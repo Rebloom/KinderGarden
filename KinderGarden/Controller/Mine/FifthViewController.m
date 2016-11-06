@@ -13,6 +13,8 @@
 #import "SchoolInfoViewController.h"
 #import "EditDataViewController.h"
 
+#import "SearchSchoolViewController.h"
+
 @interface FifthViewController ()
 
 @end
@@ -47,8 +49,21 @@
     [self createEditBtn];
     [self createTableView];
     [self createUI];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     
-    [self requestTeacherInfo];
+    if ([GFStaticData getObjectForKey:kTagSavedKeySelectSchool])
+    {
+        // 选择过学校
+    }
+    else
+    {
+        [self requestTeacherInfo];
+
+    }
 }
 
 - (void)requestTeacherInfo
@@ -59,6 +74,11 @@
 - (void)nxRequestFinished:(NXBaseRequest *)request
 {
     [[TKAlertCenter defaultCenter] postAlertWithMessage:[request.attributeDic objectForKey:@"msg"]];
+    if ([[request.attributeDic objectForKey:@"code"] integerValue] == 0)
+    {
+        SearchSchoolViewController * SSVC = [[SearchSchoolViewController alloc] init];
+        [self pushToViewController:SSVC];
+    }
 }
 
 - (void)createTableView

@@ -56,6 +56,11 @@
 
 #define kTagSavedKeyUserInfo    @"kTagSavedKeyUserInfo"
 
+// 是否选择过学校
+#define kTagSavedKeySelectSchool        @"hasSelectSchool"
+// 保存选过的老师
+#define kTagSavedKeySelectTeachers      @"savedSelectTeachers"
+
 // 通知的key
 #define kTagGoodsChangedNoti    @"kTagGoodsChangedNoti"
 

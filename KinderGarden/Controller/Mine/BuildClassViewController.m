@@ -30,7 +30,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = KFontColorA;
     
-    [headerView loadComponentsWithTitle:@"学校信息" withTitleColor:KBlackColor];
+    [headerView loadComponentsWithTitle:@"添加班级" withTitleColor:KBlackColor];
     [headerView setBackgroundColor:KFontColorA];
     [headerView backButton];
     
@@ -39,6 +39,38 @@
     
     UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapped:)];
     [self.view addGestureRecognizer:tap];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    if ([GFStaticData getObjectForKey:kTagSavedKeySelectTeachers])
+    {
+        UIButton * btn = [self.view viewWithTag:selectedIndex];
+        
+        UIView * view = [btn viewWithTag:selectedIndex+100];
+        if (view)
+        {
+            [view removeFromSuperview];
+        }
+        for (UIView * view in btn.subviews)
+        {
+            if ([view isKindOfClass:[UIImageView class]])
+            {
+                [view removeFromSuperview];
+            }
+        }
+        
+        UILabel * rightLabel = [[UILabel alloc] init];
+        rightLabel.text = [GFStaticData getObjectForKey:kTagSavedKeySelectTeachers];
+        rightLabel.textAlignment = NSTextAlignmentRight;
+        rightLabel.frame = CGRectMake(screenWidth-150, 0, 150, 135);
+        rightLabel.font = NormalFontWithSize(15);
+        rightLabel.textColor = KFontColorC;
+        rightLabel.tag = selectedIndex+100;
+        [btn addSubview:rightLabel];
+    }
 }
 
 - (void)createUI
@@ -107,17 +139,21 @@
 - (void)commitBtnOnClick:(UIButton*)sender
 {
     NSLog(@"提交");
+    [[TKAlertCenter defaultCenter] postAlertWithMessage:@"创建班级成功"];
 }
 
 - (void)buildClassBtnOnClick:(UIButton*)sender
 {
+    selectedIndex = sender.tag;
     if (sender.tag == 1000)
     {
         NSLog(@"班级名称");
     }
     else if (sender.tag == 1001)
     {
-        NSLog(@"添加班主任");
+        AddTeatcherViewController * ATVC = [[AddTeatcherViewController alloc] init];
+        ATVC.enterType = 1;
+        [self pushToViewController:ATVC];
     }
     else if (sender.tag == 1002)
     {

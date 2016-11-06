@@ -10,7 +10,7 @@
 #import <Accelerate/Accelerate.h>
 #import "EditView.h"
 
-@interface EditDataViewController : BasicViewController<UITableViewDataSource,UITableViewDelegate,UIActionSheetDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,editViewDelegate>
+@interface EditDataViewController : BasicViewController<UITableViewDataSource,UITableViewDelegate,UIActionSheetDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,editViewDelegate,UIActionSheetDelegate>
 {
     NSString * cityStr;
     
@@ -28,6 +28,8 @@
     NSInteger recordRow;//记录编辑的是哪一行
     
     NSMutableArray * infoArray;
+    
+    NSMutableArray * chargeClassArray;
 }
 
 @end

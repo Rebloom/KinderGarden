@@ -141,47 +141,19 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    for (NSDictionary * dic in selectedSection)
+    if (selectedIndex == section)
     {
-        if ([dic objectForKey:[NSString stringWithFormat:@"%d", (int)section]])
-        {
-            if ([[dic objectForKey:[NSString stringWithFormat:@"%d", (int)section]] isEqualToString:@"YES"])
-            {
-                return 10;
-            }
-            else
-            {
-                return 0;
-            }
-        }
+        return 3;
     }
     return 0;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    for (NSDictionary * dic in selectedSection)
+    if (selectedIndex == indexPath.section)
     {
-        if ([dic objectForKey:[NSString stringWithFormat:@"%d", (int)indexPath.section]])
-        {
-            if ([[dic objectForKey:[NSString stringWithFormat:@"%d", (int)indexPath.section]] isEqualToString:@"YES"])
-            {
-                if(infoArr.count > indexPath.row)
-                {
-                    return 60;
-                }
-                else
-                {
-                    return 0;
-                }
-            }
-            else
-            {
-                return 0;
-            }
-        }
+        return 60;
     }
-    
     return 0;
 }
 
@@ -194,8 +166,8 @@
         cell = [[AddTeatcherCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:addCellID];
     }
     
-    
-    cell.nameLabel.text = [infoArr objectAtIndex:indexPath.row];
+    NSArray * detailArray = @[@"小A",@"豆豆",@"妞妞"];
+    cell.nameLabel.text = [detailArray objectAtIndex:indexPath.row];
     
     cell.selectImageView.image = [UIImage imageNamed:@"teatcherChat"];
     cell.selectImageView.frame = CGRectMake(screenWidth-20-12, 21, 20, 19);
@@ -211,37 +183,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
 }
 
 // 根据时间段请求，点击即取消当前页其它请求
 - (void)timeBtnOnClick:(UIButton *)sender
 {
-//    selectedIndex = sender.tag;
-//    
-//    BOOL needAdd = YES;
-//    for (NSMutableDictionary * dic in selectedSection)
-//    {
-//        if ([dic objectForKey:[NSString stringWithFormat:@"%d", (int)selectedIndex]])
-//        {
-//            needAdd = NO;
-//            if ([[dic objectForKey:[NSString stringWithFormat:@"%d", (int)selectedIndex]] isEqualToString:@"YES"])
-//            {
-//                [dic setObject:@"NO" forKey:[NSString stringWithFormat:@"%d", (int)selectedIndex]];
-//            }
-//            else
-//            {
-//                [dic setObject:@"YES" forKey:[NSString stringWithFormat:@"%d", (int)selectedIndex]];
-//            }
-//        }
-//    }
-//    
-//    if (needAdd)
-//    {
-//        NSMutableDictionary * addDic = [NSMutableDictionary dictionary];
-//        [addDic setObject:@"YES" forKey:[NSString stringWithFormat:@"%d", (int)selectedIndex]];
-//        [selectedSection addObject:addDic];
-//    }
+    selectedIndex = sender.tag;
     [infoTableView reloadData];
 }
 

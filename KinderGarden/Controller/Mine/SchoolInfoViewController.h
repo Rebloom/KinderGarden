@@ -8,9 +8,12 @@
 
 #import "BasicViewController.h"
 
-@interface SchoolInfoViewController : BasicViewController<UITableViewDataSource,UITableViewDelegate>
+@interface SchoolInfoViewController : BasicViewController<UITableViewDataSource,UITableViewDelegate, UIAlertViewDelegate,UIActionSheetDelegate>
 {
     UITableView * infoTableView;
+    
+    NSMutableArray * leftArray;
+    NSMutableArray * rightArray;
 }
 
 

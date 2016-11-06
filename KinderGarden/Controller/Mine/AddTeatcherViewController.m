@@ -21,6 +21,14 @@
     
     selectDict = [[NSMutableDictionary alloc] initWithCapacity:10];
     
+    infoArray = [NSMutableArray array];
+    NSArray * tempArr= @[@"小A",@"豆豆",@"妞妞",@"贝贝娜",@"萌萌",@"妞妞",@"赵子轩",@"豆豆",@"妞妞",@"老师",@"小A",@"豆豆",@"妞妞",@"贝贝娜",@"萌萌"];
+    for (NSString * str in tempArr)
+    {
+        [infoArray addObject:str];
+    }
+    
+    
     [headerView setBackgroundColor:KFontColorA];
     [headerView loadComponentsWithTitle:@"添加老师" withTitleColor:KBlackColor];
     [headerView backButton];
@@ -55,6 +63,17 @@
 - (void)commitBtnOnClick
 {
     NSLog(@"提交");
+    NSArray * tempArr= @[@"小A",@"豆豆",@"妞妞",@"贝贝娜",@"萌萌",@"妞妞",@"赵子轩",@"豆豆",@"妞妞",@"老师",@"小A",@"豆豆",@"妞妞",@"贝贝娜",@"萌萌"];
+    NSString * contentString = @"";
+    NSMutableArray * nameArr = [NSMutableArray array];
+    for (NSString * str in selectDict.allKeys)
+    {
+        [nameArr addObject:[tempArr objectAtIndex:[str integerValue]]];
+    }
+    contentString = [nameArr componentsJoinedByString:@","];
+    [GFStaticData saveObject:contentString forKey:kTagSavedKeySelectTeachers];
+    
+    [self back];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
@@ -69,7 +88,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 15;
+    return infoArray.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -86,10 +105,7 @@
         cell = [[AddTeatcherCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:addCellID];
     }
     
-    
-    NSArray * tempArr= @[@"小A",@"豆豆",@"妞妞",@"贝贝娜",@"萌萌",@"妞妞",@"赵子轩",@"豆豆",@"妞妞",@"老师",@"小A",@"豆豆",@"妞妞",@"贝贝娜",@"萌萌"];
-    
-    cell.nameLabel.text = [tempArr objectAtIndex:indexPath.row];
+    cell.nameLabel.text = [infoArray objectAtIndex:indexPath.row];
     cell.selectImageView.image = [UIImage imageNamed:@"select"];
     cell.selectImageView.frame = CGRectMake(screenWidth-20-12, 22.5, 20, 15);
   
@@ -111,6 +127,11 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    if (self.enterType == 1)
+    {
+        [GFStaticData saveObject:[infoArray objectAtIndex:indexPath.row] forKey:kTagSavedKeySelectTeachers];
+        [self back];
+    }
     
     NSString * isSe = [selectDict objectForKey:[NSString stringWithFormat:@"%ld",(long)indexPath.row]];
     

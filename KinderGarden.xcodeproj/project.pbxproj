@@ -197,6 +197,7 @@
 		EF02DC181D60DC480011483A /* 饮食@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF02DBFF1D60DC480011483A /* 饮食@3x.png */; };
 		EF02DC1B1D696DEA0011483A /* PublishPublicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF02DC1A1D696DEA0011483A /* PublishPublicViewController.m */; };
 		EF0583631D9653F100A92DB8 /* AddClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF0583621D9653F100A92DB8 /* AddClassViewController.m */; };
+		EF09ADF41DBBCE7600223A3B /* SearchSchoolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF09ADF31DBBCE7600223A3B /* SearchSchoolViewController.m */; };
 		EF0A53361D910A5D00A07E53 /* EZQRView.m in Sources */ = {isa = PBXBuildFile; fileRef = EF0A52251D910A5D00A07E53 /* EZQRView.m */; };
 		EF0A53371D910A5D00A07E53 /* EZRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF0A52271D910A5D00A07E53 /* EZRecordCell.m */; };
 		EF0A53381D910A5D00A07E53 /* HIKLoadPercentView.m in Sources */ = {isa = PBXBuildFile; fileRef = EF0A52291D910A5D00A07E53 /* HIKLoadPercentView.m */; };
@@ -872,6 +873,8 @@
 		EF02DC1A1D696DEA0011483A /* PublishPublicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublishPublicViewController.m; sourceTree = "<group>"; };
 		EF0583611D9653F100A92DB8 /* AddClassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddClassViewController.h; sourceTree = "<group>"; };
 		EF0583621D9653F100A92DB8 /* AddClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddClassViewController.m; sourceTree = "<group>"; };
+		EF09ADF21DBBCE7600223A3B /* SearchSchoolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchSchoolViewController.h; sourceTree = "<group>"; };
+		EF09ADF31DBBCE7600223A3B /* SearchSchoolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchSchoolViewController.m; sourceTree = "<group>"; };
 		EF0A52241D910A5D00A07E53 /* EZQRView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZQRView.h; sourceTree = "<group>"; };
 		EF0A52251D910A5D00A07E53 /* EZQRView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZQRView.m; sourceTree = "<group>"; };
 		EF0A52261D910A5D00A07E53 /* EZRecordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZRecordCell.h; sourceTree = "<group>"; };
@@ -2048,6 +2051,8 @@
 				730C269A1D1CD3A200286B33 /* EditDataViewController.m */,
 				EF4A24721D604C15009AD380 /* DetailUserInfoViewController.h */,
 				EF4A24731D604C15009AD380 /* DetailUserInfoViewController.m */,
+				EF09ADF21DBBCE7600223A3B /* SearchSchoolViewController.h */,
+				EF09ADF31DBBCE7600223A3B /* SearchSchoolViewController.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -4854,6 +4859,7 @@
 				EF0B3C221D90769F00EAD7E2 /* EaseCustomMessageCell.m in Sources */,
 				EF93F0061D928A27001499D3 /* AFAutoPurgingImageCache.m in Sources */,
 				73DD1AB21CEEE25C0059ADAC /* SchoolCell.m in Sources */,
+				EF09ADF41DBBCE7600223A3B /* SearchSchoolViewController.m in Sources */,
 				7327FC651CEBFF6700C88F38 /* UINavBar.m in Sources */,
 				EF0A53631D910A5D00A07E53 /* UILabel+DDKit.m in Sources */,
 				EF93EF6D1D915D11001499D3 /* AFHTTPRequestOperation.m in Sources */,
@@ -5061,7 +5067,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LIBRARY = "libstdc++";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: WEI GONG (7ZMCBB6GJL)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -5087,9 +5093,9 @@
 					"$(PROJECT_DIR)/KinderGarden/ThirdParts/YSSDK/Venders/openssl/lib",
 				);
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dbn.nx.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jiugong.kindergarden;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "13cdddc3-da28-4979-b425-7b637f1761f9";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -5101,7 +5107,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LIBRARY = "libstdc++";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: WEI GONG (7ZMCBB6GJL)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -5127,9 +5133,9 @@
 					"$(PROJECT_DIR)/KinderGarden/ThirdParts/YSSDK/Venders/openssl/lib",
 				);
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dbn.nx.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jiugong.kindergarden;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "13cdddc3-da28-4979-b425-7b637f1761f9";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

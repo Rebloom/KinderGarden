@@ -12,6 +12,10 @@
 {
     UITableView * infoTableView;
     NSMutableDictionary * selectDict;
+    
+    NSMutableArray * infoArray;
 }
+
+@property (nonatomic, assign) NSInteger enterType;
 
 @end

@@ -11,6 +11,8 @@
 @interface BuildClassViewController : BasicViewController<UITextFieldDelegate>
 {
     UITextField * classNameTf;
+    
+    NSInteger selectedIndex;
 }
 
 @end

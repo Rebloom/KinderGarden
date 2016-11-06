@@ -26,6 +26,21 @@
     [headerView setBackgroundColor:KFontColorA];
     [headerView backButton];
     
+    leftArray = [NSMutableArray array];
+    rightArray = [NSMutableArray array];
+    
+    NSArray * titleArr = @[@"职务",@"权限",@"加入学校",@"建立班级",@"老师管理",@"班级管理",@"离开幼儿园"];
+    NSArray * contentArr = @[@"园长",@"管理员",@"",@"",@"",@"",@""];
+    
+    for (NSString * str in titleArr)
+    {
+        [leftArray addObject:str];
+    }
+    for (NSString * rStr in contentArr)
+    {
+        [rightArray addObject:rStr];
+    }
+    
     [self createTableView];
 }
 - (void)createTableView
@@ -61,13 +76,11 @@
     {
         cell = [[FifthCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
     }
-    NSArray * titleArr = @[@"职务",@"权限",@"加入学校",@"建立班级",@"老师管理",@"班级管理",@"离开幼儿园"];
-    NSArray * rightArr = @[@"园长",@"管理员",@"",@"",@"",@"",@""];
     
-    cell.nameLabel.text = [titleArr objectAtIndex:indexPath.row];
+    cell.nameLabel.text = [leftArray objectAtIndex:indexPath.row];
     
     cell.rightLabel.frame = CGRectMake(screenWidth-180, 0, 150, 45);
-    cell.rightLabel.text = [rightArr objectAtIndex:indexPath.row];
+    cell.rightLabel.text = [rightArray objectAtIndex:indexPath.row];
     
     return cell;
 }
@@ -86,7 +99,9 @@
     }
     else if (indexPath.row == 1)
     {
-        
+        UIActionSheet * sheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"管理员",@"普通老师",@"网站管理员",@"保育员老师", nil];
+        sheet.tag = indexPath.row;
+        [sheet showInView:self.view];
     }
     else if (indexPath.row == 2)
     {
@@ -109,7 +124,33 @@
     }
     else if (indexPath.row == 6)
     {
-        
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"确认离校" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+        [alert show];
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0)
+    {
+        [[TKAlertCenter defaultCenter] postAlertWithMessage:@"取消"];
+    }
+    else
+    {
+        [[TKAlertCenter defaultCenter] postAlertWithMessage:@"正在确认离开..."];
+    }
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (actionSheet.tag == 1)
+    {
+        NSArray * nameArr = @[@"管理员",@"普通老师",@"网站管理员",@"保育员老师"];
+        if (buttonIndex < 4)
+        {
+            [rightArray replaceObjectAtIndex:1 withObject:[nameArr objectAtIndex:buttonIndex]];
+        }
+        [infoTableView reloadData];
     }
 }
 
